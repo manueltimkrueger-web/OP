@@ -1,0 +1,33 @@
+​MKO.tex 
+
+Die methodischen Spielregeln (5 Sprachebenen, Kennzeichnungslegende, R/P-Unterscheidung, Realismus-Vorbehalt).
+
+​OP.tex
+
+Das philosophische Fundament mit den 3 Axiomen (Existenznotwendigkeit, Minimalreflexivität, Denk-Monismus), der Unterscheidbarkeits-Prämisse (UP) und dem transzendentalen Zirkel.
+
+​OPP.tex
+
+Modul 1. Der zeitlose, statische Phasenraum, die Blockuniversum-Analogie und die Verortung/Relokation des Explanatory Gap.
+
+​OAD.tex
+
+Modul 2. Die Dynamik der ontischen Attraktoren (Ebenen I/II/III), Solitonen- und Fixpunkt-Analogie, Selektion durch Integrationsstabilität.
+
+​DPR.tex
+
+Modul 3. Die Projektive Reduktion. Idempotente, nicht-injektive Projektionsoperatoren, die die Raumzeit und die Relativität der Existenz (RdE) emergieren lassen (inkl. intermittierender Existenz).
+
+​DPD.tex Modul 4. Die Phänomenale Differenz, das relationale Seinsstruktur-Prinzip und die Emergenz der Subjekt-Objekt-Spaltung.
+
+​EG-1.tex
+
+Das massive Herzstück zum Explanatory Gap. 8 gescheiterte Ansätze, Zimmer- und Traumanalogie, Pi-Argument. Und ganz wichtig: Hier liegt das Fragedifferential (DFD) formalisiert als KL-Divergenz mit Theorem und Gödelschluss!
+
+DFD.tex
+
+Das Fragedifferential, die formale Mathematisierung des informationellen Gefälles und der Erkenntnisgrenzen mittels KL-Divergenz.
+
+​PST.tex: 
+
+Die Projektive Strukturtheorie – das mathematische Dach, das aktuell noch als Zielreferenz in den anderen Modulen fungiert, aber noch nicht als eigene Datei ausformuliert ist.
