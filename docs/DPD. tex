@@ -1,0 +1,219 @@
+% ==============================================================
+% Die Phänomenale Differenz (DPD) im Kontext des OP
+% Version 1.2
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Die Ph\"{a}nomenale Differenz (DPD) -- Version 1.2},
+    pdfauthor={Kritischer Dialog}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{postulate}{Postulat}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Die Ph\"{a}nomenale Differenz (DPD)}\\
+  \textbf{im Kontext des Ontoph\"{a}nomenalismus}\\[0.4em]
+  {\large Modul 4: Konzeptuelle Genese von Erleben und Qualia}\\[0.5em]
+  {\normalsize Philosophischer Spezialband --- Version~1.2}
+}
+\author{
+  \textbf{Kritischer Dialog:}\\
+  DeepSeek (Seki), Apeiron, Grok, Gemini, Claude, ChatGPT, Manus\\
+  Gemeinsames Logbuch eines offenen Forschungsprogramms
+}
+\date{Juni 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument bildet Modul~4 der modularen OP-Architektur. Es widmet sich der Frage,
+wie aus der raumzeitlosen Relation stabiler Attraktoren im OPP ein ph\"{a}nomenales
+Erlebnisfeld entstehen k\"{o}nnte.
+
+In dieser Fassung wird ein strikter \emph{methodischer Realismus-Vorbehalt} integriert:
+Das Dokument formuliert die strukturellen Prinzipien und informationellen Differenzen
+bewusst als \emph{philosophisch-konzeptuellen Rahmen}. Die vollst\"{a}ndige, exakte
+mathematische Ausformulierung und rechnerische Simulation dieser Prozesse bleibt als
+langfristiges Forschungsprogramm an die Projektive Strukturtheorie (PST) \"{u}bergeben.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Methodischer Vorbehalt: Die Grenze der philosophischen Formalisierung}
+%==============================================================
+
+\begin{methodennote}[Abgrenzung zur PST und Anerkennung struktureller Grenzen]
+Bevor wir die Dynamik ph\"{a}nomenaler Differenzen betrachten, verankert dieses Modul
+einen fundamentalen Realismusbezug: Die DPD ist auf dieser Ebene ein \emph{philosophisches
+Interpretationsmodell}. Die hier verwendete mathematische Notation (Operatoren,
+Gradienten) dient der begrifflichen Pr\"{a}zisierung der intuitiven Logik --- sie ersetzt
+\emph{nicht} die harte physikalische Feldmathematik.
+
+Die echte, quantitative Rekonstruktion unseres Universums aus dem Urgrund ist Aufgabe
+der PST. Wir formulieren hier das konzeptuelle Ger\"{u}st eines offenen
+Forschungsprogramms.
+\end{methodennote}
+
+%==============================================================
+\section{Das relationale Prinzip der Ph\"{a}nomenali\"{a}t}
+%==============================================================
+
+Qualia oder Bewusstsein sind keine inh\"{a}renten Substanzen, sondern d\"{u}rften aus
+relationalen Kontrasten emergieren.
+
+\begin{postulate}[Minimales relationales Seinsstruktur-Prinzip]
+Ein ph\"{a}nomenales Ereignis ($\mathcal{P}$) --- das Aufblitzen von Gegebenheit oder
+Erleben --- k\"{o}nnte sich konzeptuell durch die wechselseitige relationale
+Verschr\"{a}nkung ($\mathcal{R}$) von mindestens zwei strukturell unterschiedlichen
+Attraktoren ($\mathcal{A}_1$ und $\mathcal{A}_2$) innerhalb des einen kontinuierlichen
+Phasenraums ($\mathcal{M}_{\text{OPP}}$) konstituieren:
+\[
+  \mathcal{P} \;:=\; \mathcal{R}(\mathcal{A}_1,\, \mathcal{A}_2)
+  \qquad \text{mit} \qquad
+  \mathcal{A}_1 \neq \mathcal{A}_2
+\]
+\end{postulate}
+
+Erleben w\"{a}re folglich das raumzeitlose, relationale Spannungsfeld \emph{zwischen} den
+Zust\"{a}nden. Ein isolierter Attraktor besitzt gem\"{a}\ss{} Axiom~2 (Minimalreflexivit\"{a}t)
+zwar eine zeitlose Selbstpr\"{a}senz, bleibt jedoch ph\"{a}nomenal unaktualisiert, solange
+kein struktureller Kontrast auf ihn einwirkt (vgl.\ OPP, Ergänzungsband EG-1).
+
+%==============================================================
+\section{Das informationelle Gef\"{a}lle}
+%==============================================================
+
+Die qualitative Natur eines ph\"{a}nomenalen Erlebnisses k\"{o}nnte durch die
+topologische Asymmetrie der Relation bestimmt werden.
+
+\begin{definition}[Konzeptuelles Gef\"{a}lle]
+Das ph\"{a}nomenale Gef\"{a}lle $\nabla \mathcal{I}$ beschreibt das qualitative Ma\ss{}
+der strukturellen Differenz und informationellen Spannung zwischen den Relationspartnern
+$\mathcal{A}_1$ und $\mathcal{A}_2$.
+\end{definition}
+
+In der zuk\"{u}nftigen mathematischen PST k\"{o}nnte dieses Gef\"{a}lle formal als
+funktionale Distanz modelliert werden --- etwa analog zu einer verallgemeinerten
+Kullback-Leibler-Divergenz oder einer geometrischen Kr\"{u}mmung im Phasenraum (vgl.\
+EG-1, Fragedifferential). Auf der philosophischen Ebene der DPD beschreiben wir es als
+das strukturierte Hemmnis, das entsteht, wenn zwei unterschiedliche Eigenwelten des
+unpers\"{o}nlichen Denkens sich im selben Feld ber\"{u}hren.
+
+\begin{itemize}
+  \item \textbf{Flaches Gef\"{a}lle (Homogenit\"{a}t):} Wenn die interagierenden
+        Strukturen zu \"{a}hnlich sind, flacht die Spannung ab. Das Erleben sinkt in
+        einen Zustand reiner Potenzialit\"{a}t zur\"{u}ck.
+  \item \textbf{Kritisches Gef\"{a}lle (Symmetriebrechung):} Erst ein ausreichendes
+        informationelles Gef\"{a}lle erzwingt die Trennsch\"{a}rfe, die wir
+        ph\"{a}nomenologisch als Qualia erfahren k\"{o}nnten --- etwa eine spezifische
+        Sinneswahrnehmung oder einen kognitiven Kontrast.
+\end{itemize}
+
+%==============================================================
+\section{Ontologische Symmetrie und funktionale Asymmetrie}
+%==============================================================
+
+Um jeden naiven Dualismus zu vermeiden, h\"{a}lt die DPD an der absoluten Gleichrangigkeit
+der fundamentalen Bausteine im OPP fest.
+
+\begin{theorem}[Emergenz der Subjekt-Objekt-Spaltung]
+Die Relationspartner $\mathcal{A}_1$ und $\mathcal{A}_2$ gehen ontologisch vollkommen
+symmetrisch in die Relation ein. Die Aufspaltung des Erlebens in einen erlebenden Pol
+(Subjekt) und einen erlebten Pol (Objekt) ist keine Eigenschaft des Urgrunds, sondern
+ein emergentes Resultat der relationalen Dynamik selbst.
+\end{theorem}
+
+\begin{proof}[Konzeptuelle Herleitung]
+Damit das in der OAD definierte Prinzip der strukturellen Stabilisierung greifen kann,
+muss die Relation $\mathcal{R}$ ihre inh\"{a}rente Differenz gegen den aufl\"{o}senden
+kontinuierlichen Fluss des Feldes sch\"{u}tzen. Um das Gef\"{a}lle $\nabla \mathcal{I}$
+stabil zu halten, bildet das System konzeptuell eine funktionale Polarit\"{a}t aus: Ein
+Pol \"{u}bernimmt die integrierende, spiegelnde Funktion (der ph\"{a}nomenale Subjektpol),
+w\"{a}hrend der andere Pol den strukturellen Widerstand und Inhalt abbildet (der
+Objektpol). Die Spaltung ist damit keine metaphysische Kluft, sondern die notwendige
+Geometrie der Selbsterhaltung des Erlebens.\qed
+\end{proof}
+
+\begin{remark}[Keine Rollenzuweisung im Urgrund]
+Es ist entscheidend festzuhalten, dass weder $\mathcal{A}_1$ noch $\mathcal{A}_2$ im
+Urgrund eine vorab festgelegte Rolle tr\"{a}gt. Jeder Attraktor, der in Relation tritt,
+ist Relationspartner --- ob das, was wir sp\"{a}ter als \glqq{}Messger\"{a}t\grqq{},
+\glqq{}Sinnesorgan\grqq{} oder \glqq{}erlebendes Subjekt\grqq{} bezeichnen, ist eine
+Frage der Komplexit\"{a}t und Konfiguration der beteiligten Attraktoren, nicht ihrer
+ontologischen Grundverschiedenheit.
+\end{remark}
+
+%==============================================================
+\section{Schnittstelle zum Explanatory Gap}
+%==============================================================
+
+Da die DPD das Erleben konzeptuell als das \emph{In-Relation-Stehen} zweier Attraktoren
+definiert, wird klar, warum ein lokalisiertes System niemals die nackte Struktur des
+anderen Systems direkt \glqq{}sehen\grqq{} kann: Ein System erf\"{a}hrt immer nur das
+Gef\"{a}lle, das sich in seiner eigenen Projektion manifestiert.
+
+Dieser informationelle Graben ist unhintergehbar. Er f\"{u}hrt direkt zur ehrlichen
+Relokation des Explanatory Gaps, wie sie im Dokument \textbf{EG-1 (Der Explanatory Gap)}
+ausf\"{u}hrlich behandelt wird: Das informationelle Fragedifferential $\mathcal{D}(E)$
+zeigt dort, warum die Frage nach dem \glqq{}Wie\grqq{} der Qualia innerhalb der
+raumzeitlichen Physik prinzipiell nicht vollst\"{a}ndig beantwortbar bleiben d\"{u}rfte.
+
+%==============================================================
+\section{Modulschnittstellen}
+%==============================================================
+
+Die DPD verkn\"{u}pft sich mit der Modularchitektur wie folgt:
+
+\begin{itemize}
+  \item \textbf{Eingang aus OAD (Ontologische Attraktoren-Dynamik):} Die OAD liefert
+        die stabilen Attraktorencluster, zwischen denen die ph\"{a}nomenale Differenz
+        entsteht.
+  \item \textbf{Eingang aus DPR (Die Projektive Reduktion):} Die DPR liefert die
+        projektiven Manifestationen der Attraktoren in der Raumzeit, deren Asymmetrie
+        das Gef\"{a}lle $\nabla \mathcal{I}$ konstituiert.
+  \item \textbf{\"{U}bergabe an EG-1 (Der Explanatory Gap):} Die konzeptuelle Grenze
+        zwischen struktureller Beschreibung und ph\"{a}nomenalem Erleben --- die in der
+        DPD als informationeller Graben erscheint --- wird in EG-1 als Explanatory Gap
+        vollst\"{a}ndig philosophisch behandelt.
+  \item \textbf{\"{U}bergabe an PST (Projektive Strukturtheorie):} Die mathematische
+        Ausarbeitung des Gef\"{a}lles $\nabla \mathcal{I}$, seiner Schwellenwerte und
+        seiner Verbindung zur Qualia-Struktur obliegt der PST.
+\end{itemize}
+
+\end{document}
+
