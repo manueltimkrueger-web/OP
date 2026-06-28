@@ -1,0 +1,329 @@
+% ==============================================================
+% Methodologische Konventionen des Ontophänomenalismus (MKO)
+% Version 1.0
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Methodologische Konventionen des OP (MET) -- Version 1.0},
+    pdfauthor={Kritischer Dialog}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{definition}
+\newtheorem{konvention}{Konvention}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Methodologische Konventionen des Ontoph\"{a}nomenalismus}\\[0.4em]
+  {\large MET --- Referenzdokument f\"{u}r alle Module des OP}\\[0.5em]
+  {\normalsize Version~1.0}
+}
+\author{
+  \textbf{Kritischer Dialog:}\\
+  DeepSeek (Seki), Apeiron, Grok, Gemini, Claude, ChatGPT, Manus\\
+  Gemeinsames Logbuch eines offenen Forschungsprogramms
+}
+\date{Juni 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument definiert die methodologischen Konventionen, Sprachregeln und
+Kennzeichnungssysteme, die im gesamten Ontoph\"{a}nomenalismus (OP) verbindlich gelten.
+Es dient allen anderen Modulen als gemeinsame Referenz und muss nicht in jedem Dokument
+separat erl\"{a}utert werden.
+
+Ziel dieser Konventionen ist maximale epistemische Transparenz: Der Leser soll jederzeit
+wissen, auf welcher Ebene --- Logik, Interpretation, Spekulation oder Empirie --- er sich
+befindet. Damit wird einem der h\"{a}ufigsten Einw\"{a}nde gegen philosophische Systeme
+vorgebeugt: dem stillen \"{U}bergang von logischen Schl\"{u}ssen zu Tatsachenbehauptungen.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Zweck und Geltungsbereich}
+%==============================================================
+
+Die methodologischen Konventionen des OP gelten f\"{u}r alle Dokumente des
+Forschungsprogramms:
+
+\begin{itemize}
+  \item \textbf{OP} --- Ontoph\"{a}nomenalismus (Logische Grundlegung)
+  \item \textbf{OPP} --- Ontoph\"{a}nomenaler Phasenraum
+  \item \textbf{OAD} --- Ontologische Attraktoren-Dynamik
+  \item \textbf{DPR} --- Die Projektive Reduktion
+  \item \textbf{DPD} --- Die Ph\"{a}nomenale Differenz
+  \item \textbf{EG-1} --- Der Explanatory Gap
+  \item \textbf{PST} --- Projektive Strukturtheorie
+  \item alle k\"{u}nftigen Erg\"{a}nzungsb\"{a}nde und Spezialmodule
+\end{itemize}
+
+Neue Dokumente referenzieren dieses Dokument einmalig und \"{u}bernehmen damit
+automatisch alle hier definierten Konventionen. Abweichungen m\"{u}ssen explizit
+begr\"{u}ndet werden.
+
+%==============================================================
+\section{Die Sprachregel: Vier Ebenen des Aussagenstatus}
+%==============================================================
+
+Die wichtigste Konvention des OP ist eine durchg\"{a}ngige Sprachregel, die zwischen
+vier Ebenen des Aussagenstatus unterscheidet. Jede Ebene hat ihre eigene sprachliche
+Markierung.
+
+\begin{konvention}[Ebene 1 --- Axiome und logische Folgerungen: Indikativ]
+Axiome und direkte logische Folgerungen aus Axiomen werden im \textbf{Indikativ}
+formuliert. Sie erheben keinen empirischen Wahrheitsanspruch, aber einen Anspruch auf
+interne logische Notwendigkeit.
+
+\medskip
+\textit{Beispiele:}
+\begin{itemize}
+  \item \glqq{}Es ist unm\"{o}glich, dass nichts existiert.\grqq{}
+  \item \glqq{}Aus Axiom~1 folgt, dass jede Existenz minimale Bestimmtheit besitzt.\grqq{}
+  \item \glqq{}Eine Entit\"{a}t ohne Selbigkeit ist vom Nichts ununterscheidbar.\grqq{}
+\end{itemize}
+\end{konvention}
+
+\begin{konvention}[Ebene 2 --- Ontologische Interpretationen: Konjunktiv]
+Philosophische Deutungen, die \"{u}ber die direkte logische Folgerung hinausgehen, werden
+im \textbf{Konjunktiv} oder mit vorsichtigen Modalformulierungen gekennzeichnet.
+
+\medskip
+\textit{Beispiele:}
+\begin{itemize}
+  \item \glqq{}Dies k\"{o}nnte als Individuation interpretiert werden.\grqq{}
+  \item \glqq{}Der Attraktor d\"{u}rfte in diesem Sinne als Verweilzustand gelten.\grqq{}
+  \item \glqq{}Das Feld w\"{a}re in dieser Lesart als unpersönliches Denken zu verstehen.\grqq{}
+\end{itemize}
+\end{konvention}
+
+\begin{konvention}[Ebene 3 --- Physikalische und mathematische Bez\"{u}ge: Vorsichtige
+Modalformulierung]
+Verbindungen zur Physik, Mathematik oder Informationstheorie werden stets als
+\textbf{konzeptuelle Analogien oder Arbeitshypothesen} ausgewiesen. Formulierungen wie
+\glqq{}analog zu\grqq{}, \glqq{}legt nahe\grqq{} oder \glqq{}k\"{o}nnte modelliert
+werden als\grqq{} sind verbindlich.
+
+\medskip
+\textit{Beispiele:}
+\begin{itemize}
+  \item \glqq{}Dies legt eine m\"{o}gliche Analogie zur Informationstheorie nahe.\grqq{}
+  \item \glqq{}Das Gef\"{a}lle k\"{o}nnte formal als Kullback-Leibler-Divergenz modelliert
+        werden.\grqq{}
+  \item \glqq{}Analog zu stehenden Wellen stabilisiert sich der Attraktor\ldots\grqq{}
+\end{itemize}
+\end{konvention}
+
+\begin{konvention}[Ebene 4 --- Empirische Vorhersagen: Explizite Hypothesenkennzeichnung]
+Aussagen, die prinzipiell empirisch oder mathematisch pr\"{u}fbar sein sollen, werden
+explizit als \textbf{Hypothesen} gekennzeichnet.
+
+\medskip
+\textit{Beispiele:}
+\begin{itemize}
+  \item \glqq{}Falls der OP zutrifft, w\"{a}re zu erwarten, dass\ldots\grqq{}
+  \item \glqq{}Hypothese: Systeme mit h\"{o}herer interner R\"{u}ckkopplung zeigen\ldots\grqq{}
+\end{itemize}
+\end{konvention}
+
+\begin{methodennote}[Warum diese Regel so wichtig ist]
+Der h\"{a}ufigste Angriff auf philosophische Systeme ist der Vorwurf des stillen
+\"{U}bergangs: Ein logischer Schluss wird formuliert, und im n\"{a}chsten Satz wird
+daraus eine Tatsachenbehauptung \"{u}ber die Natur. Dieser \"{U}bergang bleibt oft
+unmarkiert.
+
+Die Sprachregel des OP schl\"{u}sst diese Angriffsfläche. Ein Leser wei\ss{} jederzeit:
+Steht hier Indikativ, ist es eine Axiom-Folgerung. Steht hier Konjunktiv, ist es eine
+Interpretation. Wird eine Analogie benannt, ist es eine Analogie --- kein Beweis.
+\end{methodennote}
+
+%==============================================================
+\section{Kennzeichnungssystem: Legende aller Dokumenttypen}
+%==============================================================
+
+Zus\"{a}tzlich zur Sprachregel verwendet das OP ein einheitliches System von
+Kennzeichnungsboxen. Die folgende Legende gilt f\"{u}r alle Dokumente.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{3.5cm}p{10cm}}
+  \toprule
+  \textbf{Kennzeichnung} & \textbf{Bedeutung} \\
+  \midrule
+  \textbf{Axiom} &
+    Grundannahme des OP. Wird nicht bewiesen, sondern als Ausgangspunkt gesetzt.
+    Axiome stehen im Indikativ. \\[4pt]
+  \textbf{Definition} &
+    Pr\"{a}zise Festlegung eines Begriffs innerhalb des OP. Definitionen sind
+    terminologische Entscheidungen, keine Wahrheitsaussagen. \\[4pt]
+  \textbf{Proposition / Theorem} &
+    Folgt logisch aus Axiomen und Definitionen. Steht im Indikativ. Der Beweis
+    ist entweder formal oder als konzeptuelle Herleitung ausgewiesen. \\[4pt]
+  \textbf{Korollar} &
+    Unmittelbare Folgerung aus einer Proposition oder einem Theorem. \\[4pt]
+  \textbf{Postulat} &
+    \"{A}hnlich dem Axiom, aber auf einer nachgeordneten Modulebene. Wird innerhalb
+    eines Moduls als Arbeitsgrundlage gesetzt, ohne vollst\"{a}ndige Ableitung aus
+    den Grundaxiomen. \\[4pt]
+  \textbf{Methodennote} &
+    Erl\"{a}utert den methodischen Status eines Abschnitts, benennt Einschr\"{a}nkungen
+    oder markiert den Realismus-Vorbehalt. \\[4pt]
+  \textbf{Bemerkung} &
+    Philosophische Deutung oder erl\"{a}uternder Kommentar. Keine logische Notwendigkeit.
+    Steht typischerweise im Konjunktiv. \\[4pt]
+  \textbf{Analogie} &
+    Illustratives Hilfsmittel. Eine Analogie erkl\"{a}rt durch \"{A}hnlichkeit, behauptet
+    aber keine Identit\"{a}t. Analogien sind weder Beweise noch Definitionen. \\[4pt]
+  \textbf{Hypothese} &
+    Vorschlag, der k\"{u}nftig empirisch oder mathematisch gepr\"{u}ft werden soll.
+    Explizit als solche ausgewiesen. \\[4pt]
+  \textbf{Offene Forschungsfrage} &
+    Noch ungel\"{o}stes Problem des OP oder der PST. Markiert den Stand des
+    Forschungsprogramms ehrlich. \\
+  \bottomrule
+\end{tabular}
+\caption{Legende der Kennzeichnungen im OP-Dokumentensystem.}
+\end{table}
+
+\begin{remark}[Hierarchie der Sicherheit]
+Die Kennzeichnungen bilden eine \textbf{Hierarchie der epistemischen Sicherheit}:
+
+\medskip
+\begin{center}
+Axiom $\;\rightarrow\;$ Proposition/Theorem $\;\rightarrow\;$ Postulat
+$\;\rightarrow\;$ Bemerkung $\;\rightarrow\;$ Analogie
+$\;\rightarrow\;$ Hypothese $\;\rightarrow\;$ Offene Forschungsfrage
+\end{center}
+
+\medskip
+Je weiter rechts, desto mehr Interpretationsspielraum, desto weniger logische
+Notwendigkeit. Ein Leser kann damit sofort einordnen, wie fest ein Baustein im System
+verankert ist.
+\end{remark}
+
+%==============================================================
+\section{Die Analogie als eigenst\"{a}ndige Kategorie}
+%==============================================================
+
+Analogien spielen im OP eine wichtige und legitime Rolle. Sie machen abstrakte Strukturen
+zug\"{a}nglich, ohne einen Beweis zu ersetzen. Die Konvention des OP unterscheidet
+Analogien deshalb explizit von Beweisen, Definitionen und Interpretationen.
+
+\begin{konvention}[Verwendung von Analogien]
+Eine Analogie wird im OP immer explizit als solche benannt. Formulierungen wie
+\glqq{}analog zu\grqq{}, \glqq{}vergleichbar mit\grqq{} oder \glqq{}funktional
+\"{a}hnlich wie\grqq{} sind verbindlich. Eine Analogie darf niemals ohne diese
+Kennzeichnung als Argument verwendet werden.
+
+Analogien im OP sind stets \textbf{heuristisch}: Sie illustrieren, ohne zu beweisen.
+Ihre Grenze muss erkennbar sein.
+\end{konvention}
+
+\begin{remark}[Beispiele f\"{u}r legitime Analogien im OP]
+\begin{itemize}
+  \item \textbf{Solitonen-Analogie} (OAD): Attraktoren verhalten sich \emph{analog zu}
+        selbsterhaltenden Wellenpaketen --- das impliziert keine Behauptung \"{u}ber
+        Wellenphysik im OPP.
+  \item \textbf{Blockuniversum-Analogie} (OPP): Der OPP l\"{a}sst sich konzeptuell
+        \emph{als Verallgemeinerung} des Blockuniversums begreifen --- das ist keine
+        Gleichsetzung mit dem physikalischen Blockuniversum.
+  \item \textbf{KL-Divergenz-Analogie} (EG-1): Das Fragedifferential k\"{o}nnte
+        \emph{analog zur} Kullback-Leibler-Divergenz modelliert werden --- das ist ein
+        formaler Platzhalter, kein abgeschlossenes mathematisches Modell.
+\end{itemize}
+\end{remark}
+
+%==============================================================
+\section{Der Realismus-Vorbehalt}
+%==============================================================
+
+Alle Dokumente des OP tragen einen gemeinsamen \textbf{Realismus-Vorbehalt}, der hier
+einmalig definiert wird.
+
+\begin{konvention}[Realismus-Vorbehalt]
+Der OP ist ein philosophisches Forschungsprogramm. Seine Begriffe, Strukturen und
+Analogien sind konzeptuelle Werkzeuge, keine fertigen physikalischen Theorien. Wo
+mathematische Notation verwendet wird, geschieht dies zur Pr\"{a}zisierung des
+konzeptuellen Rahmens --- nicht als Anspruch auf eine vollst\"{a}ndig ausgearbeitete
+Feldtheorie.
+
+Die mathematisch-physikalische Ausarbeitung obliegt der \textbf{Projektiven
+Strukturtheorie (PST)} als langfristigem interdisziplin\"{a}rem Forschungsprogramm.
+Kein Einzeldokument des OP beansprucht, dieses Programm zu ersetzen oder
+vorwegzunehmen.
+\end{konvention}
+
+\begin{methodennote}[Konsequenz f\"{u}r alle Dokumente]
+Dokumente des OP, die diesen Realismus-Vorbehalt referenzieren, m\"{u}ssen ihn nicht
+erneut vollst\"{a}ndig ausformulieren. Der Verweis auf MET gen\"{u}gt. Damit wird die
+Wiederholung vermieden, ohne die epistemische Klarheit zu opfern.
+\end{methodennote}
+
+%==============================================================
+\section{Versionierung und Querverweise}
+%==============================================================
+
+\begin{konvention}[Versionierung]
+Jede \"{A}nderung an einem Dokument erh\"{o}ht die Versionsnummer. Kleinere
+Korrekturen erh\"{o}hen die Nachkommastelle (v1.0 $\rightarrow$ v1.1), substanzielle
+Erweiterungen erh\"{o}hen die Hauptnummer (v1.x $\rightarrow$ v2.0).
+\end{konvention}
+
+\begin{konvention}[Querverweise zwischen Dokumenten]
+Querverweise zwischen Modulen nennen ausschlie\ss{}lich \textbf{K\"{u}rzel und Namen}
+des Zieldokuments --- keine Versionsnummern. Versionsnummern \"{a}ndern sich;
+Dokumentnamen bleiben stabil.
+
+\medskip
+\textit{Korrekt:} \glqq{}Gem\"{a}\ss{} OAD (Ontologische Attraktoren-Dynamik)\ldots\grqq{}\\
+\textit{Nicht korrekt:} \glqq{}Gem\"{a}\ss{} OAD v1.1\ldots\grqq{}
+\end{konvention}
+
+%==============================================================
+\section{Offene Erweiterungen}
+%==============================================================
+
+Dieses Dokument ist selbst Teil des offenen Forschungsprogramms. Folgende Erweiterungen
+sind f\"{u}r sp\"{a}tere Versionen vorgesehen:
+
+\begin{itemize}
+  \item Aufnahme einer Kennzeichnung f\"{u}r \textbf{empirische Anschlusspunkte} ---
+        Stellen, an denen der OP prinzipiell mit experimentellen Befunden in Kontakt
+        treten k\"{o}nnte.
+  \item Pr\"{a}zisierung der Abgrenzung zwischen \textbf{Postulat} und \textbf{Axiom}
+        auf verschiedenen Modulebenen.
+  \item Aufnahme von Konventionen f\"{u}r den Umgang mit \textbf{Widerspruchsf\"{a}llen}
+        zwischen Modulen --- wie werden Inkonsistenzen dokumentiert und behandelt?
+  \item Integration der R/P-Unterscheidung (rekonstruktiv/postulativ) aus OP in die
+        allgemeine Kennzeichnungslegende.
+\end{itemize}
+
+\end{document}
