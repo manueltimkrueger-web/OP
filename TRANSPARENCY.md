@@ -19,10 +19,12 @@ Die Natur dieser Zusammenarbeit ist strikt hierarchisch definiert:
 1. Ideen- und Struktur-Primat (Mensch): Jede logische Stoßrichtung, 
    Konzeptänderung und inhaltliche Erweiterung geht ausschließlich 
    vom Autor aus.
+
 2. Dialektisches Sparring (KI): Die Modelle werden explizit als 
    "Adversarial Reviewer" eingesetzt, mit dem Auftrag, Schwachstellen 
    im Argumentationsfluss des Autors aufzudecken, um diese vorab 
    zu eliminieren.
+
 3. Formulierung und Formatierung (KI): Die Synthese der vom Autor 
    vorgegebenen Gedanken in akademisches LaTeX erfolgt KI-gestützt, 
    um den Formatierungsprozess im mobilen Arbeitsumfeld zu optimieren.
