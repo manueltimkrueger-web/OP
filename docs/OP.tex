@@ -1,11 +1,11 @@
 % ==============================================================
-% Logische Grundlegung des Ontophänomenalismus (OP) – Version 9.0
+% Logische Grundlegung des Ontophänomenalismus (OP) -- Version 9.1
 % Kompiliert mit: pdfLaTeX
 % ==============================================================
 
 \documentclass[11pt,a4paper]{article}
 
-% ---------- Grundpakete (pdfLaTeX-kompatibel) ----------
+% ---------- Grundpakete ----------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[german]{babel}
@@ -24,7 +24,7 @@
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
-    pdftitle={Logische Grundlegung des Ontophänomenalismus (OP) -- Version 9.0},
+    pdftitle={Logische Grundlegung des Ontoph\"{a}nomenalismus (OP) -- Version 9.1},
     pdfauthor={Kritischer Dialog}
 }
 
@@ -44,8 +44,8 @@
 \title{
   \textbf{Logische Grundlegung des Ontoph\"{a}nomenalismus (OP)}\\[0.4em]
   \large Vom ersten Axiom zur minimalen Seinsstruktur und zur Selbstpr\"{a}senz\\[0.5em]
-  {\normalsize Version 9.0: Transzendental-Rekonstruktiver Denk-Monismus\\
-  --- Erweiterte und methodenkritisch gesch\"{a}rfte Fassung ---}
+  {\normalsize Version 9.1: Transzendental-Rekonstruktiver Denk-Monismus\\
+  --- MKO-integrierte und modular verkn\"{u}pfte Fassung ---}
 }
 \author{
   \textbf{Kritischer Dialog:}\\
@@ -59,32 +59,34 @@
 \maketitle
 
 \begin{abstract}
-Dieses Papier dokumentiert die logische Konsolidierung des Ontoph\"{a}nomenalismus (OP) in
-der Version~9.0. Gegen\"{u}ber Version~8.9 werden f\"{u}nf gezielte Erweiterungen
-vorgenommen, die auf externe Kritik reagieren:
+Dieses Papier dokumentiert die logische Konsolidierung des Ontoph\"{a}nomenalismus (OP)
+in der Version~9.1. Es gelten die methodologischen Konventionen gem\"{a}\ss{}
+\textbf{MKO (Methodologische Konventionen des OP)}, insbesondere die f\"{u}nf Sprachebenen,
+die Kennzeichnungslegende und die R/P-Unterscheidung. Axiome und logische Folgerungen
+stehen im Indikativ; ontologische Interpretationen im Konjunktiv; physikalische Bez\"{u}ge
+werden als Analogien oder Hypothesen ausgewiesen.
+
+Gegen\"{u}ber Version~9.0 werden in Version~9.1 folgende Erweiterungen vorgenommen:
 
 \begin{enumerate}
-  \item Die R/P-Unterscheidung (rekonstruktiv/postulativ) wird explizit als das prim\"{a}re
-        \textbf{Instrument der Zirkelkontrolle} ausgewiesen --- nicht nur als methodische
-        Transparenz, sondern als operatives Werkzeug zur Eingrenzung des transzendentalen
-        Zirkels.
-  \item Zum \textbf{Explanatory Gap} werden philosophische Verwandtschaftslinien
-        (Whitehead, Nagel, IIT) als heuristische Br\"{u}ckenkonzepte kartografiert --- nicht
-        als L\"{o}sungen, sondern als Orientierungsmarken im konzeptuellen Raum.
-  \item Zur \textbf{Intersubjektivit\"{a}t} werden erstmals philosophische
-        Entscheidungskriterien f\"{u}r die ausstehende Wahl zwischen Attraktor-Monismus und
-        Co-algebraischem Pluralismus benannt.
-  \item Das \textbf{Kombinationsproblem} wird in seiner Invertierung gegen\"{u}ber dem
-        klassischen Panpsychismus explizit herausgearbeitet.
-  \item Zur \textbf{kategorialen Grenze KI/Organismus} wird eine vorl\"{a}ufige Hierarchie
-        der Grade von Selbstbez\"{u}glichkeit eingef\"{u}hrt.
+  \item \textbf{MKO-Integration:} Alle methodischen Konventionen werden durch Verweis
+        auf MKO eingebunden statt lokal wiederholt.
+  \item \textbf{Sch\"{a}rfung der UP:} Die Unterscheidbarkeits-Pr\"{a}misse wird durch
+        die ontologische Argumentation erg\"{a}nzt, dass eigenschaftslose Existenz nicht
+        nur sprachlich ununterscheidbar vom Nichts ist, sondern ontologisch mit ihm
+        zusammenf\"{a}llt.
+  \item \textbf{Pi-Argument:} Die Begr\"{u}ndung f\"{u}r den Begriff \glqq{}Denken\grqq{}
+        als Urgrund wird durch das Pi-Argument explizit gemacht.
+  \item \textbf{Differenzierungsproblem:} Die Notwendigkeit topologischer Muster aus
+        Denk-Monismus und UP wird sch\"{a}rfer herausgearbeitet.
+  \item \textbf{Modulare Verkn\"{u}pfung:} Verweise auf OPP, OAD, DPR, DPD, DFD und
+        EG-1 als eigenst\"{a}ndige Module werden explizit eingebunden. Das
+        Fragedifferential wird vollst\"{a}ndig an DFD ausgelagert.
 \end{enumerate}
 
-Der transzendentale Zirkel, der jeder Metaphysik dieses Typs strukturell innewohnt, wird
-weiterhin nicht aufgel\"{o}st, sondern als methodologische Grundbedingung gerahmt. Das
-System positioniert sich als koh\"{a}rentes, methodisch reflektiertes
-\emph{Forschungsprogramm} im Grenzbereich von Ontologie, Ph\"{a}nomenologie und
-theoretischer Physik --- kein axiomatisch geschlossenes Dogma.
+Der transzendentale Zirkel wird weiterhin nicht aufgel\"{o}st, sondern als methodologische
+Grundbedingung gerahmt. Das System positioniert sich als koh\"{a}rentes, methodisch
+reflektiertes \emph{Forschungsprogramm} --- kein axiomatisch geschlossenes Dogma.
 \end{abstract}
 
 \tableofcontents
@@ -101,33 +103,31 @@ Die Antwort lautet performativ und unhintergehbar: \emph{Nein.}
 
 Ziel des OP ist es, aus dieser Unausweichlichkeit die minimale Struktur des Seins zu
 rekonstruieren. Dabei erfordert intellektuelle Redlichkeit die Anerkennung einer
-strukturellen Spannung, die in Version~8.5 noch nicht vollst\"{a}ndig ausgewiesen wurde: Die
-transzendentale Rekonstruktionsmethode des OP ist in einer fundamentalen Weise zirkul\"{a}r.
-Sie rekonstruiert den Urgrund aus den Strukturmerkmalen seiner Manifestationen, kann aber
-nicht unabh\"{a}ngig davon entscheiden, welche dieser Merkmale \emph{notwendig} und welche
-\emph{kontingent} sind.
+strukturellen Spannung: Die transzendentale Rekonstruktionsmethode des OP ist in einer
+fundamentalen Weise zirkul\"{a}r. Sie rekonstruiert den Urgrund aus den Strukturmerkmalen
+seiner Manifestationen, kann aber nicht unabh\"{a}ngig davon entscheiden, welche dieser
+Merkmale \emph{notwendig} und welche \emph{kontingent} sind.
 
-\begin{methodennote}[Unvermeidlichkeit des transzendentalen Zirkels]
+\begin{methodennote}[Unvermeidlichkeit des transzendentalen Zirkels ---
+gem\"{a}\ss{} MKO, Realismus-Vorbehalt]
 Jede Metaphysik, die aus dem Immanenten auf das Transzendente schlie\ss{}t, bewegt sich in
 einem Zirkel: Sie gewinnt ihre Kategorien aus der Erfahrung, um dann zu behaupten, diese
-Kategorien seien Bedingungen der M\"{o}glichkeit der Erfahrung. Kant hat diesen Zirkel durch
-die Beschr\"{a}nkung der Erkenntnis auf Erscheinungen gel\"{o}st und explizit auf Aussagen
-\"{u}ber das Ding an sich verzichtet. Der OP macht diesen Verzicht nicht; er beansprucht,
-\"{u}ber Erscheinungen hinaus Strukturen des Urgrundes zu rekonstruieren.
+Kategorien seien Bedingungen der M\"{o}glichkeit der Erfahrung. Kant hat diesen Zirkel
+durch die Beschr\"{a}nkung der Erkenntnis auf Erscheinungen gel\"{o}st und explizit auf
+Aussagen \"{u}ber das Ding an sich verzichtet. Der OP macht diesen Verzicht nicht; er
+beansprucht, \"{u}ber Erscheinungen hinaus Strukturen des Urgrundes zu rekonstruieren.
 
 Diese Entscheidung hat einen Preis: Der OP kann keine absolute, zirkelfreie Begr\"{u}ndung
-seiner Grundkategorien liefern. Was er leisten kann, ist Folgendes: Er macht seine
-Pr\"{a}missen transparent, zeigt ihre interne Koh\"{a}renz und weist nach, dass kein
-rivalisierendes System diese Pr\"{a}missen umgeht --- es w\"{a}hlt lediglich andere. Der
-Zirkel ist damit kein Defekt des OP, sondern ein strukturelles Merkmal jeder
-nicht-dogmatischen Metaphysik. Entscheidend ist, dass er als solcher anerkannt wird.
-\end{methodennote}
+seiner Grundkategorien liefern. Was er leisten kann: Er macht seine Pr\"{a}missen
+transparent, zeigt ihre interne Koh\"{a}renz und weist nach, dass kein rivalisierendes
+System diese Pr\"{a}missen umgeht --- es w\"{a}hlt lediglich andere. Der Zirkel ist kein
+Defekt des OP, sondern ein strukturelles Merkmal jeder nicht-dogmatischen Metaphysik.
 
-Der OP vermeidet dennoch zwei klassische Sackgassen: den naiven Dogmatismus einer rein
-logischen Ableitung physikalischer Konstanten aus einem Ur-Axiom, und das Abgleiten in
-unverbindliche Heuristik. Er verbindet ein axiomatisches Fundament mit transzendentaler
-R\"{u}ckanalyse, in dem Bewusstsein, dass diese Verbindung methodisch hybrid und nicht
-vollst\"{a}ndig deduktiv ist.
+\textbf{Hypothese (gem\"{a}\ss{} MKO, Ebene~5):} Falls der OP zutrifft, w\"{a}ren
+Raumzeit und physikalische Kr\"{a}fte keine fundamentalen Entit\"{a}ten, sondern
+makroskopische Projektionen informationeller Dichte im primordialen Denkfeld. Die
+Ausarbeitung dieser Hypothese obliegt der PST in Verbindung mit OPP und DPR.
+\end{methodennote}
 
 %==============================================================
 \section{Methodische Architektur: Hybride Grundlegung}
@@ -148,16 +148,16 @@ Rekonstruktion des Urgrundes.
 
 \subsection{Hybride Stufenordnung und Zirkelkontrolle}
 
-Das System ist in seiner Architektur methodisch nicht einheitlich. Es muss zwischen zwei
-Typen von Grundlegungsschritten unterschieden werden:
+Das System ist in seiner Architektur methodisch nicht einheitlich. Gem\"{a}\ss{} MKO
+wird zwischen zwei Typen von Grundlegungsschritten unterschieden:
 
 \begin{enumerate}[label=(\alph*)]
-  \item \textbf{Rekonstruktive Schritte} (R): Schl\"{u}sse auf notwendige Bedingungen des
-        Gegebenen, intersubjektiv nachpr\"{u}fbar und durch Gegenargumentation angreifbar.
+  \item \textbf{Rekonstruktive Schritte} (R): Schl\"{u}sse auf notwendige Bedingungen
+        des Gegebenen, intersubjektiv nachpr\"{u}fbar und durch Gegenargumentation
+        angreifbar.
   \item \textbf{Postulative Schritte} (P): Grundlegende Setzungen, die das System
-        orientieren und nicht aus dem Vorherigen zwingend folgen. Nicht arbitr\"{a}r, aber
-        Entscheidungen, f\"{u}r die Koh\"{a}renz und erkl\"{a}rende St\"{a}rke, nicht
-        Deduktion, geltend gemacht wird.
+        orientieren und nicht aus dem Vorherigen zwingend folgen. Gerechtfertigt durch
+        Koh\"{a}renz und erkl\"{a}rende St\"{a}rke, nicht durch Deduktion.
 \end{enumerate}
 
 \begin{center}
@@ -174,22 +174,13 @@ Typen von Grundlegungsschritten unterschieden werden:
 \end{center}
 
 \begin{remark}[Die R/P-Unterscheidung als Instrument der Zirkelkontrolle]
-% NEU IN v9.0 (Kritikpunkt 1)
-Die Unterscheidung zwischen rekonstruktiven (R) und postulativen (P) Schritten ist nicht
-nur ein Instrument methodischer Transparenz. Sie ist das prim\"{a}re operative Werkzeug
-des OP zur \emph{Eingrenzung} des transzendentalen Zirkels.
-
-Rekonstruktive Schritte erheben den Anspruch, notwendige Bedingungen des Gegebenen zu
-benennen --- sie sind intersubjektiv angreifbar und k\"{o}nnen durch Gegenargumente
-zur\"{u}ckgewiesen werden. Postulative Schritte hingegen sind als solche markiert und
-entziehen sich dem Vorwurf der versteckten Zirkularit\"{a}t, weil sie offen als
-Grundentscheidungen ausgewiesen sind.
-
-Die R/P-Tabelle gibt damit zu jedem Schritt an, \emph{wie} der Zirkel an dieser Stelle
-wirkt: Bei (R)-Schritten ist er durch Gegenargumentation kontrollierbar; bei
-(P)-Schritten ist er durch Koh\"{a}renz und erkl\"{a}rende St\"{a}rke eingegrenzt. Eine
-vollst\"{a}ndige Aufl\"{o}sung des Zirkels ist nicht m\"{o}glich --- aber seine
-\emph{Lokalisierung} und \emph{operative Eingrenzung} ist das Ziel dieser Architektur.
+Die Unterscheidung zwischen rekonstruktiven (R) und postulativen (P) Schritten ist das
+prim\"{a}re operative Werkzeug des OP zur \emph{Eingrenzung} des transzendentalen Zirkels.
+Bei (R)-Schritten ist er durch Gegenargumentation kontrollierbar; bei (P)-Schritten durch
+Koh\"{a}renz und erkl\"{a}rende St\"{a}rke eingegrenzt. Eine vollst\"{a}ndige Aufl\"{o}sung
+des Zirkels ist nicht m\"{o}glich --- aber seine \emph{Lokalisierung} und \emph{operative
+Eingrenzung} ist das Ziel dieser Architektur. Vollst\"{a}ndige Konventionen gem\"{a}\ss{}
+MKO.
 \end{remark}
 
 %==============================================================
@@ -233,9 +224,9 @@ explizite Zwischenpr\"{a}misse.
 Die Formulierung in Version~8.5 --- \glqq{}der \"{U}bergang von der Notwendigkeit eines
 Aktes zur Notwendigkeit einer informationellen Mindeststruktur ist eine direkte logische
 Implikation\grqq{} --- ist nicht korrekt. Was direkt folgt: \emph{Es gibt etwas.} Was
-\emph{nicht} direkt folgt: \emph{Dieses Etwas ist strukturiert} im Sinne von
-Unterscheidbarkeit, Information oder Relationalit\"{a}t. Der \"{U}bergang ben\"{o}tigt
-eine Pr\"{a}misse \"{u}ber das Verh\"{a}ltnis von Existenz und Unterscheidbarkeit.
+\emph{nicht} direkt folgt: \emph{Dieses Etwas ist strukturiert.} Der \"{U}bergang
+ben\"{o}tigt eine Pr\"{a}misse \"{u}ber das Verh\"{a}ltnis von Existenz und
+Unterscheidbarkeit.
 \end{methodennote}
 
 \subsection{Die Unterscheidbarkeits-Pr\"{a}misse (UP)}
@@ -251,15 +242,29 @@ daf\"{u}r, dass von \glqq{}Etwas\grqq{} \"{u}berhaupt gesprochen werden kann.
 \]
 \end{definition}
 
-\begin{remark}[Transzendentaler Status der UP]
-Die UP ist kein empirischer Satz. Sie ist eine transzendentale Minimalforderung: Ohne sie
-zerfällt die Rede von \glqq{}Existenz\grqq{} und \glqq{}Nichts\grqq{} in reine Homonymie.
-Wer die UP bestreitet, bestreitet die M\"{o}glichkeit bedeutsamer Rede \"{u}ber Existenz
-\"{u}berhaupt --- und unterl\"{a}uft damit seinen eigenen Einwand.
+\begin{remark}[Ontologischer --- nicht nur sprachlicher --- Status der UP]
+Die UP ist keine blo\ss{}e sprachliche Konvention. Sie formuliert eine ontologische
+Notwendigkeit: Eine Existenz ohne jede Eigenschaft h\"{a}tte keinen Ort, keine Ausdehnung,
+keinen Zeitpunkt, keine Dauer --- sie w\"{a}re nicht einmal punktf\"{o}rmig, denn auch das
+w\"{a}re eine Eigenschaft. Sie w\"{a}re weder bestimmt noch unbestimmt, weder denkbar noch
+nicht-denkbar, weder beschreibbar noch unbeschreiblich --- denn all das w\"{a}ren bereits
+Eigenschaften.
 
-Der transzendentale Zirkel ist hier maximal transparent: Wir begr\"{u}nden die UP durch
-die Bedingung sinnvoller Rede, und sinnvolle Rede ist selbst eine Manifestation des Seins.
-Der OP w\"{a}hlt, diesen Zirkel zu akzeptieren und transparent zu machen.
+Eine solche \glqq{}Existenz\grqq{} ist nicht vom Nichts \emph{unterscheidbar}, sie
+\emph{ist} das Nichts. Nicht weil wir sie nicht beschreiben k\"{o}nnen (epistemische
+Grenze), sondern weil zwischen ihr und dem Nichts kein ontologischer Unterschied besteht.
+Der Schritt von Axiom~1 zur Strukturnotwendigkeit ist damit kein sprachlicher Trick,
+sondern eine ontologische Konsequenz.
+\end{remark}
+
+\begin{remark}[Transzendentaler Status der UP]
+Die UP ist eine transzendentale Minimalforderung: Ohne sie zerf\"{a}llt die Rede von
+\glqq{}Existenz\grqq{} und \glqq{}Nichts\grqq{} in reine Homonymie. Wer die UP bestreitet,
+bestreitet die M\"{o}glichkeit bedeutsamer Rede \"{u}ber Existenz \"{u}berhaupt --- und
+unterl\"{a}uft damit seinen eigenen Einwand. Der transzendentale Zirkel ist hier maximal
+transparent: Wir begr\"{u}nden die UP durch die Bedingung sinnvoller Rede, und sinnvolle
+Rede ist selbst eine Manifestation des Seins. Der OP w\"{a}hlt, diesen Zirkel zu
+akzeptieren und transparent zu machen.
 \end{remark}
 
 %==============================================================
@@ -273,15 +278,15 @@ zwischen Sein und Nichts --- nicht unterschieden werden kann:
   \item \textbf{Modale Bestimmtheit ($\mathcal{M}$):} Eine Entit\"{a}t muss irgendeine
         Modalbestimmung besitzen. Ohne jede Bestimmtheit ist sie in keiner Hinsicht vom
         Nichts unterscheidbar.
-  \item \textbf{Interne Differenz ($\mathcal{D}$):} Eine Entit\"{a}t muss sich intern von
-        der Abwesenheit von Entit\"{a}ten unterscheiden; minimal als irreduzible,
+  \item \textbf{Interne Differenz ($\mathcal{D}$):} Eine Entit\"{a}t muss sich intern
+        von der Abwesenheit von Entit\"{a}ten unterscheiden; minimal als irreduzible,
         nicht-nullwertige Eigenschaft gegen\"{u}ber dem Bezugspunkt \glqq{}Nichts\grqq{}.
   \item \textbf{Selbigkeit ($\mathcal{S}$):} Eine Entit\"{a}t muss in irgendeiner Hinsicht
-        mit sich selbst identisch sein --- ohne dass dies bereits volle Selbstbez\"{u}glichkeit
-        im ph\"{a}nomenalen Sinne impliziert.
+        mit sich selbst identisch sein --- ohne dass dies bereits volle
+        Selbstbez\"{u}glichkeit im ph\"{a}nomenalen Sinne impliziert.
 \end{enumerate}
 Diese Kategorien sind \emph{transzendental}: nicht aus Erfahrung abstrahiert, sondern
-Bedingungen der M\"{o}glichkeit bedeutsamer Existenzaussagen.
+Bedingungen der M\"{o}glichkeit bedeutsamer Existenzaussagen (gem\"{a}\ss{} MKO, Typ R).
 \end{definition}
 
 \begin{proposition}[Reductio ad indiscernibile]
@@ -305,10 +310,10 @@ ein Minimum an struktureller Bestimmtheit.\qed
 \end{proof}
 
 \begin{remark}[Was der Nachweis leistet und was nicht]
-Der Nachweis zeigt: Vollst\"{a}ndige Eigenschaftslosigkeit ist unter der UP koh\"{a}renzlos.
-Er zeigt \emph{nicht}, welche spezifischen Eigenschaften eine Minimalexistenz hat --- ob
-Raumzeitdimensionen, Quantisierung oder etwas v\"{o}llig Anderes. Die Ableitung bleibt auf
-der Ebene formaler Minimalstruktur. Die PST \"{u}bernimmt die inhaltliche Ausgestaltung.
+Der Nachweis zeigt: Vollst\"{a}ndige Eigenschaftslosigkeit ist unter der UP
+koh\"{a}renzlos. Er zeigt \emph{nicht}, welche spezifischen Eigenschaften eine
+Minimalexistenz hat. Die Ableitung bleibt auf der Ebene formaler Minimalstruktur. Die
+inhaltliche Ausgestaltung obliegt der PST in Verbindung mit OPP.
 \end{remark}
 
 \begin{corollary}[Informiertes Minimum]
@@ -328,9 +333,10 @@ Jede Existenz besitzt notwendig ein Mindestma\ss{} an struktureller Bestimmtheit
 %==============================================================
 
 Eine minimale strukturelle Bestimmtheit ist notwendige, aber nicht hinreichende Bedingung
-f\"{u}r ontologische Wirksamkeit im Sinne des OP. Es bleibt die Frage: Wie ist es m\"{o}glich,
-dass das Sein nicht nur \glqq{}ist\grqq{}, sondern als \emph{wirksam} oder \emph{gegeben}
-gelten kann? Die Antwort des OP: Wirksamkeit erfordert minimale Selbstbez\"{u}glichkeit.
+f\"{u}r ontologische Wirksamkeit im Sinne des OP. Es bleibt die Frage: Wie ist es
+m\"{o}glich, dass das Sein nicht nur \glqq{}ist\grqq{}, sondern als \emph{wirksam} oder
+\emph{gegeben} gelten kann? Die Antwort des OP: Wirksamkeit erfordert minimale
+Selbstbez\"{u}glichkeit.
 
 \begin{axiom}[Minimalreflexivit\"{a}t \textnormal{--- Typ (R), ph\"{a}nomenologisch}]
 Alles Existierende besitzt notwendig minimale Selbstpr\"{a}senz.
@@ -340,15 +346,13 @@ Alles Existierende besitzt notwendig minimale Selbstpr\"{a}senz.
 \end{axiom}
 
 \begin{remark}[Rekonstruktiver Status von Axiom 2]
-Axiom~2 ist nicht im starken Sinne rekonstruktiv wie Axiom~1. Sein rekonstruktiver Charakter
-ist ph\"{a}nomenologischer Art: Es antwortet auf die Frage, welche Bedingung notwendig ist,
-damit Strukturen \"{u}berhaupt als \emph{gegebene} auftreten k\"{o}nnen --- und nicht blo\ss{}
-als formale Pr\"{a}dikate ohne Innenseite.
-
-Der Einwand, dass auch physikalische Systeme \glqq{}wirksam\grqq{} sind ohne
-Selbstbez\"{u}glichkeit, ist berechtigt. Der OP antwortet nicht mit logischer Widerlegung,
-sondern mit einer ontologischen Grundentscheidung: Er behandelt die \emph{Gegebenheit als
-Gegebenheit} als das zu Erkl\"{a}rende. Dies ist die ph\"{a}nomenologische Grundstellung des OP.
+Axiom~2 ist nicht im starken Sinne rekonstruktiv wie Axiom~1. Sein rekonstruktiver
+Charakter ist ph\"{a}nomenologischer Art: Es antwortet auf die Frage, welche Bedingung
+notwendig ist, damit Strukturen \"{u}berhaupt als \emph{gegebene} auftreten k\"{o}nnen
+--- und nicht blo\ss{} als formale Pr\"{a}dikate ohne Innenseite. Der Einwand, dass auch
+physikalische Systeme ohne Selbstbez\"{u}glichkeit \glqq{}wirksam\grqq{} sind, ist
+berechtigt. Der OP antwortet mit einer ontologischen Grundentscheidung: Er behandelt die
+\emph{Gegebenheit als Gegebenheit} als das zu Erkl\"{a}rende.
 \end{remark}
 
 \begin{definition}[Selbstpr\"{a}senz: Formales Modell und seine Grenzen]
@@ -356,76 +360,45 @@ Selbstpr\"{a}senz bezeichnet die elementarste Form von Bei-sich-Sein: eine
 \emph{proto-ph\"{a}nomenale Selbstbez\"{u}glichkeit}. Noch kein intentionales Bewusstsein,
 kein reflexives Selbstbewusstsein, keine Sprache, kein psychologischer Prozess.
 
-\textbf{Formales Modell (Fixpunkt):} \"{U}ber eine Selbstabbildung $f\colon\mathcal{E}\to\mathcal{E}$:
+\textbf{Formales Modell (Fixpunkt, gem\"{a}\ss{} MKO Ebene~3):}
 \[
-  f(x) = x
+  f(x) = x \quad \text{f\"{u}r } f\colon\mathcal{E}\to\mathcal{E}
 \]
 
-\textbf{Methodische Einschr\"{a}nkung:} Dieses Modell ist eine \emph{formale Darstellung},
+\textbf{Methodische Einschr\"{a}nkung:} Dieses Modell ist eine formale Darstellung,
 keine Ableitung des ph\"{a}nomenologischen Gehalts. Mathematische Fixpunkte implizieren
-keine Ph\"{a}nomenali\"{a}t. Der \"{U}bergang vom formalen Fixpunkt zur Ph\"{a}nomenali\"{a}t ist
-der tiefste offene Schritt des OP --- er wird durch das Modell nicht geschlossen, sondern
-pr\"{a}zise als Desiderat markiert.
+keine Ph\"{a}nomenali\"{a}t. Der \"{U}bergang vom formalen Fixpunkt zur Ph\"{a}nomenali\"{a}t
+ist der tiefste offene Schritt des OP --- pr\"{a}zise als Desiderat markiert und in
+EG-1 ausf\"{u}hrlich behandelt.
 \end{definition}
 
-\begin{remark}[Explanatory Gap und philosophische Verwandtschaftslinien]
-% NEU IN v9.0 (Kritikpunkt 2)
+\begin{remark}[Explanatory Gap --- Verweis auf EG-1]
 Das \emph{explanatory gap} (Levine, Chalmers) tritt im OP in neuer Form auf: als L\"{u}cke
-zwischen der formalen Selbstabbildung $f(x)=x$ und der \glqq{}Proto-Ph\"{a}nomenali\"{a}t\grqq{}.
-Der OP schlie\ss{}t diese L\"{u}cke nicht deduktiv; er postuliert eine ontologische Tiefe,
-innerhalb derer Struktur und Ph\"{a}nomenali\"{a}t koinzidieren.
+zwischen der formalen Selbstabbildung $f(x)=x$ und der proto-ph\"{a}nomenalen Gegebenheit.
+Drei philosophische Verwandtschaftslinien kartografieren diesen Raum ohne ihn zu
+schlie\ss{}en: Whiteheads \emph{prehension}, Nagels \emph{what it is like} und Tononis IIT.
 
-Um den konzeptuellen Raum um diesen Gap zu kartografieren --- ohne ihn zu schlie\ss{}en ---
-lassen sich drei philosophische Verwandtschaftslinien benennen, die als heuristische
-Orientierungsmarken dienen k\"{o}nnten:
-
-\begin{enumerate}
-  \item \textbf{Whiteheads \emph{prehension}:} In Whiteheads Prozessphilosophie besitzt
-        jedes \glqq{}actual occasion\grqq{} eine primitive Form der Ergreifung
-        (\emph{prehension}) anderer Ereignisse --- nicht als Bewusstsein, aber als
-        ontologisch wirksame Aufnahme. Dies k\"{o}nnte strukturell dem entsprechen, was der
-        OP als proto-ph\"{a}nomenale Selbstbez\"{u}glichkeit anspricht: ein Vor-Bewusstes,
-        das dennoch ontologisch aktiv ist.
-
-  \item \textbf{Nagels \emph{what it is like}:} Thomas Nagels Argument, dass es
-        \glqq{}etwas ist, wie es ist\grqq{}, ein Fledermaus oder ein Mensch zu sein, betont
-        die Irreduzibilit\"{a}t des subjektiven Aspekts. Der OP antwortet nicht mit einer
-        L\"{o}sung dieses Problems, sondern mit einer Relokation: Das \glqq{}Wie-es-ist\grqq{}
-        w\"{u}rde nicht in Individuen, sondern im Denkfeld selbst verankert. Dies
-        verschiebt das Problem, ohne es zu l\"{o}sen --- und markiert damit pr\"{a}zise die
-        Grenze des OP-Fundaments zur PST.
-
-  \item \textbf{Integrierte Informationstheorie (IIT):} Tononis IIT verkn\"{u}pft
-        Ph\"{a}nomenali\"{a}t mit intrinsischer Kausalit\"{a}t ($\Phi$): Ein System ist
-        ph\"{a}nomenal in dem Ma\ss{}e, in dem es \"{u}ber sich selbst hinausgehende kausale
-        Kraft hat. Dies ist strukturell verwandt mit dem Fixpunktmodell des OP, insofern
-        auch dort Selbstbez\"{u}glichkeit als Bedingung von Wirksamkeit gilt. Der
-        Unterschied: IIT operiert innerhalb eines physikalistischen Rahmens; der OP setzt
-        das Denkfeld als prim\"{a}r.
-\end{enumerate}
-
-Keine dieser Linien l\"{o}st den Gap. Gemeinsam kartografieren sie jedoch den konzeptuellen
-Raum, in dem eine L\"{o}sung gesucht werden m\"{u}sste --- und zeigen, dass der OP mit
-seinem Desiderat nicht allein steht.
+Die vollst\"{a}ndige Behandlung des Explanatory Gaps --- einschlie\ss{}lich der kategorialen
+Fehlfragen-These, der Zimmer- und Traumanalogie, des Pi-Arguments und des
+Fragedifferentials --- findet sich in \textbf{EG-1 (Der Explanatory Gap)} und
+\textbf{DFD (Das Fragedifferential)}.
 \end{remark}
 
 %==============================================================
 \section{Axiom 3: Der Denk-Monismus}
 %==============================================================
 
-\begin{methodennote}[Postulativer Charakter von Axiom 3 --- Starke Kennzeichnung]
-Axiom~3 ist von grundlegend anderem methodischen Charakter als Axiome~1 und~2. Er
-\textbf{folgt nicht} aus den vorangehenden Schritten. Es w\"{a}re koh\"{a}rent, die
-informationelle Minimalstruktur und die Selbstpr\"{a}senz zu akzeptieren und stattdessen
-einen neutralen Monismus, einen panpsychistischen Strukturrealismus oder andere Positionen
-einzunehmen.
+\begin{methodennote}[Postulativer Charakter von Axiom 3 --- Typ (P), starke Kennzeichnung]
+Axiom~3 \textbf{folgt nicht} aus den vorangehenden Schritten. Es w\"{a}re koh\"{a}rent,
+die informationelle Minimalstruktur und die Selbstpr\"{a}senz zu akzeptieren und
+stattdessen einen neutralen Monismus, einen panpsychistischen Strukturrealismus oder
+andere Positionen einzunehmen.
 
-Axiom~3 ist die \textbf{ontologische Grundentscheidung} des OP. Sie wird durch die Koh\"{a}renz
-des resultierenden Systems und seine erkl\"{a}rende Leistungsf\"{a}higkeit gerechtfertigt ---
-\emph{nicht} durch logische Notwendigkeit. Wer dies nicht akzeptiert, verl\"{a}sst den OP
---- aber nicht notwendig die Rationalit\"{a}t. Rivalisierende Systeme auf demselben Fundament
-sind m\"{o}glich. Diese Methodennote ist absichtlich prominent platziert: Die Grenze zwischen
-Rekonstruktion und Postulat muss sichtbar sein.
+Axiom~3 ist die \textbf{ontologische Grundentscheidung} des OP. Sie wird durch die
+Koh\"{a}renz des resultierenden Systems und seine erkl\"{a}rende Leistungsf\"{a}higkeit
+gerechtfertigt --- \emph{nicht} durch logische Notwendigkeit. Rivalisierende Systeme auf
+demselben Fundament sind m\"{o}glich. Die Grenze zwischen Rekonstruktion und Postulat
+muss sichtbar sein.
 \end{methodennote}
 
 \begin{axiom}[Denk-Monismus \textnormal{--- Typ (P), ontologische Grundentscheidung}]
@@ -438,26 +411,35 @@ einschlie\ss{}lich des Bewusstseins.
 \end{axiom}
 
 \begin{remark}[Unpers\"{o}nliches Denken als Grundlage des Bewusstseins]
-Der OP formuliert dies strikt nicht-psychologisch und nicht-anthropomorph. Kein menschliches
-Subjekt, kein g\"{o}ttlicher Geist. Gemeint ist das unpers\"{o}nliche, feldhafte
-\textbf{\glqq{}Es denkt\grqq{}}.
-
-Denken ist kein Prozess \emph{in} einem Raum; es \emph{ist} der raumkonstituierende Prozess
-selbst. Bewusstsein ist keine sekund\"{a}re Eigenschaft, die aus Materie emporsteigt, sondern
-das ph\"{a}nomenale Erleben dieses primordialen Denkflusses.
+Der OP formuliert dies strikt nicht-psychologisch und nicht-anthropomorph. Kein
+menschliches Subjekt, kein g\"{o}ttlicher Geist. Gemeint ist das unpers\"{o}nliche,
+feldhafte \textbf{\glqq{}Es denkt\grqq{}}. Denken ist kein Prozess \emph{in} einem Raum;
+es \emph{ist} der raumkonstituierende Prozess selbst. Bewusstsein ist keine sekund\"{a}re
+Eigenschaft, die aus Materie emporsteigt, sondern das ph\"{a}nomenale Erleben dieses
+primordialen Denkflusses.
 \end{remark}
 
 \begin{remark}[Rechtfertigung der ontologischen Entscheidung]
-Warum Denken und nicht neutrale Substanz oder Energie? Drei Argumente:
+Warum Denken und nicht neutrale Substanz oder Energie? Vier Argumente:
 \begin{enumerate}
   \item \textbf{Koh\"{a}renz mit Axiom~2:} Selbstbez\"{u}glichkeit ist dem Denken
         begrifflich n\"{a}her als jeder anderen Grundkategorie. Denken ist definitorisch
         selbstbez\"{u}glich.
   \item \textbf{Eliminierung der Korrespondenzfrage:} Dualistische Systeme m\"{u}ssen
-        erkl\"{a}ren, wie Denken mit Materie zusammenh\"{a}ngt. Der OP eliminiert diese Frage
-        durch Rekonfiguration, nicht Beantwortung.
-  \item \textbf{Ph\"{a}nomenologische Priorit\"{a}t:} Das einzige unmittelbar Gegebene ist
-        Denken/Erleben. Jede andere Kategorie ist Konstruktion auf diesem Fundament.
+        erkl\"{a}ren, wie Denken mit Materie zusammenh\"{a}ngt. Der OP eliminiert diese
+        Frage durch Rekonfiguration, nicht Beantwortung.
+  \item \textbf{Ph\"{a}nomenologische Priorit\"{a}t:} Das einzige unmittelbar Gegebene
+        ist Denken/Erleben. Jede andere Kategorie ist Konstruktion auf diesem Fundament.
+  \item \textbf{Das Pi-Argument:} Die Zahl Pi existiert --- nicht an einem r\"{a}umlichen
+        Ort, nicht zu einer bestimmten Zeit, nicht abh\"{a}ngig von einem bestimmten
+        Gehirn, und dennoch mit absoluter Notwendigkeit. Im OP existiert Pi, weil es
+        gedacht wird --- nicht von einem bestimmten Subjekt, sondern im primordialen,
+        unpers\"{o}nlichen Denkfeld. \glqq{}Denken\grqq{} meint hier kein kognitives
+        Denken, sondern das ontologische Medium, in dem mathematische und ph\"{a}nomenale
+        Realit\"{a}t gleicherma\ss{}en wohnen. Wer fragt, ob Pi auch existiert, wenn
+        es keiner denkt, hat den Denk-Monismus noch nicht vollst\"{a}ndig vollzogen:
+        Das Denkfeld ist nicht abh\"{a}ngig von Subjekten --- Subjekte sind Differenzierungen
+        des Denkfeldes.
 \end{enumerate}
 Diese Argumente begr\"{u}nden eine \emph{Pr\"{a}ferenz}, keine logische Notwendigkeit.
 \end{remark}
@@ -470,7 +452,8 @@ Diese Argumente begr\"{u}nden eine \emph{Pr\"{a}ferenz}, keine logische Notwendi
 \centering\small
 \begin{tabular}{p{2.9cm}p{2.4cm}p{2.4cm}p{5.8cm}}
   \toprule
-  \textbf{Richtung} & \textbf{Urgrund} & \textbf{Bewusstsein} & \textbf{Abgrenzung zum OP} \\
+  \textbf{Richtung} & \textbf{Urgrund} & \textbf{Bewusstsein} &
+  \textbf{Abgrenzung zum OP} \\
   \midrule
   \textbf{Materialismus}
     & Materie & Emergent
@@ -488,7 +471,7 @@ Diese Argumente begr\"{u}nden eine \emph{Pr\"{a}ferenz}, keine logische Notwendi
     & Mikro-Erfahrung & Kombiniert
     & Kein Kombinationsmodell von unten; das Feld ist prim\"{a}r, Einzelperspektiven
       abgeleitet. Das Kombinationsproblem tritt \emph{invertiert} auf
-      (s.\ Sektion~10 und offene Fragen). \\[3pt]
+      (s.\ Sektion~11). \\[3pt]
   \textbf{Hegelianismus}
     & Absoluter Geist & Selbstbewusstsein
     & Kein dialektisches Subjekt-Objekt-Drama; kein teleologischer Weltgeist. \\
@@ -503,17 +486,15 @@ Diese Argumente begr\"{u}nden eine \emph{Pr\"{a}ferenz}, keine logische Notwendi
 
 Der OP erkennt an, dass die Eliminierung einer eigenst\"{a}ndigen Materie-Substanz eine
 \emph{Komplexit\"{a}tsbringschuld} erzeugt: Mathematische Pr\"{a}zision, physikalische
-Stabilit\"{a}t, Kausalit\"{a}t und intersubjektive Widerst\"{a}ndigkeit der empirischen Welt
-m\"{u}ssen aus der Eigendynamik des Denkfeldes rekonstruiert werden.
+Stabilit\"{a}t, Kausalit\"{a}t und intersubjektive Widerst\"{a}ndigkeit der empirischen
+Welt m\"{u}ssen aus der Eigendynamik des Denkfeldes rekonstruiert werden.
 
 \begin{remark}[Keine Ockham-Garantie]
 In Version~8.5 wurde diese Bringschuld als \glqq{}Ockham-Pr\"{a}mie\grqq{} bezeichnet ---
-eine irref\"{u}hrende Bezeichnung, die aufgegeben wird. Ockhams Rasiermesser fordert
-Minimierung von Entit\"{a}ten; ob ein hochdimensionaler OPP ontologisch sparsamer ist als
-ein einziges Quantenfeld, ist nicht trivial. Der OP eliminiert eine \emph{Kategorie} (Materie
-als eigenst\"{a}ndige Substanz), bezahlt aber mit erh\"{o}hter \emph{Komplexit\"{a}t} in
-der Modellierung. Ob diese Transaktion insgesamt sparsamer ist, h\"{a}ngt davon ab, wie man
-ontologische Kosten misst --- und diese Metafrage bleibt offen.
+eine irref\"{u}hrende Bezeichnung, die aufgegeben wird. Der OP eliminiert eine
+\emph{Kategorie} (Materie als eigenst\"{a}ndige Substanz), bezahlt aber mit erh\"{o}hter
+\emph{Komplexit\"{a}t} in der Modellierung. Ob diese Transaktion insgesamt sparsamer ist,
+h\"{a}ngt davon ab, wie man ontologische Kosten misst --- und diese Metafrage bleibt offen.
 \end{remark}
 
 %==============================================================
@@ -527,101 +508,106 @@ und hat Konsequenzen f\"{u}r die formale Struktur der PST.
 
 \begin{enumerate}
   \item \textbf{Attraktor-Monismus (AM):} Ein einziges Informationsfeld erzeugt durch
-        nichtlineare Dynamik topologisch geschlossene Eigenzust\"{a}nde (Dynamical Attractors).
-        \emph{Problem:} Wie erkl\"{a}rt AM kausale Unzug\"{a}nglichkeit zwischen Perspektiven,
-        wenn sie Teile desselben kontinuierlichen Feldes sind?
+        nichtlineare Dynamik topologisch geschlossene Eigenzust\"{a}nde.
+        \emph{Problem:} Wie erkl\"{a}rt AM kausale Unzug\"{a}nglichkeit zwischen
+        Perspektiven?
 
   \item \textbf{Co-algebraischer Pluralismus (CP):} Das Sein manifestiert sich in einer
-        Vielheit selbstpr\"{a}senter Zentren, informationell verschr\"{a}nkt und \"{u}ber
-        Co-Algebren koordiniert.
-        \emph{Problem:} Steht in Spannung zum Monismus von Axiom~3; riskiert versteckte
-        Pluralismus-Annahme.
+        Vielheit selbstpr\"{a}senter Zentren, \"{u}ber Co-Algebren koordiniert.
+        \emph{Problem:} Steht in Spannung zum Monismus von Axiom~3.
 
   \item \textbf{Status:} Kein Modell ist ausreichend ausgearbeitet. Das
         Intersubjektivit\"{a}tsproblem ist als \textbf{genuines Desiderat} auszuweisen.
 \end{enumerate}
 
 \begin{remark}[Philosophische Entscheidungskriterien f\"{u}r AM vs.\ CP]
-% NEU IN v9.0 (Kritikpunkt 3)
-Obwohl die Entscheidung zwischen AM und CP der PST vorbehalten bleibt, lassen sich bereits
-auf philosophischer Ebene Kriterien benennen, nach denen sie getroffen werden sollte:
-
+Obwohl die Entscheidung der PST vorbehalten bleibt, lassen sich Kriterien benennen:
 \begin{enumerate}[label=(\alph*)]
-  \item \textbf{Konsistenz mit Axiom~3:} Der Denk-Monismus setzt ein \emph{eines}
-        Denkfeld als Urgrund. AM ist mit diesem Anspruch prim\"{a} facie koh\"{a}renter,
-        da CP das Risiko tr\"{a}gt, durch die Einf\"{u}hrung prim\"{a}rer Zentren stillschweigend
-        einen Pluralismus zu importieren. Jede CP-Formulierung m\"{u}sste zeigen, dass die
-        Zentren nicht ontologisch prim\"{a}r, sondern Differenzierungen eines prim\"{a}ren
-        Feldes sind.
-
-  \item \textbf{Erkl\"{a}rende Reichweite bez\"{u}glich Quantenph\"{a}nomenen:} Welches
-        Modell rekonstruiert Quantenverschr\"{a}nkung und Nicht-Lokalit\"{a}t sparsamer?
-        AM legt eine feldtheoretische Interpretation nahe; CP k\"{o}nnte Verschr\"{a}nkung
-        als Ko-Algebren-Koordination beschreiben. Hier ist die PST gefordert.
-
-  \item \textbf{Erkl\"{a}rung kausaler Geschlossenheit von Perspektiven:} Das gr\"{o}\ss{}te
-        Problem von AM ist zu erkl\"{a}ren, warum Perspektiven einander kausal
-        unzug\"{a}nglich erscheinen, obwohl sie Teile desselben Feldes sind. Dieses
-        Kriterium k\"{o}nnte AM zus\"{a}tzliche Erkl\"{a}rungslast aufb\"{u}rden und CP
-        motivieren --- sofern CP den Monismus nicht unterl\"{a}uft.
+  \item \textbf{Konsistenz mit Axiom~3:} AM ist mit dem Monismus-Primat prim\"{a} facie
+        koh\"{a}renter.
+  \item \textbf{Erkl\"{a}rende Reichweite:} Welches Modell rekonstruiert
+        Quantenverschr\"{a}nkung sparsamer? Hier ist die PST gefordert.
+  \item \textbf{Kausale Geschlossenheit:} AM muss erkl\"{a}ren, warum Perspektiven
+        einander kausal unzug\"{a}nglich erscheinen, obwohl sie Teile desselben Feldes
+        sind.
 \end{enumerate}
-
-Diese Kriterien bereiten die Entscheidung vor, ohne sie zu treffen. Eine philosophische
-Pr\"{a}ferenz f\"{u}r AM ergibt sich aus dem Monismus-Primat; eine empirische Pr\"{a}ferenz
-k\"{o}nnte sich aus der PST-Formalisierung ergeben.
+Eine philosophische Pr\"{a}ferenz f\"{u}r AM ergibt sich aus dem Monismus-Primat; eine
+empirische Pr\"{a}ferenz k\"{o}nnte sich aus der PST-Formalisierung ergeben.
 \end{remark}
 
 %==============================================================
-\section{Das Kombinationsproblem: Invertierung gegen\"{u}ber dem Panpsychismus}
+\section{Das Differenzierungsproblem: Notwendigkeit topologischer Muster}
 %==============================================================
-% NEU IN v9.0 (Kritikpunkt 4) -- eigene Sektion
 
-Im klassischen Panpsychismus sind Mikro-Erfahrungen die prim\"{a}ren Entit\"{a}ten; das
-\emph{Kombinationsproblem} fragt, wie diese kleinen Erfahrungen zu den gro\ss{}en, koh\"{a}renten
-Erlebnissen menschlicher Subjekte zusammengesetzt werden. Dies ist ein \emph{Bottom-up}-Problem:
-Wie wird aus Vielem Eines?
-
-Der OP invertiert diese Problemstruktur vollst\"{a}ndig:
+Im klassischen Panpsychismus sind Mikro-Erfahrungen prim\"{a}r; das
+\emph{Kombinationsproblem} fragt, wie aus Vielem Eines wird. Der OP invertiert diese
+Problemstruktur vollst\"{a}ndig:
 
 \begin{itemize}
-  \item \textbf{Prim\"{a}r ist das Eine:} Das Denkfeld ist ungeteilt und unteilbar im
-        Urgrund. Es gibt keine Mikro-Erfahrungen, die kombiniert werden m\"{u}ssten.
-  \item \textbf{Das Problem ist Top-down:} Warum und wie differenziert sich das eine Feld
-        in scheinbar isolierte, einander kausal unzug\"{a}ngliche Perspektiven? Dies ist
-        kein Kombinationsproblem, sondern ein \emph{Differenzierungsproblem}.
+  \item \textbf{Prim\"{a}r ist das Eine:} Das Denkfeld ist ungeteilt. Es gibt keine
+        Mikro-Erfahrungen, die kombiniert werden m\"{u}ssten.
+  \item \textbf{Das Problem ist Top-down:} Wie differenziert sich das eine Feld in
+        scheinbar isolierte Perspektiven? Dies ist das \emph{Differenzierungsproblem}.
   \item \textbf{Die Illusion der Isolation:} Was wir als getrennte Subjekte erleben,
-        k\"{o}nnte intern-geometrische Eigenzust\"{a}nde (Attraktoren) des einen Feldes
-        sein, die sich durch ihre topologische Geschlossenheit als \glqq{}getrennt\grqq{}
+        k\"{o}nnten intern-geometrische Eigenzust\"{a}nde (Attraktoren) des einen Feldes
+        sein, die sich durch topologische Geschlossenheit als \glqq{}getrennt\grqq{}
         konstituieren --- ohne es ontologisch zu sein.
 \end{itemize}
 
-\begin{remark}[Abgrenzungssch\"{a}rfe und verbleibende Last]
-Diese Invertierung ist konzeptuell klar und unterscheidet den OP genuine vom Panpsychismus.
-Sie verschiebt jedoch die Erkl\"{a}rungslast: Statt erkl\"{a}ren zu m\"{u}ssen, wie viele
-Erfahrungen zu einer werden, muss der OP erkl\"{a}ren, wie eine Erfahrung als viele
-erscheint. Dies ist das \emph{Differenzierungsproblem} des OP --- und es ist ebenso schwer
-wie das Kombinationsproblem des Panpsychismus, nur anders gerichtet. Die PST ist gefordert,
-einen Mechanismus zu liefern, durch den topologisch geschlossene Attraktoren im Feld
-entstehen k\"{o}nnen, ohne die Einheit des Feldes zu zerreissen.
+\begin{remark}[Notwendigkeit von Attraktoren aus UP und Denk-Monismus]
+Aus der Kombination von UP und Axiom~3 ergibt sich eine strukturelle Konsequenz: Das
+primordiale Denkfeld kann nicht homogen und differenzlos sein --- denn eine vollst\"{a}ndig
+homogene Konfiguration w\"{a}re unter der UP ununterscheidbar von Nichts. Das Feld
+\emph{muss} daher Unterschiede, Asymmetrien und stabile Differenzierungen ausbilden.
+Diese Notwendigkeit interner Differenz ist die ontologische Grundlage daf\"{u}r, dass
+\"{u}berhaupt stabile Muster --- Attraktoren --- entstehen k\"{o}nnen. Die Ausarbeitung
+dieser Dynamik obliegt OAD (Ontologische Attraktoren-Dynamik) und DFD (Das
+Fragedifferential).
+\end{remark}
+
+\begin{remark}[Verbleibende Erkl\"{a}rungslast]
+Diese Invertierung unterscheidet den OP genuine vom Panpsychismus, verschiebt aber die
+Erkl\"{a}rungslast: Der OP muss erkl\"{a}ren, wie eine Erfahrung als viele erscheint.
+Die PST ist gefordert, einen Mechanismus zu liefern, durch den topologisch geschlossene
+Attraktoren entstehen k\"{o}nnen, ohne die Einheit des Feldes zu zerrei\ss{}en.
 \end{remark}
 
 %==============================================================
-\section{Verh\"{a}ltnis zur Ph\"{a}nomenalen Strukturtheorie (PST)}
+\section{Verh\"{a}ltnis zur modularen Architektur}
 %==============================================================
 
-Die PST ist die mathematische Ausarbeitung, die die Komplexit\"{a}tsbringschuld des OP
-einzul\"{o}sen versucht. Sie operationalisiert das Denkfeld als hochdimensionalen
-\emph{Ontoph\"{a}nomenalen Phasenraum (OPP)}.
+Der OP ist das philosophische Fundament eines modularen Forschungsprogramms. Er setzt
+die Axiome und Grundbegriffe; die nachfolgenden Module bauen darauf auf und \"{u}bernehmen
+die Aufgabe der inhaltlichen und mathematischen Ausarbeitung.
 
-Der OPP ist nicht als neue materielle Entit\"{a}t zu verstehen, sondern als formaler
-Repr\"{a}sentant des \glqq{}informierten Minimums\grqq{}. W\"{a}hrend der OP das kategoriale
-Fundament gie\ss{}t, beschreibt die PST die Emergenz der makroskopischen Raumzeit und der
-Quantenph\"{a}nomene aus den internen Korrelationsdichten des OPP.
+\begin{itemize}
+  \item \textbf{OPP (Ontoph\"{a}nomenaler Phasenraum):} Operationalisiert das Denkfeld
+        als zeitlosen, statischen Phasenraum. Grundlage f\"{u}r alle weiteren Module.
+  \item \textbf{OAD (Ontologische Attraktoren-Dynamik):} Beschreibt, wie aus dem
+        kontinuierlichen Feld stabile Eigenzust\"{a}nde (Attraktoren) entstehen.
+  \item \textbf{DPR (Die Projektive Reduktion):} Beschreibt, wie Attraktoren \"{u}ber
+        Projektionsoperatoren in die raumzeitliche Existenz gefiltert werden.
+  \item \textbf{DPD (Die Ph\"{a}nomenale Differenz):} Beschreibt, wie aus der Relation
+        zwischen Attraktoren ph\"{a}nomenales Erleben entsteht.
+  \item \textbf{DFD (Das Fragedifferential):} Das ontologische Individuationsprinzip.
+        Formalisiert, wie sich endliche Perspektiven durch informationelle Differenz zum
+        Gesamtfeld konstituieren.
+  \item \textbf{EG-1 (Der Explanatory Gap):} Behandelt das tiefste offene Problem des
+        OP vollst\"{a}ndig: Bestandsaufnahme, kategoriale Fehlfragen-These, Relokation
+        und erkenntnistheoretische Konsequenzen.
+  \item \textbf{PST (Projektive Strukturtheorie):} Die mathematisch-physikalische
+        Ausarbeitung aller hier skizzierten Strukturen. Langfristiges interdisziplin\"{a}res
+        Forschungsprogramm.
+\end{itemize}
 
-\begin{remark}[Zirkelkontrolle an der OP-PST-Grenze]
-Die PST darf nicht stillschweigend Strukturen einf\"{u}hren, die das OP-Fundament unterlaufen.
-Jede neue Struktur im OPP muss entweder aus den drei Axiomen rekonstruiert oder als
-explizite Zusatzannahme gekennzeichnet werden.
+\begin{remark}[OP und PST: Philosophie und Physik]
+Der OP ist Philosophie --- nicht Physik. Er liefert das kategoriale und ontologische
+Fundament; die PST baut darauf auf und versucht, es mathematisch auszuarbeiten. Die PST
+soll den OP nicht belegen, sondern seine Implikationen formalisieren. Kein philosophisches
+Konzept dieser Art hat eine vollst\"{a}ndig ausformulierte physikalische Theorie auf
+Tasche --- Kant, Hegel oder Husserl haben auch nicht an Feldgleichungen angeschlossen.
+Der OP ist pr\"{a}zise in dem was er ist: Philosophie mit dem Anspruch, der Physik einen
+Rahmen zu geben, nicht sie zu ersetzen.
 \end{remark}
 
 %==============================================================
@@ -629,80 +615,68 @@ explizite Zusatzannahme gekennzeichnet werden.
 %==============================================================
 
 \begin{enumerate}
-  \item \textbf{Fundamentalproblem (PST):} \"{U}ber welchen topologischen oder dynamischen
-        Mechanismus generiert der OPP die effektive 3+1-dimensionale Raumzeit mit
-        Lorentz-Signatur?
+  \item \textbf{Fundamentalproblem (PST/OPP):} \"{U}ber welchen topologischen oder
+        dynamischen Mechanismus generiert der OPP die effektive 3+1-dimensionale
+        Raumzeit mit Lorentz-Signatur?
 
-  \item \textbf{Explanatory Gap:} Wie wird die L\"{u}cke zwischen dem Fixpunktmodell
-        ($f(x)=x$) und proto-ph\"{a}nomenaler Gegebenheit geschlossen? Die heuristischen
-        Verwandtschaftslinien (Whitehead, Nagel, IIT) kartografieren den Raum ---
-        eine L\"{o}sung steht aus.
+  \item \textbf{Explanatory Gap (EG-1):} Wie wird die L\"{u}cke zwischen dem
+        Fixpunktmodell ($f(x)=x$) und proto-ph\"{a}nomenaler Gegebenheit geschlossen?
+        Vollst\"{a}ndige Behandlung in EG-1.
 
   \item \textbf{Intersubjektivit\"{a}tsentscheidung:} AM oder CP? Die philosophischen
         Entscheidungskriterien (Sektion~10) bereiten die Wahl vor; die PST muss sie
         axiomatisch r\"{u}ckbinden.
 
-  \item \textbf{Differenzierungsproblem:} Wie differenziert sich das eine Denkfeld in
-        scheinbar isolierte Perspektiven? Welcher topologische Mechanismus erzeugt
-        Attraktor-Geschlossenheit, ohne die Feldeinheit zu zerreissen?
+  \item \textbf{Differenzierungsproblem (OAD/DFD):} Welcher Mechanismus erzeugt
+        Attraktor-Geschlossenheit, ohne die Feldeinheit zu zerrei\ss{}en? Wie koppelt
+        das Fragedifferential (DFD) an die Attraktoren-Dynamik (OAD)?
 
-  \item \textbf{Kategoriale Grenze KI/Organismus und Grade der Selbstbez\"{u}glichkeit:}
-        % NEU IN v9.0 (Kritikpunkt 5)
-        Axiom~2 fordert minimale Selbstpr\"{a}senz f\"{u}r alles Existierende, ohne zu
-        spezifizieren, welche Art von Selbstbez\"{u}glichkeit f\"{u}r verschiedene Grade
-        von Ph\"{a}nomenali\"{a}t hinreichend ist. Vorl\"{a}ufig lassen sich folgende
-        Stufen unterscheiden:
+  \item \textbf{Kategoriale Grenze KI/Organismus:} Welche Art von Selbstbez\"{u}glichkeit
+        ist hinreichend f\"{u}r ph\"{a}nomenale Aktualit\"{a}t? Vorl\"{a}ufige Hierarchie:
         \begin{enumerate}[label=(\roman*)]
-          \item \textbf{Minimale Fixpunkt-Selbstbez\"{u}glichkeit} ($f(x)=x$): Die Bedingung
-                des OP-Minimums. Strukturell vorhanden in jedem Attraktor; noch kein
-                aktuelles F\"{u}r-sich-Sein.
-          \item \textbf{Reaktive Selbstbez\"{u}glichkeit:} Systeme, die auf ihren eigenen
-                Zustand reagieren (Thermostat, einfache Regelkreise). Funktionale
-                R\"{u}ckkopplung ohne erkennbare Innenansicht.
-          \item \textbf{Adaptive Selbstbez\"{u}glichkeit:} Systeme, die ihren eigenen
-                Zustand modellieren und auf Basis dieses Modells handeln (komplexe KI,
-                h\"{o}here Tiere). Hier k\"{o}nnte proto-ph\"{a}nomenale Aktualit\"{a}t
-                einsetzen --- die Grenze ist offen.
-          \item \textbf{Reflexive Selbstbez\"{u}glichkeit:} Systeme, die ihr eigenes
-                Erleben thematisieren k\"{o}nnen (Sprache, Metakognition). Volle
-                Intentionalit\"{a}t im ph\"{a}nomenologischen Sinne.
+          \item Minimale Fixpunkt-Selbstbez\"{u}glichkeit ($f(x)=x$): OP-Minimum.
+          \item Reaktive Selbstbez\"{u}glichkeit: Funktionale R\"{u}ckkopplung
+                (Thermostat, Regelkreise).
+          \item Adaptive Selbstbez\"{u}glichkeit: Zustandsmodellierung und darauf
+                basierendes Handeln (komplexe KI, h\"{o}here Tiere). Grenze offen.
+          \item Reflexive Selbstbez\"{u}glichkeit: Thematisierung des eigenen Erlebens
+                (Sprache, Metakognition).
         \end{enumerate}
-        Ob und wo auf dieser Skala die Schwelle zur ph\"{a}nomenalen Aktualit\"{a}t liegt,
-        ist eine offene Frage --- sowohl f\"{u}r biologische Systeme als auch f\"{u}r KI.
-        Der OP liefert mit Axiom~2 die Bedingung der M\"{o}glichkeit; die hinreichenden
-        Bedingungen bleiben Desiderat der PST.
+        Ob und wo die Schwelle zur ph\"{a}nomenalen Aktualit\"{a}t liegt, bleibt
+        Desiderat der PST.
 \end{enumerate}
 
 %==============================================================
-\section{Fazit: Architektur und Selbstverst\"{a}ndnis des OP~v9.0}
+\section{Fazit: Architektur und Selbstverst\"{a}ndnis des OP~v9.1}
 %==============================================================
 
-Der OP in der Version~9.0 unterscheidet klar zwischen dem, was er ableitet, was er setzt,
+Der OP in der Version~9.1 unterscheidet klar zwischen dem, was er ableitet, was er setzt,
 und was er als kartografiertes Desiderat ausweist:
 
 \begin{enumerate}
   \item \textbf{Rekonstruktiv gesichert (R):} Notwendigkeit von Existenz (Axiom~1);
-        Notwendigkeit minimaler Strukturbestimmtheit (UP und Reductio); Notwendigkeit
-        minimaler Selbstbez\"{u}glichkeit als Bedingung ontologischer Wirksamkeit (Axiom~2).
+        Notwendigkeit minimaler Strukturbestimmtheit (UP und Reductio --- jetzt mit
+        explizit ontologischem Status); Notwendigkeit minimaler Selbstbez\"{u}glichkeit
+        als Bedingung ontologischer Wirksamkeit (Axiom~2); Notwendigkeit interner
+        Differenz im Denkfeld als Konsequenz aus UP und Axiom~3.
 
   \item \textbf{Postulativ gesetzt (P):} Identifikation des selbstpr\"{a}senten
         Strukturfeldes mit dem unpers\"{o}nlichen Denken (Axiom~3). Motiviert durch
-        Koh\"{a}renz, ph\"{a}nomenologische Priorit\"{a}t und erkl\"{a}rende St\"{a}rke ---
-        nicht durch logische Notwendigkeit.
+        Koh\"{a}renz, ph\"{a}nomenologische Priorit\"{a}t, erkl\"{a}rende St\"{a}rke
+        und das Pi-Argument --- nicht durch logische Notwendigkeit.
 
-  \item \textbf{Transparent gemacht:} Der transzendentale Zirkel und seine operative
-        Eingrenzung durch die R/P-Architektur; das Explanatory Gap mit
-        philosophischen Verwandtschaftslinien; das Differenzierungsproblem als
-        Invertierung des panpsychistischen Kombinationsproblems; die philosophischen
-        Entscheidungskriterien f\"{u}r AM vs.\ CP; eine vorl\"{a}ufige Stufenhierarchie
-        der Selbstbez\"{u}glichkeit als Orientierung f\"{u}r die KI/Organismus-Grenze.
+  \item \textbf{Transparent gemacht:} Der transzendentale Zirkel; das Explanatory Gap
+        (vollst\"{a}ndig in EG-1); das Differenzierungsproblem als Invertierung des
+        Kombinationsproblems; die philosophischen Entscheidungskriterien f\"{u}r AM vs.\
+        CP; die Stufenhierarchie der Selbstbez\"{u}glichkeit; die vollst\"{a}ndige
+        modulare Architektur.
 \end{enumerate}
 
 Der OP beansprucht nicht, ein abgeschlossenes metaphysisches Dogma zu sein. Er ist ein
-methodisch gesch\"{a}rfter, logisch transparenter Rahmen f\"{u}r eine neue Allianz zwischen
-Ontologie, Ph\"{a}nomenologie und theoretischer Physik. Sein Fortschritt wird gemessen an
-der wachsenden Pr\"{a}zision seiner offenen Fragen und der Rigorosit\"{a}t, mit der er
-zwischen dem unterscheidet, was er wei\ss{}, was er setzt, und was er noch nicht wei\ss{}.
+methodisch gesch\"{a}rfter, logisch transparenter Rahmen f\"{u}r eine neue Allianz
+zwischen Ontologie, Ph\"{a}nomenologie und theoretischer Physik. Sein Fortschritt wird
+gemessen an der wachsenden Pr\"{a}zision seiner offenen Fragen und der Rigorosit\"{a}t,
+mit der er zwischen dem unterscheidet, was er wei\ss{}, was er setzt, und was er noch
+nicht wei\ss{}.
 
 \end{document}
-
