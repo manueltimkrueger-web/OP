@@ -1,3 +1,8 @@
+TRANSPARENCY.tex
+
+https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/TRANSPARENCY.tex
+
+
 ​MKO.tex 
 
 Die methodischen Spielregeln (5 Sprachebenen, Kennzeichnungslegende, R/P-Unterscheidung, Realismus-Vorbehalt).
