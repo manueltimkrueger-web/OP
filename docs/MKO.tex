@@ -1,6 +1,6 @@
 % ==============================================================
 % Methodologische Konventionen des Ontophänomenalismus (MKO)
-% Version 1.2
+% Version 1.3
 % Kompiliert mit: pdfLaTeX
 % ==============================================================
 
@@ -25,21 +25,29 @@
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
-    pdftitle={Methodologische Konventionen des OP (MKO) -- Version 1.2},
+    pdftitle={Methodologische Konventionen des OP (MKO) -- Version 1.3},
     pdfauthor={Kritischer Dialog}
 }
 
-% ---------- Theorem-Umgebungen ----------
+% ---------- Theorem-Umgebungen (LaTeX-Makros) ----------
+\theoremstyle{plain}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Korollar}[section]
+\newtheorem{theorem}{Theorem}[section]
+
 \theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
 \newtheorem{konvention}{Konvention}[section]
 \newtheorem{remark}{Bemerkung}[section]
 \newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Hypothese}[section]
 
 % ---------- Titel ----------
 \title{
   \textbf{Methodologische Konventionen des Ontoph\"{a}nomenalismus}\\[0.4em]
   {\large MKO --- Referenzdokument f\"{u}r alle Module des OP}\\[0.5em]
-  {\normalsize Version~1.2}
+  {\normalsize Version~1.3}
 }
 \author{
   \textbf{Kritischer Dialog:}\\
@@ -55,403 +63,367 @@
 \begin{abstract}
 Dieses Dokument definiert die methodologischen Konventionen, Sprachregeln und
 Kennzeichnungssysteme, die im gesamten Ontoph\"{a}nomenalismus (OP) verbindlich gelten.
-Es dient allen anderen Modulen als gemeinsame Referenz und muss nicht in jedem Dokument
-separat erl\"{a}utert werden.
+Es dient allen anderen Modulen als gemeinsame Referenz.
 
-Ziel dieser Konventionen ist maximale epistemische Transparenz: Der Leser soll jederzeit
-wissen, auf welcher Ebene --- Logik, Interpretation, Formalisierung, Spekulation oder
-Empirie --- er sich befindet. Damit wird einem der h\"{a}ufigsten Einw\"{a}nde gegen
-philosophische Systeme vorgebeugt: dem stillen \"{U}bergang von logischen Schl\"{u}ssen
-zu Tatsachenbehauptungen.
+Neue Dokumente referenzieren dieses Dokument einmalig und \"{u}bernehmen damit
+automatisch alle hier definierten Konventionen.
 
-Version~1.2 erg\"{a}nzt gegen\"{u}ber Version~1.0 eine f\"{u}nfte Sprachebene f\"{u}r
-formale Definitionen und Modelle, eine explizite Trennung zwischen Definition und Modell
-in der Kennzeichnungslegende, einen Abschnitt \"{u}ber Falsifizierbarkeit und
-wissenschaftliche Anschlussf\"{a}higkeit sowie eine pr\"{a}zisierte Versionierungsregel.
+Gegen\"{u}ber Version~1.2 wurden in Version~1.3 folgende Verbesserungen vorgenommen:
+eine kompakte Glossar-Tabelle der Kennzeichnungstypen, eine Mapping-Tabelle f\"{u}r
+die f\"{u}nf Sprachebenen, ein zweites Modell-Beispiel, ein schlankes
+Hypothesen-Template sowie eine neue Methodennote zur \textbf{Vermeidung vorzeitiger
+Kontamination} (ontische Basisebene vs.\ emergente Projektionsebene).
 \end{abstract}
 
 \tableofcontents
 \newpage
 
 %==============================================================
-\section{Zweck und Geltungsbereich}
+\section{Zweck, Geltungsbereich und Glossar}
 %==============================================================
 
-Die methodologischen Konventionen des OP gelten f\"{u}r alle Dokumente des
-Forschungsprogramms:
+\subsection{Geltungsbereich}
 
-\begin{itemize}
-  \item \textbf{OP} --- Ontoph\"{a}nomenalismus (Logische Grundlegung)
-  \item \textbf{OPP} --- Ontoph\"{a}nomenaler Phasenraum
-  \item \textbf{OAD} --- Ontologische Attraktoren-Dynamik
-  \item \textbf{DPR} --- Die Projektive Reduktion
-  \item \textbf{DPD} --- Die Ph\"{a}nomenale Differenz
-  \item \textbf{EG-1} --- Der Explanatory Gap
-  \item \textbf{PST} --- Projektive Strukturtheorie
-  \item alle k\"{u}nftigen Erg\"{a}nzungsb\"{a}nde und Spezialmodule
-\end{itemize}
+Die Konventionen gelten f\"{u}r alle Dokumente des Forschungsprogramms:
+OP, OPP, OAD, DPR, DPD, DFD, EG-1, PST sowie alle k\"{u}nftigen
+Erg\"{a}nzungsb\"{a}nde. Abweichungen m\"{u}ssen explizit begr\"{u}ndet werden.
 
-Neue Dokumente referenzieren dieses Dokument einmalig und \"{u}bernehmen damit
-automatisch alle hier definierten Konventionen. Abweichungen m\"{u}ssen explizit
-begr\"{u}ndet werden.
+\subsection{Glossar: Kennzeichnungstypen im \"{U}berblick}
+
+Die folgende Tabelle definiert alle Kennzeichnungstypen des OP verbindlich.
+\textbf{Konvention} bezeichnet eine verbindliche Regel; \textbf{Methodennote}
+bezeichnet einen erl\"{a}uternden Kommentar zum methodischen Status.
+
+\begin{table}[h!]
+\centering\small
+\begin{tabular}{p{3.5cm}p{1.8cm}p{8.2cm}}
+  \toprule
+  \textbf{Kennzeichnung} & \textbf{LaTeX-Typ} & \textbf{Bedeutung (ein Satz)} \\
+  \midrule
+  \textbf{Axiom} & \texttt{axiom} &
+    Grundannahme des OP; wird nicht bewiesen, sondern gesetzt. \\[3pt]
+  \textbf{Definition} & \texttt{definition} &
+    Terminologische Festlegung eines Begriffs; keine Wahrheitsaussage. \\[3pt]
+  \textbf{Formale Definition / Modell} & \texttt{definition} &
+    Mathematische Festlegung der Modellsprache; Modelle sind austauschbar,
+    Begriffe bleiben stabil. \\[3pt]
+  \textbf{Proposition / Theorem} & \texttt{proposition} / \texttt{theorem} &
+    Folgt logisch aus Axiomen und Definitionen; Nachweis formal oder
+    konzeptuell ausgewiesen. \\[3pt]
+  \textbf{Korollar} & \texttt{corollary} &
+    Unmittelbare Folgerung aus Proposition oder Theorem. \\[3pt]
+  \textbf{Postulat} & \texttt{postulate} &
+    Arbeitsgrundlage auf Modulebene; keine vollst\"{a}ndige Ableitung
+    aus den Grundaxiomen. \\[3pt]
+  \textbf{Konvention} & \texttt{konvention} &
+    Verbindliche methodische Regel f\"{u}r alle Module. \\[3pt]
+  \textbf{Methodennote} & \texttt{methodennote} &
+    Erl\"{a}uternder Kommentar zum methodischen Status eines Abschnitts. \\[3pt]
+  \textbf{Bemerkung} & \texttt{remark} &
+    Philosophische Deutung oder Kommentar; steht typischerweise im Konjunktiv. \\[3pt]
+  \textbf{Analogie} & \texttt{remark} + Kennzeichnung &
+    Illustratives Hilfsmittel; erkl\"{a}rt durch \"{A}hnlichkeit, behauptet
+    keine Identit\"{a}t. \\[3pt]
+  \textbf{Hypothese} & \texttt{hypothese} &
+    Vorschlag, der k\"{u}nftig empirisch oder mathematisch gepr\"{u}ft
+    werden soll. \\[3pt]
+  \textbf{Offene Forschungsfrage} & Nummerierte Liste &
+    Ungel\"{o}stes Problem des OP oder der PST. \\
+  \bottomrule
+\end{tabular}
+\caption{Glossar der Kennzeichnungstypen im OP-Dokumentensystem.}
+\end{table}
 
 %==============================================================
 \section{Die Sprachregel: F\"{u}nf Ebenen des Aussagenstatus}
 %==============================================================
 
-Die wichtigste Konvention des OP ist eine durchg\"{a}ngige Sprachregel, die zwischen
-f\"{u}nf Ebenen des Aussagenstatus unterscheidet. Jede Ebene hat ihre eigene sprachliche
-Markierung.
+\subsection{Mapping-Tabelle}
 
-\begin{konvention}[Ebene 1 --- Axiome und logische Folgerungen: Indikativ]
-Axiome und direkte logische Folgerungen aus Axiomen werden im \textbf{Indikativ}
-formuliert. Sie erheben keinen empirischen Wahrheitsanspruch, aber einen Anspruch auf
-interne logische Notwendigkeit.
+Die folgende Tabelle erm\"{o}glicht die konsistente Anwendung der Sprachregel.
+Sie zeigt f\"{u}r jede Ebene das verbindliche Sprachregister, typische
+Schlu\ss{}worte und ein Minimalbeispiel.
 
-\medskip
-\textit{Beispiele:}
-\begin{itemize}
-  \item \glqq{}Es ist unm\"{o}glich, dass nichts existiert.\grqq{}
-  \item \glqq{}Aus Axiom~1 folgt, dass jede Existenz minimale Bestimmtheit besitzt.\grqq{}
-  \item \glqq{}Eine Entit\"{a}t ohne Selbigkeit ist vom Nichts ununterscheidbar.\grqq{}
-\end{itemize}
-\end{konvention}
+\begin{table}[h!]
+\centering\small
+\begin{tabular}{p{0.4cm}p{3.0cm}p{2.8cm}p{2.5cm}p{4.5cm}}
+  \toprule
+  \textbf{\#} & \textbf{Ebene} & \textbf{Register} &
+  \textbf{Typische Worte} & \textbf{Minimalbeispiel} \\
+  \midrule
+  1 & Axiome \& logische Folgerungen &
+    Indikativ &
+    \emph{ist, folgt, gilt} &
+    \glqq{}Existenz erfordert Struktur.\grqq{} \\[4pt]
+  2 & Ontologische Interpretationen &
+    Konjunktiv &
+    \emph{k\"{o}nnte, d\"{u}rfte, w\"{a}re} &
+    \glqq{}Dies k\"{o}nnte als Individuation interpretiert werden.\grqq{} \\[4pt]
+  3 & Formale Definitionen \& Modelle &
+    Definitorisch &
+    \emph{:=, sei, werde definiert als} &
+    \glqq{}$\mathcal{D}(E) := D_{\mathrm{KL}}(Q_E \| P)$\grqq{} \\[4pt]
+  4 & Physikalische Analogien &
+    Modal + \emph{analog zu} &
+    \emph{analog zu, legt nahe, \"{a}hnlich wie} &
+    \glqq{}Analog zu stehenden Wellen\ldots\grqq{} \\[4pt]
+  5 & Empirische Vorhersagen &
+    Hypothetisch &
+    \emph{falls\ldots, w\"{a}re zu erwarten} &
+    \glqq{}Falls der OP zutrifft, w\"{a}re zu erwarten\ldots\grqq{} \\
+  \bottomrule
+\end{tabular}
+\caption{Mapping-Tabelle der f\"{u}nf Sprachebenen.}
+\end{table}
 
-\begin{konvention}[Ebene 2 --- Ontologische Interpretationen: Konjunktiv]
-Philosophische Deutungen, die \"{u}ber die direkte logische Folgerung hinausgehen, werden
-im \textbf{Konjunktiv} oder mit vorsichtigen Modalformulierungen gekennzeichnet.
-
-\medskip
-\textit{Beispiele:}
-\begin{itemize}
-  \item \glqq{}Dies k\"{o}nnte als Individuation interpretiert werden.\grqq{}
-  \item \glqq{}Der Attraktor d\"{u}rfte in diesem Sinne als Verweilzustand gelten.\grqq{}
-  \item \glqq{}Das Feld w\"{a}re in dieser Lesart als unpers\"{o}nliches Denken zu
-        verstehen.\grqq{}
-\end{itemize}
-\end{konvention}
-
-\begin{konvention}[Ebene 3 --- Formale Definitionen und Modelle: Definitorischer Modus]
-Mathematische Definitionen und formale Modelle legen die \textbf{Sprache eines Modells}
-fest. Sie behaupten weder empirische Wahrheit noch ontologische Identit\"{a}t. Sie
-dienen der Pr\"{a}zisierung eines zuvor eingef\"{u}hrten philosophischen Begriffs.
-
-Formale Definitionen werden mit dem Symbol \glqq{}$:=$\grqq{} oder der expliziten
-Kennzeichnung \glqq{}Formale Definition\grqq{} ausgewiesen.
-
-\medskip
-\textit{Beispiele:}
-\begin{itemize}
-  \item \glqq{}Das Fragedifferential wird definiert als
-        $\mathcal{D}(E) := D_{\mathrm{KL}}(Q_E \| P)$.\grqq{}
-        Dies ist eine formale Definition innerhalb des Modells --- keine Behauptung
-        \"{u}ber die Natur.
-  \item \glqq{}$P_{\mathcal{O}}\colon \mathcal{M}_{\text{OPP}} \rightarrow
-        \mathcal{M}_{\mathcal{O}}$ sei ein Projektionsoperator mit folgenden
-        Eigenschaften\ldots\grqq{}
-\end{itemize}
-\end{konvention}
-
-\begin{konvention}[Ebene 4 --- Physikalische und mathematische Analogien:
-Vorsichtige Modalformulierung]
-Verbindungen zur Physik, Mathematik oder Informationstheorie werden stets als
-\textbf{konzeptuelle Analogien oder Arbeitshypothesen} ausgewiesen. Formulierungen wie
-\glqq{}analog zu\grqq{}, \glqq{}legt nahe\grqq{} oder \glqq{}k\"{o}nnte modelliert
-werden als\grqq{} sind verbindlich.
-
-\medskip
-\textit{Beispiele:}
-\begin{itemize}
-  \item \glqq{}Dies legt eine m\"{o}gliche Analogie zur Informationstheorie nahe.\grqq{}
-  \item \glqq{}Das Gef\"{a}lle k\"{o}nnte formal als Kullback-Leibler-Divergenz
-        modelliert werden.\grqq{}
-  \item \glqq{}Analog zu stehenden Wellen stabilisiert sich der Attraktor\ldots\grqq{}
-\end{itemize}
-\end{konvention}
-
-\begin{konvention}[Ebene 5 --- Empirische Vorhersagen: Explizite Hypothesenkennzeichnung]
-Aussagen, die prinzipiell empirisch oder mathematisch pr\"{u}fbar sein sollen, werden
-explizit als \textbf{Hypothesen} gekennzeichnet.
-
-\medskip
-\textit{Beispiele:}
-\begin{itemize}
-  \item \glqq{}Falls der OP zutrifft, w\"{a}re zu erwarten, dass\ldots\grqq{}
-  \item \glqq{}Hypothese: Systeme mit h\"{o}herer interner R\"{u}ckkopplung
-        zeigen\ldots\grqq{}
-\end{itemize}
-\end{konvention}
-
-\begin{methodennote}[Warum diese Regel so wichtig ist]
-Der h\"{a}ufigste Angriff auf philosophische Systeme ist der Vorwurf des stillen
-\"{U}bergangs: Ein logischer Schluss wird formuliert, und im n\"{a}chsten Satz wird
-daraus eine Tatsachenbehauptung \"{u}ber die Natur. Dieser \"{U}bergang bleibt oft
-unmarkiert.
-
-Die Sprachregel des OP schlie\ss{}t diese Angriffsfläche. Ein Leser wei\ss{} jederzeit:
-Steht hier Indikativ, ist es eine Axiom-Folgerung. Steht hier Konjunktiv, ist es eine
-Interpretation. Wird eine formale Definition eingef\"{u}hrt, legt sie Sprache fest ---
-keine Wahrheit. Wird eine Analogie benannt, ist es eine Analogie --- kein Beweis.
+\begin{methodennote}[Warum die Sprachregel zentral ist]
+Der h\"{a}ufigste Angriff auf philosophische Systeme ist der stille \"{U}bergang
+von logischen Schl\"{u}ssen zu Tatsachenbehauptungen. Die Sprachregel schlie\ss{}t
+diese Angriffsfläche: Der Leser wei\ss{} jederzeit, auf welcher Ebene er sich
+befindet. Axiome und Folgerungen stehen im Indikativ (Ebene~1). Interpretationen
+stehen im Konjunktiv (Ebene~2). Formale Definitionen legen Sprache fest, keine
+Wahrheit (Ebene~3). Analogien illustrieren (Ebene~4). Hypothesen sind explizit
+als pr\"{u}fbare Vorschl\"{a}ge ausgewiesen (Ebene~5).
 \end{methodennote}
 
 %==============================================================
-\section{Kennzeichnungssystem: Legende aller Dokumenttypen}
+\section{Die R/P-Unterscheidung: Zirkelkontrolle}
 %==============================================================
 
-Zus\"{a}tzlich zur Sprachregel verwendet das OP ein einheitliches System von
-Kennzeichnungen. Die folgende Legende gilt f\"{u}r alle Dokumente.
+Im Hauptdokument OP (Logische Grundlegung) wird zus\"{a}tzlich zwischen
+rekonstruktiven und postulativen Schritten unterschieden.
 
-\begin{table}[h!]
-\centering
-\small
-\begin{tabular}{p{3.8cm}p{9.7cm}}
-  \toprule
-  \textbf{Kennzeichnung} & \textbf{Bedeutung} \\
-  \midrule
-  \textbf{Axiom} &
-    Grundannahme des OP. Wird nicht bewiesen, sondern als Ausgangspunkt gesetzt.
-    Steht im Indikativ. \\[4pt]
-  \textbf{Definition} &
-    Terminologische Festlegung eines Begriffs innerhalb des OP. Keine
-    Wahrheitsaussage \"{u}ber die Natur. \\[4pt]
-  \textbf{Formale Definition / Modell} &
-    Mathematische oder formale Festlegung der Sprache eines Modells. Behauptet
-    weder empirische Wahrheit noch ontologische Identit\"{a}t. Modelle k\"{o}nnen
-    ersetzt oder verallgemeinert werden, ohne den zugrundeliegenden philosophischen
-    Begriff aufzugeben. \\[4pt]
-  \textbf{Proposition / Theorem} &
-    Folgt logisch aus Axiomen und Definitionen. Steht im Indikativ. Der Nachweis
-    ist entweder formal oder als konzeptuelle Herleitung ausgewiesen. \\[4pt]
-  \textbf{Korollar} &
-    Unmittelbare Folgerung aus einer Proposition oder einem Theorem. \\[4pt]
-  \textbf{Postulat} &
-    \"{A}hnlich dem Axiom, aber auf einer nachgeordneten Modulebene. Wird innerhalb
-    eines Moduls als Arbeitsgrundlage gesetzt, ohne vollst\"{a}ndige Ableitung aus
-    den Grundaxiomen des OP. \\[4pt]
-  \textbf{Methodennote} &
-    Erl\"{a}utert den methodischen Status eines Abschnitts, benennt Einschr\"{a}nkungen
-    oder markiert den Realismus-Vorbehalt. \\[4pt]
-  \textbf{Bemerkung} &
-    Philosophische Deutung oder erl\"{a}uternder Kommentar. Keine logische
-    Notwendigkeit. Steht typischerweise im Konjunktiv. \\[4pt]
-  \textbf{Analogie} &
-    Illustratives Hilfsmittel. Eine Analogie erkl\"{a}rt durch \"{A}hnlichkeit,
-    behauptet aber keine Identit\"{a}t. Weder Beweis noch Definition. \\[4pt]
-  \textbf{Hypothese} &
-    Vorschlag, der k\"{u}nftig empirisch oder mathematisch gepr\"{u}ft werden soll.
-    Explizit als solche ausgewiesen. \\[4pt]
-  \textbf{Offene Forschungsfrage} &
-    Noch ungel\"{o}stes Problem des OP oder der PST. Markiert den Stand des
-    Forschungsprogramms ehrlich. \\
-  \bottomrule
-\end{tabular}
-\caption{Legende der Kennzeichnungen im OP-Dokumentensystem.}
-\end{table}
+\begin{konvention}[Rekonstruktiv (R) vs.\ Postulativ (P)]
+\begin{itemize}
+  \item \textbf{(R) Rekonstruktiv:} Beansprucht notwendige Bedingungen des
+        Gegebenen zu benennen. Intersubjektiv angreifbar; durch Gegenargument
+        zur\"{u}ckweisbar. Steht im Indikativ (Ebene~1).
+  \item \textbf{(P) Postulativ:} Ontologische Grundentscheidung, die nicht
+        zwingend aus dem Vorherigen folgt. Gerechtfertigt durch Koh\"{a}renz und
+        erkl\"{a}rende St\"{a}rke, nicht durch Deduktion. Steht im Konjunktiv
+        (Ebene~2).
+\end{itemize}
+Die R/P-Kennzeichnung erscheint in Klammern hinter dem Axiom-Titel,
+z.\,B.\ \texttt{Axiom 1 [Notwendigkeit der Existenz --- Typ (R)]}.
+\end{konvention}
 
-\begin{remark}[Hierarchie der epistemischen Sicherheit]
-Die Kennzeichnungen bilden eine \textbf{Hierarchie der epistemischen Sicherheit}:
-
-\medskip
-\begin{center}
-Axiom $\;\rightarrow\;$ Proposition/Theorem $\;\rightarrow\;$ Postulat
-$\;\rightarrow\;$ Formale Definition/Modell $\;\rightarrow\;$ Bemerkung
-$\;\rightarrow\;$ Analogie $\;\rightarrow\;$ Hypothese
-$\;\rightarrow\;$ Offene Forschungsfrage
-\end{center}
-
-\medskip
-Je weiter rechts, desto mehr Interpretationsspielraum, desto weniger logische
-Notwendigkeit.
+\begin{remark}[R/P als Instrument der Zirkelkontrolle]
+Bei (R)-Schritten ist der transzendentale Zirkel durch Gegenargument
+kontrollierbar. Bei (P)-Schritten ist er durch Koh\"{a}renz eingegrenzt.
+Die vollst\"{a}ndige Aufl\"{o}sung des Zirkels ist nicht m\"{o}glich --- seine
+\emph{Lokalisierung} ist das Ziel dieser Architektur.
 \end{remark}
 
 %==============================================================
 \section{Definition und Modell: Eine wichtige Unterscheidung}
 %==============================================================
 
-Die Unterscheidung zwischen \textbf{Definition} und \textbf{Modell} ist im OP von
-zentraler Bedeutung und verdient einen eigenen Abschnitt.
-
 \begin{konvention}[Definition vs.\ Modell]
-Eine \textbf{Definition} legt fest, was ein Begriff im Rahmen des OP bedeutet. Sie ist
-terminologisch und bleibt stabil, solange der Begriff verwendet wird.
+Eine \textbf{Definition} legt fest, was ein Begriff im OP bedeutet. Sie ist
+terminologisch stabil.
 
-Ein \textbf{Modell} ist eine formale oder mathematische Repr\"{a}sentation eines
-ontologischen Begriffs. Modelle k\"{o}nnen ersetzt, erweitert oder verallgemeinert
-werden, ohne den zugrundeliegenden Begriff aufzugeben. Der Begriff bleibt; das Modell
-ist ein Werkzeug.
+Ein \textbf{Modell} ist eine formale oder mathematische Repr\"{a}sentation
+eines Begriffs. Modelle k\"{o}nnen ersetzt oder verallgemeinert werden, ohne
+den Begriff aufzugeben.
 \end{konvention}
 
-\begin{remark}[Beispiel: Das Fragedifferential]
-Der Begriff \glqq{}Fragedifferential\grqq{} ist eine \textbf{Definition} innerhalb des
-OP: Er bezeichnet die strukturelle Differenz zwischen dem Informationsstand einer
-endlichen Perspektive und dem Gesamtzustand des Feldes.
+\begin{remark}[Beispiel 1: Das Fragedifferential]
+Der Begriff \glqq{}Fragedifferential\grqq{} ist eine \textbf{Definition}:
+strukturelle Differenz einer endlichen Perspektive zum Gesamtfeld.
+Die Formalisierung als $\mathcal{D}(E) := D_{\mathrm{KL}}(Q_E \| P)$
+ist ein \textbf{Modell} --- ein formaler Platzhalter, den die PST pr\"{a}zisieren
+oder ersetzen kann, ohne den Begriff aufzugeben.
+\end{remark}
 
-Die Formalisierung als Kullback-Leibler-Divergenz
-\[
-  \mathcal{D}(E) := D_{\mathrm{KL}}(Q_E \| P)
-\]
-ist ein \textbf{Modell} dieser Definition --- ein formaler Platzhalter, der pr\"{a}zisiert
-werden kann, ohne den Begriff selbst aufzugeben. Sollte die PST eine bessere
-Formalisierung finden, bleibt das Fragedifferential als Begriff erhalten; nur das Modell
-wird ersetzt.
+\begin{remark}[Beispiel 2: Der Attraktor]
+Der Begriff \glqq{}Attraktor\grqq{} ist eine \textbf{Definition}: ein stabiler
+Eigenzustand des Denkfeldes, der seine informationelle Geometrie gegen den
+kontinuierlichen Fluss behauptet. Das Fixpunktmodell $f(x) = x$ ist ein
+\textbf{Modell} dieser Definition --- mathematisch pr\"{a}zise, aber ersetzbar.
+Die PST k\"{o}nnte stattdessen eine andere Formalisierung w\"{a}hlen; der Begriff
+\glqq{}Attraktor\grqq{} bliebe stabil.
 \end{remark}
 
 %==============================================================
 \section{Die Analogie als eigenst\"{a}ndige Kategorie}
 %==============================================================
 
-Analogien spielen im OP eine wichtige und legitime Rolle. Sie machen abstrakte Strukturen
-zug\"{a}nglich, ohne einen Beweis zu ersetzen.
-
 \begin{konvention}[Verwendung von Analogien]
-Eine Analogie wird im OP immer explizit als solche benannt. Formulierungen wie
-\glqq{}analog zu\grqq{}, \glqq{}vergleichbar mit\grqq{} oder \glqq{}funktional
-\"{a}hnlich wie\grqq{} sind verbindlich. Eine Analogie darf niemals ohne diese
-Kennzeichnung als Argument verwendet werden. Analogien sind stets \textbf{heuristisch}:
-Sie illustrieren, ohne zu beweisen.
+Eine Analogie wird immer explizit als solche benannt. Verbindliche
+Formulierungen: \glqq{}analog zu\grqq{}, \glqq{}vergleichbar mit\grqq{},
+\glqq{}funktional \"{a}hnlich wie\grqq{}. Eine Analogie darf niemals ohne
+diese Kennzeichnung als Argument verwendet werden.
+
+Im Text wird eine Analogie durch den Einschub \textbf{[Analogie]} oder
+eine entsprechende Bemerkungsbox kenntlich gemacht.
 \end{konvention}
 
-\begin{remark}[Beispiele f\"{u}r legitime Analogien im OP]
+\begin{remark}[Beispiele legitimer Analogien im OP]
 \begin{itemize}
-  \item \textbf{Solitonen-Analogie} (OAD): Attraktoren verhalten sich \emph{analog zu}
-        selbsterhaltenden Wellenpaketen --- das impliziert keine Behauptung \"{u}ber
-        Wellenphysik im OPP.
-  \item \textbf{Blockuniversum-Analogie} (OPP): Der OPP l\"{a}sst sich konzeptuell
-        \emph{als Verallgemeinerung} des Blockuniversums begreifen --- keine
-        Gleichsetzung mit dem physikalischen Blockuniversum.
-  \item \textbf{KL-Divergenz-Analogie} (EG-1): Das Fragedifferential k\"{o}nnte
-        \emph{analog zur} Kullback-Leibler-Divergenz modelliert werden --- ein formaler
-        Platzhalter, kein abgeschlossenes mathematisches Modell.
+  \item \textbf{Solitonen-Analogie (OAD):} Attraktoren verhalten sich
+        \emph{analog zu} selbsterhaltenden Wellenpaketen --- kein Anspruch
+        auf Wellenphysik im OPP.
+  \item \textbf{Blockuniversum-Analogie (OPP):} Der OPP l\"{a}sst sich
+        konzeptuell \emph{als Verallgemeinerung} des Blockuniversums begreifen
+        --- keine Gleichsetzung mit dem physikalischen Blockuniversum.
+  \item \textbf{KL-Divergenz-Analogie (DFD):} Das Fragedifferential k\"{o}nnte
+        \emph{analog zur} Kullback-Leibler-Divergenz modelliert werden --- ein
+        formaler Platzhalter, kein abgeschlossenes Modell.
 \end{itemize}
 \end{remark}
 
 %==============================================================
-\section{Falsifizierbarkeit und wissenschaftliche Anschlussf\"{a}higkeit}
+\section{Vermeidung vorzeitiger Kontamination}
 %==============================================================
 
-Ein philosophisches Forschungsprogramm, das nie benennt wo seine Annahmen scheitern
-k\"{o}nnten, ist immun gegen Kritik --- aber auch epistemisch uninteressant. Der OP
-w\"{a}hlt bewusst Offenheit.
+\begin{methodennote}[Richtlinie: Ontische Basis vs.\ Emergente Projektionsebene]
+Dies ist eine der wichtigsten methodischen Regeln des OP. Sie verhindert
+einen klassischen Kategorienfehler: das heimliche Einschmuggeln emergenter
+Ph\"{a}nomene in die ontische Basis.
+
+\textbf{Das Problem:} Begriffe wie \emph{Raum}, \emph{Zeit}, \emph{Energie},
+\emph{Entfernung}, \emph{Bewegung}, \emph{n\"{a}her}, \emph{energetisch
+g\"{u}nstig} oder \emph{biologische Symbiose} sind emergente Ph\"{a}nomene.
+Sie entstehen erst durch den Projektionsoperator (DPR) aus dem OPP heraus.
+Werden sie bereits im OPP oder in der OAD als konstituierende Eigenschaften
+verwendet, setzt man die Physik voraus, die man erst erkl\"{a}ren m\"{o}chte.
+
+\textbf{Die Regel:}
+\begin{enumerate}
+  \item Im OPP und in der OAD sind ausschlie\ss{}lich ontische Begriffe
+        erlaubt: \emph{strukturelle Koh\"{a}renz}, \emph{relationale
+        Anschlussfähigkeit}, \emph{Selbstkonsistenz}, \emph{Integrations-stabilit\"{a}t},
+        \emph{topologische Isomorphie}.
+  \item Emergente Begriffe (Raum, Zeit, Energie, Abstand) sind in den
+        Basismodulen nur als explizit gekennzeichnete R\"{u}ckw\"{a}rts-Analogien
+        erlaubt --- also als Verweise \emph{von der projizierten Ebene her}
+        auf das, was sich dort als jener Begriff manifestiert.
+  \item Erst in der DPR (Die Projektive Reduktion) entsteht die Metrik.
+        Erst dort d\"{u}rfen Begriffe wie Raum, Zeit und Energie als
+        emergente Erscheinungsformen beschrieben werden.
+\end{enumerate}
+
+\textbf{Korrekte Formulierung (OPP/OAD):}
+\begin{quote}
+\glqq{}Zwei Attraktoren verbinden sich nicht, weil sie \emph{n\"{a}her}
+beieinander sind, sondern weil sie eine hohe \emph{strukturelle Koh\"{a}renz}
+besitzen.\grqq{}
+\end{quote}
+
+\textbf{Mit R\"{u}ckw\"{a}rts-Analogie (zul\"{a}ssig):}
+\begin{quote}
+\glqq{}Was sich auf der ontischen Ebene des OPP als \emph{strukturelle
+Koh\"{a}renz} darstellt, erscheint in der ph\"{a}nomenalen Projektion
+(Ebene~4, Analogie) als das, was die Physik als \emph{r\"{a}umliche N\"{a}he}
+oder \emph{energetisch g\"{u}nstigen Zustand} bezeichnet.\grqq{}
+\end{quote}
+\end{methodennote}
+
+%==============================================================
+\section{Falsifizierbarkeit und Hypothesen-Template}
+%==============================================================
 
 \begin{konvention}[Benennung von Pr\"{u}fbarkeitsbereichen]
-Jedes Modul des OP, das mathematisch pr\"{a}zisierbare oder empirisch anschlussf\"{a}hige
-Konzepte enth\"{a}lt, soll explizit benennen:
-\begin{enumerate}
-  \item \textbf{Wo} eine k\"{u}nftige mathematische Ausarbeitung ansetzen k\"{o}nnte.
-  \item \textbf{Welche Vorhersagen} der OP machen w\"{u}rde, falls seine Grundannahmen
-        zutreffen.
-  \item \textbf{Welche Befunde} mit den Grundannahmen des OP unvereinbar w\"{a}ren.
-\end{enumerate}
-Diese Punkte werden als \textbf{Hypothesen} oder \textbf{Offene Forschungsfragen}
-gekennzeichnet.
+Jedes Modul, das mathematisch pr\"{a}zisierbare oder empirisch
+anschlussfähige Konzepte enth\"{a}lt, soll explizit benennen:
+(a) wo eine k\"{u}nftige mathematische Ausarbeitung ansetzen k\"{o}nnte,
+(b) welche Vorhersagen der OP machen w\"{u}rde, falls seine Annahmen
+zutreffen, und (c) welche Befunde mit den Grundannahmen unvereinbar w\"{a}ren.
 \end{konvention}
 
-\begin{remark}[Warum Falsifizierbarkeit zum Forschungsprogramm geh\"{o}rt]
-Karl Popper hat gezeigt, dass wissenschaftliche Theorien daran erkennbar sind, dass sie
-scheitern k\"{o}nnen. Der OP ist keine empirische Theorie im Popperschen Sinne --- aber
-er kann Bereiche benennen, in denen seine Konsequenzen mathematisch \"{u}berpr\"{u}fbar
-w\"{a}ren. Das erh\"{o}ht die wissenschaftliche Glaubw\"{u}rdigkeit und schafft die
-Br\"{u}cke zur PST.
+\begin{remark}[Hypothesen-Template]
+Hypothesen im OP folgen diesem schlanken Schema:
 
-Ein Beispiel: Falls der OP zutrifft und Individuation durch ein Fragedifferential
-$\mathcal{D}(E) > 0$ konstituiert wird, w\"{a}re zu erwarten, dass Systeme mit
-messbarer interner Informationsdifferenz gegen\"{u}ber ihrer Umgebung Eigenschaften
-zeigen, die mit dem OP-Begriff von Selbstpr\"{a}senz korrespondieren. Ob und wie das
-empirisch pr\"{u}fbar ist, bleibt eine offene Forschungsfrage der PST.
+\medskip
+\noindent\textbf{Hypothese [Modul, Nummer]:} \textit{Aussage im Konjunktiv.}\\
+\textbf{Erwartete Beobachtung:} \textit{Was w\"{a}re zu messen oder zu zeigen?}\\
+\textbf{M\"{o}gliches Gegenbeispiel:} \textit{Was w\"{u}rde die Hypothese
+widerlegen?}\\
+\textbf{Verweis:} \textit{Welches Modul ist zust\"{a}ndig?}
+
+\medskip
+\textit{Beispiel:}\\
+\textbf{Hypothese [DFD-1]:} Falls das Fragedifferential das Individuationsprinzip
+des OP korrekt beschreibt, w\"{a}re zu erwarten, dass Systeme mit messbarer
+interner Informationsdifferenz gegen\"{u}ber ihrer Umgebung Eigenschaften zeigen,
+die mit dem OP-Begriff von Selbstpr\"{a}senz korrespondieren.\\
+\textbf{Erwartete Beobachtung:} Korrelation zwischen $\mathcal{D}(E) > 0$
+und messbarem Integrationsverhalten.\\
+\textbf{M\"{o}gliches Gegenbeispiel:} Systeme mit hohem $\mathcal{D}(E)$,
+die keinerlei integrative Eigenschaften zeigen.\\
+\textbf{Verweis:} PST, DFD.
 \end{remark}
 
 %==============================================================
 \section{Der Realismus-Vorbehalt}
 %==============================================================
 
-Alle Dokumente des OP tragen einen gemeinsamen \textbf{Realismus-Vorbehalt}, der hier
-einmalig definiert wird.
-
 \begin{konvention}[Realismus-Vorbehalt]
-Der OP ist ein philosophisches Forschungsprogramm. Seine Begriffe, Strukturen und
-Analogien sind konzeptuelle Werkzeuge, keine fertigen physikalischen Theorien. Wo
-mathematische Notation verwendet wird, geschieht dies zur Pr\"{a}zisierung des
-konzeptuellen Rahmens --- nicht als Anspruch auf eine vollst\"{a}ndig ausgearbeitete
-Feldtheorie.
+Der OP ist ein philosophisches Forschungsprogramm, keine fertige physikalische
+Theorie. Mathematische Notation dient der konzeptuellen Pr\"{a}zisierung ---
+nicht als Anspruch auf eine vollst\"{a}ndig ausgearbeitete Feldtheorie.
+Die mathematisch-physikalische Ausarbeitung obliegt der PST. Kein Einzeldokument
+beansprucht, dieses Programm zu ersetzen.
 
-Die mathematisch-physikalische Ausarbeitung obliegt der \textbf{Projektiven
-Strukturtheorie (PST)} als langfristigem interdisziplin\"{a}rem Forschungsprogramm.
-Kein Einzeldokument des OP beansprucht, dieses Programm zu ersetzen oder
-vorwegzunehmen.
+Dokumente verweisen auf diesen Vorbehalt durch den Satz: \glqq{}Es gelten
+die methodologischen Konventionen gem\"{a}\ss{} MKO.\grqq{}
 \end{konvention}
-
-\begin{methodennote}[Konsequenz f\"{u}r alle Dokumente]
-Dokumente des OP, die diesen Realismus-Vorbehalt referenzieren, m\"{u}ssen ihn nicht
-erneut vollst\"{a}ndig ausformulieren. Der Verweis auf MKO gen\"{u}gt. Damit wird
-Wiederholung vermieden, ohne die epistemische Klarheit zu opfern.
-\end{methodennote}
 
 %==============================================================
 \section{Versionierung und Querverweise}
 %==============================================================
 
 \begin{konvention}[Versionierung]
-Jede \"{A}nderung an einem Dokument erh\"{o}ht die Versionsnummer. Kleinere
-Korrekturen erh\"{o}hen die Nachkommastelle (v1.0 $\rightarrow$ v1.1), substanzielle
-Erweiterungen erh\"{o}hen die Hauptnummer (v1.x $\rightarrow$ v2.0).
+Jede \"{A}nderung erh\"{o}ht die Versionsnummer. \textbf{Dokumente behalten
+ihren Namen dauerhaft.} Versionsnummern dokumentieren ausschlie\ss{}lich
+den Entwicklungsstand.
 
-\textbf{Dokumente behalten ihren Namen dauerhaft.} Versionsnummern dokumentieren
-ausschlie\ss{}lich den Entwicklungsstand eines Dokuments --- sie ver\"{a}ndern nicht
-seinen Namen und nicht seine Stellung in der Modularchitektur. Damit bleibt die
-Architektur stabil, auch wenn einzelne Dokumente weiterentwickelt werden.
+Kleinere Korrekturen: v1.0 $\rightarrow$ v1.1.
+Substanzielle Erweiterungen: v1.x $\rightarrow$ v2.0.
 \end{konvention}
 
-\begin{konvention}[Querverweise zwischen Dokumenten]
-Querverweise zwischen Modulen nennen ausschlie\ss{}lich \textbf{K\"{u}rzel und Namen}
-des Zieldokuments --- keine Versionsnummern. Versionsnummern \"{a}ndern sich;
-Dokumentnamen bleiben stabil.
+\begin{konvention}[Querverweise]
+Querverweise nennen ausschlie\ss{}lich K\"{u}rzel und Namen --- keine
+Versionsnummern.
 
-\medskip
-\textit{Korrekt:} \glqq{}Gem\"{a}\ss{} OAD (Ontologische Attraktoren-Dynamik)\ldots\grqq{}\\
+\textit{Korrekt:} \glqq{}Gem\"{a}\ss{} OAD (Ontologische
+Attraktoren-Dynamik)\ldots\grqq{}
+
 \textit{Nicht korrekt:} \glqq{}Gem\"{a}\ss{} OAD v1.1\ldots\grqq{}
 \end{konvention}
 
 %==============================================================
-\section{Die R/P-Unterscheidung im OP}
+\section{Hierarchie der epistemischen Sicherheit}
 %==============================================================
 
-Das Hauptdokument OP (Logische Grundlegung) verwendet eine zus\"{a}tzliche Unterscheidung,
-die \"{u}ber die allgemeine Sprachregel hinausgeht und hier dokumentiert wird.
+Die Kennzeichnungen bilden eine Hierarchie --- von h\"{o}chster logischer
+Bindung zu gr\"{o}\ss{}tem Interpretationsspielraum:
 
-\begin{konvention}[Rekonstruktiv (R) vs.\ Postulativ (P)]
-Im OP werden Grundlegungsschritte nach ihrem methodischen Typ gekennzeichnet:
-
-\begin{itemize}
-  \item \textbf{(R) Rekonstruktiv:} Der Schritt beansprucht, notwendige Bedingungen
-        des Gegebenen zu benennen. Er ist intersubjektiv angreifbar und kann durch
-        Gegenargument zur\"{u}ckgewiesen werden.
-  \item \textbf{(P) Postulativ:} Der Schritt ist eine Grundentscheidung, die das System
-        orientiert, aber nicht aus dem Vorherigen zwingend folgt. Er wird durch
-        Koh\"{a}renz und erkl\"{a}rende St\"{a}rke gerechtfertigt, nicht durch Deduktion.
-\end{itemize}
-
-Diese Unterscheidung ist das prim\"{a}re Instrument der \textbf{Zirkelkontrolle} im OP:
-Sie macht sichtbar, wo der transzendentale Zirkel durch Gegenargument kontrollierbar ist
-(R) und wo er durch Koh\"{a}renz eingegrenzt wird (P).
-\end{konvention}
+\begin{center}
+\small
+Axiom (R)
+$\;\rightarrow\;$ Proposition/Theorem
+$\;\rightarrow\;$ Postulat/Axiom (P)
+$\;\rightarrow\;$ Formale Definition/Modell
+$\;\rightarrow\;$ Bemerkung
+$\;\rightarrow\;$ Analogie
+$\;\rightarrow\;$ Hypothese
+$\;\rightarrow\;$ Offene Forschungsfrage
+\end{center}
 
 %==============================================================
 \section{Offene Erweiterungen}
 %==============================================================
 
-Dieses Dokument ist selbst Teil des offenen Forschungsprogramms. Folgende Erweiterungen
-sind f\"{u}r sp\"{a}tere Versionen vorgesehen:
-
+F\"{u}r sp\"{a}tere Versionen vorgesehen:
 \begin{itemize}
-  \item Aufnahme von Konventionen f\"{u}r den Umgang mit \textbf{Widerspr\"{u}chen
-        zwischen Modulen} --- wie werden Inkonsistenzen dokumentiert und behandelt?
-  \item Pr\"{a}zisierung der Abgrenzung zwischen \textbf{Postulat} und \textbf{Axiom}
-        auf verschiedenen Modulebenen.
-  \item Konventionen f\"{u}r \textbf{empirische Anschlusspunkte} --- Stellen, an denen
+  \item Konventionen f\"{u}r den Umgang mit Widerspr\"{u}chen zwischen Modulen.
+  \item Pr\"{a}zisierung der Abgrenzung Postulat vs.\ Axiom auf verschiedenen
+        Modulebenen.
+  \item Konventionen f\"{u}r empirische Anschlusspunkte --- Stellen, an denen
         der OP prinzipiell mit experimentellen Befunden in Kontakt treten k\"{o}nnte.
-  \item Aufnahme einer Konvention f\"{u}r \textbf{inter-modul\"{a}re Abh\"{a}ngigkeiten}
-        --- welche Dokumente setzen welche anderen voraus?
+  \item Konventionen f\"{u}r inter-modul\"{a}re Abh\"{a}ngigkeiten --- welche
+        Dokumente setzen welche anderen voraus?
 \end{itemize}
 
 \end{document}
-
