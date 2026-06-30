@@ -1,5 +1,7 @@
 TRANSPARENCY.tex
 
+Erklärung zur KI-gestützten Urheberschaft und Offenlegung der Methodik bezüglich "AI-assisted human authorship" und des dialektischen Sparrings.
+
 https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/TRANSPARENCY.tex
 
 
