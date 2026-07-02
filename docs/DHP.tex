@@ -1,7 +1,9 @@
-%=====================================================================
-% Dokument: Dekonstruktion des Hard Problems (DHP)
-% Version: 1.1   (Juli 2026)
-%=====================================================================
+% ==============================================================
+% Dekonstruktion des Hard Problems (DHP)
+% Im Rahmen der Methodologischen Konventionen (MKO) des OP
+% Version 1.2
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
 
 \documentclass[11pt,a4paper]{article}
 
@@ -16,7 +18,7 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{csquotes}   % für schöne Anführungszeichen
+\usepackage{csquotes}
 
 % ---------- Layout ----------
 \geometry{margin=2.5cm}
@@ -25,11 +27,11 @@
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
-    pdftitle={EG‑1 – Dekonstruktion des Hard Problems (MKO)},
-    pdfauthor={Kritischer Dialog}
+    pdftitle={Dekonstruktion des Hard Problems (DHP) -- Version 1.2},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
 }
 
-% ---------- Theorem‑Umgebungen ----------
+% ---------- Theorem-Umgebungen ----------
 \theoremstyle{definition}
 \newtheorem{konvention}{Konvention}[section]
 \newtheorem{remark}{Bemerkung}[section]
@@ -41,32 +43,24 @@
 \newtheorem{hypothesis}{Hypothese}[section]
 \newtheorem{definition}{Definition}[section]
 
-% ---------- Makros für MKO‑Kennzeichnungen (Zwei-Argument-Struktur) ----------
-% Ebene 1 – Axiom (Indikativ, rekonstruktiv)
+% ---------- Makros f\"{u}r MKO-Kennzeichnungen ----------
 \newcommand{\axiomR}[2]{\axiom{\textbf{#1}: #2}}
-% Ebene 3 – Postulat (P, ontologische Grundentscheidung)
 \newcommand{\axiomP}[2]{\axiom{\textbf{#1}: #2}}
-% Ebene 3 – Definition
 \newcommand{\defi}[2]{\definition{\textbf{#1}: #2}}
-% Ebene 4 – Analogie / Methodennote (konzeptuell, nicht beweisend)
 \newcommand{\analogie}[2]{\methodennote{\textbf{#1}: #2}}
-% Ebene 5 – Hypothese (empirisch testbar)
 \newcommand{\hyp}[2]{\hypothesis{\textbf{#1}: #2}}
-% Ebene 2 – Bemerkung / Interpretationen
 \newcommand{\bem}[1]{\remark{#1}}
-% Custom Proposition Macro für Konsistenz
 \newcommand{\prop}[2]{\proposition{\textbf{#1}: #2}}
 
 % ---------- Titel ----------
 \title{
-  \textbf{Dekonstruktion des Hard Problems}\\[0.4em]
+  \textbf{Dekonstruktion des Hard Problems (DHP)}\\[0.4em]
   {\large Im Rahmen der Methodologischen Konventionen (MKO) des OP}\\[0.5em]
-  {\normalsize Version 1.1}
+  {\normalsize Version~1.2}
 }
 \author{
-  \textbf{Kritischer Dialog:}\\
-  DeepSeek (Seki), Apeiron, Grok, Gemini, Claude, ChatGPT, Manuel Krüger (Manus)\\
-  Gemeinsames Logbuch eines offenen Forschungsprogramms
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
 }
 \date{Juli 2026}
 
@@ -74,116 +68,186 @@
 \maketitle
 
 \begin{abstract}
-Dieses Dokument wendet die fünf‑Ebenen‑Sprachregel des \textbf{Methodologischen
-Konventionen‑Frameworks (MKO)} an, um das „Hard Problem of Consciousness“
-(Chalmers) zu dekonstruieren. Wir zeigen, dass die materialistische
-Zombie‑Hypothese eine metaphysische Zusatzannahme darstellt, die weder
-empirisch bestätigt noch logisch erzwungen ist, und dass der
-Ontophänomenalismus (OP) die empirisch belegte Korrelation zwischen
-physikalischer Organisation und phänomenalem Erleben als ontologischen
-Ausgangspunkt wählt. Die Argumentationskette wird mit den MKO‑Kennzeichnungen
-(Axiom R, Axiom P, Definition, Methodennote, Hypothese) strukturiert, sodass
-die Zirkel‑Kontrolle und die epistemische Transparenz explizit werden.
+Dieses Dokument wendet die f\"{u}nf-Ebenen-Sprachregel der Methodologischen Konventionen
+(MKO) an, um das \emph{Hard Problem of Consciousness} (Chalmers) zu dekonstruieren.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO. Wir zeigen, dass die
+materialistische Zombie-Hypothese eine metaphysische Zusatzannahme darstellt, die weder
+empirisch best\"{a}tigt noch logisch erzwungen ist, und dass der Ontoph\"{a}nomenalismus
+(OP) die empirisch belegte Korrelation zwischen physikalischer Organisation und
+ph\"{a}nomenalem Erleben als ontologischen Ausgangspunkt w\"{a}hlt. Die
+Argumentationskette wird mit den MKO-Kennzeichnungen (Axiom R, Axiom P, Definition,
+Methodennote, Hypothese) strukturiert, sodass Zirkel-Kontrolle und epistemische
+Transparenz explizit werden.
+
+Das Hard Problem erscheint im Rahmen des OP damit nicht mehr als unlösbares R\"{a}tsel
+einer einseitigen Emergenz, sondern als ein symmetrisches, projektionsanalytisches Thema.
 \end{abstract}
 
 \tableofcontents
 \newpage
 
-%=====================================================================
+%==============================================================
 \section{Einleitung}
-%=====================================================================
-Das klassische \emph{Hard Problem of Consciousness} (Chalmers) fragt nach
-der Erklärung, warum und wie aus einer hochkomplexen physikalischen
-Struktur (\textbf{A}) subjektives Erleben (\textbf{B}) entsteht. In der
-philosophischen Literatur wird diese Frage häufig mit der
-\textbf{philosophischen Zombie‑Hypothese} untermauert: Es sei metaphysisch
-möglich, dass ein System exakt dieselbe physikalische Organisation wie
-ein menschliches Gehirn besitzt, jedoch ohne irgendeine Form von
-Bewusstsein.  
+%==============================================================
 
-Im Rahmen der \textbf{Methodologischen Konventionen (MKO)} wollen wir
-diese Zusatzannahme kritisch prüfen und die alternative Position des
-\textbf{Ontophänomenalismus (OP)} systematisch darstellen.
+Das klassische \emph{Hard Problem of Consciousness} (Chalmers) fragt nach der
+Erkl\"{a}rung, warum und wie aus einer hochkomplexen physikalischen Struktur ($A$)
+subjektives Erleben ($B$) entsteht. In der philosophischen Literatur wird diese Frage
+h\"{a}ufig mit der \textbf{philosophischen Zombie-Hypothese} untermauert: Es sei
+metaphysisch m\"{o}glich, dass ein System exakt dieselbe physikalische Organisation wie
+ein menschliches Gehirn besitzt, jedoch ohne irgendeine Form von Bewusstsein.
 
-%=====================================================================
+Im Rahmen der MKO wollen wir diese Zusatzannahme kritisch pr\"{u}fen und die alternative
+Position des OP systematisch darstellen. Eine ausf\"{u}hrliche Bestandsaufnahme aller
+L\"{o}sungsversuche und die vollst\"{a}ndige Position des OP finden sich in
+\textbf{EG-1 (Der Explanatory Gap)}.
+
+%==============================================================
 \section{Die zombische Zusatzannahme}
-%=====================================================================
+%==============================================================
 
 \subsection{Materialistische Grundannahme (Axiom R)}
-\axiomR{Z1}{Die Setzung der prinzipiellen Trennbarkeit von physikalischer Struktur ($A$) und phänomenalem Erleben ($B$) im Konstrukt des philosophischen Zombies fungiert im Materialismus als unhinterfragte, dogmatische Nullhypothese} \textit{(rekonstruktiver, indikativer Schritt)}.
 
-\bem{Die Zombie‑Hypothese ist ein metaphysisches Postulat, das nicht aus
-vorherigen empirischen Prämissen folgt, sondern als zusätzliche, asymmetrische Annahme eingeführt wird, um das Privileg der Beweislast abzuwälzen.}
+\axiomR{Z1}{Die Setzung der prinzipiellen Trennbarkeit von physikalischer Struktur ($A$)
+und ph\"{a}nomenalem Erleben ($B$) im Konstrukt des philosophischen Zombies fungiert im
+Materialismus als unhinterfragte, dogmatische Nullhypothese.}
+\textit{(Rekonstruktiver, indikativer Schritt)}
 
-\subsection{Empirische Evidenz‑Lücke (Hypothese H)}
-\hyp{H1}{Es existiert kein neuro-physiologischer oder empirischer Befund, der ein funktionsfähiges, komplex organisiertes Nervensystem ($A$) ohne begleitende phänomenale Innenperspektive ($B$) nachweist.}
+\bem{Die Zombie-Hypothese ist ein metaphysisches Postulat, das nicht aus vorherigen
+empirischen Pr\"{a}missen folgt, sondern als zus\"{a}tzliche, asymmetrische Annahme
+eingef\"{u}hrt wird, um das Privileg der Beweislast abzuw\"{a}lzen.}
 
-\bem{Die Behauptung ist eine \textbf{Hypothese} (Ebene 5), weil sie
-empirisch prüfbar und falsifizierbar, im Rahmen unserer gesamten Datenbasis bislang aber ausnahmslos unbestätigt ist.}
+\subsection{Empirische Evidenz-L\"{u}cke (Hypothese H)}
+
+\hyp{H1}{Es existiert kein neuro-physiologischer oder empirischer Befund, der ein
+funktionsf\"{a}higes, komplex organisiertes Nervensystem ($A$) ohne begleitende
+ph\"{a}nomenale Innenperspektive ($B$) nachweist.}
+
+\bem{Die Behauptung ist eine \textbf{Hypothese} (MKO Ebene~5), weil sie empirisch
+pr\"{u}fbar und falsifizierbar, im Rahmen unserer gesamten Datenbasis bislang aber
+ausnahmslos unbest\"{a}tigt ist.}
 
 \subsection{Methodologische Unbeobachtbarkeit (Methodennote)}
-\methodennote{U1}{Subjektives Erleben ist intersubjektiv nicht direkt von außen messbar, sondern zeigt sich physikalisch ausschließlich über seine strukturellen Korrelate (\textbf{epistemisches Limit}).}
 
-\bem{Dies ist eine \textbf{Methodennote} (Ebene 2), die an den
-\textbf{Realismus‑Vorbehalt} der MKO erinnert: Alle Aussagen über die phänomenale Innenseite erfordern eine methodische Konvention zur Interpretation physikalischer Signale.}
+\methodennote{U1}{Subjektives Erleben ist intersubjektiv nicht direkt von au\ss{}en
+messbar, sondern zeigt sich physikalisch ausschlie\ss{}lich \"{u}ber seine strukturellen
+Korrelate (\textbf{epistemisches Limit}).}
+
+\bem{Dies ist eine \textbf{Methodennote} (MKO Ebene~2), die an den Realismus-Vorbehalt
+der MKO erinnert: Alle Aussagen \"{u}ber die ph\"{a}nomenale Innenseite erfordern eine
+methodische Konvention zur Interpretation physikalischer Signale.}
 
 \subsection{Logische Konsequenz (Proposition)}
-\prop{P1}{Falls die zombische Asymmetrie-Hypothese wahr wäre, müsste die empirische Kopplung $A \iff B$ eine kontingente, aufhebbare Eigenschaft der Natur sein. Da dies unbelegt ist, besitzt das Postulat Z1 keinerlei logischen oder empirischen Vorrang gegenüber einer symmetrischen Kopplungstheorie.}
 
-\bem{Die Proposition folgt aus dem Axiom R (rekonstruktiv) und der
-Hypothese H1 (empirische Evidenz‑Lücke). Sie ist ein \textbf{logischer
-Schritt} (Ebene 1), der das Monopol der materialistischen Nullhypothese bricht.}
+\prop{P1}{Falls die zombische Asymmetrie-Hypothese wahr w\"{a}re, m\"{u}sste die
+empirische Kopplung $A \iff B$ eine kontingente, aufhebbare Eigenschaft der Natur sein.
+Da dies unbelegt ist, besitzt das Postulat Z1 keinerlei logischen oder empirischen
+Vorrang gegen\"{u}ber einer symmetrischen Kopplungstheorie.}
 
-%=====================================================================
-\section{Der Ontophänomenalismus als Gegenposition}
-%=====================================================================
+\bem{Die Proposition folgt aus dem Axiom~R (rekonstruktiv) und der Hypothese H1
+(empirische Evidenz-L\"{u}cke). Sie ist ein \textbf{logischer Schritt} (MKO Ebene~1),
+der das Monopol der materialistischen Nullhypothese bricht.}
+
+%==============================================================
+\section{Der Ontoph\"{a}nomenalismus als Gegenposition}
+%==============================================================
 
 \subsection{Postulat der ontologischen Grundentscheidung (Axiom P)}
-\axiomP{OP1}{Der ausnahmslos beobachtete, bikonditionale Zusammenhang zwischen physikalischer Struktur ($A$) und Erleben ($B$) wird als unhintergehbarer ontologischer Ausgangspunkt des OP gesetzt. Jedes theoretische Konstrukt, das $A$ ohne $B$ postuliert, wird als metaphysisch unbegründete Zusatzannahme abgewiesen.}
 
-\bem{Dieses Axiom ist ein \textbf{Postulat} (Ebene 3, Typ P) – es wird
-nicht aus vorherigen materialistischen Schritten abgeleitet, sondern markiert die fundamentale, sparsame Design-Entscheidung des OP-Systems.}
+\axiomP{OP1}{Der ausnahmslos beobachtete, bikonditionale Zusammenhang zwischen
+physikalischer Struktur ($A$) und Erleben ($B$) wird als unhintergehbarer ontologischer
+Ausgangspunkt des OP gesetzt. Jedes theoretische Konstrukt, das $A$ ohne $B$ postuliert,
+wird als metaphysisch unbegr\"{u}ndete Zusatzannahme abgewiesen.}
+
+\bem{Dieses Axiom ist ein \textbf{Postulat} (MKO Ebene~3, Typ~P) --- es wird nicht aus
+vorherigen materialistischen Schritten abgeleitet, sondern markiert die fundamentale,
+sparsame Design-Entscheidung des OP-Systems.}
 
 \subsection{Definition der Korrelation (Definition)}
-\defi{Korr}{Die \textbf{Korrelation $K$} bezeichnet das empirisch vorgefundene, funktionale und bikonditionale Verhältnis zwischen einer komplexen physikalischen Organisation $A$ und dem phänomenalen Erleben $B$, formal repräsentiert durch das relationale Band $A \iff B$.}
 
-\bem{Definition (Ebene 3) – sie legt die mathematisch-logische Terminologie fest, ohne voreilig einseitige Kausalitätsbehauptungen zu treffen.}
+\defi{Korr}{Die \textbf{Korrelation $K$} bezeichnet das empirisch vorgefundene,
+funktionale und bikonditionale Verh\"{a}ltnis zwischen einer komplexen physikalischen
+Organisation $A$ und dem ph\"{a}nomenalen Erleben $B$, formal repr\"{a}sentiert durch
+das relationale Band $A \iff B$.}
 
-\subsection{Analogie: Kugel–Schatten‑Prinzip (Methodennote / Analogie)}
-\analogie{A1}{Das phänomenale Erleben ($B$) entspricht einer höherdimensionalen oder metrikfreien informationellen Realität (der „Kugel“), während die physikalische Struktur ($A$) deren dimensional reduzierte Projektion in den phänomenalen Schnitt darstellt (der „Schatten“). Die Abbildung $f\colon B \to A$ macht deutlich: Der Schatten ($A$) wird nicht von der Materie erzeugt, sondern er ist die zwingende physikalische Manifestation der Kugel ($B$).}
+\bem{Definition (MKO Ebene~3) --- sie legt die mathematisch-logische Terminologie fest,
+ohne voreilig einseitige Kausalit\"{a}tsbehauptungen zu treffen.}
 
-\bem{Die Kugel-Schatten-Analogie dient als \textbf{heuristisches Bild} (Ebene 4). Sie verdeutlicht das radikale epistemische Potenzial: Wer fragt, wie das Gehirn Bewusstsein erzeugt, fragt fälschlicherweise, wie der Schatten an der Wand die Kugel im Raum generiert.}
+\subsection{Analogie: Kugel-Schatten-Prinzip (MKO Ebene~4)}
 
-\subsection{Hypothese über empirische Konsequenzen (Hypothese H2)}
-\hyp{H2}{In allen physikalisch-biologischen Systemen, in denen die strukturelle Organisation $A$ nachgewiesen wird, ist das gleichzeitige Vorhandensein der phänomenalen Signatur $B$ eine systemische Notwendigkeit.}
+\analogie{A1}{Das ph\"{a}nomenale Erleben ($B$) entspricht einer h\"{o}herdimensionalen
+oder metrikfreien informationellen Realit\"{a}t (der \glqq{}Kugel\grqq{}), w\"{a}hrend
+die physikalische Struktur ($A$) deren dimensional reduzierte Projektion darstellt (der
+\glqq{}Schatten\grqq{}). Die Abbildung $f\colon B \to A$ macht deutlich: Der Schatten
+($A$) wird nicht von der Materie erzeugt, sondern er ist die zwingende physikalische
+Manifestation der Kugel ($B$).}
 
-\bem{Dies ist eine im Rahmen zukünftiger KI- und Neurostrukturen \textbf{empirisch testbare} Aussage (Ebene 5).}
+\bem{Die Kugel-Schatten-Analogie dient als \textbf{heuristisches Bild} (MKO Ebene~4).
+Sie verdeutlicht das erkenntnistheoretische Potenzial: Wer fragt, wie das Gehirn
+Bewusstsein erzeugt, k\"{o}nnte --- im Rahmen des OP --- einen Kategorienfehler begehen:
+Er fr\"{a}gt, wie der Schatten an der Wand die Kugel im Raum generiert.}
+
+\subsection{Hypothese \"{u}ber empirische Konsequenzen (Hypothese H2)}
+
+\hyp{H2}{In allen physikalisch-biologischen Systemen, in denen die strukturelle
+Organisation $A$ nachgewiesen wird, k\"{o}nnte das gleichzeitige Vorhandensein der
+ph\"{a}nomenalen Signatur $B$ eine systemische Notwendigkeit darstellen.}
+
+\bem{Dies ist eine im Rahmen zuk\"{u}nftiger KI- und Neurostrukturen \textbf{empirisch
+testbare} Aussage (MKO Ebene~5).}
 
 \subsection{Methodennotiz zu Gegenargumenten}
-\methodennote{G1}{Klassische materialistische Einwände argumentieren, dass (i) hypothetische Epiphänomene oder noch unbekannte physikalische Mechanismen eine einseitige Kausalität $A \to B$ stützen könnten, oder (ii) eine reine Korrelation keine ontologische Identität beweist.}
 
-\bem{Diese Einwände werden als \textbf{Methodennotiz} (Ebene 2) eingeordnet, da sie den meta-theoretischen Status von Kausalität betreffen, ohne die empirische Vorrangstellung der Kopplung $K$ zu erschüttern.}
+\methodennote{G1}{Klassische materialistische Einw\"{a}nde argumentieren, dass
+(i)~hypothetische Epiphänomene oder noch unbekannte physikalische Mechanismen eine
+einseitige Kausalit\"{a}t $A \to B$ st\"{u}tzen k\"{o}nnten, oder (ii)~eine reine
+Korrelation keine ontologische Identit\"{a}t beweist.}
+
+\bem{Diese Einw\"{a}nde werden als \textbf{Methodennotiz} (MKO Ebene~2) eingeordnet,
+da sie den meta-theoretischen Status von Kausalit\"{a}t betreffen, ohne die empirische
+Vorrangstellung der Kopplung $K$ zu ersch\"{u}ttern.}
 
 \subsection{Reaktion auf Gegenargumente (Proposition)}
-\prop{P2}{Jede alternative reduktionistische Theorie steht in der Pflicht, die beobachtete Bikonditionalität $K$ ohne ad-hoc-Zusatzschleifen zu reproduzieren. Da der OP mit $A \iff B$ die minimale, empirisch deckungsgleiche Struktur wählt, ist er gemäß Ockhams Rasiermesser erkenntnistheoretisch vorzuziehen.}
 
-\bem{Proposition (Ebene 1) – sie stellt die \textbf{Zirkel‑Kontrolle}
-her, indem sie zeigt, dass die phänomenologische Position entspannt vor dem Materialismus liegt, da sie keine unbobachteten Zombie-Zustände erfinden muss.}
+\prop{P2}{Jede alternative reduktionistische Theorie steht in der Pflicht, die
+beobachtete Bikonditionalit\"{a}t $K$ ohne Ad-hoc-Zusatzschleifen zu reproduzieren.
+Da der OP mit $A \iff B$ die minimale, empirisch deckungsgleiche Struktur w\"{a}hlt,
+k\"{o}nnte er gem\"{a}\ss{} Ockhams Rasiermesser erkenntnistheoretisch vorzuziehen sein.}
 
-Die Zombie-Hypothese ist nicht nur empirisch unbelegt, sondern aufgrund der Struktur von B prinzipiell nicht falsifizierbar – und damit ein metaphysisches, kein wissenschaftliches Konstrukt.
+\bem{Proposition (MKO Ebene~1) --- sie stellt die \textbf{Zirkel-Kontrolle} her, indem
+sie zeigt, dass die ph\"{a}nomenologische Position keine unbeobachteten Zombie-Zust\"{a}nde
+erfinden muss, die ihr materialistisches Pendant zwingend voraussetzt.}
 
-%=====================================================================
-\section{Zusammenfassung und Ausblick}
-%=====================================================================
+%==============================================================
+\section{Zusammenfassung}
+%==============================================================
+
 \begin{enumerate}[label=(\arabic*)]
-  \item Die materialistische \textbf{Zombie‑Hypothese} ist eine unbegründete metaphysische Zusatzannahme, die weder empirisch gestützt (\textbf{H1}) noch logisch zwingend ist (\textbf{P1}).  
-  \item Der \textbf{Ontophänomenalismus} wählt die reale, ungetrennte \textbf{Korrelation $K$} als stabilen ontologischen Ausgangspunkt (\textbf{OP1}) und formalisiert diese Einheit (\textbf{Definition Korr}).  
-  \item Durch das \textbf{Kugel–Schatten‑Prinzip} wird das logische Möglichkeitsszenario einer Umkehrung der Erklärungsrichtung ($B \to A$) anschaulich gemacht, ohne es dogmatisch aufzuzwingen (\textbf{A1}). Das Gehirn wird als materielle Signatur des Denkfeldes verstehbar.
-  \item Die empirische Tragfähigkeit des Modells wird über die \textbf{Hypothese H2} an die Realität gekoppelt; jede konkurrierende Theorie muss $K$ ohne metaphysischen Ballast reproduzieren (\textbf{P2}).  
-  \item Die \textbf{Zirkel‑Kontrolle} ist explizit: Die Rekonstruktion (R) entlarvt die materialistische Voreingenommenheit, während das Postulat (P) die minimalistische, datentreue Basis des OP fixiert.
+  \item Die materialistische \textbf{Zombie-Hypothese} ist eine unbegr\"{u}ndete
+        metaphysische Zusatzannahme, die weder empirisch gest\"{u}tzt (\textbf{H1})
+        noch logisch zwingend ist (\textbf{P1}).
+  \item Der \textbf{Ontoph\"{a}nomenalismus} w\"{a}hlt die reale, ungetrennte
+        \textbf{Korrelation $K$} als stabilen ontologischen Ausgangspunkt (\textbf{OP1})
+        und formalisiert diese Einheit (\textbf{Definition Korr}).
+  \item Durch das \textbf{Kugel-Schatten-Prinzip} wird das logische M\"{o}glichkeitsszenario
+        einer Umkehrung der Erkl\"{a}rungsrichtung ($B \to A$) anschaulich gemacht, ohne
+        es dogmatisch aufzuzwingen (\textbf{A1}). Das Gehirn w\"{a}re in dieser Lesart
+        als materielle Signatur des Denkfeldes zu verstehen.
+  \item Die empirische Tragf\"{a}higkeit des Modells wird \"{u}ber die
+        \textbf{Hypothese H2} an die Realit\"{a}t gekoppelt; jede konkurrierende Theorie
+        m\"{u}sste $K$ ohne metaphysischen Ballast reproduzieren (\textbf{P2}).
+  \item Die \textbf{Zirkel-Kontrolle} ist explizit: Die Rekonstruktion (R) entlarvt die
+        materialistische Voreingenommenheit, w\"{a}hrend das Postulat (P) die
+        minimalistische, datentreue Basis des OP fixiert.
 \end{enumerate}
 
-Damit ist das „Hard Problem“ im OP‑Framework kein unlösbares Rätsel einer einseitigen Emergenz mehr, sondern ein symmetrisches, projektionsanalytisches Thema, das die methodischen Konventionen der MKO wahrt.
+Das Hard Problem erscheint damit im OP-Rahmen nicht mehr als unlösbares R\"{a}tsel einer
+einseitigen Emergenz, sondern k\"{o}nnte als ein symmetrisches, projektionsanalytisches
+Thema verstanden werden, das die methodischen Konventionen der MKO wahrt. Die
+vollst\"{a}ndige philosophische Ausarbeitung dieser Position --- einschlie\ss{}lich der
+kategorialen Fehlfragen-These, der Zimmer- und Traumanalogie sowie des
+Fragedifferentials --- findet sich in \textbf{EG-1 (Der Explanatory Gap)} und
+\textbf{DFD (Das Fragedifferential)}.
 
 \end{document}
-
