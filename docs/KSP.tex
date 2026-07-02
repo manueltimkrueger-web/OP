@@ -1,0 +1,265 @@
+%=====================================================================
+% Dokument: EG-1 – Kugel-Schatten-Prinzip (MKO-konform)
+% Version: 1.0   (Juni 2026)
+%=====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{underscore} % FIX: Erlaubt Unterstriche im Dateinamen (Jobname) ohne Absturz
+\usepackage{hyperref}
+\usepackage{csquotes}   % schöne Anführungszeichen
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={EG-1 – Kugel-Schatten-Prinzip (MKO)},
+    pdfauthor={Kritischer Dialog}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{definition}
+\newtheorem{konvention}{Konvention}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{plain}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{hypothesis}{Hypothese}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Kugel-Schatten-Prinzip}\\[0.4em]
+  {\large Formalisierung der Analogie im Rahmen der MKO}\\[0.5em]
+  {\normalsize Version 1.0}
+}
+\author{
+  \textbf{Kritischer Dialog:}\\
+  DeepSeek (Seki), Apeiron, Grok, Gemini, Claude, ChatGPT, Manus\\
+  Gemeinsames Logbuch eines offenen Forschungsprogramms
+}
+\date{Juni 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Wir entwickeln die \textbf{Kugel-Schatten-Analogie} – das zentrale Bild des
+Ontophänomenalismus (OP) – zu einer formalen mathematischen Struktur.
+Dabei wird die phänomenale Grundstruktur $B$ als „Kugel“ $\mathcal{K}$ und
+die physikalische Manifestation $A$ als „Schatten“ $\mathcal{S}$ dargestellt.
+Durch die Einführung eines \textbf{Projektionsoperators} $P\colon\mathcal{K}\to\mathcal{S}$
+zeigen wir, dass das OP-Framework die fünf-Ebenen-Sprachregel des
+\textbf{Methodologischen Konventionen-Frameworks (MKO)} einhält und die
+Zirkel-Kontrolle transparent macht.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%=====================================================================
+\section{Einleitung}
+%=====================================================================
+Das \emph{Hard Problem of Consciousness} wird im OP durch das Bild
+der \textbf{Kugel-Schatten-Relation} erklärt: das phänomenale Erleben ist die
+Kugel, die physikalische Welt ihr Schatten. Im Folgenden wird diese
+Analogie in mathematische Formeln überführt, wobei jede Aussage nach den
+MKO-Regeln (5 Ebenen, Kennzeichnungen) gekennzeichnet wird.
+
+%=====================================================================
+\section{Grundlegende Begriffe}
+%=====================================================================
+
+\subsection{Phänomenale Grundstruktur (Kugel)}
+\begin{definition}[Kugel]
+\textbf{Kugel $\mathcal{K}$}: Der ontologische Grundbegriff des OP,
+der das gesamte, unveränderliche Feld des bewussten Erlebens
+(z.\,B. das „Ur-Bewusstsein“) bezeichnet. Sie ist ein topologisch
+kompaktes, nicht-diskretes Hilbert-ähnliches Objekt mit innerer
+Selbst-Referenz.
+\end{definition}
+
+\begin{remark}
+Ebene 3 – Definition.
+\end{remark}
+
+\subsection{Physikalische Manifestation (Schatten)}
+\begin{definition}[Schatten]
+\textbf{Schatten $\mathcal{S}$}: Das physikalische, messbare
+System (z.\,B. das Gehirn, neuronale Netze, makroskopische Felder),
+das aus der Kugel hervorgeht. Es ist ein Banach-Raum, dessen Elemente
+durch experimentelle Messgrößen (EEG-Signale, fMRT, etc.) repräsentiert
+werden können.
+\end{definition}
+
+\begin{remark}
+Ebene 3 – Definition.
+\end{remark}
+
+\subsection{Projektionsoperator}
+\begin{definition}[Projektionsoperator]
+\textbf{Projektionsoperator $P$}: Eine lineare Abbildung
+\[
+   P\colon\mathcal{K}\longrightarrow\mathcal{S}
+\]
+mit den Eigenschaften
+\[
+   P^{2}=P\qquad\text{(Idempotenz)}\tag{1}
+\]
+\[
+   \ker P\neq\{0\}\qquad\text{(nicht-injektiv)}\tag{2}
+\]
+\end{definition}
+
+\begin{remark}
+Ebene 3 – Definition.
+\end{remark}
+
+%=====================================================================
+\section{Mathematische Ausarbeitung der Analogie}
+%=====================================================================
+
+\subsection{Geometrische Intuition}
+\begin{methodennote}[A1]
+Stellen wir uns $\mathcal{K}$ als eine dreidimensionale Kugel in
+$\mathbb{R}^{3}$ vor. Die Projektion $P$ ist das orthogonale
+Abbilden auf eine zweidimensionale Ebene $\mathcal{S}$ (der „Boden“). Jeder
+Punkt $x\in\mathcal{K}$ besitzt ein Bild $Px\in\mathcal{S}$, das wir als
+\textbf{Schatten} bezeichnen. Da $P$ nicht-injektiv ist, besitzen
+unterschiedliche Punkte von $\mathcal{K}$ denselben Schatten – das erklärt,
+warum unterschiedliche innerweltliche Zustände (z.\,B. unterschiedliche Qualia)
+auf das gleiche physikalische Messsignal reduzieren können.
+\end{methodennote}
+
+\begin{remark}
+Ebene 4 – Analogie.
+\end{remark}
+
+\subsection{Formale Eigenschaften}
+\begin{itemize}
+  \item \textbf{Idempotenz (1)}: $P$ ist ein Projektor; eine wiederholte
+        Anwendung ändert das Ergebnis nicht mehr. In physikalischen
+        Begriffen bedeutet das, dass das physikalische System ein
+        \emph{stabiler} Ausdruck der phänomenalen Struktur ist.
+  \item \textbf{Nicht-Injektivität (2)}: $\dim\ker P>0$; es gibt
+        nicht-triviale Subräume von $\mathcal{K}$, die denselben Schatten
+        erzeugen. Das ist das mathematische Pendant zur \textbf{Mensch-Schatten-Mehrdeutigkeit}
+        (verschiedene innere Zustände $\rightarrow$ identische neuronale Aktivität).
+  \item \textbf{Bild von $P$}: $\operatorname{im}P=\mathcal{S}$ ist ein
+        abgeschlossener Unterraum von $\mathcal{S}$. Damit ist jede
+        physikalische Messgröße ein \emph{Projektionsresultat} aus
+        $\mathcal{K}$.
+\end{itemize}
+
+\begin{remark}
+Ebene 2 – Bemerkung zu den formalen Eigenschaften.
+\end{remark}
+
+\subsection{Kausal-logische Relation}
+\begin{axiom}[R1]
+\textbf{Kausalität umgekehrt}: Aus $P(x)=y$ folgt \emph{logisch},
+dass $y$ ein Schatten von $x$ ist, nicht umgekehrt. Formal:
+\[
+   \forall x\in\mathcal{K}\;\exists y\in\mathcal{S}\;(y=P(x))
+   \;\Longrightarrow\;
+   \forall y\in\mathcal{S}\;\exists x\in\mathcal{K}\;(y=P(x)).
+\]
+\end{axiom}
+
+\begin{remark}
+Ebene 1 – Rekonstruktives Axiom (R).
+\end{remark}
+
+\subsection{Postulat der ontologischen Grundentscheidung}
+\begin{axiom}[P1]
+\textbf{Ontologisches Postulat}: Das \textbf{Kugel-Schatten-Prinzip}
+sei die \emph{grundlegende} Relation zwischen phänomenaler
+Existenz und physikalischer Manifestation. Jede alternative
+Theorie, die $A$ ohne $B$ zulässt, ist eine metaphysische Zusatzannahme.
+\end{axiom}
+
+\begin{remark}
+Ebene 3 – Postulat (P).
+\end{remark}
+
+\subsection{Hypothese zur Empirischen Testbarkeit}
+\begin{hypothesis}[H1]
+\textbf{Empirische Hypothese}: Für jedes messbare physikalische
+System $y\in\mathcal{S}$ gibt es mindestens ein nicht-trivales
+phänomenales Element $x\in\mathcal{K}$ mit $P(x)=y$; umgekehrt lässt
+sich jedes $x\in\mathcal{K}$ eindeutig einem $y\in\mathcal{S}$ zuordnen.
+\end{hypothesis}
+
+\begin{remark}
+Ebene 5 – Hypothese (testbar).
+\end{remark}
+
+\subsection{Methodennotiz zu Gegenargumenten}
+\begin{methodennote}[G1]
+\textbf{Mögliche Gegenargumente}:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Korrelation $\neq$ Kausalität}: Die Projektion $P$ ist
+        nur ein \emph{mathematisches Abbilden}, kein kausaler
+        Mechanismus.
+  \item \textbf{Verborgene physikalische Mechanismen}: Es könnte
+        Systeme geben, die $A$ besitzen, ohne dass ein $x\in\mathcal{K}$
+        existiert.
+\end{enumerate}
+\end{methodennote}
+
+\begin{remark}
+Ebene 2 – Methodennotiz.
+\end{remark}
+
+\subsection{Reaktion auf Gegenargumenten (Proposition)}
+\begin{proposition}[P2]
+\textbf{Reaktion}: Jede alternative Theorie muss ein
+\emph{Projektionsschema} $P'$ besitzen, das die Eigenschaften (1)–(2)
+erfüllt und die empirische Hypothese $H1$ reproduziert. Fehlt ein
+solches $P'$, bleibt die Theorie eine metaphysische Zusatzannahme.
+\end{proposition}
+
+\begin{remark}
+Ebene 1 – Proposition (logische Konsequenz).
+\end{remark}
+
+%=====================================================================
+\section{Zusammenfassung}
+%=====================================================================
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Kugel $\mathcal{K}$} und \textbf{Schatten $\mathcal{S}$}
+        sind formal definierte Strukturen (Definitionen K1, S1).
+  \item \textbf{Projektionsoperator $P$} verbindet beide Räume und
+        erfüllt Idempotenz und Nicht-Injektivität (Definition P1, Formeln 1–2).
+  \item \textbf{Rekonstruktives Axiom R1} stellt die logische Richtung
+        $B\to A$ (Kugel $\rightarrow$ Schatten) klar.
+  \item \textbf{Postulat P1} wählt diese Relation als ontologischen
+        Ausgangspunkt des OP.
+  \item \textbf{Hypothese H1} macht die Aussage empirisch prüfbar.
+  \item \textbf{Methodennotiz G1} und \textbf{Proposition P2} zeigen,
+        wie mögliche Gegenargumente in das MKO-Framework eingebettet
+        und durch die Zirkel-Kontrolle adressiert werden.
+\end{enumerate}
+
+Damit ist das \textbf{Kugel-Schatten-Prinzip} nicht mehr nur ein Bild,
+sondern ein formal definiertes, testbares Gerüst, das die
+\textbf{Methodologischen Konventionen (MKO)} vollständig respektiert.
+
+\bigskip
+\end{document}
+
