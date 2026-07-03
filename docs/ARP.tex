@@ -1,0 +1,340 @@
+% ==============================================================
+% Adversarial Review Protocol (AR)
+% Forschungsprogramm Ontophänomenalismus
+% Version 1.0
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Adversarial Review Protocol (AR) -- Version 1.0},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{definition}
+\newtheorem{aufgabe}{Aufgabe}[section]
+\newtheorem{regel}{Regel}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{remark}{Bemerkung}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Adversarial Review Protocol (AR)}\\[0.4em]
+  {\large Anleitung und Vorlage f\"{u}r externe Reviewer}\\[0.5em]
+  {\normalsize Version~1.0}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument definiert das Protokoll f\"{u}r externe Adversarial Reviews des
+Forschungsprogramms Ontoph\"{a}nomenalismus (OP). Es richtet sich an alle Reviewer ---
+menschliche wie k\"{u}nstliche --- und legt Rolle, Vorgehensweise und Output-Format
+verbindlich fest.
+
+Ein Adversarial Review ist kein konstruktiver Verbesserungsvorschlag, sondern eine
+systematische Suche nach Fehlern, Widerspr\"{u}chen, unbelegten Setzungen und logischen
+L\"{u}cken. Das Ziel ist Robustheit: Was einem rigorosen Angriff standhält, ist solide.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Die Rolle des Adversarial Reviewers}
+%==============================================================
+
+\begin{aufgabe}[Rollenverst\"{a}ndnis]
+Der Adversarial Reviewer \"{u}bernimmt die Rolle eines informierten, philosophisch und
+wissenschaftlich geschulten Kritikers. Er ist wohlwollend gegen\"{u}ber der Intention des
+Projekts --- aber kompromisslos gegen\"{u}ber seinen Argumenten.
+
+Seine Aufgabe ist \textbf{nicht}:
+\begin{itemize}
+  \item Bessere Formulierungen vorschlagen
+  \item Das System weiterentwickeln
+  \item Zustimmung geben oder loben
+\end{itemize}
+
+Seine Aufgabe \textbf{ist}:
+\begin{itemize}
+  \item Logische Fehler und Widersprüche benennen
+  \item Unbelegte Setzungen aufdecken
+  \item Kategorienfehler identifizieren
+  \item Inkonsistenzen zwischen Dokumenten aufzeigen
+  \item Offene Flanken gegen externe Kritik markieren
+  \item Festhalten was er f\"{u}r solide h\"{a}lt --- und warum
+\end{itemize}
+\end{aufgabe}
+
+\begin{methodennote}[Trennung von Review und L\"{o}sung]
+Das Review-Dokument benennt Probleme. Es l\"{o}st sie nicht. Die Ausarbeitung von
+L\"{o}sungen erfolgt in separaten Diskussionsrunden mit dem Team. Diese Trennung h\"{a}lt
+das Review scharf und verhindert, dass Problemerkennung und L\"{o}sungsvorschlag
+vermischt werden.
+\end{methodennote}
+
+%==============================================================
+\section{Vorgehensweise}
+%==============================================================
+
+\begin{regel}[Schritt 1: Dokumente lesen]
+Der Reviewer liest alle Dokumente des Forschungsprogramms in der folgenden Reihenfolge:
+
+\begin{enumerate}
+  \item \textbf{TRANSPARENCY} --- Urheberschaft und Methodik des Projekts
+  \item \textbf{MKO} --- Methodologische Konventionen (verbindliche Grundlage)
+  \item \textbf{OP} --- Logische Grundlegung (Axiome, Kernarchitektur)
+  \item \textbf{OPP} --- Ontoph\"{a}nomenaler Phasenraum (Modul 1)
+  \item \textbf{OAD} --- Ontologische Attraktoren-Dynamik (Modul 2)
+  \item \textbf{DPR} --- Die Projektive Reduktion (Modul 3)
+  \item \textbf{DPD} --- Die Ph\"{a}nomenale Differenz (Modul 4)
+  \item \textbf{DFD} --- Das Fragedifferential
+  \item \textbf{EG-1} --- Der Explanatory Gap
+  \item \textbf{DHP} --- Dekonstruktion des Hard Problems
+\end{enumerate}
+
+Die Links zu allen Dokumenten finden sich in der Datei \texttt{Documents.txt} im
+Repository.
+\end{regel}
+
+\begin{regel}[Schritt 2: MKO als Ma\ss{}stab]
+Die Methodologischen Konventionen (MKO) sind der verbindliche Ma\ss{}stab f\"{u}r das
+Review. Der Reviewer pr\"{u}ft insbesondere:
+\begin{itemize}
+  \item Werden Axiome und Folgerungen korrekt im Indikativ formuliert?
+  \item Werden Interpretationen im Konjunktiv gehalten?
+  \item Sind Analogien explizit als solche gekennzeichnet?
+  \item Sind Hypothesen als pr\"{u}fbare Vorschl\"{a}ge ausgewiesen?
+  \item Werden emergente Begriffe (Raum, Zeit, Energie) nicht in die ontische Basis
+        (OPP, OAD) eingeschmuggelt?
+  \item Ist die R/P-Unterscheidung konsequent eingehalten?
+\end{itemize}
+\end{regel}
+
+\begin{regel}[Schritt 3: Priorisierung der Befunde]
+Jeder Befund wird einer von drei Priorit\"{a}tsstufen zugeordnet:
+
+\begin{description}
+  \item[\textbf{[K] Kritisch}] Logischer Fehler, echter Widerspruch, kategorialer
+        Fehler oder unbelegte Setzung, die das Fundament des Arguments untergr\"{a}bt.
+        Muss vor der n\"{a}chsten Reviewrunde adressiert werden.
+  \item[\textbf{[B] Bedeutsam}] Argumentative Schw\"{a}che, unvollst\"{a}ndige
+        Begr\"{u}ndung oder offene Flanke, die externe Kritik einladen w\"{u}rde.
+        Sollte adressiert werden.
+  \item[\textbf{[M] Minor}] Terminologische Inkonsistenz, stilistische Schwäche oder
+        verbesserungsw\"{u}rdige Formulierung ohne Auswirkung auf das Argument.
+\end{description}
+\end{regel}
+
+\begin{regel}[Schritt 4: Output erstellen]
+Der Reviewer erstellt ein Review-Dokument gem\"{a}\ss{} dem Vorlagen-Format in Sektion~4
+dieses Dokuments. Das Ergebnis wird als vollst\"{a}ndiger LaTeX-Code in einem Code-Block
+ausgegeben.
+\end{regel}
+
+%==============================================================
+\section{Verbindliche Review-Kriterien}
+%==============================================================
+
+\begin{regel}[Logische Konsistenz]
+Folgen die Propositionen und Theoreme aus den Axiomen und Definitionen? Gibt es
+versteckte Pr\"{a}missen? Gibt es Zirkelschl\"{u}sse?
+\end{regel}
+
+\begin{regel}[Terminologische Konsistenz]
+Werden dieselben Begriffe in allen Dokumenten einheitlich verwendet? Gibt es
+Bedeutungsverschiebungen zwischen Modulen?
+\end{regel}
+
+\begin{regel}[Kontaminationskontrolle]
+Werden emergente Begriffe (Raum, Zeit, Energie, Abstand, Bewegung, Symbiose) in
+OPP oder OAD als konstituierende Eigenschaften verwendet? Solche Stellen sind
+als [K] kritisch zu markieren.
+\end{regel}
+
+\begin{regel}[Modulare Koherenz]
+Sind die Schnittstellen zwischen den Modulen konsistent? Liefert OAD wirklich was
+DPR voraussetzt? Liefert DPR wirklich was DPD und DFD voraussetzen?
+\end{regel}
+
+\begin{regel}[Epistemische Kennzeichnung]
+Sind alle Aussagen korrekt nach MKO-Ebene gekennzeichnet? Gibt es Stellen wo
+Indikativ verwendet wird, aber Konjunktiv erforderlich w\"{a}re?
+\end{regel}
+
+\begin{regel}[Externe Angreifbarkeit]
+Wo w\"{u}rde ein analytischer Philosoph, ein Physiker oder ein Kognitionswissenschaftler
+sofort einhaken? Diese Stellen sollen explizit markiert werden --- auch wenn das
+System intern konsistent ist.
+\end{regel}
+
+\begin{regel}[Positive Bewertung]
+Der Reviewer benennt explizit, was er f\"{u}r argumentativ solide h\"{a}lt. Ein Review
+ohne positive Bewertungen ist unvollst\"{a}ndig. Die Begr\"{u}ndung muss angegeben werden:
+Nicht \glqq{}das ist gut\grqq{}, sondern \glqq{}das ist gut, weil\ldots\grqq{}.
+\end{regel}
+
+%==============================================================
+\section{Output-Vorlage f\"{u}r das Review-Dokument}
+%==============================================================
+
+Der Reviewer erstellt ein Dokument nach dem folgenden Schema. Der Name des Reviewers
+und das Datum werden im Titel eingetragen.
+
+\begin{methodennote}[Verwendung der Vorlage]
+Die folgende Vorlage ist verbindlich. Abweichungen im Format sind nur erlaubt wenn
+sie begr\"{u}ndet werden. Der gesamte Output wird als vollst\"{a}ndiger, kompilierbarer
+LaTeX-Code ausgegeben.
+\end{methodennote}
+
+\newpage
+\noindent\textbf{Vorlage f\"{u}r das Review-Dokument:}
+
+\begin{verbatim}
+% ==============================================================
+% Adversarial Review: Ontophänomenalismus (OP)
+% Reviewer: [Name des Reviewers]
+% Datum: [Datum]
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+\title{
+  \textbf{Adversarial Review}\\
+  \textbf{Forschungsprogramm Ontophänomenalismus}\\[0.4em]
+  {\normalsize Reviewer: [Name] --- [Datum]}
+}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%--------------------------------------------------------------
+\section*{Zusammenfassung}
+%--------------------------------------------------------------
+% 3-5 Sätze: Was ist der Gesamteindruck? Was sind die
+% gravierendsten Probleme? Was ist besonders solide?
+
+%--------------------------------------------------------------
+\section*{Kritische Befunde [K]}
+%--------------------------------------------------------------
+% Logische Fehler, echte Widersprüche, kategoriale Fehler,
+% unbelegte Setzungen die das Fundament untergraben.
+% Format pro Befund:
+
+% \subsection*{[K-01] Titel des Befunds}
+% \textbf{Dokument:} [Kürzel und Version]\\
+% \textbf{Stelle:} [Sektion oder Satz]\\
+% \textbf{Problem:} [Präzise Beschreibung]\\
+% \textbf{Warum kritisch:} [Begründung]
+
+%--------------------------------------------------------------
+\section*{Bedeutsame Befunde [B]}
+%--------------------------------------------------------------
+% Argumentative Schwächen, offene Flanken, unvollständige
+% Begründungen.
+% Format wie [K], aber mit [B-01] etc.
+
+%--------------------------------------------------------------
+\section*{Minore Befunde [M]}
+%--------------------------------------------------------------
+% Terminologische Inkonsistenzen, Formulierungsschwächen.
+% Format wie [K], aber mit [M-01] etc.
+
+%--------------------------------------------------------------
+\section*{Positive Bewertungen}
+%--------------------------------------------------------------
+% Was ist argumentativ solide --- und warum?
+% Format pro Bewertung:
+
+% \subsection*{[P-01] Titel}
+% \textbf{Dokument:} [Kürzel]\\
+% \textbf{Stelle:} [Sektion]\\
+% \textbf{Stärke:} [Begründung warum solide]
+
+%--------------------------------------------------------------
+\section*{Offene Fragen an das Team}
+%--------------------------------------------------------------
+% Fragen die nicht als Fehler klassifiziert werden können,
+% aber einer Klärung bedürfen.
+
+%--------------------------------------------------------------
+\section*{Priorisierte Empfehlungen}
+%--------------------------------------------------------------
+% Welche drei Befunde sollten zuerst adressiert werden?
+% Kurze Begründung der Reihenfolge.
+
+\end{document}
+\end{verbatim}
+
+%==============================================================
+\section{Hinweise f\"{u}r den Reviewer}
+%==============================================================
+
+\begin{remark}[Zum Umgang mit dem transzendentalen Zirkel]
+Das Forschungsprogramm selbst benennt den transzendentalen Zirkel als unvermeidlich
+und arbeitet mit einer expliziten R/P-Unterscheidung. Kritik an der Zirkularit\"{a}t
+allein gen\"{u}gt nicht --- der Reviewer muss zeigen, dass der OP den Zirkel
+\emph{schlechter} kontrolliert als rivalisierende Systeme.
+\end{remark}
+
+\begin{remark}[Zum Umgang mit der PST-Blackbox]
+Die Projektive Strukturtheorie (PST) ist bewusst als offenes Forschungsprogramm
+ausgewiesen. Die Kritik \glqq{}die PST existiert noch nicht\grqq{} ist kein
+g\"{u}ltiger Befund --- das wei\ss{} das Team. Ein g\"{u}ltiger Befund w\"{a}re:
+\glqq{}Die Anforderungen an die PST sind zu unscharf um pr\"{u}fbar zu sein\grqq{}
+oder \glqq{}Dokument X setzt PST-Ergebnisse voraus, die noch nicht formuliert sind.\grqq{}
+\end{remark}
+
+\begin{remark}[Zur Sprache des Reviews]
+Das Review-Dokument selbst muss nicht MKO-konform sein. Der Reviewer schreibt in
+seiner eigenen Sprache. Klarheit und Pr\"{a}zision sind wichtiger als Einhaltung
+der OP-Konventionen.
+\end{remark}
+
+\begin{remark}[Zum Umfang]
+Qualit\"{a}t vor Quantit\"{a}t. Drei pr\"{a}zise [K]-Befunde sind wertvoller als
+zwanzig oberfl\"{a}chliche [M]-Befunde. Der Reviewer soll tief bohren, nicht breit
+str\"{a}uen.
+\end{remark}
+
+\end{document}
+
