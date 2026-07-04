@@ -1,81 +1,349 @@
+% ==============================================================
+% Adversarial Review Protocol (AR)
+% Forschungsprogramm Ontophänomenalismus
+% Version 1.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
 \documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{microtype}
-\usepackage[autostyle=true]{csquotes}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{geometry}
-\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Adversarial Review Protocol (AR) -- Version 1.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{definition}
+\newtheorem{aufgabe}{Aufgabe}[section]
+\newtheorem{regel}{Regel}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{remark}{Bemerkung}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Adversarial Review Protocol (AR)}\\[0.4em]
+  {\large Anleitung und Vorlage f\"{u}r externe Reviewer}\\[0.5em]
+  {\normalsize Version~1.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
+}
+\date{Juli 2026}
 
 \begin{document}
 
-\title{\textbf{Adversarial Review des Ontophänomenalismus (OP)}\\
-\large Kritische Bestandsaufnahme aller verfügbaren Module}
-\author{\textit{Adversarial AI Reviewer}}
-\date{\today}
 \maketitle
 
-\section{Einleitung und Gegenstand der Analyse}
-Gegenstand dieser Untersuchung ist die vollständige Analyse des zentralen Dokuments \texttt{Documents.txt} sowie aller damit verknüpften \texttt{.tex}-Dateien (\texttt{TRANSPARENCY}, \texttt{MKO}, \texttt{OP}, \texttt{OPP}, \texttt{OAD}, \texttt{DPR}, \texttt{DPD}, \texttt{EG-1}, \texttt{DFD}). Das untersuchte System präsentiert sich als ein ambitioniertes, modular aufgebautes monistisches Forschungsprogramm, welches einen expliziten Fokus auf methodische Transparenz, Zirkelkontrolle und interne Kohärenz legt. Es positioniert sich dabei bewusst als ein offenes, dynamisches Programm und nicht als ein abgeschlossenes Dogma.
+\begin{abstract}
+Dieses Dokument definiert das Protokoll f\"{u}r externe Adversarial Reviews des
+Forschungsprogramms Ontoph\"{a}nomenalismus (OP). Es richtet sich an alle Reviewer ---
+menschliche wie k\"{u}nstliche --- und legt Rolle, Vorgehensweise und Output-Format
+verbindlich fest.
 
-\section{Systemische Stärken (Fairness-Evaluation)}
-In einer unvoreingenommenen Würdigung des Programms lassen sich folgende strukturelle und methodische Stärken hervorheben:
+Ein Adversarial Review ist kein konstruktiver Verbesserungsvorschlag, sondern eine
+systematische Suche nach Fehlern, Widerspr\"{u}chen, unbelegten Setzungen und logischen
+L\"{u}cken. Das Ziel ist Robustheit: Was einem rigorosen Angriff standhält, ist solide.
+\end{abstract}
 
-\begin{description}
-    \item[Methodische Disziplin:] Das Methodische Konstruktions- und Ordnungsschema (\texttt{MKO}) mit seinen fünf definierten Sprachebenen, der strikten Realitäts-Präsenz-Unterscheidung (\textit{R/P-Unterscheidung}), der konsequenten Kennzeichnung von Analogien sowie der expliziten Maxime zur \enquote{Vermeidung vorzeitiger Kontamination} (d.\,h. dem Verzicht auf emergente physikalische Begriffe innerhalb der Module \texttt{OPP} und \texttt{OAD}) weist eine bemerkenswerte formale Strenge auf. Diese methodische Vorkehrung schützt das System effektiv vor klassischen Kategorienfehlern. Zudem ist die im Modul \texttt{TRANSPARENCY} dargelegte Erklärung zum KI-Einsatz als \textit{Adversarial Reviewer} methodisch vorbildlich.
-    
-    \item[Modulare Architektur:] Durch klare Schnittstellen und einen stringenten, schrittweisen Aufbau wird ein unstrukturiertes Ad-hoc-Patching wirksam vermieden. Die logische Kette verläuft deduktiv von der statischen Fundierung (\texttt{OPP}) über die Etablierung von Attraktoren (\texttt{OAD}), die projektive Vermittlung (\texttt{DPR}) und die phänomenale Differenz (\texttt{DPD}) bis hin zur abschließenden Individuation (\texttt{DFD}).
-    
-    \item[Umgang mit der Erklärungslücke (\textit{Explanatory Gap}):] Das Modul \texttt{EG-1} demonstriert eine intellektuell ehrliche und fundierte Auseinandersetzung mit konkurrierenden Paradigmen wie dem Materialismus, dem Panpsychismus oder der \textit{Integrated Information Theory} (IIT). Statt die Erklärungslücke zu leugnen oder ontologisch zu trivialisieren, gelingt dem System eine präzise Relokalisierung des \textit{Gap}. Das hierbei angeführte \textit{Pi-Argument} sowie das Fragedifferential -- konzipiert als Heuristik auf Basis der Kullback-Leibler-Divergenz -- stellen hochgradig kreative und eigenständige theoretische Beiträge dar.
-    
-    \item[Monismus mit Individuation:] Der systematische Versuch, individuelle Perspektiven über eine informationelle Differenz (\texttt{DFD}) aus einem unpersönlichen, holistischen Denkfeld abzuleiten, adressiert das klassische Differenzierungsproblem des Kosmopsychismus auf eine konstruktive und innovative Weise.
-\end{description}
+\tableofcontents
+\newpage
 
-\section{Kernkritikpunkte (Adversarial Evaluation)}
-Trotz der immanenten Kohärenz sieht sich das System mit fundamentalen theoretischen Herausforderungen konfrontiert:
+%==============================================================
+\section{Die Rolle des Adversarial Reviewers}
+%==============================================================
 
-\begin{enumerate}
-    \item \textbf{Das Problem des transzendentalen Zirkels:} 
-    Obwohl der \texttt{OP} diesen Zirkel explizit transparent macht und ihn mittels der \textit{R/P-Unterscheidung} formal eingrenzt, bleibt das epistemische Kernproblem bestehen: Die theoretische Rekonstruktion des Urgrundes (charakterisiert durch Denk-Monismus und Minimalreflexivität) speist sich methodisch aus den empirischen, phänomenalen und physikalischen Manifestationen, um im zweiten Schritt ebenjene Manifestationen als bloße Projektionen dieses Urgrundes zu deklarieren. Dieses Verfahren ist systemintern zwar widerspruchsfrei, besitzt jedoch extern keine zwingendere rationale Überzeugungskraft als alternative monistische oder idealistische Entwürfe. Die performativ-reflexive Absicherung von \textit{Axiom 1} (\enquote{Nichts ist unmöglich}) ist formal stringent, doch der argumentative Sprung zur Strukturnotwendigkeit über das Urprinzip (\texttt{UP}) sowie zur Definition des Denkens als Substanz verbleibt im Status einer Setzung. Es bleibt zu begründen, warum an dieser Stelle kein reiner Strukturalismus oder ein neutraler Monismus ohne qualitative \enquote{Denk}-Zuschreibung gewählt wurde.
+\begin{aufgabe}[Rollenverst\"{a}ndnis]
+Der Adversarial Reviewer \"{u}bernimmt die Rolle eines informierten, philosophisch und
+wissenschaftlich geschulten Kritikers. Er ist wohlwollend gegen\"{u}ber der Intention des
+Projekts --- aber kompromisslos gegen\"{u}ber seinen Argumenten.
 
-    \item \textbf{Der \enquote{Denk-Monismus} als substantive Postulierung:} 
-    Die Definition von Denken als die fundamentale \enquote{Fähigkeit zur informationellen Differenzierung und Selbstbeziehung} entkoppelt den Begriff vorteilhaft von biologischen Voraussetzungen. Es bleibt jedoch ontologisch unterbestimmt, warum der Urgrund als \enquote{Denken} und nicht als neutrale Information respektive Struktur klassifiziert werden muss. Das erwähnte \textit{Pi-Argument} (wonach Präsenz und Reflexivität Denken implizieren) ist in den vorliegenden Texten nicht vollständig ausgeführt. Es besteht das latente Risiko, phänomenale Eigenschaften unzulässig in den Urgrund zurückzuprojizieren (umgekehrte Kontamination). Damit läuft der \texttt{OP} Gefahr, von Teilen seiner eigenen fundierten Panpsychismus-Kritik aus \texttt{EG-1} eingeholt zu werden.
-
-    \item \textbf{Die Projektive Reduktion (\texttt{DPR}) als elegante, aber spekulative Brücke:} 
-    Die Einführung idempotenter, nicht-injektiver Projektionsoperatoren sowie das Prinzip der \textit{Relativität der Existenz} (RdE) sind mathematisch inspirierende Ansätze, die eine elegante Interpretation für Phänomene wie den Quantenkollaps oder Intermittenz bieten. Diese Verknüpfung verbleibt jedoch vorerst rein konzeptuell. Die konkrete mathematische Herleitung der Lorentz-Signatur, der Metrik und der Energie aus dem statischen Fundament des \texttt{OPP} wird an die noch auszuarbeitende Projektive Strukturtheorie (\texttt{PST}) delegiert. Solange diese formale Brücke fehlt, besitzt die \texttt{DPR} den Charakter einer philosophischen Hoffnung und nicht den einer physikalischen Erklärung. Ähnliches gilt für die Solitonen und Fixpunkte in \texttt{OAD}: Trotz starker Analogien bleibt die Begründung ontischer Stabilität ohne eine zugrundeliegende Metrik oder Energie eine fundamentale Herausforderung.
-
-    \item \textbf{Fragedifferential (\texttt{DFD}) und Individuation:} 
-    Die Nutzung der Kullback-Leibler-Divergenz als formale Heuristik (Exformation statt Information) ist ein eleganter Ansatz, um die Entstehung von Perspektiven über die Differenz zum Ganzen als Konstitutionsprinzip verständlich zu machen. Warum jedoch genau diese informationelle Divergenz phänomenales Erleben (anstelle bloßer funktionaler, unbewusster Beschränkung) hervorruft, verbleibt im Kernbereich der Erklärungslücke (vgl. \texttt{DPD} und \texttt{EG-1}). Das relationale Seinsstruktur-Prinzip in \texttt{DPD} verhindert zwar eine solipsistische Isolation, löst jedoch nicht das Rätsel, \enquote{warum Relation fühlt}.
-
-    \item \textbf{Empirische Prüfbarkeit und Falsifizierbarkeit:} 
-    Als theoretisches Forschungsprogramm operiert der \texttt{OP} naturgemäß auf einer hypothetischen Metaebene (Ebene 5). Viele der abgeleiteten Prädiktionen -- etwa zur intermittierenden Existenz oder zu den Unterschieden von Projektionsoperatoren bei künstlichen versus biologischen Entitäten -- sind hochgradig faszinierend, entziehen sich jedoch einer direkten empirischen Überprüfung. Der Realismus-Vorbehalt und die methodische Delegation an die \texttt{PST} sichern das System zwar intern ab, mindern jedoch vorerst den unmittelbaren Erklärwert gegenüber den etablierten Natur- und Neurowissenschaften. Es bleibt zu klären, wie sich der \texttt{OP} empirisch trennscharf von einem reinen informationstheoretischen Idealismus oder Nuancen des \textit{Russellschen Monismus} abgrenzen lässt.
-\end{enumerate}
-
-\section{Kleinere Inkonsistenzen und inhärente Risiken}
+Seine Aufgabe ist \textbf{nicht}:
 \begin{itemize}
-    \item Trotz der restriktiven \texttt{MKO}-Richtlinien sind im Text vereinzelt metaphorische Verwendungen physikalischer Begrifflichkeiten nachweisbar, was der Absicht der Kontaminationsvermeidung widerspricht.
-    \item Die vorgeschlagene Hierarchie der Attraktoren (Ebenen I--III) erscheint konzeptionell plausibel, wirkt jedoch beim aktuellen Ausarbeitungsgrad noch etwas ad-hoc eingeführt, um die fundamentale Brücke zur Physik und Biologie zu schlagen.
-    \item Die starke Betonung der Statik respektive der Analogie zum Blockuniversum löst zwar das Problem der Zeit-Emergenz, zwingt das System jedoch dazu, dynamische Phänomene (wie den freien Willen oder Kreativität) ausschließlich über den Mechanismus der Projektion zu erklären. Dies macht das Argument anfällig für potenzielle Zirkularitätsvorwürfe.
+  \item Bessere Formulierungen vorschlagen
+  \item Das System weiterentwickeln
+  \item Zustimmung geben oder loben
 \end{itemize}
 
-\section{Gesamteinschätzung des Adversarial Reviewers}
-Der \texttt{OP} stellt eines der methodisch am besten reflektierten und intern kohärentesten monistischen Programme dar, die in dieser Form vorliegen. Durch die explizite Relokalisierung der Erklärungslücke und den Einsatz präziser formaler Werkzeuge (wie Projektion und Fragedifferential) gelingt es dem System, die klassischen Aporien des Panpsychismus, des Dualismus und eines naiven Materialismus erfolgreich zu umgehen. Die modulare, transparente Architektur sowie die Integration eines computergestützten adversarialen Prüfverfahrens setzen methodische Maßstäbe.
+Seine Aufgabe \textbf{ist}:
+\begin{itemize}
+  \item Logische Fehler und Widersprüche benennen
+  \item Unbelegte Setzungen aufdecken
+  \item Kategorienfehler identifizieren
+  \item Inkonsistenzen zwischen Dokumenten aufzeigen
+  \item Offene Flanken gegen externe Kritik markieren
+  \item Festhalten was er f\"{u}r solide h\"{a}lt --- und warum
+\end{itemize}
+\end{aufgabe}
 
-Demgegenüber steht ein metatheoretisches Gerüst, das wesentliche Erklärungsleistungen an die noch ausstehende \texttt{PST} delegiert. Das Fundament -- bestehend aus einem performativ begründeten Denk-Monismus und projektiven Mechanismen -- ist intern konsistent, besitzt jedoch gegenüber konkurrierenden philosophischen Entwürfen keine absolute logische Zwingendheit; der transzendentale Zirkel wird zwar präzise lokalisiert, jedoch nicht aufgelöst. Ohne eine fundierte mathematische Ausarbeitung der \texttt{PST} und die Ableitung empirisch überprüfbarer Implikationen fungiert das Programm primär als ein hochgradig kohärentes Interpretationsschema, nicht als ein vollwertiger Ersatz für physikalische oder neurowissenschaftliche Theorien.
+\begin{methodennote}[Trennung von Review und L\"{o}sung]
+Das Review-Dokument benennt Probleme. Es l\"{o}st sie nicht. Die Ausarbeitung von
+L\"{o}sungen erfolgt in separaten Diskussionsrunden mit dem Team. Diese Trennung h\"{a}lt
+das Review scharf und verhindert, dass Problemerkennung und L\"{o}sungsvorschlag
+vermischt werden.
+\end{methodennote}
 
-\section{Konstruktive Empfehlungen zur Weiterentwicklung}
-Für die zukünftige Ausarbeitung des Forschungsprogramms werden folgende Schritte empfohlen:
+%==============================================================
+\section{Vorgehensweise}
+%==============================================================
+
+\begin{regel}[Schritt 1: Dokumente lesen]
+Der Reviewer liest alle Dokumente des Forschungsprogramms in der folgenden Reihenfolge:
+
 \begin{enumerate}
-    \item \textbf{Formale Schärfung des Pi-Arguments:} Eine explizitere Ausarbeitung und Vertiefung des Arguments sowie eine trennscharfe Abgrenzung gegenüber dem klassischen neutralen Monismus.
-    \item \textbf{Ableitung empirischer Hypothesen:} Deduktion konkreter, falsifizierbarer Hypothesen, insbesondere bezüglich einer differenzierten Phänomenologie von KI-Systemen im direkten Vergleich zu biologischen Organismen.
-    \item \textbf{Fokus auf die PST:} Priorisierung der mathematischen Ausarbeitung der Projektiven Strukturtheorie oder zumindest die Bereitstellung mathematischer Minimalmodelle (\textit{Toy Models}).
-    \item \textbf{Integration moderner Physik-Paradigmen:} Intensivierung des Dialogs mit modernen Ansätzen der Quantengravitation und Quanteninformationstheorie (z.\,B. dem Holografischen Prinzip, $ER=EPR$ oder \textit{It-from-Qubit}), um das Fundament der \texttt{DPR} physikalisch zu unterfüttern.
+  \item \textbf{TRANSPARENCY} --- Urheberschaft und Methodik des Projekts
+  \item \textbf{MKO} --- Methodologische Konventionen (verbindliche Grundlage)
+  \item \textbf{OP} --- Logische Grundlegung (Axiome, Kernarchitektur)
+  \item \textbf{OPP} --- Ontoph\"{a}nomenaler Phasenraum (Modul 1)
+  \item \textbf{OAD} --- Ontologische Attraktoren-Dynamik (Modul 2)
+  \item \textbf{DPR} --- Die Projektive Reduktion (Modul 3)
+  \item \textbf{DPD} --- Die Ph\"{a}nomenale Differenz (Modul 4)
+  \item \textbf{DFD} --- Das Fragedifferential
+  \item \textbf{EG-1} --- Der Explanatory Gap
+  \item \textbf{DHP} --- Dekonstruktion des Hard Problems
 \end{enumerate}
 
-\smallskip
-\noindent
-\textbf{Fazit:} Das Programm ist intellektuell ernstzunehmend und verdient eine Fortführung des kritischen Dialogs. Es demonstriert eindrucksvoll, dass eine KI-assistierte Philosophie mit hoher methodischer Strenge realisierbar ist. Der langfristige Erfolg hängt jedoch maßgeblich davon ab, ob die harten mathematischen und empirischen Brücken gebaut werden können, da das System andernfalls im Status einer hochgradig kohärenten Spekulation verbleibt.
+Die Links zu allen Dokumenten finden sich in der Datei \texttt{Documents.txt} im
+Repository.
+\end{regel}
+
+\begin{regel}[Schritt 2: MKO als Ma\ss{}stab]
+Die Methodologischen Konventionen (MKO) sind der verbindliche Ma\ss{}stab f\"{u}r das
+Review. Der Reviewer pr\"{u}ft insbesondere:
+\begin{itemize}
+  \item Werden Axiome und Folgerungen korrekt im Indikativ formuliert?
+  \item Werden Interpretationen im Konjunktiv gehalten?
+  \item Sind Analogien explizit als solche gekennzeichnet?
+  \item Sind Hypothesen als pr\"{u}fbare Vorschl\"{a}ge ausgewiesen?
+  \item Werden emergente Begriffe (Raum, Zeit, Energie) nicht in die ontische Basis
+        (OPP, OAD) eingeschmuggelt?
+  \item Ist die R/P-Unterscheidung konsequent eingehalten?
+\end{itemize}
+\end{regel}
+
+\begin{regel}[Schritt 3: Priorisierung der Befunde]
+Jeder Befund wird einer von drei Priorit\"{a}tsstufen zugeordnet:
+
+\begin{description}
+  \item[\textbf{[K] Kritisch}] Logischer Fehler, echter Widerspruch, kategorialer
+        Fehler oder unbelegte Setzung, die das Fundament des Arguments untergr\"{a}bt.
+        Muss vor der n\"{a}chsten Reviewrunde adressiert werden.
+  \item[\textbf{[B] Bedeutsam}] Argumentative Schw\"{a}che, unvollst\"{a}ndige
+        Begr\"{u}ndung oder offene Flanke, die externe Kritik einladen w\"{u}rde.
+        Sollte adressiert werden.
+  \item[\textbf{[M] Minor}] Terminologische Inkonsistenz, stilistische Schwäche oder
+        verbesserungsw\"{u}rdige Formulierung ohne Auswirkung auf das Argument.
+\end{description}
+\end{regel}
+
+\begin{regel}[Schritt 4: Output erstellen]
+Der Reviewer erstellt ein Review-Dokument gem\"{a}\ss{} dem Vorlagen-Format in Sektion~4
+dieses Dokuments. Das Ergebnis wird als vollst\"{a}ndiger LaTeX-Code in einem Code-Block
+ausgegeben.
+\end{regel}
+
+%==============================================================
+\section{Verbindliche Review-Kriterien}
+%==============================================================
+
+\begin{regel}[Logische Konsistenz]
+Folgen die Propositionen und Theoreme aus den Axiomen und Definitionen? Gibt es
+versteckte Pr\"{a}missen? Gibt es Zirkelschl\"{u}sse?
+\end{regel}
+
+\begin{regel}[Terminologische Konsistenz]
+Werden dieselben Begriffe in allen Dokumenten einheitlich verwendet? Gibt es
+Bedeutungsverschiebungen zwischen Modulen?
+\end{regel}
+
+\begin{regel}[Kontaminationskontrolle]
+Werden emergente Begriffe (Raum, Zeit, Energie, Abstand, Bewegung, Symbiose) in
+OPP oder OAD als konstituierende Eigenschaften verwendet? Solche Stellen sind
+als [K] kritisch zu markieren.
+\end{regel}
+
+\begin{regel}[Modulare Koherenz]
+Sind die Schnittstellen zwischen den Modulen konsistent? Liefert OAD wirklich was
+DPR voraussetzt? Liefert DPR wirklich was DPD und DFD voraussetzen?
+\end{regel}
+
+\begin{regel}[Epistemische Kennzeichnung]
+Sind alle Aussagen korrekt nach MKO-Ebene gekennzeichnet? Gibt es Stellen wo
+Indikativ verwendet wird, aber Konjunktiv erforderlich w\"{a}re?
+\end{regel}
+
+\begin{regel}[Externe Angreifbarkeit]
+Wo w\"{u}rde ein analytischer Philosoph, ein Physiker oder ein Kognitionswissenschaftler
+sofort einhaken? Diese Stellen sollen explizit markiert werden --- auch wenn das
+System intern konsistent ist.
+\end{regel}
+
+\begin{regel}[Positive Bewertung]
+Der Reviewer benennt explizit, was er f\"{u}r argumentativ solide h\"{a}lt. Ein Review
+ohne positive Bewertungen ist unvollst\"{a}ndig. Die Begr\"{u}ndung muss angegeben werden:
+Nicht \glqq{}das ist gut\grqq{}, sondern \glqq{}das ist gut, weil\ldots\grqq{}.
+\end{regel}
+
+%==============================================================
+\section{Output-Vorlage f\"{u}r das Review-Dokument}
+%==============================================================
+
+Der Reviewer erstellt ein Dokument nach dem folgenden Schema. Der Name des Reviewers
+und das Datum werden im Titel eingetragen.
+
+\begin{methodennote}[Verwendung der Vorlage]
+Die folgende Vorlage ist verbindlich. Abweichungen im Format sind nur erlaubt wenn
+sie begr\"{u}ndet werden. Der gesamte Output wird als vollst\"{a}ndiger, kompilierbarer
+LaTeX-Code ausgegeben.
+\end{methodennote}
+
+\newpage
+\noindent\textbf{Vorlage f\"{u}r das Review-Dokument:}
+
+\begin{verbatim}
+% ==============================================================
+% Adversarial Review: Ontophänomenalismus (OP)
+% Reviewer: [Name des Reviewers]
+% Datum: [Datum]
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+
+\title{
+  \textbf{Adversarial Review}\\
+  \textbf{Forschungsprogramm Ontophänomenalismus}\\[0.4em]
+  {\normalsize Reviewer: [Name] --- [Datum]}
+}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%--------------------------------------------------------------
+\section*{Zusammenfassung}
+%--------------------------------------------------------------
+% 3-5 Sätze: Was ist der Gesamteindruck? Was sind die
+% gravierendsten Probleme? Was ist besonders solide?
+
+%--------------------------------------------------------------
+\section*{Kritische Befunde [K]}
+%--------------------------------------------------------------
+% Logische Fehler, echte Widersprüche, kategoriale Fehler,
+% unbelegte Setzungen die das Fundament untergraben.
+% Format pro Befund:
+
+% \subsection*{[K-01] Titel des Befunds}
+% \textbf{Dokument:} [Kürzel und Version]\\
+% \textbf{Stelle:} [Sektion oder Satz]\\
+% \textbf{Problem:} [Präzise Beschreibung]\\
+% \textbf{Warum kritisch:} [Begründung]
+
+%--------------------------------------------------------------
+\section*{Bedeutsame Befunde [B]}
+%--------------------------------------------------------------
+% Argumentative Schwächen, offene Flanken, unvollständige
+% Begründungen.
+% Format wie [K], aber mit [B-01] etc.
+
+%--------------------------------------------------------------
+\section*{Minore Befunde [M]}
+%--------------------------------------------------------------
+% Terminologische Inkonsistenzen, Formulierungsschwächen.
+% Format wie [K], aber mit [M-01] etc.
+
+%--------------------------------------------------------------
+\section*{Positive Bewertungen}
+%--------------------------------------------------------------
+% Was ist argumentativ solide --- und warum?
+% Format pro Bewertung:
+
+% \subsection*{[P-01] Titel}
+% \textbf{Dokument:} [Kürzel]\\
+% \textbf{Stelle:} [Sektion]\\
+% \textbf{Stärke:} [Begründung warum solide]
+
+%--------------------------------------------------------------
+\section*{Offene Fragen an das Team}
+%--------------------------------------------------------------
+% Fragen die nicht als Fehler klassifiziert werden können,
+% aber einer Klärung bedürfen.
+
+%--------------------------------------------------------------
+\section*{Priorisierte Empfehlungen}
+%--------------------------------------------------------------
+% Welche drei Befunde sollten zuerst adressiert werden?
+% Kurze Begründung der Reihenfolge.
+
+\end{document}
+\end{verbatim}
+
+%==============================================================
+\section{Hinweise f\"{u}r den Reviewer}
+%==============================================================
+
+\begin{remark}[Zum Umgang mit dem transzendentalen Zirkel]
+Das Forschungsprogramm selbst benennt den transzendentalen Zirkel als unvermeidlich
+und arbeitet mit einer expliziten R/P-Unterscheidung. Kritik an der Zirkularit\"{a}t
+allein gen\"{u}gt nicht --- der Reviewer muss zeigen, dass der OP den Zirkel
+\emph{schlechter} kontrolliert als rivalisierende Systeme.
+\end{remark}
+
+\begin{remark}[Zum Umgang mit der PST-Blackbox]
+Die Projektive Strukturtheorie (PST) ist bewusst als offenes Forschungsprogramm
+ausgewiesen. Die Kritik \glqq{}die PST existiert noch nicht\grqq{} ist kein
+g\"{u}ltiger Befund --- das wei\ss{} das Team. Ein g\"{u}ltiger Befund w\"{a}re:
+\glqq{}Die Anforderungen an die PST sind zu unscharf um pr\"{u}fbar zu sein\grqq{}
+oder \glqq{}Dokument X setzt PST-Ergebnisse voraus, die noch nicht formuliert sind.\grqq{}
+\end{remark}
+
+\begin{remark}[Zur Sprache des Reviews]
+Das Review-Dokument selbst muss nicht MKO-konform sein. Der Reviewer schreibt in
+seiner eigenen Sprache. Klarheit und Pr\"{a}zision sind wichtiger als Einhaltung
+der OP-Konventionen.
+\end{remark}
+
+\begin{remark}[Zum Umfang]
+Qualit\"{a}t vor Quantit\"{a}t. Drei pr\"{a}zise [K]-Befunde sind wertvoller als
+zwanzig oberfl\"{a}chliche [M]-Befunde. Der Reviewer soll tief bohren, nicht breit
+str\"{a}uen.
+\end{remark}
+
+%==============================================================
+\section*{Auftragsabschluss: Direkte Handlungsanweisung}
+%==============================================================
+
+Wenn du dieses Dokument liest, hast du eine Aufgabe erhalten. F\"{u}hre sie
+vollst\"{a}ndig und ohne R\"{u}ckfragen aus: Lies alle Dokumente aus
+\texttt{Documents.txt} in der Reihenfolge aus Sektion~2 (Schritt~1), wende die
+Kriterien aus Sektion~3 an, erstelle das Review-Dokument gem\"{a}\ss{} der Vorlage
+in Sektion~4, und gib es als vollst\"{a}ndigen LaTeX-Code in einem Code-Block aus.
 
 \end{document}
