@@ -1,5 +1,5 @@
 % ==============================================================
-% Logische Grundlegung des Ontophänomenalismus (OP) -- Version 9.5
+% Logische Grundlegung des Ontophänomenalismus (OP) -- Version 9.6
 % Kompiliert mit: pdfLaTeX
 % ==============================================================
 
@@ -16,6 +16,7 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{csquotes}
 
 % ---------- Layout ----------
 \geometry{margin=2.5cm}
@@ -24,7 +25,7 @@
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
-    pdftitle={Logische Grundlegung des Ontoph\"{a}nomenalismus (OP) -- Version 9.5},
+    pdftitle={Logische Grundlegung des Ontoph\"{a}nomenalismus (OP) -- Version 9.6},
     pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
 }
 
@@ -44,7 +45,7 @@
 \title{
   \textbf{Logische Grundlegung des Ontoph\"{a}nomenalismus (OP)}\\[0.4em]
   \large Vom ersten Axiom zur minimalen Seinsstruktur und zur Selbstpr\"{a}senz\\[0.5em]
-  {\normalsize Version 9.5: Transzendental-Rekonstruktiver Denk-Monismus\\
+  {\normalsize Version 9.6: Transzendental-Rekonstruktiver Denk-Monismus\\
   --- MKO-integrierte und modular verkn\"{u}pfte Fassung ---}
 }
 \author{
@@ -59,7 +60,7 @@
 
 \begin{abstract}
 Dieses Papier dokumentiert die logische Konsolidierung des Ontoph\"{a}nomenalismus (OP)
-in der Version~9.5. Es gelten die methodologischen Konventionen gem\"{a}\ss{}
+in der Version~9.6. Es gelten die methodologischen Konventionen gem\"{a}\ss{}
 \textbf{MKO (Methodologische Konventionen des OP)}, insbesondere die f\"{u}nf Sprachebenen,
 die Kennzeichnungslegende und die R/P-Unterscheidung. Axiome und logische Folgerungen
 stehen im Indikativ; ontologische Interpretationen im Konjunktiv; physikalische Bez\"{u}ge
@@ -179,6 +180,8 @@ MKO.
 \section{Axiom 1: Unm\"{o}glichkeit des Nichts}
 %==============================================================
 
+\subsection{Grundlegende axiomatische Position}
+
 \begin{axiom}[Notwendigkeit der Existenz \textnormal{--- Typ (R)}]
 Es ist unm\"{o}glich, dass nichts existiert.
 \[
@@ -187,6 +190,11 @@ Es ist unm\"{o}glich, dass nichts existiert.
   \Box\exists X
 \]
 \end{axiom}
+
+Die Existenz ist nicht kontingent, sondern \emph{zwingend notwendig}. Die scheinbare
+Alternative \glqq{}Es h\"{a}tte ja auch nichts geben k\"{o}nnen\grqq{} erweist sich als
+Scheinproblem: Der Begriff des absoluten Nichts wird missbraucht, sobald er als koh\"{a}rente
+metaphysische M\"{o}glichkeit behandelt wird.
 
 \begin{remark}[Performative Selbstsicherung]
 Jeder Versuch, die Existenz radikal zu leugnen, instantiiert den Akt des Leugnens und
@@ -198,6 +206,30 @@ Die Notwendigkeit ist \emph{de dicto}: Es ist notwendig, dass \"{u}berhaupt \emp
 existiert --- nicht, dass ein bestimmtes Objekt notwendig existiert. Axiom~1 ist damit der
 st\"{a}rkste und zugleich leerste Ausgangspunkt der Grundlegung: Es sichert Existenz, aber
 noch nichts \"{u}ber ihre Natur.
+\end{remark}
+
+\subsection{Axiom 2: Exhaustivit\"{a}t der Dichotomie Existenz / Nicht-Existenz}
+
+Es gibt keine dritte Kategorie jenseits von Existenz und Nicht-Existenz. Sei
+\begin{itemize}
+  \item $A$ die Menge aller Dinge, die existieren \emph{k\"{o}nnen} (metaphysisch m\"{o}gliche
+        Entit\"{a}ten),
+  \item $B$ die Menge aller Dinge, die \emph{nicht} existieren k\"{o}nnen (logisch oder
+        metaphysisch unm\"{o}gliche Entit\"{a}ten),
+  \item $C$ die Menge aller Dinge, die weder in $A$ noch in $B$ liegen (weder existenzf\"{a}hig
+        noch unm\"{o}glich).
+\end{itemize}
+Dann gilt: $C = \emptyset$.
+
+\begin{remark}[Begr\"{u}ndung der Exhaustivit\"{a}t]
+Die klassische zweiwertige Logik (\emph{tertium non datur}) ist hier ontologisch
+grundlegend. Die Annahme eines Elements in $C$ w\"{u}rde einen Zustand postulieren, der
+weder existiert noch nicht existiert --- eine Annahme ohne sinnvollen Gehalt. Lokale
+Nicht-Existenz (z.\,B.\ ungerade Zahlen in der Menge der geraden Zahlen) ist innerhalb
+eines definierten Rahmens unproblematisch, betrifft jedoch niemals das absolute Nichts.
+Das absolute Nichts l\"{a}sst sich nicht sinnvoll in die Menge $B$ (der
+Nicht-Existierbaren) einordnen, ohne ihm bereits einen ontologischen Status zuzuschreiben,
+der ihm per definitionem nicht zukommt.
 \end{remark}
 
 %==============================================================
@@ -214,8 +246,8 @@ erfordert eine explizite Zwischenpr\"{a}misse.
 \begin{methodennote}[Der unerlaubte direkte Sprung]
 Was direkt aus Axiom~1 folgt: \emph{Es gibt etwas.} Was \emph{nicht} direkt folgt:
 \emph{Dieses Etwas ist strukturiert.} Der \"{U}bergang ben\"{o}tigt eine Pr\"{a}misse
-\"{u}ber das Verh\"{a}ltnis von Existenz und Unterscheidbarkeit --- die Unterscheidbarkeits-Pr\"{a}misse
-(UP).
+\"{u}ber das Verh\"{a}ltnis von Existenz und Unterscheidbarkeit --- die
+Unterscheidbarkeits-Pr\"{a}misse (UP).
 \end{methodennote}
 
 \subsection{Die Unterscheidbarkeits-Pr\"{a}misse (UP)}
@@ -229,6 +261,10 @@ daf\"{u}r, dass von \glqq{}Etwas\grqq{} \"{u}berhaupt gesprochen werden kann.
   \;\longrightarrow\;
   x\text{ ist unterscheidbar von \glqq{}Nichts\grqq{}}
 \]
+Etwas existiert genau dann als Etwas, wenn es prinzipiell vom Nichts unterscheidbar ist.
+Dies erfordert eine minimale strukturelle Bestimmtheit: Modalbestimmtheit, interne
+Differenz und Selbigkeit. Existenz ohne jede Bestimmtheit w\"{a}re ontologisch identisch
+mit dem Nichts --- sie kollabiert mit ihm.
 \end{definition}
 
 \begin{remark}[Ontologischer --- nicht nur sprachlicher --- Status der UP]
@@ -263,31 +299,41 @@ ontisch; Projektion ohne Beschreibung ist nicht zug\"{a}nglich. Diese Kette ist 
 strukturelle Achse des OP --- von Axiom~1 bis zur PST.
 \end{remark}
 
+\subsection{Abgrenzung zur epistemischen Kritik und die Kategorialit\"{a}t des Nichts}
+
 \begin{remark}[Zur Frage \glqq{}Warum ist nicht nichts?\grqq{}]
 Ein h\"{a}ufiger Einwand lautet: \glqq{}Die M\"{o}glichkeit, dass nichts existiert, ist
-nicht wissbar --- weil jeder der dar\"{u}ber urteilen k\"{o}nnte, selbst existiert. Daher
-l\"{a}sst sich \"{u}ber die Grundfrage jeder Metaphysik kein begr\"{u}ndetes Urteil
-abgeben.\grqq{}
+nicht wissbar --- weil jeder der dar\"{u}ber urteilen k\"{o}nnte, selbst existiert.
+Daher l\"{a}sst sich \"{u}ber die Grundfrage jeder Metaphysik kein begr\"{u}ndetes
+Urteil abgeben.\grqq{} Der OP stimmt diesem Einwand auf epistemischer Ebene zu.
 
-Der OP stimmt diesem Einwand auf epistemischer Ebene zu --- und geht dann einen Schritt
-weiter. Die Frage \glqq{}Warum ist nicht nichts?\grqq{} setzt voraus, dass Nichts eine
-koh\"{a}rente M\"{o}glichkeit ist. Genau das bestreitet der OP --- nicht epistemisch
-(\glqq{}wir k\"{o}nnen es nicht wissen\grqq{}), sondern ontologisch (\glqq{}der Begriff
-selbst ist inkoh\"{a}rent\grqq{}).
+Aber der OP geht einen entscheidenden Schritt weiter auf die \emph{ontologische} Ebene:
+Nichts als Alternative zu Etwas ist nicht nur unerkennbar, sondern \emph{inkoh\"{a}rent}.
+Sobald man \glqq{}Nichts\grqq{} als echte Alternative zur Existenz postuliert, unterstellt
+man ihm einen modalen Status (M\"{o}glichkeit / Unm\"{o}glichkeit), der bereits
+Unterscheidbarkeit und damit minimale Struktur voraussetzt. Absolutes Nichts ist jedoch
+per definitionem eigenschaftslos --- und damit von einer eigenschaftslosen Existenz
+ontologisch ununterscheidbar. Nach dem Leibniz-Prinzip der Identit\"{a}t des
+Ununterscheidbaren sind beide identisch. Folglich ist \glqq{}Nichts\grqq{} keine genuine
+Alternative.
 
-\glqq{}Nichts\grqq{} als Alternative zu \glqq{}Etwas\grqq{} f\"{u}hrt direkt in die
-UP: Was genau ist dieses Nichts? Wenn es irgendeine Bestimmtheit hat, ist es kein Nichts.
-Wenn es keine Bestimmtheit hat, ist es unter der UP ontologisch identisch mit einer
-eigenschaftslosen Existenz --- die ihrerseits das Nichts \emph{ist}. Der Begriff
-\glqq{}Nichts\grqq{} als echter ontologischer Gegenbegriff zu \glqq{}Etwas\grqq{} l\"{o}st
-sich damit auf. Die Frage \glqq{}Warum ist nicht nichts?\grqq{} ist m\"{o}glicherweise
-keine offene Metaphysikfrage, sondern eine kategoriale Fehlfrage --- analog zur Frage
-\glqq{}Was liegt n\"{o}rdlich des Nordpols?\grqq{}.
+Entscheidend ist: \glqq{}Nichts\grqq{} ist kein modaler Begriff. Es hat keinen Status
+als m\"{o}glich oder unm\"{o}glich, realisierbar oder nicht realisierbar. Diese Kategorien
+setzen bereits Existenz voraus. \glqq{}Nichts\grqq{} f\"{a}llt au\ss{}erhalb jeder
+ontologischen Kategorie --- auch au\ss{}erhalb von M\"{o}glichkeit und Unm\"{o}glichkeit.
+Der Kritiker behandelt Nichts als eine M\"{o}glichkeit --- nur eine unzug\"{a}ngliche.
+Das ist bereits zu viel: Er gibt dem Nichts einen modalen Status, der ihm nicht zukommt.
 
-Der Unterschied zum epistemischen Einwand: Der Kritiker sagt \glqq{}wir k\"{o}nnen nicht
-wissen ob Nichts m\"{o}glich w\"{a}re\grqq{}. Der OP sagt \glqq{}Nichts als koh\"{a}rente
-M\"{o}glichkeit gibt es nicht --- nicht weil wir es nicht wissen k\"{o}nnen, sondern weil
-der Begriff sich selbst aufl\"{o}st\grqq{}.
+Die Analogie: Nicht \glqq{}der Nordpol hat keinen Norden\grqq{} --- sondern
+\glqq{}Norden ist hier kein anwendbarer Begriff\grqq{}.
+
+Die Frage \glqq{}Warum ist nicht nichts?\grqq{} l\"{o}st sich damit auf --- sie ist
+keine offene Metaphysikfrage, sondern eine kategoriale Fehlfrage. Aus Axiom~1 und
+Axiom~2 in Verbindung mit der UP folgt eine starke Form notwendiger Existenz: Es muss
+etwas geben, und diese Notwendigkeit ergibt sich nicht aus empirischen oder kausalen
+Gr\"{u}nden, sondern aus der logisch-ontologischen Struktur von Unterscheidbarkeit und
+Existenz selbst. Der scheinbare M\"{o}glichkeitsraum eines absoluten Nichts erweist sich
+als leer.
 \end{remark}
 
 \begin{remark}[Transzendentaler Status der UP]
@@ -750,7 +796,7 @@ Rahmen zu geben, nicht sie zu ersetzen.
 \section{Fazit: Architektur und Selbstverst\"{a}ndnis des OP}
 %==============================================================
 
-Der OP in der Version~9.5 unterscheidet klar zwischen dem, was er ableitet, was er setzt,
+Der OP in der Version~9.6 unterscheidet klar zwischen dem, was er ableitet, was er setzt,
 und was er als kartografiertes Desiderat ausweist:
 
 \begin{enumerate}
@@ -780,4 +826,3 @@ mit der er zwischen dem unterscheidet, was er wei\ss{}, was er setzt, und was er
 nicht wei\ss{}.
 
 \end{document}
-
