@@ -12,6 +12,13 @@ Die methodischen Spielregeln (5 Sprachebenen, Kennzeichnungslegende, R/P-Untersc
 https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/MKO.tex
 
 
+MGO.tex
+
+Die mathematischen Grundlagen des Ontophänomenalismus: Definiert den formalen mathematischen Rahmen des Ontophänomenalismus und schafft die Grundlage für seine spätere präzise Ausarbeitung in der Projektiven Strukturtheorie (PST).
+
+https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/MGO.tex
+
+
 ​OP.tex
 
 Das philosophische Fundament mit den 3 Axiomen (Existenznotwendigkeit, Minimalreflexivität, Denk-Monismus), der Unterscheidbarkeits-Prämisse (UP) und dem transzendentalen Zirkel.
