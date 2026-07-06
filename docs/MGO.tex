@@ -1,0 +1,488 @@
+% ==============================================================
+% Mathematische Grundlagen des Ontophänomenalismus (MGO)
+% Version 1.0
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Mathematische Grundlagen des Ontoph\"{a}nomenalismus (MGO) -- Version 1.0},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Korollar}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{konvention}{Konvention}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Mathematische Grundlagen des Ontoph\"{a}nomenalismus (MGO)}\\[0.4em]
+  {\large Formaler Rahmen f\"{u}r OP, OPP und die Projektive Strukturtheorie}\\[0.5em]
+  {\normalsize Version~1.0}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument legt die mathematischen Grundlagen des Ontoph\"{a}nomenalismus (OP)
+fest. Es definiert den formalen Rahmen aus Logik, Mengenlehre, Topologie,
+Kategorientheorie und Informationstheorie, innerhalb dessen die philosophischen
+Konzepte des OP pr\"{a}zisiert und die Projektive Strukturtheorie (PST) langfristig
+entwickelt werden kann.
+
+MGO baut direkt auf den methodologischen Konventionen gem\"{a}\ss{} MKO auf. Es
+beansprucht nicht, fertige mathematische Beweise zu liefern --- das ist Aufgabe der PST.
+Es definiert den \emph{minimalen formalen Rahmen}, der notwendig ist, damit die
+Aussagen des OP mathematisch anschlussfähig sind.
+
+MGO ist ein Alleinstellungsmerkmal des OP gegen\"{u}ber vergleichbaren philosophischen
+Programmen: Kein anderes System dieser Art legt seine mathematischen Grundlagen so
+explizit und pr\"{u}fbar fest.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Zweck und Geltungsbereich}
+%==============================================================
+
+\begin{methodennote}[Verh\"{a}ltnis zu MKO und PST]
+MGO steht zwischen MKO (methodologische Konventionen) und PST (physikalische
+Ausarbeitung). MKO definiert Sprachregeln und epistemische Standards. MGO definiert
+den mathematischen Arbeitsrahmen. PST f\"{u}hrt die eigentliche mathematische
+Ausarbeitung durch.
+
+Jede Aussage im OP, die mathematische Begriffe verwendet --- Mengen, Operatoren,
+Metriken, Divergenzen --- ist implizit im Rahmen von MGO zu lesen. MGO macht diesen
+Rahmen explizit und pr\"{u}fbar.
+\end{methodennote}
+
+MGO gilt f\"{u}r alle Dokumente des Forschungsprogramms, insbesondere:
+\begin{itemize}
+  \item \textbf{OP} --- Logische Grundlegung: Mengentheoretische Fundierung von
+        Axiom~2 (Exhaustivit\"{a}t), formale Verankerung der UP.
+  \item \textbf{OPP} --- Ontoph\"{a}nomenaler Phasenraum: Topologische Grundstruktur
+        des primordialen Feldes.
+  \item \textbf{OAD} --- Ontologische Attraktoren-Dynamik: Fixpunkttheorie,
+        Stabilit\"{a}tsbegriffe.
+  \item \textbf{DPR} --- Die Projektive Reduktion: Algebraische Eigenschaften der
+        Projektionsoperatoren.
+  \item \textbf{DFD} --- Das Fragedifferential: Informationstheoretische Grundlagen
+        der KL-Divergenz.
+  \item \textbf{PST} --- Projektive Strukturtheorie: Vollst\"{a}ndige mathematische
+        Ausarbeitung auf Basis von MGO.
+\end{itemize}
+
+%==============================================================
+\section{Logische Basis}
+%==============================================================
+
+\begin{konvention}[Klassische zweiwertige Logik]
+Der OP arbeitet mit klassischer zweiwertiger Logik (Aussagenlogik und
+Pr\"{a}dikatenlogik erster Stufe). Jede Aussage ist entweder wahr oder falsch ---
+\emph{tertium non datur}.
+\end{konvention}
+
+\begin{remark}[Abgrenzung zur intuitionistischen Logik]
+Die intuitionistische Logik verwirft das \emph{tertium non datur}: Dort gibt es
+Aussagen die weder als wahr noch als falsch beweisbar sind. Der OP w\"{a}hlt bewusst
+die klassische Logik, weil:
+
+\begin{enumerate}
+  \item Axiom~2 des OP (Exhaustivit\"{a}t der Dichotomie Existenz / Nicht-Existenz)
+        ontologisch das \emph{tertium non datur} voraussetzt. Es gibt keine dritte
+        Kategorie zwischen Existenz und Nicht-Existenz.
+  \item Die PST soll an die klassische Physik und Mathematik anschlie\ss{}en, die
+        \"{u}berwiegend klassisch-logisch operieren.
+  \item Die intuitionistische Verwerfung des \emph{tertium non datur} w\"{u}rde den
+        ontologischen Kern von Axiom~2 untergraben.
+\end{enumerate}
+
+Diese Wahl ist eine methodische Grundentscheidung (MKO, Typ~P) --- sie ist
+gerechtfertigt durch Koh\"{a}renz, nicht durch logische Notwendigkeit. Wer
+intuitionistische Logik bevorzugt, muss Axiom~2 entsprechend modifizieren.
+\end{remark}
+
+\begin{konvention}[Modallogik]
+F\"{u}r Aussagen \"{u}ber Notwendigkeit und M\"{o}glichkeit verwendet der OP die
+\textbf{modallogische Standardsprache S5}:
+\begin{itemize}
+  \item $\Box \varphi$ --- \glqq{}Es ist notwendig, dass $\varphi$\grqq{}
+  \item $\Diamond \varphi$ --- \glqq{}Es ist m\"{o}glich, dass $\varphi$\grqq{}
+  \item In S5 gilt: $\Diamond \varphi \leftrightarrow \neg\Box\neg\varphi$
+\end{itemize}
+Axiom~1 des OP lautet formal:
+\[
+  \Box\exists X \qquad \text{bzw.\"{a}quivalent} \qquad \neg\Diamond(\neg\exists X)
+\]
+S5 ist die st\"{a}rkste der Standardmodallogiken und enth\"{a}lt das Axiom
+$\Diamond\Box\varphi \rightarrow \Box\varphi$ (was in S5 m\"{o}glicherweise notwendig
+ist, ist notwendig). Diese St\"{a}rke ist f\"{u}r Axiom~1 angemessen.
+\end{konvention}
+
+\begin{remark}[Zur Frage der Kategorisierbarkeit des Nichts]
+In der klassischen Logik gilt: Jede wohlgeformte Aussage ist entweder wahr oder
+falsch. \glqq{}Nichts existiert\grqq{} ist eine wohlgeformte Aussage --- und nach
+Axiom~1 ist sie notwendig falsch. Aber \glqq{}Nichts\grqq{} als Objekt ist kein
+Element irgendeiner Menge --- es ist kein Kandidat f\"{u}r Existenz oder
+Nicht-Existenz. Dieser Unterschied zwischen der \emph{Aussage} \glqq{}nichts
+existiert\grqq{} und dem \emph{Begriff} \glqq{}Nichts\grqq{} als vermeintlichem
+Objekt ist im OP fundamental.
+\end{remark}
+
+%==============================================================
+\section{Mengenlehre}
+%==============================================================
+
+\begin{konvention}[Zermelo-Fraenkel-Mengenlehre (ZF)]
+Der OP verwendet \textbf{ZF} (Zermelo-Fraenkel ohne Auswahlaxiom) als
+mengenlehre\-rische Grundlage. Das Auswahlaxiom (ZFC) wird dort hinzugef\"{u}gt,
+wo es explizit ben\"{o}tigt wird.
+\end{konvention}
+
+\begin{remark}[Warum ZF und nicht naive Mengenlehre]
+Die naive Mengenlehre f\"{u}hrt zu Widerspr\"{u}chen (Russell-Paradoxon: die Menge
+aller Mengen die sich nicht selbst enthalten). ZF vermeidet dies durch das
+Fundierungsaxiom und das Aussonderungsaxiom. Da der OPP als Menge aller m\"{o}glichen
+Strukturen konzeptuell sehr gro\ss{} ist, brauchen wir einen paradoxiefreien Rahmen.
+\end{remark}
+
+\begin{definition}[Exhaustivit\"{a}t der Existenzdichotomie --- formal]
+Sei $\mathcal{U}$ die Universalmenge aller wohldefinierten Entit\"{a}ten. Wir
+definieren:
+\begin{align*}
+  A &:= \{ x \in \mathcal{U} \mid x \text{ ist metaphysisch m\"{o}glich} \} \\
+  B &:= \{ x \in \mathcal{U} \mid x \text{ ist metaphysisch unm\"{o}glich} \} \\
+  C &:= \mathcal{U} \setminus (A \cup B)
+\end{align*}
+\textbf{Axiom~2 des OP formal:} $C = \emptyset$, d.\,h.\ $A \cup B = \mathcal{U}$.
+
+Jede wohldefinierte Entit\"{a}t ist entweder metaphysisch m\"{o}glich oder
+metaphysisch unm\"{o}glich --- es gibt keine dritte Kategorie.
+\end{definition}
+
+\begin{remark}[Zur Einordnung des Nichts]
+\glqq{}Nichts\grqq{} im absoluten Sinne ist kein Element von $\mathcal{U}$ ---
+es ist keine wohldefinierte Entit\"{a}t. Es kann daher weder in $A$ noch in $B$
+eingeordnet werden. $C = \emptyset$ gilt weiterhin, weil \glqq{}Nichts\grqq{} nicht
+in $\mathcal{U}$ liegt --- nicht weil es in $A$ oder $B$ klassifiziert w\"{a}re.
+
+Dies unterscheidet \glqq{}Nichts\grqq{} von logisch inkoh\"{a}renten Begriffen wie
+dem \glqq{}dreieckigen Kreis\grqq{}: Dieser ist ein Element von $\mathcal{U}$ (er
+ist benennbar und hat Eigenschaften), aber er liegt in $B$ --- er ist metaphysisch
+unm\"{o}glich wegen interner Inkoh\"{a}renz. \glqq{}Nichts\grqq{} ist nicht einmal
+das: Es ist kein Kandidat f\"{u}r die Kategorisierung.
+\end{remark}
+
+\begin{remark}[Drei Typen von Nicht-Existenz]
+Der OP unterscheidet drei formal verschiedene Typen von Nicht-Existenz:
+\begin{enumerate}
+  \item \textbf{Lokale Nicht-Existenz:} $x \notin M$ f\"{u}r eine Menge $M$, obwohl
+        $x$ anderswo existiert. Beispiel: Ungerade Zahlen existieren nicht in der Menge
+        der geraden Zahlen --- aber sie existieren in $\mathbb{Z}$.
+  \item \textbf{Globale Nicht-Existenz (logisch inkoh\"{a}rent):} $x \in B$, d.\,h.\
+        $x$ ist metaphysisch unm\"{o}glich wegen interner Widerspr\"{u}chlichkeit.
+        Beispiel: Der dreieckige Kreis, das gr\"{o}\ss{}te nat\"{u}rliche Element.
+  \item \textbf{Kategoriale Nicht-Einordbarkeit:} $x \notin \mathcal{U}$, d.\,h.\ $x$
+        ist keine wohldefinierte Entit\"{a}t. Das absolute Nichts ist der einzige
+        Kandidat f\"{u}r diese Kategorie.
+\end{enumerate}
+\end{remark}
+
+%==============================================================
+\section{Topologische Grundstruktur des OPP}
+%==============================================================
+
+\begin{methodennote}[Status dieser Sektion --- MKO Ebene~3 und~4]
+Die folgenden topologischen Eigenschaften des OPP sind konzeptuelle Festlegungen ---
+formale Modelle im Sinne von MKO. Sie definieren den mathematischen Rahmen, in dem
+die PST operieren soll. Ob der OPP tats\"{a}chlich diese Eigenschaften hat, ist eine
+offene Forschungsfrage der PST.
+\end{methodennote}
+
+\begin{definition}[Topologischer Rahmen des OPP]
+Der Ontoph\"{a}nomenale Phasenraum $\mathcal{M}_{\text{OPP}}$ wird konzeptuell
+modelliert als:
+\begin{enumerate}
+  \item \textbf{Topologischer Raum:} $(\mathcal{M}_{\text{OPP}}, \tau)$ mit einer
+        Topologie $\tau$, die offene Mengen definiert.
+  \item \textbf{Zusammenh\"{a}ngend:} $\mathcal{M}_{\text{OPP}}$ ist nicht als Vereinigung
+        zweier disjunkter offener Mengen darstellbar. Dies formalisiert die Einheit des
+        primordialen Feldes.
+  \item \textbf{Glatt (differenzierbar):} $\mathcal{M}_{\text{OPP}}$ tr\"{a}gt
+        konzeptuell die Struktur einer glatten Mannigfaltigkeit, um Differentialrechnung
+        und Gradientenbildung zu erm\"{o}glichen. Die Dimension ist a priori nicht
+        festgelegt --- der OPP ist konzeptuell unendlichdimensional.
+  \item \textbf{Metrisch (nach Projektion):} Im OPP selbst existiert keine ausgezeichnete
+        Metrik. Metriken entstehen erst durch Projektionsoperatoren (vgl.\ DPR).
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Warum keine Metrik im OPP]
+Dies ist der formale Ausdruck der Kontaminationsregel aus MKO: Begriffe wie Abstand,
+N\"{a}he und Energie setzen eine Metrik voraus. Da der OPP keine ausgezeichnete
+Metrik tr\"{a}gt, sind diese Begriffe im OPP nicht definiert --- sie entstehen erst
+durch $P_{\mathcal{O}}$ in der DPR.
+\end{remark}
+
+\begin{definition}[Attraktoren als topologische Eigenzust\"{a}nde]
+Ein Attraktor $\mathcal{A} \subset \mathcal{M}_{\text{OPP}}$ ist konzeptuell eine
+\textbf{abgeschlossene, invariante Teilmenge} des Feldes mit den Eigenschaften:
+\begin{itemize}
+  \item \textbf{Invarianz:} Die Felddynamik bildet $\mathcal{A}$ auf sich selbst ab.
+  \item \textbf{Stabilit\"{a}t:} Kleine St\"{o}rungen kehren zu $\mathcal{A}$ zur\"{u}ck
+        (Lyapunov-Stabilit\"{a}t, konzeptuell).
+  \item \textbf{Minimalit\"{a}t:} $\mathcal{A}$ enth\"{a}lt keine echte invariante
+        Teilmenge (irreduzibel).
+\end{itemize}
+\end{definition}
+
+\begin{remark}[Fixpunktmodell der Minimalreflexivit\"{a}t]
+Axiom~2 (Minimalreflexivit\"{a}t) wird formal modelliert als: Jeder Attraktor
+$\mathcal{A}$ erf\"{u}llt die Fixpunktbedingung
+\[
+  f(\mathcal{A}) = \mathcal{A}
+\]
+f\"{u}r einen geeigneten Feldoperator $f\colon \mathcal{M}_{\text{OPP}} \to
+\mathcal{M}_{\text{OPP}}$. Dies ist ein formales Modell (MKO, Ebene~3) --- es
+beansprucht nicht, ph\"{a}nomenale Aktualit\"{a}t zu erkl\"{a}ren.
+\end{remark}
+
+%==============================================================
+\section{Algebraische Struktur der Projektionsoperatoren}
+%==============================================================
+
+\begin{definition}[Projektionsoperator --- algebraische Eigenschaften]
+Ein Projektionsoperator $P_{\mathcal{O}}\colon \mathcal{M}_{\text{OPP}} \to
+\mathcal{M}_{\mathcal{O}}$ erf\"{u}llt konzeptuell:
+\begin{enumerate}
+  \item \textbf{Idempotenz:}
+        \[ P_{\mathcal{O}} \circ P_{\mathcal{O}} = P_{\mathcal{O}} \]
+        Eine bereits projizierte Struktur wird durch erneute Projektion nicht
+        weiter ver\"{a}ndert.
+  \item \textbf{Nicht-Injektivit\"{a}t:}
+        \[ \exists\, x \neq y \in \mathcal{M}_{\text{OPP}}\colon
+           P_{\mathcal{O}}(x) = P_{\mathcal{O}}(y) \]
+        Verschiedene OPP-Zust\"{a}nde k\"{o}nnen auf denselben Beobachtungszustand
+        abgebildet werden --- formaler Ausdruck des Informationsverlusts bei der
+        Projektion.
+  \item \textbf{Surjektivit\"{a}t auf $\mathcal{M}_{\mathcal{O}}$:}
+        \[ P_{\mathcal{O}}(\mathcal{M}_{\text{OPP}}) = \mathcal{M}_{\mathcal{O}} \]
+        Jeder Beobachtungszustand hat mindestens ein Urbild im OPP.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Kategorientheoretische Perspektive]
+Konzeptuell l\"{a}sst sich der Rahmen der Projektionsoperatoren auch
+kategorientheoretisch formulieren: Der OPP und die Beobachtungsr\"{a}ume
+$\mathcal{M}_{\mathcal{O}}$ sind Objekte einer Kategorie $\mathbf{OP}$; die
+Projektionsoperatoren $P_{\mathcal{O}}$ sind Morphismen. Die Komposition
+$P_{\mathcal{O}_2} \circ P_{\mathcal{O}_1}$ beschreibt verkettete Projektionen.
+Funktoren zwischen $\mathbf{OP}$ und physikalischen Kategorien (z.\,B.\ der Kategorie
+der glatten Mannigfaltigkeiten $\mathbf{Man}$) w\"{a}ren der formale Rahmen f\"{u}r die
+PST. Dies ist eine offene Forschungsfrage.
+\end{remark}
+
+\begin{definition}[Metrogenese durch Projektion]
+Sei $d_{\mathcal{O}}$ eine Metrik auf $\mathcal{M}_{\mathcal{O}}$. Diese Metrik
+\emph{entsteht} durch den Projektionsoperator --- sie ist keine intrinsische
+Eigenschaft des OPP, sondern eine Eigenschaft des Beobachtungsraums. Formal:
+\[
+  d_{\mathcal{O}}(x, y) := \| P_{\mathcal{O}}(x) - P_{\mathcal{O}}(y) \|
+\]
+f\"{u}r geeignete Normen auf $\mathcal{M}_{\mathcal{O}}$. Dies ist der formale
+Ausdruck daf\"{u}r, dass r\"{a}umliche Abst\"{a}nde erst in der Projektion entstehen.
+\end{definition}
+
+%==============================================================
+\section{Informationstheoretische Grundlagen}
+%==============================================================
+
+\begin{methodennote}[Status dieser Sektion --- MKO Ebene~3]
+Die folgenden informationstheoretischen Grundlagen definieren den formalen Rahmen
+f\"{u}r das Fragedifferential (DFD). Sie sind formale Modelle --- die PST wird
+entscheiden, welche davon die pr\"{a}ziseste Formalisierung liefert.
+\end{methodennote}
+
+\begin{definition}[Shannon-Entropie]
+F\"{u}r eine diskrete Wahrscheinlichkeitsverteilung $P = (p_1, \ldots, p_n)$ ist die
+Shannon-Entropie:
+\[
+  H(P) := -\sum_{i=1}^{n} p_i \log p_i
+\]
+Sie misst den mittleren Informationsgehalt einer Verteilung. Im OP-Kontext:
+$H(P)$ f\"{u}r das Gesamtfeld, $H(Q_E)$ f\"{u}r eine individuierte Perspektive.
+\end{definition}
+
+\begin{definition}[Kullback-Leibler-Divergenz (KL-Divergenz)]
+F\"{u}r zwei Wahrscheinlichkeitsverteilungen $Q$ und $P$ \"{u}ber demselben
+Ereignisraum $\mathcal{X}$:
+\[
+  D_{\mathrm{KL}}(Q \| P) := \sum_{x \in \mathcal{X}} Q(x) \log \frac{Q(x)}{P(x)}
+\]
+Eigenschaften:
+\begin{itemize}
+  \item $D_{\mathrm{KL}}(Q \| P) \geq 0$ (Gibbs'sche Ungleichung)
+  \item $D_{\mathrm{KL}}(Q \| P) = 0 \iff Q = P$
+  \item Nicht symmetrisch: $D_{\mathrm{KL}}(Q \| P) \neq D_{\mathrm{KL}}(P \| Q)$
+        im Allgemeinen
+\end{itemize}
+Das Fragedifferential des OP (DFD) verwendet diese Gr\"{o}\ss{}e als erste Heuristik:
+$\mathcal{D}(E) := D_{\mathrm{KL}}(Q_E \| P)$.
+\end{definition}
+
+\begin{definition}[Von-Neumann-Entropie]
+F\"{u}r einen Dichteoperator $\rho$ auf einem Hilbert-Raum $\mathcal{H}$:
+\[
+  S(\rho) := -\mathrm{tr}(\rho \log \rho)
+\]
+Die Von-Neumann-Entropie verallgemeinert die Shannon-Entropie auf den
+quantenmechanischen Fall. Sie ist ein Kandidat f\"{u}r die PST-Formalisierung des
+Fragedifferentials, sobald der OPP als Operatoralgebra modelliert wird.
+\end{definition}
+
+\begin{remark}[Warum KL-Divergenz und nicht symmetrische Distanzma\ss{}e]
+Die Asymmetrie der KL-Divergenz $D_{\mathrm{KL}}(Q_E \| P)$ ist konzeptuell
+entscheidend: Sie misst, wie viel Information der Perspektive $Q_E$ im Vergleich zum
+Gesamtfeld $P$ fehlt --- nicht umgekehrt. Das Gesamtfeld $P$ \glqq{}sieht\grqq{}
+$Q_E$ vollst\"{a}ndig; $Q_E$ \glqq{}sieht\grqq{} $P$ nur partiell. Diese strukturelle
+Asymmetrie ist der formale Ausdruck der Individuation.
+\end{remark}
+
+\begin{remark}[Kandidaten f\"{u}r PST-Verallgemeinerungen]
+Die KL-Divergenz ist ein erster Platzhalter. Die PST wird voraussichtlich eine der
+folgenden Verallgemeinerungen ben\"{o}tigen:
+\begin{itemize}
+  \item \textbf{R\'{e}nyi-Divergenz:} $D_\alpha(Q \| P)$ f\"{u}r $\alpha \neq 1$,
+        verallgemeinert KL.
+  \item \textbf{Von-Neumann-Divergenz} auf Operatoralgebren f\"{u}r quantenmechanische
+        Systeme.
+  \item \textbf{Geometrische Distanzma\ss{}e} auf dem Raum der Wahrscheinlichkeits\-ma\ss{}e
+        (Fisher-Information, Wasserstein-Metrik).
+\end{itemize}
+Welche Verallgemeinerung die PST w\"{a}hlt, h\"{a}ngt davon ab, welche Struktur dem
+OPP formal zugeschrieben wird.
+\end{remark}
+
+%==============================================================
+\section{Schnittstelle zur Projektiven Strukturtheorie (PST)}
+%==============================================================
+
+MGO definiert den minimalen formalen Rahmen. Die PST \"{u}bernimmt die Aufgabe, diesen
+Rahmen zu konkretisieren und physikalisch auszuarbeiten. Die zentralen offenen Fragen:
+
+\begin{enumerate}
+  \item \textbf{Dimension des OPP:} Ist der OPP endlich- oder unendlichdimensional?
+        Welche Funktionenr\"{a}ume (Hilbert, Banach, Fr\'{e}chet) sind geeignet?
+
+  \item \textbf{Dynamik im OPP:} Welche Differentialgleichungen oder Variations\-prinzipien
+        regeln die Ausbildung stabiler Attraktoren? Gibt es ein Analogon zum
+        Hamiltonschen Prinzip?
+
+  \item \textbf{Metrogenese:} Wie leitet die PST die Lorentz-Signatur der Raumzeit
+        aus dem metrikfreien OPP ab? Welche Klasse von Projektionsoperatoren erzeugt
+        die 3+1-dimensionale Physik?
+
+  \item \textbf{Quantenmechanik:} Ist die Von-Neumann-Entropie auf Operatoralgebren
+        die richtige Verallgemeinerung des Fragedifferentials? Wie verh\"{a}lt sich
+        $\mathcal{D}(E)$ zur Verschr\"{a}nkungsentropie?
+
+  \item \textbf{Naturkonstanten:} K\"{o}nnen Planck-L\"{a}nge, Lichtgeschwindigkeit
+        und andere Naturkonstanten aus Eigenschaften des OPP und der
+        Projektionsoperatoren abgeleitet werden?
+\end{enumerate}
+
+\begin{methodennote}[Realismus-Vorbehalt --- gem\"{a}\ss{} MKO]
+Alle in diesem Dokument verwendeten mathematischen Strukturen sind konzeptuelle Modelle
+(MKO, Ebene~3). Sie definieren den Rahmen, in dem die PST arbeiten soll --- sie
+beanspruchen nicht, bereits Beweise oder Herleitungen zu liefern. Der Abstand zwischen
+dem hier definierten Rahmen und einer vollst\"{a}ndigen physikalischen Theorie ist
+erheblich und wird in der PST \"{u}berbr\"{u}ckt.
+\end{methodennote}
+
+%==============================================================
+\section{Abgrenzung und Alleinstellungsmerkmal}
+%==============================================================
+
+\begin{remark}[MGO als Differenzierungsmerkmal]
+Kein vergleichbares philosophisches Programm --- weder der Analytische Idealismus
+(Kastrup) noch der Panpsychismus (Goff) noch die Integrierte Informationstheorie
+(Tononi) --- legt seine mathematischen Grundlagen in dieser Explizitheit und
+Pr\"{u}fbarkeit fest. Der OP verbindet philosophische Tiefe mit mathematischer
+Anschlussfähigkeit.
+
+Dies ist kein blo\ss{}er formaler Anspruch: MGO definiert \emph{pr\"{u}fbare
+Anforderungen} an die PST. Wer den OP widerlegen will, muss zeigen dass der
+OPP die in MGO definierten Eigenschaften nicht besitzen kann --- oder dass diese
+Eigenschaften nicht zu den physikalischen Konsequenzen f\"{u}hren, die der OP
+beansprucht. Das ist ein echter wissenschaftlicher Standard.
+\end{remark}
+
+\begin{remark}[Verh\"{a}ltnis zu ZF und anderen Logiken]
+MGO legt ZF als Mengenlehre und klassische Logik als Grundlage fest. Wer andere
+Grundlagen w\"{a}hlt --- intuitionistische Logik, Parakonsistente Logik, alternative
+Mengenlehren --- muss pr\"{u}fen, welche S\"{a}tze des OP unter diesen Grundlagen
+weiterhin gelten. MGO macht diese Abh\"{a}ngigkeit explizit und damit diskutierbar.
+\end{remark}
+
+%==============================================================
+\section{Offene Forschungsfragen}
+%==============================================================
+
+\begin{enumerate}
+  \item Welche Kategorie formalisiert den OPP am ad\"{a}quatesten: Topologische
+        R\"{a}ume, Funktionenr\"{a}ume, Operatoralgebren, oder eine neue Kategorie?
+
+  \item Gibt es eine kategorientheoretische Formulierung des gesamten OP-Systems
+        als Funktor zwischen $\mathbf{OP}$ und $\mathbf{Man}$ (glatte
+        Mannigfaltigkeiten)?
+
+  \item Wie verh\"{a}lt sich die Nicht-Injektivit\"{a}t der Projektionsoperatoren zur
+        quantenmechanischen Unsch\"{a}rfe? Ist dies eine formale Analogie oder eine
+        tiefere Identit\"{a}t?
+
+  \item Kann die Struktur des OPP Constraints auf die m\"{o}glichen
+        Projektionsoperatoren legen --- und damit Vorhersagen \"{u}ber die Physik
+        erm\"{o}glichen?
+
+  \item Welche Axiome der ZF sind f\"{u}r den OP tats\"{a}chlich notwendig, welche
+        k\"{o}nnten durch schw\"{a}chere Annahmen ersetzt werden?
+\end{enumerate}
+
+\end{document}
+
