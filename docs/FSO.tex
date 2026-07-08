@@ -1,0 +1,458 @@
+% ==============================================================
+% Formale Semantik des Ontophänomenalismus (FSO)
+% Version 1.0
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Formale Semantik des Ontoph\"{a}nomenalismus (FSO) -- Version 1.0},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Korollar}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{konvention}{Konvention}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Formale Semantik des Ontoph\"{a}nomenalismus (FSO)}\\[0.4em]
+  {\large Diskursdom\"{a}nen, Referenztheorie und sprachlogische Grundlagen}\\[0.5em]
+  {\normalsize Version~1.0}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument legt die formalsemantischen Grundlagen des Ontoph\"{a}nomenalismus (OP)
+fest. Es steht zwischen den methodologischen Konventionen (MKO) und den mathematischen
+Grundlagen (MGO) und behandelt die Bedingungen, unter denen \"{u}ber ontologische
+Gegenst\"{a}nde \"{u}berhaupt sinnvoll gesprochen werden kann.
+
+FSO verbindet klassische Logik, Montague-Grammatik, Pr\"{a}suppositionstheorie,
+Diskursdom\"{a}nen und dynamische Semantik zu einem gemeinsamen methodischen Rahmen.
+Sein zentrales Ziel ist die Identifikation und Vermeidung von Kategorienfehlern ---
+insbesondere der Reifikation negativer Grenzbegriffe wie dem \glqq{}absoluten
+Nichts\grqq{}.
+
+FSO dient allen nachfolgenden Dokumenten als sprachlogisches Fundament. Es erm\"{o}glicht
+pr\"{a}zise Aussagen \"{u}ber Existenz, Referenz und Bestimmtheit, ohne die Fallen
+nat\"{u}rlicher Sprache zu \"{u}bernehmen.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Zweck und Einordnung}
+%==============================================================
+
+\begin{methodennote}[Verh\"{a}ltnis zu MKO und MGO]
+MKO definiert Sprachregeln und epistemische Standards f\"{u}r alle Dokumente des OP.
+FSO vertieft diese Regeln auf der Ebene formaler Semantik: Es kl\"{a}rt, was Begriffe
+wie \glqq{}Existenz\grqq{}, \glqq{}Referenz\grqq{} und \glqq{}Bestimmtheit\grqq{} im
+Rahmen des OP formal bedeuten. MGO baut auf FSO auf und formalisiert die
+mathematischen Strukturen, die FSO sprachlogisch vorbereitet.
+
+FSO ist kein linguistisches Dokument. Es ist ein philosophisch-logisches Werkzeug
+zur Vermeidung von Kategorienfehlern --- insbesondere dort, wo nat\"{u}rliche Sprache
+ontologische Fragen in die Irre f\"{u}hren kann.
+\end{methodennote}
+
+%==============================================================
+\section{Grundbegriffe der formalen Semantik}
+%==============================================================
+
+\subsection{Assertion und Pr\"{a}supposition}
+
+\begin{definition}[Assertion]
+Eine \textbf{Assertion} ist das, was ein Satz ausdr\"{u}cklich behauptet --- sein
+propositionaler Gehalt, der einen Wahrheitswert annehmen kann.
+\end{definition}
+
+\begin{definition}[Pr\"{a}supposition]
+Eine \textbf{Pr\"{a}supposition} ist eine Voraussetzung, die erf\"{u}llt sein muss,
+damit ein Satz \"{u}berhaupt sinnvoll einen Wahrheitswert annehmen kann. Pr\"{a}suppositionen
+bleiben unter Negation erhalten.
+\end{definition}
+
+\begin{remark}[Pr\"{a}suppositionstest]
+Der klassische Test: Ein Satz $S$ pr\"{a}supponiert $P$, wenn sowohl $S$ als auch
+$\neg S$ die G\"{u}ltigkeit von $P$ voraussetzen.
+
+\medskip
+\textit{Beispiel:} \glqq{}Dieses Glas ist nicht leer.\grqq{}\\
+Assertion: Das Glas ist nicht leer.\\
+Pr\"{a}supposition: Es gibt ein bestimmtes Glas. --- Diese bleibt auch unter Negation
+erhalten.
+
+\medskip
+\textit{Konsequenz f\"{u}r den OP:} Die Frage \glqq{}Warum ist etwas und nicht
+nichts?\grqq{} pr\"{a}supponiert, dass \glqq{}nichts\grqq{} einen koh\"{a}renten
+Alternativzustand bezeichnet. Genau diese Pr\"{a}supposition ist Gegenstand der
+Debatte --- sie kann nicht stillschweigend in die Fragestellung eingebaut werden.
+\end{remark}
+
+\subsection{Referenz und Reifikation}
+
+\begin{definition}[Referenz]
+\textbf{Referenz} bezeichnet die Beziehung zwischen einem sprachlichen Ausdruck und
+dem Gegenstand, auf den er verweist. Erfolgreiche Referenz setzt voraus:
+\begin{enumerate}
+  \item Es gibt einen Referenten (ein Diskursobjekt).
+  \item Identit\"{a}tsbedingungen f\"{u}r diesen Referenten sind definiert.
+  \item \"{U}ber diesen Referenten kann sinnvoll pr\"{a}diziert werden.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Reifikation]
+\textbf{Reifikation} bezeichnet den Kategorienfehler, einen Nicht-Gegenstand
+(z.\,B.\ einen Grenzbegriff, ein Indefinitpronomen oder eine Quantifikation) wie
+einen referenzf\"{a}higen Gegenstand zu behandeln.
+\end{definition}
+
+\begin{remark}[Reifikation des Nichts]
+Die Substantivierung \glqq{}das Nichts\grqq{} ist eine klassische Reifikation. Durch
+grammatische Substantivierung erh\"{a}lt \glqq{}nichts\grqq{} --- ein Indefinitpronomen
+--- die scheinbare Form eines referenzf\"{a}higen Gegenstandes. Damit wird ihm bereits
+genau jene minimale Bestimmtheit zugeschrieben, die sein Inhalt ausschlie\ss{}en soll.
+
+Der korrekte Ausdruck ist: \glqq{}es existiert nichts\grqq{} --- als Quantifikation,
+nicht als Referenz auf ein Objekt namens \glqq{}Nichts\grqq{}.
+\end{remark}
+
+%==============================================================
+\section{Montague-Grammatik als formalsemantischer Rahmen}
+%==============================================================
+
+\begin{methodennote}[Status dieser Sektion --- MKO Ebene~3 und~4]
+Die Montague-Grammatik wird hier als formales Werkzeug eingef\"{u}hrt. Ihre Anwendung
+auf den OP ist ein konzeptuelles Modell im Sinne von MKO --- kein abgeschlossener
+Beweis, sondern ein Pr\"{a}zisierungsrahmen.
+\end{methodennote}
+
+\begin{definition}[Montague-Semantik --- Grundprinzipien]
+Die \textbf{Montague-Grammatik} (Richard Montague, 1970er) behandelt nat\"{u}rliche
+Sprache mit denselben formalen Mitteln wie Logik. Ihre Kernprinzipien:
+\begin{enumerate}
+  \item \textbf{Typentheorie:} Jeder Ausdruck hat einen semantischen Typ.
+        Individuen haben Typ $e$, Wahrheitswerte Typ $t$, Eigenschaften Typ
+        $\langle e, t \rangle$, Quantoren Typ $\langle\langle e,t\rangle, t\rangle$.
+  \item \textbf{Kompositionalit\"{a}t:} Die Bedeutung eines komplexen Ausdrucks
+        ergibt sich regelm\"{a}\ss{}ig aus den Bedeutungen seiner Teile.
+  \item \textbf{Intensionale Logik:} Bedeutungen sind nicht nur extensional
+        (Mengen von Individuen), sondern intensional --- sie variieren \"{u}ber
+        m\"{o}gliche Welten.
+  \item \textbf{Generalisierte Quantoren:} Quantorausdr\"{u}cke wie \glqq{}nichts\grqq{},
+        \glqq{}alles\grqq{}, \glqq{}einiges\grqq{} werden als Mengen von Eigenschaften
+        behandelt, nicht als Referenzausdr\"{u}cke.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[\glqq{}Nichts\grqq{} als generalisierter Quantor]
+In der Montague-Semantik ist \glqq{}nichts\grqq{} ein generalisierter Quantor ---
+kein Referenzausdruck. \glqq{}Nichts existiert\grqq{} bedeutet formal:
+\[
+  \neg \exists x\, E(x)
+\]
+wobei $E$ das Pr\"{a}dikat \glqq{}existiert\grqq{} bezeichnet. Diese Aussage
+referiert auf kein Objekt namens \glqq{}Nichts\grqq{} --- sie quantifiziert
+\"{u}ber eine Domäne und sagt, dass kein Element dieser Dom\"{a}ne die Eigenschaft
+$E$ hat.
+
+\textbf{Die entscheidende Konsequenz:} Der Existenzquantor $\exists$ ist niemals
+dom\"{a}nenneutral. Er operiert stets \"{u}ber eine nicht-leere Diskursdom\"{a}ne.
+Die Aussage $\neg \exists x\, E(x)$ ist formal undefiniert, wenn die Dom\"{a}ne
+selbst leer oder inexistent ist.
+\end{remark}
+
+\begin{remark}[Definite Kennzeichnungen und Referenzanspruch]
+Definite Nominalphrasen wie \glqq{}das absolute Nichts\grqq{} tragen in der
+Montague-Semantik eine Pr\"{a}supposition: Es gibt genau einen Referenten der
+entsprechenden Beschreibung. F\"{u}r \glqq{}das absolute Nichts\grqq{} sind die
+Erf\"{u}llungsbedingungen dieser Pr\"{a}supposition prinzipiell nicht realisierbar
+--- jeder Versuch, einen Referenten zu identifizieren, schreibt ihm bereits
+Bestimmtheit zu.
+\end{remark}
+
+%==============================================================
+\section{Hierarchie der Diskursdom\"{a}nen}
+%==============================================================
+
+\begin{definition}[Diskursdom\"{a}nen-Hierarchie]
+Existenz, Bestimmtheit und Referenz sind stets relativ zu einer Diskursdom\"{a}ne
+definiert. Die Dom\"{a}nen bilden eine Hierarchie zunehmender Einschr\"{a}nkung:
+\[
+  \mathcal{D}_{\mathrm{fakt}}
+  \subset
+  \mathcal{D}_{\mathrm{phys}}
+  \subset
+  \mathcal{D}_{\mathrm{log}}
+  \subset
+  \mathcal{D}_{\mathrm{kogn}}
+  \subset
+  \mathcal{D}_{\mathrm{synt}}
+\]
+\begin{itemize}
+  \item $\mathcal{D}_{\mathrm{synt}}$: Alles syntaktisch Formulierbare.
+  \item $\mathcal{D}_{\mathrm{kogn}}$: Alles begrifflich Repr\"{a}sentierbare.
+  \item $\mathcal{D}_{\mathrm{log}}$: Alles logisch Konsistente.
+  \item $\mathcal{D}_{\mathrm{phys}}$: Alles physikalisch M\"{o}gliche.
+  \item $\mathcal{D}_{\mathrm{fakt}}$: Alles faktisch Existierende.
+\end{itemize}
+\end{definition}
+
+\begin{proposition}[Implikationsrichtungen]
+Aus der Hierarchie folgen einseitige Implikationen:
+\begin{itemize}
+  \item Was faktisch existiert, ist physikalisch m\"{o}glich.
+  \item Was physikalisch m\"{o}glich ist, ist logisch konsistent.
+  \item Was logisch konsistent ist, ist begrifflich repr\"{a}sentierbar.
+  \item Was begrifflich repr\"{a}sentierbar ist, ist syntaktisch formulierbar.
+\end{itemize}
+Die Umkehrungen gelten im Allgemeinen \emph{nicht}: Syntaktische Formulierbarkeit
+impliziert keine logische Konsistenz, logische Konsistenz keine physikalische
+M\"{o}glichkeit, physikalische M\"{o}glichkeit keine faktische Existenz.
+\end{proposition}
+
+\begin{remark}[Praktische Konsequenz]
+Diese Hierarchie ist das wichtigste Werkzeug zur Vermeidung von Kategorienfehlern
+im OP. Wer \glqq{}das absolute Nichts\grqq{} syntaktisch formuliert, bewegt sich in
+$\mathcal{D}_{\mathrm{synt}}$ --- nicht in $\mathcal{D}_{\mathrm{log}}$ oder
+$\mathcal{D}_{\mathrm{phys}}$. Der Sprung von syntaktischer Formulierbarkeit zu
+ontologischer M\"{o}glichkeit ist ein Kategorienfehler.
+\end{remark}
+
+%==============================================================
+\section{Negative Dom\"{a}nen und ihre Grenzen}
+%==============================================================
+
+\begin{definition}[Negative Dom\"{a}ne]
+Das Komplement der syntaktischen Dom\"{a}ne:
+\[
+  \mathcal{D}_{\mathrm{neg}} = \overline{\mathcal{D}_{\mathrm{synt}}}
+\]
+enth\"{a}lt alle Entit\"{a}ten $x$ f\"{u}r die gilt:
+$\neg\,\mathrm{Symbolisierbar}(x)$.
+\end{definition}
+
+\begin{proposition}[Strukturlosigkeit negativer Dom\"{a}nen]
+F\"{u}r jedes $x \in \mathcal{D}_{\mathrm{neg}}$ fehlen s\"{a}mtliche Voraussetzungen
+f\"{u}r Referenz, Identit\"{a}tsbildung, Quantifikation und Pr\"{a}dikation. Negative
+Dom\"{a}nen besitzen keine interne Struktur \"{u}ber die formallogisch sinnvoll
+gesprochen werden k\"{o}nnte.
+\end{proposition}
+
+\begin{remark}[Das absolute Nichts als Grenzbegriff]
+Das absolute Nichts ist kein Element irgendeiner positiven Dom\"{a}ne --- auch nicht
+von $\mathcal{D}_{\mathrm{synt}}$. Sobald es syntaktisch formuliert wird, ist es
+bereits in $\mathcal{D}_{\mathrm{synt}}$ eingetreten und hat damit genau die
+Eigenschaft verloren, die es ausdr\"{u}cken soll.
+
+Das absolute Nichts ist der Grenzbegriff an dem jede Dom\"{a}ne endet --- kein Punkt
+innerhalb irgendeiner Dom\"{a}ne. Es bezeichnet den \"{U}bergang, nicht einen Zustand.
+\end{remark}
+
+%==============================================================
+\section{Erweiterungen: Dynamische Semantik und Situation Semantics}
+%==============================================================
+
+\begin{methodennote}[Status dieser Sektion --- MKO Ebene~4 und~5]
+Die folgenden Erweiterungen sind Analogien und Hypothesen im Sinne von MKO. Sie
+skizzieren Forschungsrichtungen f\"{u}r die PST und zuk\"{u}nftige Versionen des FSO.
+\end{methodennote}
+
+\subsection{Dynamische Semantik}
+
+\begin{remark}[Dynamische Semantik und Kontextaufbau --- MKO Ebene~4]
+Die \textbf{Dynamische Semantik} (Groenendijk, Stokhof, Heim) behandelt Bedeutung
+nicht als statische Relation zwischen Ausdruck und Referent, sondern als
+\emph{Kontexttransformation}: Jeder Satz ver\"{a}ndert den Interpretationskontext
+f\"{u}r nachfolgende S\"{a}tze.
+
+F\"{u}r den OP ist dies relevant weil es zeigt: Diskursdom\"{a}nen entstehen durch
+Diskurs --- sie sind nicht vorausgesetzt, sondern werden aufgebaut. Das korrespondiert
+mit der Idee der Projektiven Reduktion (DPR): Metriken und Strukturen entstehen durch
+Projektion, nicht als vorgegebene Rahmen.
+
+\textbf{Hypothese (MKO Ebene~5):} Falls der OP zutrifft, k\"{o}nnte die dynamische
+Semantik ein formales Modell f\"{u}r die Entstehung von Diskursdom\"{a}nen durch
+Projektion liefern --- als Br\"{u}cke zwischen OPP und der raumzeitlichen Ebene.
+\end{remark}
+
+\subsection{Situation Semantics}
+
+\begin{remark}[Situation Semantics und partielle Informationsstrukturen --- MKO Ebene~4]
+Die \textbf{Situation Semantics} (Barwise, Perry) behandelt Bedeutung nicht relativ
+zu vollst\"{a}ndigen m\"{o}glichen Welten, sondern relativ zu \emph{Situationen} ---
+partiellen Informationsstrukturen, die nur einen Ausschnitt der Realit\"{a}t erfassen.
+
+Dies korrespondiert direkt mit dem Fragedifferential (DFD): Eine individuierte
+Perspektive $Q_E$ ist eine partielle Situation --- ein Ausschnitt des Gesamtfeldes $P$.
+Das Fragedifferential $\mathcal{D}(E) = D_{\mathrm{KL}}(Q_E \| P)$ misst formal die
+Distanz zwischen der partiellen Situation und der vollst\"{a}ndigen
+Informationsstruktur.
+
+\textbf{Hypothese (MKO Ebene~5):} Situation Semantics k\"{o}nnte ein formaler Rahmen
+f\"{u}r die Theorie des Fragedifferentials sein: Individuation als Partialit\"{a}t einer
+Situation, Erleben als relationale Struktur zwischen Situationen.
+\end{remark}
+
+\subsection{Typentheoretische Semantik}
+
+\begin{remark}[Typentheoretische Semantik --- MKO Ebene~4]
+Die \textbf{Typentheoretische Semantik} (Ranta, Martin-L\"{o}f) verbindet
+Montague-Grammatik mit konstruktiver Mathematik. Typen entsprechen Propositionen,
+Terme entsprechen Beweisen. Dies erm\"{o}glicht:
+\begin{itemize}
+  \item Pr\"{a}zise Typisierung aller Ausdr\"{u}cke des OP.
+  \item Formale \"{U}berpr\"{u}fbarkeit von Schlussfolgerungen.
+  \item Verbindung zur kategorientheoretischen Formulierung in MGO.
+\end{itemize}
+F\"{u}r den OP ist besonders relevant: In der konstruktiven Typentheorie existiert
+ein Objekt genau dann, wenn ein Beweis (Term) f\"{u}r seinen Typ konstruiert werden
+kann. Das korrespondiert mit der Unterscheidbarkeits-Pr\"{a}misse (UP): Existenz
+erfordert konstruktive Bestimmtheit.
+\end{remark}
+
+\subsection{Freie Logik}
+
+\begin{remark}[Freie Logik und Quantoren ohne Existenzpr\"{a}supposition --- MKO Ebene~4]
+Die \textbf{Freie Logik} (Lambert, van Fraassen) erlaubt Quantoren \"{u}ber leere
+oder nicht-existierende Terme. In klassischer Pr\"{a}dikatenlogik gilt:
+$\exists x\, (x = a)$ f\"{u}r jeden Term $a$ --- jeder Term referiert auf etwas
+Existierendes.
+
+Freie Logik hebt diese Pr\"{a}supposition auf: Terme k\"{o}nnen auf nicht-existierende
+Gegenst\"{a}nde referieren. Das erm\"{o}glicht formale Aussagen \"{u}ber
+\glqq{}Nichts\grqq{} ohne Reifikation.
+
+F\"{u}r den OP ist Freie Logik ein Kandidat f\"{u}r die pr\"{a}zise Behandlung von
+Grenzbegriffen --- dort wo klassische Pr\"{a}dikatenlogik in die Reifikationsfalle
+f\"{u}hrt. Ob Freie Logik die richtige Wahl ist, bleibt eine offene Forschungsfrage.
+\end{remark}
+
+%==============================================================
+\section{Folgerung: Die Leibniz-Frage als kategoriale Fehlfrage}
+%==============================================================
+
+\begin{theorem}[Kategoriale Fehlfrage]
+Die klassische Frage
+\begin{quote}
+\glqq{}Warum existiert \"{u}berhaupt etwas und nicht vielmehr nichts?\grqq{}
+\end{quote}
+ist in ihrer klassischen Form keine wohldefinierte ontologische Frage, sondern
+enth\"{a}lt einen Kategorienfehler.
+\end{theorem}
+
+\begin{proof}[Konzeptuelle Herleitung]
+\begin{enumerate}
+  \item Die Frage setzt voraus, dass \glqq{}nichts\grqq{} einen koh\"{a}renten
+        alternativen Gesamtzustand der Realit\"{a}t bezeichnet.
+  \item Nach der Dom\"{a}nenhierarchie: \glqq{}Nichts\grqq{} als Gesamtzustand
+        liegt au\ss{}erhalb jeder positiven Dom\"{a}ne einschlie\ss{}lich
+        $\mathcal{D}_{\mathrm{synt}}$.
+  \item Nach Montague: $\neg \exists x\, E(x)$ ben\"{o}tigt eine Dom\"{a}ne \"{u}ber
+        die quantifiziert wird. Die totale Negation aller Existenz eliminiert simultan
+        die Dom\"{a}ne --- der Ausdruck wird formal undefiniert.
+  \item Nach der Pr\"{a}suppositionsanalyse: Die Frage pr\"{a}supponiert die
+        G\"{u}ltigkeit von \glqq{}nichts\grqq{} als Alternative. Diese Pr\"{a}supposition
+        kann nicht ohne Zirkel begr\"{u}ndet werden.
+  \item Folglich: Die Frage kontrastiert Existenz mit einer Gr\"{o}\ss{}e, die die
+        Voraussetzungen jeder Kontrastbildung selbst negiert.\qed
+\end{enumerate}
+\end{proof}
+
+\begin{remark}[Was der OP stattdessen sagt]
+Der Ontoph\"{a}nomenalismus beantwortet die Leibniz-Frage nicht. Er zeigt, warum sie
+in ihrer klassischen Form logisch nicht wohldefiniert ist. Die pr\"{a}zisere Frage ---
+die der OP stellt --- lautet:
+
+\begin{quote}
+\glqq{}Warum ist strukturierte Existenz notwendig --- und nicht eine
+strukturlose Alternative?\grqq{}
+\end{quote}
+
+Diese Frage ist wohldefiniert: Sie fragt nicht nach \glqq{}Nichts\grqq{} als
+Alternativzustand, sondern nach den Bedingungen der M\"{o}glichkeit von Struktur
+\"{u}berhaupt. Die Antwort liefert die Kombination aus Axiom~1, Axiom~2 und der
+Unterscheidbarkeits-Pr\"{a}misse (UP) in OP.
+\end{remark}
+
+\begin{remark}[Offene Forschungsfragen f\"{u}r die PST]
+\begin{enumerate}
+  \item Kann Freie Logik die Behandlung von Grenzbegriffen im OP pr\"{a}ziser
+        formalisieren als klassische Pr\"{a}dikatenlogik?
+  \item Wie verbindet sich Situation Semantics formal mit dem Fragedifferential
+        (DFD)? Ist eine Perspektive formal eine Situation im Sinne von Barwise/Perry?
+  \item Kann die Dom\"{a}nen-Hierarchie durch den Projektionsoperator (DPR) formal
+        abgeleitet werden --- also zeigen dass Dom\"{a}nen entstehen statt vorausgesetzt
+        werden?
+  \item Welche Typen im Sinne der Martin-L\"{o}f-Typentheorie entsprechen den
+        Grundbegriffen des OP (Attraktor, Projektion, Fragedifferential)?
+\end{enumerate}
+\end{remark}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{MKO (Methodologische Konventionen):} FSO konkretisiert die
+        Sprachregeln von MKO auf der Ebene formaler Semantik. Insbesondere die
+        Konvention gegen Reifikation und die f\"{u}nf Sprachebenen werden hier
+        formal untermauert.
+  \item \textbf{MGO (Mathematische Grundlagen):} FSO bereitet den
+        kategorientheoretischen Rahmen von MGO vor. Typentheorie und
+        Diskursdom\"{a}nen verbinden sich mit den topologischen und algebraischen
+        Strukturen in MGO.
+  \item \textbf{OP (Logische Grundlegung):} FSO liefert die formalsemantische
+        Analyse von Axiom~1 (Notwendigkeit der Existenz), Axiom~2 (Exhaustivit\"{a}t)
+        und der UP. Die Pr\"{a}suppositionsanalyse der Leibniz-Frage geh\"{o}rt zur
+        Verteidigung von Axiom~1.
+  \item \textbf{DFD (Das Fragedifferential):} Situation Semantics liefert einen
+        m\"{o}glichen formalen Rahmen f\"{u}r das Fragedifferential als Ma\ss{} der
+        Partialit\"{a}t einer Perspektive.
+  \item \textbf{PST (Projektive Strukturtheorie):} Die offenen Forschungsfragen
+        in Sektion~6 definieren ein Arbeitsprogramm f\"{u}r die PST im Bereich
+        formaler Semantik.
+\end{itemize}
+
+\end{document}
+
