@@ -12,6 +12,13 @@ Die methodischen Spielregeln (5 Sprachebenen, Kennzeichnungslegende, R/P-Untersc
 https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/MKO.tex
 
 
+FSO.tex
+
+Die formale Semantik des Ontophänomenalismus: Untersuchung der sprachlogischen Bedingungen, Diskursdomänen und Präsuppositionen, die für eine widerspruchsfreie Referenz auf ontologische Grenzbegriffe erforderlich sind, um Kategorienfehler und Reifikationen frühzeitig zu eliminieren.
+
+https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/FSO.tex
+
+
 MGO.tex
 
 Die mathematischen Grundlagen des Ontophänomenalismus: Definiert den formalen mathematischen Rahmen des Ontophänomenalismus und schafft die Grundlage für seine spätere präzise Ausarbeitung in der Projektiven Strukturtheorie (PST).
