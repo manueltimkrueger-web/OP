@@ -68,6 +68,13 @@ Das massive Herzstück zum Explanatory Gap. 8 gescheiterte Ansätze, Zimmer- und
 https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/EG1.tex
 
 
+​DHP.tex 
+
+Dekonstruktion des Hard Problems
+
+https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/DHPtex
+
+
 DFD.tex
 
 Das Fragedifferential, die formale Mathematisierung des informationellen Gefälles und der Erkenntnisgrenzen mittels KL-Divergenz.
