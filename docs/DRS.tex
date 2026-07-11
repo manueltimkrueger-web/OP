@@ -1,8 +1,7 @@
 % ==============================================================
 % Differenz-Relation-Struktur (DRS)
 % Form als fundamentaler ontologischer Begriff
-% Version 0.3 (Entwurf)
-% Teil 1
+% Version 1.1
 % Kompiliert mit: pdfLaTeX
 % ==============================================================
 
@@ -11,11 +10,9 @@
 % ---------- Grundpakete ----------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman,provide=*]{babel}
-
+\usepackage[german]{babel}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathtools}
-
 \usepackage{geometry}
 \usepackage{parskip}
 \usepackage{enumitem}
@@ -25,21 +22,16 @@
 
 % ---------- Layout ----------
 \geometry{margin=2.5cm}
-
-\setlist{
-itemsep=0.25em,
-topsep=0.25em
-}
-
+\setlist{itemsep=0.2em, topsep=0.2em}
 \hypersetup{
-colorlinks=true,
-linkcolor=blue,
-urlcolor=blue,
-pdftitle={Differenz-Relation-Struktur (DRS)},
-pdfauthor={Forschungsprogramm Ontophänomenalismus}
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Differenz-Relation-Struktur (DRS) -- Version 1.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
 }
 
-% ---------- Theorem ----------
+% ---------- Theorem-Umgebungen ----------
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
@@ -50,22 +42,18 @@ pdfauthor={Forschungsprogramm Ontophänomenalismus}
 \newtheorem{remark}{Bemerkung}[section]
 \newtheorem{methodennote}{Methodennote}[section]
 \newtheorem{hypothese}{Arbeitshypothese}[section]
+\newtheorem{prinzip}{Prinzip}[section]
 
-% ==============================================================
-% Titel
-% ==============================================================
-
+% ---------- Titel ----------
 \title{
-\textbf{Differenz--Relation--Struktur (DRS)}\\[0.4em]
-{\large Form als fundamentaler ontologischer Begriff}\\[0.4em]
-{\normalsize Version 0.3 (Entwurf)}
+  \textbf{Differenz-Relation-Struktur (DRS)}\\[0.4em]
+  {\large Form als fundamentaler ontologischer Begriff}\\[0.5em]
+  {\normalsize Version~1.1}
 }
-
 \author{
-Forschungsprogramm Ontophänomenalismus\\
-\small Siehe TRANSPARENCY für methodologische Hinweise.
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft und KI-Einsatz.
 }
-
 \date{Juli 2026}
 
 \begin{document}
@@ -73,1141 +61,435 @@ Forschungsprogramm Ontophänomenalismus\\
 \maketitle
 
 \begin{abstract}
+Dieses Dokument untersucht die Hypothese, dass der Begriff der \emph{Form} den
+allgemeinsten ontologischen Grundbegriff des Ontoph\"{a}nomenalismus darstellt.
 
-Dieses Dokument untersucht die Hypothese, dass der Begriff der
-\emph{Form} den allgemeinsten ontologischen Grundbegriff des
-Ontophänomenalismus darstellt.
-
-Während die bisherigen Dokumente des OP Begriffe wie
-Existenz,
-Bestimmtheit,
-Relation,
-Information
-und Struktur teilweise getrennt behandeln,
-wird hier untersucht,
-ob sich diese Begriffe auf ein gemeinsames Fundament zurückführen lassen.
-
-Die leitende Vermutung lautet:
+W\"{a}hrend die bisherigen Dokumente des OP Begriffe wie Existenz, Bestimmtheit,
+Relation, Information und Struktur weitgehend getrennt einf\"{u}hren, wird hier
+untersucht, ob sich diese Begriffe auf ein gemeinsames Fundament zur\"{u}ckf\"{u}hren
+lassen. Die leitende Vermutung lautet:
 
 \begin{center}
-
-\emph{Existenz ist nur als Form möglich.}
-
+\emph{Existenz ist nur als Form m\"{o}glich.}
 \end{center}
 
-Form wird dabei nicht geometrisch verstanden,
-sondern als stabile Organisation von Differenzen und Relationen.
-Das Dokument besitzt den Status einer Arbeitshypothese
-(MKO Ebene 4--5)
-und dient der Vorbereitung einer späteren mathematischen
-Formalisierung innerhalb der MGO und PST.
+Form wird dabei nicht geometrisch verstanden, sondern als stabile
+\"{A}quivalenzklasse von Differenz-Relation-Strukturen unter zul\"{a}ssigen
+Transformationen. Das Dokument besitzt den Status einer Arbeitshypothese
+(MKO Ebene~4--5) und dient der Vorbereitung einer sp\"{a}teren mathematischen
+Formalisierung innerhalb von MGO und PST.
 
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
 \end{abstract}
 
 \tableofcontents
-
 \newpage
 
-% ==============================================================
+%==============================================================
 \section{Einordnung}
-% ==============================================================
+%==============================================================
 
-\begin{methodennote}[Stellung innerhalb des OP]
+\begin{methodennote}[Stellung innerhalb des OP --- MKO Ebene~4--5]
+DRS besitzt den Charakter eines Forschungsdokuments. Es erweitert nicht die Axiome
+des OP, sondern untersucht, ob mehrere bereits verwendete Grundbegriffe unter einem
+gemeinsamen Prinzip zusammengef\"{u}hrt werden k\"{o}nnen.
 
-DRS besitzt gegenwärtig den Charakter eines Forschungsdokuments.
-
-Es erweitert nicht die Axiome des Ontophänomenalismus,
-sondern untersucht,
-ob mehrere bereits verwendete Grundbegriffe
-unter einem gemeinsamen Prinzip zusammengeführt werden können.
-
-Die wichtigsten Schnittstellen sind:
-
-\begin{itemize}
-
-\item
-OP:
-Existenz,
-Bestimmtheit,
-Unterscheidbarkeit.
-
-\item
-FSO:
-Formale Semantik,
-Diskursdomänen,
-Referenz.
-
-\item
-MGO:
-Mathematische Beschreibung von Struktur,
-Operatoren,
-Kategorien
-und Projektionen.
-
-\item
-PST:
-Entstehung,
-Transformation
-und Dynamik von Formen.
-
-\item
-PGT:
-Selbstreferenzielle Formen,
-Bewusstsein,
-Perspektiven.
-
-\end{itemize}
-
+Die wichtigsten Schnittstellen sind: OP (Existenz, Bestimmtheit, Unterscheidbarkeit),
+FSO (Diskursdom\"{a}nen, Referenz, Bedeutung), MGO (Struktur, Operatoren, Kategorien),
+PST (Entstehung und Dynamik von Formen), DPR (Projektionsoperatoren als
+Formtransformationen), DPD (selbstreferenzielle Formen, Bewusstsein, Perspektiven)
+und DFD (strukturelle Distanzen zwischen Formen).
 \end{methodennote}
 
-% ==============================================================
-\section{Motivation}
-% ==============================================================
-
-Der Ontophänomenalismus verwendet bereits mehrere eng miteinander
-verbundene Grundbegriffe.
-
-Unter anderem:
-
-\begin{itemize}
-
-\item Existenz
-
-\item Bestimmtheit
-
-\item Differenz
-
-\item Relation
-
-\item Struktur
-
-\item Information
-
-\end{itemize}
-
-Bislang werden diese Begriffe jedoch weitgehend unabhängig
-voneinander eingeführt.
-
-Dies wirft die Frage auf,
-ob sie möglicherweise verschiedene Erscheinungsformen
-eines allgemeineren Prinzips darstellen.
-
-Die leitende Fragestellung lautet deshalb:
+Die leitende Fragestellung lautet:
 
 \begin{quote}
-
-Ist Form die allgemeinste Beschreibung dessen,
-was minimale Bestimmtheit überhaupt bedeutet?
-
+Ist Form die allgemeinste Beschreibung dessen, was minimale Bestimmtheit
+\"{u}berhaupt bedeutet?
 \end{quote}
 
-Falls diese Vermutung zutrifft,
-ergäbe sich eine erhebliche Vereinfachung
-der ontologischen Grundstruktur.
+Falls diese Vermutung zutrifft, erg\"{a}be sich eine erhebliche Vereinfachung der
+ontologischen Grundstruktur des OP.
 
-Existenz müsste dann nicht mehr unmittelbar
-über Bestimmtheit definiert werden,
-sondern Bestimmtheit selbst wäre lediglich
-eine Eigenschaft von Form.
+%==============================================================
+\section{Ausgangspunkt: Axiom~1 und die UP}
+%==============================================================
 
-Ebenso würden Information,
-Struktur,
-Relation
-und möglicherweise sogar Raum
-nicht mehr als unabhängige Begriffe erscheinen,
-sondern als verschiedene Aspekte derselben
-formalen Grundlage.
+Die \"{U}berlegungen bauen unmittelbar auf zwei bereits eingef\"{u}hrten Prinzipien
+des OP auf:
 
-% ==============================================================
-\section{Ausgangspunkt}
-% ==============================================================
+\textbf{Axiom~1:} Etwas existiert.
 
-Die Überlegungen bauen unmittelbar auf drei bereits eingeführten
-Prinzipien auf.
+\textbf{Unterscheidbarkeits-Pr\"{a}misse (UP):} Existenz setzt minimale Bestimmtheit
+voraus. Was prinzipiell von nichts unterschieden werden kann, besitzt mindestens
+eine Eigenschaft.
 
-\subsection*{Axiom 1}
-
-Etwas existiert.
-
-\subsection*{Unterscheidbarkeits-Prämisse (UP)}
-
-Existenz setzt minimale Bestimmtheit voraus.
-
-Was prinzipiell von nichts unterschieden werden kann,
-besitzt mindestens eine Eigenschaft.
-
-\subsection*{Konsequenz}
-
-Bestimmtheit verlangt immer mindestens
-eine unterscheidbare Struktur.
-
-Die hier entwickelte Arbeitshypothese lautet daher:
-
+\textbf{Arbeitshypothese:} Bestimmtheit ist \"{a}quivalent mit Form.
 \[
-\boxed{
-\text{Bestimmtheit}
-\Longleftrightarrow
-\text{Form}
-}
+  \boxed{\text{Bestimmtheit} \;\Longleftrightarrow\; \text{Form}}
 \]
+Diese Identifikation ist gegenw\"{a}rtig noch keine Aussage des OP, sondern Gegenstand
+der vorliegenden Untersuchung.
 
-Diese Identifikation ist gegenwärtig noch keine Aussage des OP,
-sondern Gegenstand der vorliegenden Untersuchung.
-
-% ==============================================================
-\section{Differenz als primitiver Begriff}
-% ==============================================================
+%==============================================================
+\section{Differenz, Relation und Form}
+%==============================================================
 
 \begin{definition}[Differenz]
-
-Eine Differenz bezeichnet die elementare Möglichkeit,
-zwei Zustände,
-Eigenschaften
-oder Relationen voneinander zu unterscheiden.
-
-Formal schreiben wir
-
-\[
-a \neq b.
-\]
-
-Dabei beschreibt die Differenz noch keine Richtung,
-keine Entfernung
-und keine Metrik.
-
-Sie bezeichnet ausschließlich Nichtidentität.
-
+Eine \textbf{Differenz} bezeichnet die elementare M\"{o}glichkeit, zwei Zust\"{a}nde,
+Eigenschaften oder Relationen voneinander zu unterscheiden. Formal: $a \neq b$.
+Differenz beschreibt noch keine Richtung, keine Entfernung und keine Metrik ---
+ausschlie\ss{}lich Nichtidentit\"{a}t.
 \end{definition}
 
 \begin{remark}
-
-Differenz wird hier nicht weiter definiert.
-
-Sie besitzt den Status eines primitiven Begriffs,
-vergleichbar mit Punkt oder Menge
-in axiomatischen Theorien.
-
+Differenz besitzt den Status eines primitiven Begriffs, vergleichbar mit
+\glqq{}Punkt\grqq{} oder \glqq{}Menge\grqq{} in axiomatischen Theorien.
 \end{remark}
-
-% ==============================================================
-\section{Relation}
-% ==============================================================
 
 \begin{definition}[Relation]
-
-Eine Relation beschreibt eine strukturierte Verknüpfung
-zwischen mindestens zwei unterscheidbaren Elementen.
-
-Formal
-
-\[
-R
-\subseteq
-D\times D.
-\]
-
+Eine \textbf{Relation} beschreibt eine strukturierte Verkn\"{u}pfung zwischen
+mindestens zwei unterscheidbaren Elementen. Formal: $R \subseteq D \times D$.
+Eine Relation setzt Differenzen voraus --- ohne unterscheidbare Pole reduziert sie
+sich auf reine Identit\"{a}t.
 \end{definition}
 
-\begin{remark}
-
-Eine Relation setzt Differenzen voraus.
-
-Sind keinerlei unterscheidbare Pole vorhanden,
-reduziert sich jede Relation
-auf reine Identität.
-
-\end{remark}
-
-\begin{proposition}[Kooriginarität]
-
-Differenz und Relation sind kooriginär.
-
-Differenzen erzeugen Relationen.
-
-Relationen erhalten Differenzen.
-
-Keine der beiden Strukturen besitzt
-innerhalb dieser Arbeitshypothese
-einen absoluten Vorrang.
-
+\begin{proposition}[Ko-Originalit\"{a}t von Differenz, Relation und Form]
+Differenz, Relation und Form sind ko-origin\"{a}r: Differenzen erzeugen Relationen,
+Relationen konstituieren Formen, und Formen organisieren Differenzen. Keine dieser
+drei Strukturen besitzt absoluten ontologischen Vorrang:
+\[
+  \boxed{\text{Differenz} \;\Longleftrightarrow\; \text{Relation}
+  \;\Longleftrightarrow\; \text{Form}}
+\]
 \end{proposition}
 
-Dies lässt sich symbolisch schreiben als
+\begin{remark}
+Die Ko-Originalit\"{a}t von Form und Relation ist konzeptuell wichtig: Form ist
+selbst ein geordnetes Relationenmuster --- sie ist keine zus\"{a}tzliche Schicht
+\"{u}ber den Relationen, sondern deren stabile Organisation. Ob hier tats\"{a}chlich
+eine Hierarchie besteht oder begriffliche Identit\"{a}t vorliegt, ist eine offene
+Forschungsfrage.
+\end{remark}
 
+%==============================================================
+\section{Definition der Form}
+%==============================================================
+
+\begin{definition}[Form --- Prim\"{a}rdefinition als \"{A}quivalenzklasse]
+Eine \textbf{Form} ist die \"{A}quivalenzklasse aller Differenz-Relation-Strukturen,
+die bez\"{u}glich einer Menge zul\"{a}ssiger Transformationen invariant sind:
 \[
-\boxed{
-\text{Differenz}
-\Longleftrightarrow
-\text{Relation}
-}
+  F = [(D, R)]_{\sim}
 \]
+wobei $\sim$ eine geeignete \"{A}quivalenzrelation bezeichnet und $D$ die Menge der
+Differenzen, $R$ die Relationen zwischen diesen Differenzen. Form ist damit vollst\"{a}ndig
+tr\"{a}gerunabh\"{a}ngig: Verschiedene Realisierungen k\"{o}nnen dieselbe Form besitzen.
+\end{definition}
 
-Diese Aussage ist ausdrücklich keine logische Äquivalenz,
-sondern beschreibt gegenseitige ontologische Abhängigkeit.
-
-% ==============================================================
-\section{Form}
-% ==============================================================
-
-\begin{definition}[Form]
-
-Eine Form ist eine stabile Organisation
-von Differenzen und Relationen.
-
-Formal schreiben wir
-
+\begin{definition}[Form --- Realisierung als Tripel]
+Eine \textbf{Realisierung} einer Form ist ein konkretes Tripel $(D, R, \mathcal{I})$,
+wobei $\mathcal{I}$ die \emph{Menge} aller identit\"{a}tsbestimmenden Invarianten
+bezeichnet:
 \[
-F=(D,R,I).
+  \mathcal{I} = \{I_1, I_2, \ldots, I_n\}
 \]
-
-Dabei bezeichnet
-
-\begin{itemize}
-
-\item
-\(D\)
-die Menge der Differenzen,
-
-\item
-\(R\)
-die Relationen zwischen diesen Differenzen,
-
-\item
-\(I\)
-eine Invarianzbedingung,
-welche die Identität der Form
-unter zulässigen Transformationen beschreibt.
-
-\end{itemize}
-
+Die Invarianten k\"{o}nnen verschiedener Art sein: topologische, algebraische,
+dynamische, kategoriale oder Symmetrieinvarianten.
 \end{definition}
 
 \begin{remark}
-
-Die Invarianz ersetzt bewusst den bisherigen Begriff
-der Stabilität.
-
-Stabilität beschreibt lediglich Verhalten.
-
-Invarianz beschreibt dagegen,
-welche Eigenschaften trotz Transformation
-erhalten bleiben.
-
-Damit wird Form unabhängig
-von ihrem konkreten Träger.
-
+Die \"{A}quivalenzklassen-Definition ist die mathematisch fundamentalere. Sie verbindet
+Form direkt mit:
+\begin{itemize}
+  \item \textbf{Topologie} --- Invarianten unter stetigen Transformationen
+  \item \textbf{Kategorientheorie} --- Objekte und Morphismen, Funktoren zwischen
+        Formkategorien
+  \item \textbf{Homotopietheorie} --- Invarianzklassen unter Deformationen
+  \item \textbf{Symmetriegruppen} --- Erhaltungss\"{a}tze und Noether-Theorem
+  \item \textbf{Invarianzprinzipien der Physik} --- Lorentz-Invarianz, Eichinvarianz
+\end{itemize}
+Die Tripel-Darstellung $(D, R, \mathcal{I})$ dient als konkrete Realisierung
+innerhalb dieser allgemeinen Struktur.
 \end{remark}
 
-% ==============================================================
-\section{Erstes Formprinzip}
-% ==============================================================
+%==============================================================
+\section{Das Formprinzip}
+%==============================================================
 
 \begin{proposition}[Formprinzip]
-
-Existenz setzt Form voraus.
-
-Formal
-
+Existenz setzt Form voraus:
 \[
-\boxed{
-\text{Existenz}
-\Longrightarrow
-\text{Form}
-}
+  \boxed{\text{Existenz} \;\Longrightarrow\; \text{Form}}
 \]
-
 \end{proposition}
 
-\begin{proof}[Konzeptuelle Herleitung]
-
-Existenz verlangt nach UP
-mindestens eine Bestimmtheit.
-
-Bestimmtheit verlangt mindestens
-eine Differenz.
-
-Differenzen erzeugen Relationen.
-
-Stabile Relationen bilden eine Form.
-
-Damit besitzt jede Existenz
-mindestens eine Form.
-
+\begin{proof}[Konzeptuelle Herleitung --- MKO Ebene~2]
+Existenz verlangt nach UP mindestens eine Bestimmtheit. Bestimmtheit verlangt
+mindestens eine Differenz. Differenzen erzeugen Relationen. Stabile Relationen
+bilden eine Form. Damit besitzt jede Existenz mindestens eine Form.\qed
 \end{proof}
 
-\begin{remark}
-
-Die Umkehrung
-
-\[
-\text{Form}
-\Longrightarrow
-\text{Existenz}
-\]
-
-wird bewusst noch nicht behauptet.
-
-Ob jede mathematisch beschreibbare Form
-ontologische Existenz besitzt,
-ist eine offene Forschungsfrage
-und berührt unmittelbar
-den Status mathematischer Objekte.
-
+\begin{remark}[Offene Kernfrage]
+Die Umkehrung $\text{Form} \Longrightarrow \text{Existenz}$ wird bewusst noch nicht
+behauptet. Ob jede Form ontologische Existenz besitzt, ber\"{u}hrt unmittelbar den
+Status mathematischer Objekte (vgl.\ Pi-Argument in OP). Von der Antwort h\"{a}ngt
+ab, ob DRS zum Fundament des OP wird oder ein Erg\"{a}nzungsdokument bleibt.
 \end{remark}
 
-% ==============================================================
-% Ende Teil 1
-% ==============================================================
-
-% Fortsetzung in Teil 2
-
-% ==============================================================
-% DRS – Differenz-Relation-Struktur
-% Version 0.3 (Entwurf)
-% Teil 2
-% ==============================================================
-
-% ==============================================================
-\section{Form und Information}
-% ==============================================================
-
-\begin{methodennote}[Leitidee]
-
-In der Literatur wird Information häufig als fundamentaler Begriff
-behandelt.
-
-Die hier entwickelte Arbeitshypothese verfolgt die umgekehrte Richtung:
-
-\begin{center}
-Information setzt Form voraus.
-\end{center}
-
-Form besitzt daher im DRS den ontologischen Vorrang.
-
-\end{methodennote}
-
-%--------------------------------------------------------------
-
-\begin{definition}[Information]
-
-Information ist eine Interpretation oder Auslesung einer Form
-relativ zu einem Beobachter,
-einem Referenzsystem
-oder einer Projektion.
-
-Formal schreiben wir
-
+\begin{hypothese}[Formaxiom --- MKO Ebene~5]
+Falls die Umkehrung gilt, l\"{a}sst sich ein Formaxiom formulieren:
 \[
-\mathcal I = \Phi(F)
+  \forall x\;\bigl(\operatorname{Existiert}(x)
+  \;\rightarrow\; \exists F\; \operatorname{FormVon}(F,x)\bigr)
 \]
-
-wobei
-
+und m\"{o}glicherweise sogar:
 \[
-\Phi
+  \text{Existenz} \;\Longleftrightarrow\; \text{Form}
 \]
-
-einen Interpretationsoperator bezeichnet.
-
-\end{definition}
-
-\begin{remark}
-
-Dies trennt erstmals drei Begriffe sauber voneinander.
-
-\[
-\boxed{
-\text{Form}
-\neq
-\text{Information}
-\neq
-\text{Bedeutung}
-}
-\]
-
-Form existiert unabhängig davon,
-ob sie interpretiert wird.
-
-Information entsteht erst durch Interpretation.
-
-Bedeutung setzt zusätzlich einen semantischen Kontext voraus
-(FSO).
-
-\end{remark}
-
-% ==============================================================
-\section{Form und Darstellung}
-% ==============================================================
-
-Verschiedene Darstellungen können dieselbe Form besitzen.
-
-Die Form ist daher trägerunabhängig.
-
-Formal:
-
-\[
-F
-=
-[\rho_1]
-=
-[\rho_2]
-=
-\cdots
-=
-[\rho_n]
-\]
-
-wobei
-
-\[
-[\rho]
-\]
-
-eine Äquivalenzklasse zulässiger Darstellungen bezeichnet.
-
-Damit besitzt Form eine deutlich höhere Allgemeinheit
-als jede konkrete Repräsentation.
-
-%--------------------------------------------------------------
-
-\begin{remark}
-
-Eine Melodie kann
-
-\begin{itemize}
-
-\item gespielt,
-
-\item gesungen,
-
-\item als Notenschrift,
-
-\item digital codiert
-
-\end{itemize}
-
-werden.
-
-Alle diese Repräsentationen unterscheiden sich materiell,
-realisieren jedoch dieselbe Form.
-
-\end{remark}
-
-% ==============================================================
-\section{Das Kompressionsprinzip}
-% ==============================================================
-
-Die Unterscheidung zwischen Form und Darstellung
-führt unmittelbar auf ein allgemeines Kompressionsprinzip.
-
-\begin{proposition}[Kompressionsprinzip]
-
-Eine Form kann wesentlich einfacher sein
-als ihre vollständige Entfaltung.
-
-\end{proposition}
-
-\begin{remark}
-
-Die Kreiszahl
-
-\[
-\pi
-\]
-
-liefert ein anschauliches Beispiel.
-
-Ihre Dezimalentwicklung besitzt unendlich viele Stellen.
-
-Die zugrunde liegende Form
-
-\[
-\pi
-=
-\frac{\text{Umfang}}{\text{Durchmesser}}
-\]
-
-ist dagegen äußerst kompakt.
-
-Unendliche Darstellung impliziert daher
-keine komplexe Form.
-
-\end{remark}
-
-Dieses Prinzip dürfte später
-für Attraktoren,
-Projektionsoperatoren
-und die Beschreibung physikalischer Zustände
-von erheblicher Bedeutung sein.
-
-% ==============================================================
-\section{Transformationen von Formen}
-% ==============================================================
-
-Formen sind nicht statisch.
-
-Sie können ineinander übergehen,
-ohne ihre Identität vollständig zu verlieren.
-
-\begin{definition}[Transformation]
-
-Eine Transformation ist ein Operator
-
-\[
-T :
-F
-\rightarrow
-F'
-\]
-
-der eine Form
-in eine andere Form überführt.
-
-\end{definition}
-
-Transformationen können beispielsweise sein
-
-\begin{itemize}
-
-\item Projektionen,
-
-\item Symmetrien,
-
-\item Deformationen,
-
-\item Kompositionen,
-
-\item Zerlegungen.
-
-\end{itemize}
-
-%--------------------------------------------------------------
-
-\begin{definition}[Invariant]
-
-Eine Eigenschaft
-
-\[
-P(F)
-\]
-
-heißt invariant bezüglich
-
-\[
-T,
-\]
-
-wenn gilt
-
-\[
-P(F)
-=
-P(T(F)).
-\]
-
-\end{definition}
-
-Invarianten definieren die Identität einer Form.
-
-Nicht alle Eigenschaften müssen erhalten bleiben.
-
-Entscheidend ist,
-welche Eigenschaften unter zulässigen Transformationen
-konstant bleiben.
-
-% ==============================================================
-\section{Minimalformprinzip}
-% ==============================================================
-
-Die bisher entwickelten Begriffe erlauben
-eine stärkere Formulierung.
-
-\begin{proposition}[Minimalformprinzip]
-
-Jede Existenz besitzt mindestens eine minimale Form.
-
-Formal
-
-\[
-\forall x
-\,
-\big(
-E(x)
-\rightarrow
-\exists F_x
-\big).
-\]
-
-\end{proposition}
-
-\begin{remark}
-
-Das Minimalformprinzip erweitert unmittelbar
-die Unterscheidbarkeits-Prämisse.
-
-Existenz verlangt Bestimmtheit.
-
-Bestimmtheit verlangt Form.
-
-Form verlangt mindestens eine Differenz
-und mindestens eine Relation.
-
-\end{remark}
-
-% ==============================================================
-\section{Raum als Form}
-% ==============================================================
-
-Im Ontophänomenalismus
-wird Raum nicht als primitive Entität verstanden.
-
-Vielmehr entsteht Raum
-durch stabile relationale Formen.
-
-\begin{hypothese}[Emergenz des Raumes]
-
-Raum ist eine emergente Form
-eines Netzes relationaler Möglichkeiten.
-
+Dies bleibt Gegenstand weiterer konzeptueller und mathematischer Pr\"{u}fung.
 \end{hypothese}
 
-Damit besitzt Raum
-keinen ontologischen Vorrang.
+%==============================================================
+\section{Das Entfaltungsprinzip}
+%==============================================================
 
-Vorrang besitzt ausschließlich
-die zugrunde liegende Form.
-
-Dies stimmt mit der projektiven Interpretation
-des OPP überein.
-
-% ==============================================================
-\section{Entropie}
-% ==============================================================
-
-Auch Entropie erscheint
-unter diesem Blickwinkel
-nicht mehr fundamental.
+\begin{prinzip}[Entfaltungsprinzip]
+Die Komplexit\"{a}t einer Darstellung ist unabh\"{a}ngig von der Komplexit\"{a}t der
+zugrundeliegenden Form. Eine endliche Form kann eine unendliche Entfaltung besitzen.
+\[
+  \mathrm{Komplexit\"{a}t}(\text{Darstellung})
+  \;\not\Longrightarrow\;
+  \mathrm{Komplexit\"{a}t}(\text{Form})
+\]
+\end{prinzip}
 
 \begin{remark}
+Die Kreiszahl $\pi$ besitzt eine unendliche Dezimalentwicklung, aber eine \"{a}u\ss{}erst
+kompakte Form: Verh\"{a}ltnis von Umfang zu Durchmesser eines Kreises. Eine Melodie
+besitzt eine endliche Form, kann aber in unendlich vielen Vari\"{a}tionen entfaltet
+werden.
 
-Sowohl
-
-\begin{itemize}
-
-\item Shannon-Entropie,
-
-\item Von-Neumann-Entropie,
-
-\item thermodynamische Entropie
-
-\end{itemize}
-
-setzen einen strukturierten Zustandsraum voraus.
-
-Ein Zustandsraum
-ist jedoch bereits eine Form.
-
-Ohne Form
-existieren weder Zustände
-noch Wahrscheinlichkeiten.
-
-Entropie setzt daher Form voraus.
-
+Dieses Prinzip d\"{u}rfte erhebliche Bedeutung f\"{u}r Attraktoren, Projektionsoperatoren
+und physikalische Prozesse besitzen: Einfache ontische Formen k\"{o}nnten hochkomplexe
+physikalische Erscheinungen erzeugen.
 \end{remark}
 
-Formal:
+%==============================================================
+\section{Form als Fundament weiterer Begriffe}
+%==============================================================
 
+\subsection{Information und Bedeutung}
+
+\begin{definition}[Information]
+Information ist eine Interpretation einer Form relativ zu einem Beobachter,
+Referenzsystem oder einer Projektion:
 \[
-\boxed{
-\text{Form}
-\Longrightarrow
-\text{Zustandsraum}
-\Longrightarrow
-\text{Entropie}
-}
+  \mathcal{I} = \Phi(F)
 \]
-
-Die Umkehrung gilt im Allgemeinen nicht.
-
-% ==============================================================
-\section{Möglichkeiten}
-% ==============================================================
-
-Auch Möglichkeiten
-lassen sich formtheoretisch interpretieren.
-
-\begin{definition}[Möglichkeitsraum]
-
-Ein Möglichkeitsraum
-ist eine Menge potentiell realisierbarer Formen.
-
-\[
-\Omega
-=
-\{F_i\}
-\]
-
+wobei $\Phi$ einen Interpretationsoperator bezeichnet.
 \end{definition}
 
-Physikalische Realität
-wählt innerhalb des OP
-nicht aus formlosen Möglichkeiten,
-sondern aus strukturierten Formen.
-
-Dies verbindet DRS
-direkt mit der Projektiven Strukturtheorie.
-
-% ==============================================================
-\section{Zwischenfazit}
-% ==============================================================
-
-Die bisherige Argumentation lässt sich
-in einer ersten Hierarchie zusammenfassen.
-
+\begin{remark}[Dreischritt Form --- Information --- Bedeutung]
+Drei Begriffe sind sauber zu trennen:
 \[
-\boxed{
-\begin{aligned}
-&
-\text{Differenz}
-\\[0.3em]
-\Longleftrightarrow\;&
-\text{Relation}
-\\[0.3em]
-\Longrightarrow\;&
-\text{Form}
-\\[0.3em]
-\Longrightarrow\;&
-\text{Bestimmtheit}
-\\[0.3em]
-\Longrightarrow\;&
-\text{Existenz}
-\end{aligned}
-}
+  \boxed{\text{Form} \;\Longrightarrow\; \text{Information}
+  \;\Longrightarrow\; \text{Bedeutung}}
+\]
+\begin{itemize}
+  \item \textbf{Form} beschreibt objektive Struktur --- tr\"{a}gerunabh\"{a}ngig und
+        unabh\"{a}ngig von Interpretation.
+  \item \textbf{Information} ist codierte bzw.\ repr\"{a}sentierte Form relativ zu
+        einem Beobachter oder System.
+  \item \textbf{Bedeutung} entsteht erst durch Interpretation innerhalb eines
+        semantischen Kontextes (vgl.\ FSO).
+\end{itemize}
+Form existiert unabh\"{a}ngig davon ob sie interpretiert wird. Information setzt
+Form voraus. Bedeutung setzt Information und semantischen Kontext voraus.
+\end{remark}
+
+\subsection{Entropie}
+
+Shannon-Entropie, Von-Neumann-Entropie und thermodynamische Entropie setzen alle
+einen strukturierten Zustandsraum voraus. Ein Zustandsraum ist bereits eine Form.
+Ohne Form existieren weder Zust\"{a}nde noch Wahrscheinlichkeiten:
+\[
+  \boxed{\text{Form} \;\Longrightarrow\; \text{Zustandsraum}
+  \;\Longrightarrow\; \text{Entropie}}
 \]
 
-Die genaue Richtung einzelner Implikationen
-bleibt Gegenstand weiterer Untersuchungen.
+\subsection{Raum}
 
-Insbesondere ist noch offen,
+\begin{hypothese}[Emergenz des Raumes --- MKO Ebene~5]
+Raum ist eine emergente Form eines Netzes relationaler M\"{o}glichkeiten. Er besitzt
+keinen ontologischen Vorrang. Ein M\"{o}glichkeitsraum ist eine Menge potentiell
+realisierbarer Formen: $\Omega = \{F_i\}$. Physikalische Realit\"{a}t w\"{a}hlt
+nicht aus formlosen M\"{o}glichkeiten, sondern aus strukturierten Formen.
+\end{hypothese}
 
+%==============================================================
+\section{Transformationen und Projektionsoperatoren}
+%==============================================================
+
+\begin{definition}[Transformation]
+Eine \textbf{Transformation} ist ein Operator $T\colon F \rightarrow F'$, der eine
+Form in eine andere Form \"{u}berf\"{u}hrt. M\"{o}gliche Transformationen: Projektionen,
+Symmetrien, Deformationen, Kompositionen, Zerlegungen.
+\end{definition}
+
+\begin{proposition}[Projektionsoperatoren als Formtransformationen]
+Projektionsoperatoren erzeugen keine Form aus Formlosigkeit. Sie bilden bestehende
+Formen auf neue Formen ab:
 \[
-\text{Form}
-\Longrightarrow
-\text{Existenz}
+  P\colon F_{\mathrm{OPP}} \longrightarrow F_{\mathrm{phys}}
 \]
+Damit verschiebt sich der Fokus: Nicht Materie ist fundamental, nicht Raum, nicht
+Information --- sondern Form. Die physikalische Welt erscheint als Familie projizierter
+Formen.
+\end{proposition}
 
-oder
-
-\[
-\text{Existenz}
-\Longleftrightarrow
-\text{Form}
-\]
-
-ob eine dieser stärkeren Aussagen
-innerhalb des OP begründet werden kann.
-
-% ==============================================================
-% Ende Teil 2
-% ==============================================================
-
-% Fortsetzung in Teil 3
-% ==============================================================
-% DRS – Differenz-Relation-Struktur
-% Version 0.3 (Entwurf)
-% Teil 3
-% ==============================================================
+\begin{remark}
+Diese Aussage verbindet DRS unmittelbar mit moderner Mathematik: Operatoren, Funktoren
+und Morphismen erzeugen in der Regel keine Strukturen ex nihilo, sondern bilden
+vorhandene Strukturen auf neue Strukturen ab. Dieser Gedanke ist vollst\"{a}ndig
+konsistent mit der Projektiven Reduktion (DPR).
+\end{remark}
 
 %==============================================================
 \section{Bewusstsein als Form}
 %==============================================================
 
-\begin{methodennote}[Status]
-
-Die folgenden Überlegungen stellen eine offene Arbeitshypothese (MKO Ebene 5)
-dar. Sie dienen als mögliche Verbindung zwischen DRS und der Projektiven
-Gefälletheorie (PGT).
-
+\begin{methodennote}[Status --- MKO Ebene~5]
+Die folgenden \"{U}berlegungen sind offene Arbeitshypothesen und dienen als m\"{o}gliche
+Verbindung zwischen DRS und der Ph\"{a}nomenalen Differenz (DPD).
 \end{methodennote}
 
-Im bisherigen OP wird Bewusstsein nicht als eigenständige Substanz verstanden,
-sondern als emergente Eigenschaft bestimmter relationaler Strukturen.
-
-Die DRS-Hypothese erlaubt eine allgemeinere Formulierung.
-
-\begin{hypothese}[Bewusstsein]
-
-Bewusstsein ist eine besondere Klasse
-selbstreferenzieller und dynamisch stabiler Formen.
-
+\begin{hypothese}[Bewusstsein als selbstreferenzielle Form]
+Bewusstsein ist eine besondere Klasse selbstreferenzieller und dynamisch stabiler
+Formen. Selbstreferenz bezeichnet die F\"{a}higkeit einer Form, ihre eigene Struktur
+in ihre weitere Entwicklung einzubeziehen:
+\[
+  F \rightarrow \Sigma(F) \rightarrow F'
+\]
+Ob Selbstreferenz hinreichend oder nur notwendig f\"{u}r Bewusstsein ist, bleibt offen.
 \end{hypothese}
 
-Selbstreferenz bedeutet dabei nicht lediglich Rekursion, sondern die Fähigkeit
-einer Form, ihre eigene Struktur in ihre weitere Entwicklung einzubeziehen.
-
-Formal könnte dies durch einen Operator
-
-\[
-\Sigma(F)
-\]
-
-beschrieben werden, für den gilt
-
-\[
-\Sigma(F)\subseteq F
-\]
-
-oder allgemeiner
-
-\[
-F \rightarrow \Sigma(F) \rightarrow F'.
-\]
-
-Ob diese Selbstreferenz bereits hinreichend für Bewusstsein ist oder lediglich
-eine notwendige Bedingung darstellt, bleibt offen.
-
 %==============================================================
-\section{Projektive Interpretation}
+\section{Vorl\"{a}ufige Gesamtsynthese}
 %==============================================================
 
-Die DRS lässt sich als strukturelle Grundlage der Projektiven Strukturtheorie
-(PST) interpretieren.
-
-\begin{hypothese}
-
-Projektionsoperatoren erzeugen keine Form aus Formlosigkeit.
-
-Sie bilden bestehende Formen in neue Formen ab.
+Die in diesem Dokument entwickelte Arbeitshypothese l\"{a}sst sich in folgender
+Hierarchie zusammenfassen:
 
 \[
-P :
-F_{OPP}
-\longrightarrow
-F_{phys}
+  \boxed{
+  \begin{aligned}
+    &\text{Differenz} \\
+    \Longleftrightarrow\;&\text{Relation} \\
+    \Longleftrightarrow\;&\text{Form} \\
+    \Longrightarrow\;&\text{Bestimmtheit} \\
+    \Longrightarrow\;&\text{Information} \\
+    \Longrightarrow\;&\text{M\"{o}glichkeiten} \\
+    \Longrightarrow\;&\text{Projektionsr\"{a}ume} \\
+    \Longrightarrow\;&\text{Physikalische Realit\"{a}t}
+  \end{aligned}
+  }
 \]
 
-\end{hypothese}
+Bewusstsein erscheint innerhalb dieser Sichtweise nicht als Ausnahme, sondern als
+hochkomplexe Klasse selbstreferenzieller Formen.
 
-Damit verschiebt sich der Fokus des OP:
+Gegen\"{u}ber Information-first-Ans\"{a}tzen (IIT, digitaler Physikalismus) schlägt
+DRS eine fundamentalere Reihenfolge vor:
 
-Nicht Materie ist fundamental,
-sondern Form.
+\[
+  \text{Information-first:}\quad
+  \text{Information} \Longrightarrow \text{Realit\"{a}t}
+\]
+\[
+  \text{DRS:}\quad
+  \text{Differenz} \Longleftrightarrow \text{Relation}
+  \Longleftrightarrow \text{Form} \Longrightarrow \text{Information}
+\]
 
-Nicht Raum ist fundamental,
-sondern Form.
-
-Nicht Information ist fundamental,
-sondern Form.
-
-Die physikalische Welt erscheint dann als eine Familie projektierter Formen.
+Die entscheidende offene Frage bleibt:
+\[
+  \text{Form} \;\Longrightarrow\; \text{Existenz}
+  \quad\text{oder}\quad
+  \text{Existenz} \;\Longleftrightarrow\; \text{Form}?
+\]
 
 %==============================================================
-\section{Form und mathematische Struktur}
+\section{Mathematische Kandidaten}
 %==============================================================
 
-Eine zentrale offene Frage betrifft die geeignete mathematische Beschreibung
-von Formen.
+\begin{remark}[Warum Kategorientheorie besonders vielversprechend ist]
+Kategorientheorie beschreibt nicht Objekte, sondern Beziehungen zwischen Objekten
+(Morphismen). Das ist genau die Ebene, auf der Form operiert: nicht als Ding,
+sondern als Struktur von Relationen. Funktoren zwischen Kategorien sind nat\"{u}rliche
+Kandidaten f\"{u}r Projektionsoperatoren. Nat\"{u}rliche Transformationen k\"{o}nnten
+Form\"{a}nderungen beschreiben ohne den Inhalt zu verlieren.
+\end{remark}
 
-Derzeit erscheinen mehrere Kandidaten geeignet.
+Weitere Kandidaten f\"{u}r die mathematische Beschreibung von Formen:
 
 \begin{enumerate}
-
-\item Graphentheorie
-
-\item Hypergraphen
-
-\item Kategorien und Funktoren
-
-\item Topologie
-
-\item Operatoralgebren
-
-\item Dynamische Systeme
-
+  \item \textbf{Kategorientheorie und Funktoren} --- Relationen zwischen Strukturen;
+        erscheint am vielversprechendsten (siehe Bemerkung oben).
+  \item \textbf{Topologie und Homotopie} --- Invarianzklassen unter stetigen
+        Transformationen; nat\"{u}rliche Sprache f\"{u}r \"{A}quivalenzklassen.
+  \item \textbf{Graphentheorie und Hypergraphen} --- diskrete
+        Differenz-Relation-Strukturen.
+  \item \textbf{Operatoralgebren} --- quantenmechanische Formen und
+        Von-Neumann-Algebren.
+  \item \textbf{Dynamische Systeme} --- Attraktoren, Stabilit\"{a}t, Bifurkationen.
 \end{enumerate}
-
-Jeder dieser Ansätze beschreibt unterschiedliche Aspekte von Form.
-
-Eine zukünftige MGO-Version sollte untersuchen,
-welcher Formalismus die größte Ausdrucksstärke bei möglichst geringer
-Komplexität besitzt.
-
-Insbesondere erscheint die Kategorientheorie vielversprechend,
-da sie Beziehungen zwischen Strukturen statt einzelner Objekte beschreibt.
-
-%==============================================================
-\section{Invarianz als Identitätsprinzip}
-%==============================================================
-
-Die bisherige Definition
-
-\[
-F=(D,R,S)
-\]
-
-liefert eine operative Beschreibung einer Form.
-
-Möglicherweise lässt sich der Begriff jedoch noch allgemeiner fassen.
-
-\begin{hypothese}[Form als Invarianzklasse]
-
-Eine Form ist die Äquivalenzklasse aller Differenz-Relation-Strukturen,
-die bezüglich einer Menge zulässiger Transformationen invariant sind.
-
-Formal
-
-\[
-F
-=
-[(D,R)]_{\sim}
-\]
-
-wobei
-
-\[
-\sim
-\]
-
-eine geeignete Äquivalenzrelation bezeichnet.
-
-\end{hypothese}
-
-Diese Sichtweise besitzt mehrere Vorteile.
-
-\begin{itemize}
-
-\item Form wird vollständig trägerunabhängig.
-
-\item Unterschiedliche physikalische Realisierungen können dieselbe Form
-besitzen.
-
-\item Identität ergibt sich aus Invarianz und nicht aus Materialität.
-
-\item Der Anschluss an moderne Mathematik (Topologie,
-Kategorientheorie, Homotopie) wird wesentlich einfacher.
-
-\end{itemize}
-
-Diese Hypothese könnte langfristig die vorläufige Definition
-\(F=(D,R,S)\) ersetzen.
 
 %==============================================================
 \section{Offene Forschungsfragen}
 %==============================================================
 
-Die DRS wirft eine Reihe grundlegender Fragen auf.
-
 \begin{enumerate}
-
-\item Ist Form ontologisch fundamentaler als Information?
-
-\item Lässt sich Bestimmtheit vollständig durch Form erklären?
-
-\item Ist Relation logisch gleichursprünglich mit Differenz?
-
-\item Welche Minimalstruktur besitzt die einfachste mögliche Form?
-
-\item Können Projektionsoperatoren ausschließlich zwischen Formen
-abbilden?
-
-\item Ist Bewusstsein vollständig als Klasse selbstreferenzieller Formen
-beschreibbar?
-
-\item Welche mathematische Sprache eignet sich langfristig am besten
-zur Beschreibung von Formen?
-
-\item Ist Form selbst eine emergente Eigenschaft noch fundamentalerer
-Strukturen oder bildet sie den Endpunkt weiterer Reduktionen?
-
+  \item Gilt $\text{Form} \Longleftrightarrow \text{Existenz}$ oder nur
+        $\text{Form} \Longleftarrow \text{Existenz}$?
+  \item Sind Differenz, Relation und Form tats\"{a}chlich ko-origin\"{a}r oder
+        liegt eine Hierarchie vor?
+  \item L\"{a}sst sich Bestimmtheit vollst\"{a}ndig durch Form erkl\"{a}ren?
+  \item Welche Minimalstruktur besitzt die einfachste m\"{o}gliche Form?
+  \item K\"{o}nnen Projektionsoperatoren ausschlie\ss{}lich zwischen Formen abbilden?
+  \item Ist Bewusstsein vollst\"{a}ndig als Klasse selbstreferenzieller Formen
+        beschreibbar?
+  \item Welche mathematische Sprache --- Kategorientheorie, Homotopie,
+        Operatoralgebren --- eignet sich langfristig am besten?
+  \item Ist Form selbst emergent aus noch fundamentaleren Strukturen oder bildet
+        sie den Endpunkt weiterer Reduktionen?
 \end{enumerate}
-
-%==============================================================
-\section{Vorläufige Gesamtsynthese}
-%==============================================================
-
-Die in diesem Dokument entwickelte Arbeitshypothese lässt sich
-gegenwärtig in folgender Struktur zusammenfassen.
-
-\[
-\boxed{
-\begin{aligned}
-&
-\text{Differenz}
-\\
-\Longleftrightarrow&
-\text{Relation}
-\\
-\Longrightarrow&
-\text{Form}
-\\
-\Longrightarrow&
-\text{Bestimmtheit}
-\\
-\Longrightarrow&
-\text{Information}
-\\
-\Longrightarrow&
-\text{Möglichkeiten}
-\\
-\Longrightarrow&
-\text{Projektionsräume}
-\\
-\Longrightarrow&
-\text{Physikalische Realität}
-\end{aligned}
-}
-\]
-
-Bewusstsein erscheint innerhalb dieser Sichtweise nicht als Ausnahme,
-sondern als eine hochkomplexe Klasse selbstreferenzieller Formen.
 
 %==============================================================
 \section{Schnittstellen}
 %==============================================================
 
-Die DRS besitzt unmittelbare Verbindungen zu mehreren OP-Modulen.
-
 \begin{itemize}
-
-\item \textbf{OP:}
-Die Unterscheidbarkeits-Prämisse erhält mit dem Formbegriff
-eine mögliche strukturelle Präzisierung.
-
-\item \textbf{FSO:}
-Diskursdomänen können als Räume formulierbarer Formen interpretiert werden.
-
-\item \textbf{MGO:}
-Die mathematische Formalisierung von Form bildet eine natürliche
-Erweiterung der dort entwickelten algebraischen und
-kategorientheoretischen Grundlagen.
-
-\item \textbf{PST:}
-Projektionsoperatoren transformieren Formen zwischen verschiedenen
-Beschreibungsebenen.
-
-\item \textbf{PGT:}
-Bewusstsein könnte als Klasse selbstreferenzieller Formen beschrieben
-werden.
-
-\item \textbf{DFD:}
-Fragedifferentiale könnten als strukturelle Distanzen zwischen Formen
-interpretiert werden.
-
+  \item \textbf{OP:} Die UP erh\"{a}lt mit dem Formbegriff eine strukturelle
+        Pr\"{a}zisierung. Bestimmtheit k\"{o}nnte vollst\"{a}ndig durch Form erkl\"{a}rt
+        werden.
+  \item \textbf{FSO:} Diskursdom\"{a}nen k\"{o}nnen als R\"{a}ume formulierbarer Formen
+        interpretiert werden. Referenz setzt eine bestimmte Form voraus. Der Dreischritt
+        Form-Information-Bedeutung verbindet DRS direkt mit FSO.
+  \item \textbf{MGO:} Die mathematische Formalisierung von Form bildet eine nat\"{u}rliche
+        Erweiterung der algebraischen und kategorientheoretischen Grundlagen in MGO.
+        Das Entfaltungsprinzip ist ein Kandidat f\"{u}r ein eigenes MGO-Axiom.
+  \item \textbf{DPR:} Projektionsoperatoren transformieren Formen zwischen verschiedenen
+        Beschreibungsebenen --- nicht aus Formlosigkeit in Form. Das verbindet DRS
+        direkt mit DPR.
+  \item \textbf{DPD:} Das ph\"{a}nomenale Gef\"{a}lle w\"{a}re eine strukturelle
+        Differenz zwischen Formen. Bewusstsein als selbstreferenzielle Form verbindet
+        DRS mit DPD.
+  \item \textbf{DFD:} Fragedifferentiale k\"{o}nnten als strukturelle Distanzen
+        zwischen Formen interpretiert werden --- $\mathcal{D}(E)$ als Ma\ss{} f\"{u}r
+        die Formabweichung einer Perspektive vom Gesamtfeld.
+  \item \textbf{PST:} Die vollst\"{a}ndige mathematische Ausarbeitung des Formbegriffs
+        und der Transformationshierarchie obliegt der PST.
 \end{itemize}
 
-%==============================================================
-\section{Schlussbemerkung}
-%==============================================================
-
-Dieses Dokument erhebt keinen Anspruch auf eine abgeschlossene Theorie.
-
-Es formuliert die Arbeitshypothese, dass der Begriff der Form den bislang
-verwendeten Begriffen Struktur, Bestimmtheit, Relation und Information
-ontologisch vorausgehen könnte.
-
-Sollte sich diese Vermutung bestätigen, könnte die DRS zukünftig eine
-vereinheitlichende Grundlage des Ontophänomenalismus bilden und als
-Bindeglied zwischen OP, MGO, FSO, PST und PGT dienen.
-
 \end{document}
-
