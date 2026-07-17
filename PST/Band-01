@@ -1,0 +1,345 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\geometry{margin=2.5cm}
+
+\title{
+Band I\
+Grundlagen und Motivation\
+der Projective Structure Theory
+}
+
+\author{PST Working Draft}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Einleitung}
+
+Dieses Dokument bildet den ersten Band einer zusammenhängenden Forschungsdokumentation über die Projective Structure Theory (PST) und ihren ontologischen Ursprung, den Ontophänomenalen Phasenraum (OPP).
+
+Die Dokumentation verfolgt zwei Ziele.
+
+\begin{enumerate}
+\item
+Die vollständige mathematische und numerische Entwicklung der PST nachvollziehbar zu dokumentieren.
+
+\item
+Alle Simulationen, Überlegungen, Fehlschläge, offenen Fragen und erfolgreichen Ergebnisse in einer konsistenten Form zusammenzuführen.
+\end{enumerate}
+
+Im Gegensatz zu klassischen Veröffentlichungen sollen hier nicht nur erfolgreiche Resultate dokumentiert werden.
+
+Auch verworfene Ansätze besitzen wissenschaftlichen Wert.
+
+Gerade sie zeigen, welche Wege bereits untersucht wurden und welche Hypothesen durch numerische Experimente ausgeschlossen werden konnten.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivation}
+
+Die grundlegende Motivation der PST besteht darin, die Struktur unserer physikalischen Welt nicht als fundamental anzunehmen.
+
+Stattdessen wird untersucht, ob sich Raum, Zeit und physikalische Gesetze als emergente Eigenschaften eines wesentlich allgemeineren mathematischen Objektes ergeben.
+
+Dieses Objekt wird als
+
+[
+\boxed{\text{Ontophänomenaler Phasenraum}}
+]
+
+oder kurz
+
+[
+\boxed{\mathrm{OPP}}
+]
+
+bezeichnet.
+
+Die Grundidee lautet:
+
+\begin{quote}
+Nicht Raumzeit erzeugt Physik.
+
+Sondern Physik erscheint als Projektion einer tieferen informationsbasierten Struktur.
+\end{quote}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Der Ontophänomenale Phasenraum}
+
+Der OPP besitzt zunächst keinerlei klassische physikalische Struktur.
+
+Insbesondere wird \textbf{nicht} vorausgesetzt:
+
+\begin{itemize}
+\item euklidische Geometrie,
+\item Minkowski-Metrik,
+\item Raum,
+\item Zeit,
+\item Teilchen,
+\item Felder,
+\item Kausalität.
+\end{itemize}
+
+Der OPP stellt lediglich ein hochdimensionales relationales Informationssystem dar.
+
+Alle bekannten physikalischen Größen sollen erst durch geeignete Projektionen oder Stabilitätsbedingungen entstehen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Grundannahmen}
+
+Während der Entwicklung der PST kristallisierten sich folgende Arbeitsannahmen heraus.
+
+\subsection{Axiom 1}
+
+Es existiert etwas.
+
+Formal:
+
+[
+\exists X.
+]
+
+Dieses Axiom wird nicht aus physikalischen Überlegungen gewonnen, sondern bildet die ontologische Minimalannahme.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Axiom 2}
+
+Der OPP besitzt keine ausgezeichneten Raumdimensionen.
+
+Es existiert zunächst keine bevorzugte Richtung.
+
+Ebenso existiert keine ausgezeichnete Zeitrichtung.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Axiom 3}
+
+Relationen sind fundamentaler als klassische Objekte.
+
+Objekte entstehen erst durch stabile Strukturen innerhalb relationaler Zusammenhänge.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Axiom 4}
+
+Raumzeit ist nicht fundamental.
+
+Sie entsteht erst als emergente Beschreibung geeigneter Projektionen des OPP.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die zentrale Forschungsfrage}
+
+Während der numerischen Arbeiten entwickelte sich eine sehr präzise Leitfrage.
+
+Sie lautet:
+
+\begin{quote}
+
+Gibt es innerhalb des OPP eine ausgezeichnete Projektion, aus der unsere beobachtete Physik zwangsläufig entsteht?
+
+\end{quote}
+
+Diese Frage ersetzte frühere Fragestellungen wie
+
+\begin{quote}
+
+Kann man eine vierdimensionale Struktur im OPP finden?
+
+\end{quote}
+
+Denn die Simulationen zeigten sehr deutlich:
+
+Nicht jede Projektion besitzt physikalische Bedeutung.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die ursprüngliche Erwartung}
+
+Zu Beginn der numerischen Untersuchungen bestand die Hoffnung, dass geeignete Optimierungsverfahren automatisch eine vierdimensionale Struktur erzeugen würden.
+
+Insbesondere wurden untersucht:
+
+\begin{itemize}
+\item Stabilitätsfunktionale
+\item PCA
+\item Kernel PCA
+\item Diffusion Maps
+\item Random Projection
+\item verschiedene Kernel
+\item Spektraloptimierungen
+\end{itemize}
+
+Die ursprüngliche Erwartung lautete:
+
+[
+\mathrm{OPP}
+\longrightarrow
+3+1
+]
+
+ohne weitere Annahmen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die erste Überraschung}
+
+Die ersten größeren Simulationen zeigten jedoch ein anderes Bild.
+
+Der OPP selbst besitzt offenbar eine wesentlich höhere intrinsische effektive Dimension.
+
+Je nach Punktzahl wurden Werte beobachtet wie
+
+[
+d_{\mathrm{eff}}
+\approx
+10,
+18,
+32,
+\dots
+]
+
+Dies war eines der ersten robusten numerischen Resultate.
+
+Die hohe Dimension verschwindet nicht von selbst.
+
+Sie muss durch geeignete Projektionen reduziert werden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Die zweite Überraschung}
+
+Im Verlauf zahlreicher Simulationen zeigte sich, dass verschiedene Projektionsverfahren erstaunlich unterschiedliche Eigenschaften besitzen.
+
+Insbesondere ergaben sich Hinweise darauf, dass
+
+\begin{itemize}
+\item PCA zwar stabile Strukturen liefert,
+
+\item Kernel PCA deutlich robustere Ergebnisse erzeugt,
+
+\item Diffusion Maps besonders interessante vierdimensionale Attraktoren besitzen könnten.
+\end{itemize}
+
+Dies führte schließlich zu einer grundlegenden Änderung der Forschungsstrategie.
+
+Nicht mehr
+
+[
+\text{„Welche Dimension besitzt der OPP?“}
+]
+
+stand im Mittelpunkt,
+
+sondern
+
+[
+\boxed{
+\text{„Welche Projektionen besitzen physikalische Bedeutung?“}
+}
+]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Neue Arbeitshypothese}
+
+Aus den bisherigen numerischen Ergebnissen entstand schließlich die folgende Hypothese.
+
+\bigskip
+
+Der OPP ist selbst hochdimensional.
+
+Unsere beobachtete Raumzeit ist dagegen lediglich eine stabile Projektion dieses hochdimensionalen Informationsraumes.
+
+Dabei könnten mehrere Eigenschaften gleichzeitig durch dieselbe Projektion entstehen:
+
+\begin{itemize}
+
+\item Raum,
+
+\item Zeit,
+
+\item Lorentz-Invarianz,
+
+\item Quantisierung,
+
+\item Eichsymmetrien,
+
+\item möglicherweise sogar Gravitation.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Forschungsprogramm}
+
+Aus heutiger Sicht verfolgt die PST drei Hauptziele.
+
+\subsection*{Mathematisch}
+
+Existenz geeigneter projektiver Strukturen nachweisen.
+
+\subsection*{Numerisch}
+
+Robuste Projektionsverfahren identifizieren.
+
+\subsection*{Physikalisch}
+
+Zeigen, dass unsere beobachtete Physik notwendigerweise als Projektion des OPP entsteht.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ausblick}
+
+Der zweite Band entwickelt die vollständigen mathematischen Grundlagen.
+
+Dort werden sämtliche verwendeten Größen eingeführt:
+
+\begin{itemize}
+
+\item Kernel
+
+\item Gram-Matrizen
+
+\item Eigenwertspektren
+
+\item Partizipationszahl
+
+\item effektive Dimension
+
+\item Stabilitätsfunktionale
+
+\item Projektionsoperatoren
+
+\item Diffusionsoperatoren
+
+\end{itemize}
+
+Diese bilden anschließend die Grundlage sämtlicher numerischer Untersuchungen.
+
+\end{document}
