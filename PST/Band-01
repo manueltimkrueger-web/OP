@@ -16,8 +16,8 @@
 \geometry{margin=2.5cm}
 
 \title{
-Band I\
-Grundlagen und Motivation\
+Band I\\
+Grundlagen und Motivation\\
 der Projective Structure Theory
 }
 
@@ -65,15 +65,15 @@ Stattdessen wird untersucht, ob sich Raum, Zeit und physikalische Gesetze als em
 
 Dieses Objekt wird als
 
-[
+\[
 \boxed{\text{Ontophänomenaler Phasenraum}}
-]
+\]
 
 oder kurz
 
-[
+\[
 \boxed{\mathrm{OPP}}
-]
+\]
 
 bezeichnet.
 
@@ -119,9 +119,9 @@ Es existiert etwas.
 
 Formal:
 
-[
+\[
 \exists X.
-]
+\]
 
 Dieses Axiom wird nicht aus physikalischen Überlegungen gewonnen, sondern bildet die ontologische Minimalannahme.
 
@@ -197,11 +197,11 @@ Insbesondere wurden untersucht:
 
 Die ursprüngliche Erwartung lautete:
 
-[
+\[
 \mathrm{OPP}
 \longrightarrow
 3+1
-]
+\]
 
 ohne weitere Annahmen.
 
@@ -215,14 +215,14 @@ Der OPP selbst besitzt offenbar eine wesentlich höhere intrinsische effektive D
 
 Je nach Punktzahl wurden Werte beobachtet wie
 
-[
+\[
 d_{\mathrm{eff}}
 \approx
 10,
 18,
 32,
 \dots
-]
+\]
 
 Dies war eines der ersten robusten numerischen Resultate.
 
@@ -250,19 +250,19 @@ Dies führte schließlich zu einer grundlegenden Änderung der Forschungsstrateg
 
 Nicht mehr
 
-[
+\[
 \text{„Welche Dimension besitzt der OPP?“}
-]
+\]
 
 stand im Mittelpunkt,
 
 sondern
 
-[
+\[
 \boxed{
 \text{„Welche Projektionen besitzen physikalische Bedeutung?“}
 }
-]
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
