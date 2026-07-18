@@ -1,0 +1,339 @@
+\subsection{2.2.3 Projektive Reduktion und beobachterabhängige Geometrie}
+
+Die bisherigen Untersuchungen führten zu einer grundlegenden Einsicht:
+
+\begin{center}
+\emph{Die Geometrie der beobachteten Welt muss nicht identisch mit der Geometrie des OPP sein.}
+\end{center}
+
+Vielmehr spricht sowohl die mathematische Struktur der Simulationen als auch die Physik dafür, dass zwischen beiden Ebenen eine Projektionsabbildung existiert.
+
+Formal schreiben wir
+
+\[
+\Pi :
+\mathcal{O}
+\longrightarrow
+\mathcal{M},
+\]
+
+wobei
+
+\begin{itemize}
+\item
+\(\mathcal{O}\) den Ontophänomenalen Phasenraum (OPP),
+
+\item
+\(\mathcal{M}\) die beobachtbare physikalische Welt,
+
+\item
+\(\Pi\) den Projektionsoperator
+\end{itemize}
+
+bezeichnet.
+
+Der OPP besitzt keine vorgegebene Raumzeit.
+
+Er besitzt lediglich Relationen.
+
+Erst die Projektion erzeugt eine effektive Geometrie.
+
+\bigskip
+
+Diese Sichtweise besitzt einen bemerkenswerten Vorteil.
+
+Sie erklärt unmittelbar, weshalb frühere numerische Versuche scheiterten.
+
+Denn sämtliche frühen Simulationen gingen implizit davon aus,
+
+\[
+\mathcal{M}
+=
+\mathcal{O},
+\]
+
+also
+
+\[
+\Pi
+=
+\mathrm{Id}.
+\]
+
+Genau diese Annahme wurde jedoch experimentell widerlegt.
+
+\section*{Der Beobachter als Projektor}
+
+Die Projektionshypothese bedeutet nicht zwangsläufig, dass ein menschlicher Beobachter erforderlich ist.
+
+Der Begriff „Beobachter“ wird hier wesentlich allgemeiner verstanden.
+
+Ein Beobachter ist jedes System, das
+
+\begin{enumerate}
+\item Informationen selektiert,
+\item Relationen reduziert,
+\item eine endliche Auflösung besitzt.
+\end{enumerate}
+
+Formal kann eine Projektion daher beschrieben werden als
+
+\[
+\Pi
+=
+\Pi_{\text{Auflösung}}
+\circ
+\Pi_{\text{Relation}}
+\circ
+\Pi_{\text{Information}}.
+\]
+
+Jede Projektion verliert Information.
+
+Dies ist keine Schwäche,
+
+sondern ihre eigentliche Aufgabe.
+
+\section*{Projektive Kompression}
+
+Eine Projektion reduziert den Informationsgehalt.
+
+Ist
+
+\[
+I(\mathcal O)
+\]
+
+die Gesamtinformation des OPP,
+
+dann gilt allgemein
+
+\[
+I(\Pi(\mathcal O))
+<
+I(\mathcal O).
+\]
+
+Es existiert also keine vollständige Rekonstruktion.
+
+Die beobachtete Physik stellt lediglich einen komprimierten Ausschnitt dar.
+
+Diese Aussage passt erstaunlich gut zu mehreren bekannten Bereichen der modernen Physik:
+
+\begin{itemize}
+\item Holographisches Prinzip
+\item Renormierungsgruppen
+\item Informationsverlust bei Messungen
+\item coarse graining
+\item effektive Feldtheorien
+\end{itemize}
+
+Die PST liefert hierfür einen gemeinsamen Ursprung.
+
+\section*{Warum gerade vier Dimensionen?}
+
+Eine der größten offenen Fragen lautet:
+
+\begin{center}
+Warum beobachten wir genau drei Raumdimensionen und eine Zeitdimension?
+\end{center}
+
+Die bisherigen numerischen Ergebnisse deuten darauf hin, dass dies keine fundamentale Eigenschaft des OPP ist.
+
+Vielmehr scheint zu gelten
+
+\[
+d_{\mathrm{eff}}
+=
+f(\Pi).
+\]
+
+Die Dimension ist also eine Eigenschaft der Projektion.
+
+Nicht des OPP selbst.
+
+Dies ist ein fundamentaler Perspektivwechsel.
+
+Bisherige Theorien fragen:
+
+\begin{quote}
+Warum besitzt die Welt vier Dimensionen?
+\end{quote}
+
+Die PST fragt stattdessen:
+
+\begin{quote}
+Welche Projektion eines hochdimensionalen OPP erzeugt stabil eine vierdimensionale effektive Geometrie?
+\end{quote}
+
+\section*{Die Rolle der Diffusionsprojektion}
+
+Besonders bemerkenswert war das Ergebnis der Diffusionsabbildung.
+
+Unter geeigneter Wahl des Diffusionsparameters entstand numerisch
+
+\[
+d_{\mathrm{eff}}
+\approx
+4.
+\]
+
+Im Gegensatz zu PCA oder zufälligen Projektionen entstand dieser Wert nicht durch explizite Vorgabe einer Dimension.
+
+Stattdessen entstand er aus einer natürlichen Glättung der relationalen Struktur.
+
+Damit besitzt die Diffusionsprojektion mehrere interessante Eigenschaften.
+
+Sie
+
+\begin{itemize}
+\item reduziert lokale Fluktuationen,
+
+\item erhält globale Zusammenhänge,
+
+\item entspricht einem Informationsfluss,
+
+\item besitzt eine natürliche physikalische Interpretation.
+\end{itemize}
+
+Gerade dieser letzte Punkt ist bemerkenswert.
+
+Diffusion tritt in nahezu allen Bereichen der Physik auf:
+
+\begin{itemize}
+\item Wärmeleitung
+\item Brownsche Bewegung
+\item Quantenpfadintegrale
+\item Renormierungsgruppen
+\item Informationsausbreitung
+\end{itemize}
+
+Es wäre daher überraschend, wenn gerade diese Projektion keine fundamentale Rolle spielen würde.
+
+\section*{Projektive Quantisierung}
+
+Bereits früh entstand innerhalb des OP die Vermutung,
+
+dass Quantisierung möglicherweise keine fundamentale Eigenschaft der Realität ist.
+
+Die Projektionshypothese liefert hierfür erstmals einen konkreten mathematischen Rahmen.
+
+Sei
+
+\[
+x
+\in
+\mathcal O
+\]
+
+ein kontinuierlicher Zustand des OPP.
+
+Die Projektion liefert
+
+\[
+\Pi(x)
+=
+x_i,
+\]
+
+wobei
+
+\[
+x_i
+\]
+
+nun zu einer diskreten Klasse gehört.
+
+Quantisierung entsteht damit nicht durch den OPP,
+
+sondern durch die begrenzte Auflösung der Projektion.
+
+Formal ähnelt dies
+
+\[
+\text{Sampling}
+\]
+
+oder
+
+\[
+\text{Diskretisierung}
+\]
+
+kontinuierlicher Daten.
+
+Die Quantenstruktur wäre dann eine Eigenschaft der Beobachtungsebene.
+
+Nicht der ontologischen Ebene.
+
+\section*{Projektive Raumzeit}
+
+Noch weitreichender ist die Konsequenz für die Raumzeit.
+
+Wenn dieselbe Projektion sowohl
+
+\begin{itemize}
+\item Quantisierung
+
+als auch
+
+\item Vierdimensionalität
+\end{itemize}
+
+erzeugt,
+
+dann besitzen beide möglicherweise dieselbe Ursache.
+
+Dies führt zur Hypothese
+
+\[
+\boxed{
+\text{Raumzeit und Quantisierung entstehen gemeinsam
+durch dieselbe Projektionsabbildung.}
+}
+\]
+
+Diese Vermutung besitzt mehrere attraktive Eigenschaften.
+
+Sie erklärt gleichzeitig
+
+\begin{enumerate}
+\item die endliche Informationsauflösung,
+\item diskrete Quantenzahlen,
+\item die effektive Vierdimensionalität,
+\item die Existenz einer makroskopischen Geometrie.
+\end{enumerate}
+
+Damit reduziert sich die Zahl unabhängiger Grundannahmen erheblich.
+
+\section*{Offene Fragen}
+
+Die Projektionshypothese wirft jedoch neue Fragen auf.
+
+Unter anderem:
+
+\begin{enumerate}
+
+\item
+Warum bevorzugt die Natur gerade bestimmte Projektionsoperatoren?
+
+\item
+Existieren mehrere physikalisch mögliche Projektionen?
+
+\item
+Ist die Diffusionsprojektion fundamental oder lediglich eine gute Näherung?
+
+\item
+Kann aus geeigneten Projektionsprinzipien automatisch die Lorentz-Invarianz folgen?
+
+\item
+Entstehen Eichsymmetrien ebenfalls als Eigenschaften der Projektion?
+
+\end{enumerate}
+
+Diese Fragen bilden den Übergang zu den numerischen Untersuchungen der folgenden Kapitel.
+
+Dort wird untersucht,
+
+welche mathematischen Projektionsoperatoren tatsächlich stabile, physikalisch sinnvolle Strukturen erzeugen und welche lediglich mathematische Artefakte darstellen.
+
