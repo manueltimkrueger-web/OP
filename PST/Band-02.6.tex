@@ -1,0 +1,404 @@
+\subsection{2.6 Das universelle Stabilitätsfunktional}
+
+Nachdem sich gezeigt hatte, dass der rohe OPP keine intrinsische vierdimensionale Raumzeit besitzt, stellte sich zwangsläufig eine neue Frage:
+
+\begin{center}
+\emph{Existieren innerhalb des hochdimensionalen OPP bevorzugte stabile Zustände?}
+\end{center}
+
+Mit anderen Worten:
+
+\[
+\boxed{
+\text{Kann Dynamik allein bestimmte Strukturen bevorzugen?}
+}
+\]
+
+Diese Überlegung führte zur Einführung eines universellen Stabilitätsfunktionals, das unabhängig von einer konkreten physikalischen Theorie formuliert werden sollte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Grundidee}
+
+Jedes komplexe System besitzt typischerweise konkurrierende Anforderungen.
+
+Einerseits möchte das System möglichst viele Freiheitsgrade besitzen.
+
+Andererseits erzeugen zu viele Freiheitsgrade Instabilität.
+
+Auch im OPP wurde angenommen, dass zwei Größen miteinander konkurrieren:
+
+\begin{enumerate}
+
+\item maximale Selbstinformation
+
+\item minimale Frustration
+
+\end{enumerate}
+
+Die gesuchte Dynamik sollte daher nicht möglichst viele Freiheitsgrade erzeugen,
+
+sondern einen optimalen Kompromiss finden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Selbstinformation}
+
+Als erste Größe wurde die gesamte Selbstinformation des Systems definiert.
+
+Sie wurde durch die Spur der projektiven Gram-Matrix beschrieben:
+
+\[
+\Phi
+=
+\operatorname{Tr}(K).
+\]
+
+Dabei bezeichnet
+
+\[
+K
+\]
+
+die aus den Relationen konstruierte Gram-Matrix.
+
+Große Werte von
+
+\[
+\Phi
+\]
+
+entsprechen einer hohen Gesamtinformation des Systems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Frustration}
+
+Als zweite Größe wurde die sogenannte Frustration eingeführt.
+
+Die Idee stammt ursprünglich aus der Physik komplexer Systeme und der Spin-Gläser.
+
+Ein ideales System besitzt nur wenige dominante Eigenmoden.
+
+Viele kleine Eigenwerte bedeuten dagegen,
+
+dass Information auf viele Freiheitsgrade verteilt wird.
+
+Die Frustration wurde daher definiert als
+
+\[
+F
+=
+\sum_{i>r}
+\lambda_i^2,
+\]
+
+wobei
+
+\[
+r
+\]
+
+den gewünschten Zielrang bezeichnet.
+
+Je größer die Beiträge oberhalb dieses Zielranges,
+
+desto stärker ist die Frustration.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Das Stabilitätsfunktional}
+
+Aus beiden Größen wurde schließlich das universelle Funktional konstruiert:
+
+\[
+\boxed{
+\mathcal{S}
+=
+\Phi
+-
+\lambda F.
+}
+\]
+
+Dabei beschreibt
+
+\[
+\lambda
+\]
+
+die relative Gewichtung der Frustration.
+
+Das Ziel der Optimierung lautet
+
+\[
+\mathcal{S}
+\rightarrow
+\max.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Physikalische Interpretation}
+
+Dieses Funktional besitzt eine bemerkenswert einfache Bedeutung.
+
+Der erste Term
+
+\[
+\Phi
+\]
+
+belohnt möglichst viel Information.
+
+Der zweite Term
+
+\[
+F
+\]
+
+bestraft unnötig komplexe Eigenwertspektren.
+
+Das System versucht also,
+
+möglichst viel Information
+
+mit möglichst wenigen dominanten Freiheitsgraden
+
+zu speichern.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Numerische Optimierung}
+
+Zur Maximierung wurde ein Standardverfahren verwendet.
+
+Zum Einsatz kam insbesondere
+
+\[
+\text{L-BFGS-B}
+\]
+
+als numerischer Optimierer.
+
+Ausgehend von zufälligen Punktkonfigurationen wurden die Attraktoren solange verschoben,
+
+bis
+
+\[
+\mathcal{S}
+\]
+
+ein lokales Maximum erreichte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Das überraschende Ergebnis}
+
+Bereits die ersten Optimierungen lieferten erstaunliche Resultate.
+
+Während der rohe OPP typischerweise
+
+\[
+d_{\mathrm{eff}}
+\approx
+30\ldots45
+\]
+
+besaß,
+
+ergaben optimierte Konfigurationen häufig
+
+\[
+d_{\mathrm{eff}}
+\approx
+4\ldots5.
+\]
+
+Dies war die erste numerische Beobachtung,
+
+die überhaupt in die Nähe einer beobachtbaren Raumzeit führte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der scheinbare Durchbruch}
+
+Die ersten Resultate wirkten zunächst äußerst spektakulär.
+
+Insbesondere traten mehrfach Werte auf wie
+
+\[
+d_{\mathrm{eff}}
+=
+3.75,
+\]
+
+oder
+
+\[
+d_{\mathrm{eff}}
+=
+4.1.
+\]
+
+Es entstand kurzfristig der Eindruck,
+
+dass das Stabilitätsfunktional tatsächlich spontan eine Raumzeit erzeugen könnte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die kritische Analyse}
+
+Im weiteren Verlauf wurde das Verfahren jedoch sorgfältig hinterfragt.
+
+Dabei zeigte sich ein entscheidendes Problem.
+
+Die Frustration war definiert als
+
+\[
+F
+=
+\sum_{i>r}
+\lambda_i^2.
+\]
+
+Der Zielrang
+
+\[
+r
+\]
+
+war also bereits Bestandteil des Funktionals.
+
+Damit wurde implizit bereits vorgegeben,
+
+welche Anzahl dominanter Eigenwerte bevorzugt wird.
+
+Dies bedeutet:
+
+\[
+\boxed{
+\text{Das Verfahren war nicht vollständig rangneutral.}
+}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Warum das trotzdem wichtig war}
+
+Diese Erkenntnis bedeutete keineswegs,
+
+dass die Optimierung wertlos gewesen wäre.
+
+Ganz im Gegenteil.
+
+Sie zeigte erstmals,
+
+dass sich Eigenwertspektren des OPP gezielt beeinflussen lassen.
+
+Insbesondere wurde deutlich,
+
+dass der OPP keineswegs starr ist,
+
+sondern auf Variationsprinzipien reagiert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die wissenschaftliche Konsequenz}
+
+Anstatt das Resultat vorschnell als Bestätigung der PST zu interpretieren,
+
+wurde ein neuer Forschungsweg eingeschlagen.
+
+Die zentrale Frage lautete nun:
+
+\[
+\boxed{
+\text{Welche Resultate bleiben erhalten, wenn keinerlei Zielrang mehr vorgegeben wird?}
+}
+\]
+
+Diese Fragestellung führte unmittelbar zur nächsten Phase der Untersuchungen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Neue Teststrategie}
+
+Von diesem Zeitpunkt an wurden sämtliche Optimierungsverfahren zusätzlich durch rangneutrale Methoden überprüft.
+
+Dazu gehörten insbesondere
+
+\begin{itemize}
+
+\item verschiedene Projektionsverfahren,
+
+\item Kernel-Vergleiche,
+
+\item Diffusionsoperatoren,
+
+\item Random-Projektionen,
+
+\item universelle Skalierungstests.
+
+\end{itemize}
+
+Nur Resultate,
+
+die auch ohne eingebaute Ranginformation auftraten,
+
+wurden anschließend als mögliche physikalische Hinweise betrachtet.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Bedeutung für die PST}
+
+Rückblickend markiert das Stabilitätsfunktional einen wichtigen Wendepunkt.
+
+Es zeigte,
+
+dass
+
+\begin{enumerate}
+
+\item Variationsprinzipien grundsätzlich geeignet sind,
+
+Eigenwertspektren zu strukturieren,
+
+\item aber gleichzeitig,
+
+dass jede implizite Vorannahme sorgfältig kontrolliert werden muss.
+
+\end{enumerate}
+
+Gerade diese Selbstkritik machte das gesamte numerische Forschungsprogramm wesentlich robuster.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Zusammenfassung}
+
+Das universelle Stabilitätsfunktional war der erste Versuch,
+
+aus rein informationstheoretischen Prinzipien stabile Strukturen innerhalb des OPP zu erzeugen.
+
+Obwohl sich später zeigte,
+
+dass der Zielrang bereits teilweise eingebaut war,
+
+lieferte das Verfahren dennoch mehrere wichtige Erkenntnisse:
+
+\begin{itemize}
+
+\item Der OPP reagiert auf Variationsprinzipien.
+
+\item Dominante Eigenmoden können gezielt verstärkt werden.
+
+\item Die Optimierung allein erklärt jedoch noch keine emergente Raumzeit.
+
+\item Eine echte Erklärung muss ohne implizite Rangvorgaben funktionieren.
+
+\end{itemize}
+
+Diese Einsicht führte unmittelbar zur entscheidenden nächsten Entwicklungsstufe der PST:
+
+der systematischen Untersuchung verschiedener mathematischer Projektionsoperatoren.
+
