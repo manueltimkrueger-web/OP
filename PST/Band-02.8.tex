@@ -1,0 +1,416 @@
+\subsection{2.8 Vergleich verschiedener Projektionsoperatoren}
+
+Mit der Einführung der Projektionstheorie änderte sich der Schwerpunkt der numerischen Untersuchungen grundlegend.
+
+Nicht mehr der OPP selbst stand im Mittelpunkt, sondern die Frage:
+
+\[
+\boxed{
+\text{Welche Projektion erzeugt eine physikalisch sinnvolle Raumzeit?}
+}
+\]
+
+Dabei wurde bewusst auf Verfahren zurückgegriffen, die aus der modernen Mathematik und Datenanalyse stammen und keine spezielle physikalische Information enthalten.
+
+Die Hoffnung bestand darin, dass sich eine Projektion als natürlich herausstellt, weil sie unabhängig von den Anfangsbedingungen immer wieder ähnliche Strukturen erzeugt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Grundprinzip}
+
+Alle untersuchten Verfahren besitzen dieselbe mathematische Aufgabe:
+
+Aus einer hochdimensionalen relationalen Struktur
+
+\[
+R
+\]
+
+soll eine niedrigdimensionale Darstellung
+
+\[
+Y
+\]
+
+erzeugt werden.
+
+Formal:
+
+\[
+\mathcal{P}
+:
+R
+\rightarrow
+Y.
+\]
+
+Die Verfahren unterscheiden sich ausschließlich darin,
+
+welche Eigenschaften der ursprünglichen Struktur möglichst gut erhalten bleiben sollen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die untersuchten Verfahren}
+
+Im Verlauf der numerischen Untersuchungen wurden insbesondere folgende Projektionsoperatoren getestet.
+
+\begin{enumerate}
+
+\item
+Principal Component Analysis (PCA)
+
+\item
+Kernel Principal Component Analysis (Kernel PCA)
+
+\item
+Diffusion Maps
+
+\item
+Random Projection
+
+\item
+verschiedene Kernel-Familien
+
+\end{enumerate}
+
+Alle Verfahren wurden unter identischen Randbedingungen auf denselben OPP angewendet.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Principal Component Analysis}
+
+Die PCA stellt den klassischen Standard der Dimensionsreduktion dar.
+
+Sie bestimmt jene Richtungen,
+
+in denen die Varianz maximal ist.
+
+Mathematisch erfolgt dies über die Eigenwertzerlegung einer Kovarianzmatrix.
+
+In den Tests zeigte PCA reproduzierbare Ergebnisse,
+
+jedoch keine vollständige Stabilität.
+
+Typischerweise ergab sich
+
+\[
+d_{\mathrm{eff}}
+\approx
+3.6.
+\]
+
+Ein Beispiel aus Test 032:
+
+\[
+d_{\mathrm{eff}}
+=
+3.605
+\pm
+0.168.
+\]
+
+Damit lag PCA bereits überraschend nahe an einer vierdimensionalen Struktur.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Random Projection}
+
+Als Kontrollversuch wurde eine vollständig zufällige Projektion verwendet.
+
+Sie besitzt keinen Bezug zur Struktur des OPP.
+
+Die Ergebnisse fielen deutlich schlechter aus.
+
+Typischerweise wurde beobachtet
+
+\[
+d_{\mathrm{eff}}
+\approx
+2.9
+\]
+
+bei gleichzeitig deutlich größerer Streuung.
+
+Ein Beispiel:
+
+\[
+d_{\mathrm{eff}}
+=
+2.901
+\pm
+0.415.
+\]
+
+Dies zeigte,
+
+dass nicht jede Dimensionsreduktion automatisch sinnvolle Ergebnisse liefert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Kernel PCA}
+
+Kernel PCA erweitert die gewöhnliche PCA,
+
+indem zunächst eine nichtlineare Abbildung
+
+\[
+\phi
+:
+x
+\rightarrow
+\mathcal{H}
+\]
+
+in einen hochdimensionalen Hilbertraum erfolgt.
+
+Erst dort wird anschließend eine PCA durchgeführt.
+
+Dadurch können gekrümmte Mannigfaltigkeiten wesentlich besser beschrieben werden.
+
+Die numerischen Resultate waren überraschend stabil.
+
+Ein typisches Ergebnis lautete
+
+\[
+d_{\mathrm{eff}}
+=
+3.910
+\pm
+0.040.
+\]
+
+Dies war der erste Projektionsoperator,
+
+der reproduzierbar Werte praktisch bei vier lieferte.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Diffusion Maps}
+
+Noch bemerkenswerter entwickelte sich Diffusion Maps.
+
+Dieses Verfahren basiert nicht auf maximaler Varianz,
+
+sondern auf Diffusionsprozessen auf einem Graphen.
+
+Der Kern lautet
+
+\[
+P
+=
+D^{-1}R,
+\]
+
+wobei
+
+\[
+D
+\]
+
+die Gradmatrix bezeichnet.
+
+Die Eigenfunktionen dieses Operators beschreiben großskalige Diffusionsmoden.
+
+Bereits der erste Vergleich ergab
+
+\[
+d_{\mathrm{eff}}
+=
+4.000
+\pm
+0.000.
+\]
+
+Die perfekte Stabilität war zunächst äußerst überraschend.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Warum dieses Ergebnis kritisch geprüft werden musste}
+
+Gerade wegen der auffallenden Stabilität wurde das Resultat nicht sofort akzeptiert.
+
+Stattdessen wurde untersucht,
+
+ob der Algorithmus selbst bereits eine Vierdimensionalität bevorzugt.
+
+Die Analyse zeigte:
+
+Die verwendeten Diffusionskoordinaten wurden über
+
+\[
+K=4
+\]
+
+Eigenvektoren konstruiert.
+
+Damit konnte die perfekte Vier
+
+zumindest teilweise algorithmisch bedingt sein.
+
+Das Ergebnis war daher interessant,
+
+aber noch kein Beweis.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Vergleich der Verfahren}
+
+Die ersten direkten Vergleiche ergaben folgendes qualitative Bild:
+
+\[
+\begin{array}{l|c}
+\text{Projektionsverfahren}
+&
+d_{\mathrm{eff}}
+\\
+\hline
+\text{Random Projection}
+&
+\approx2.9
+\\
+\text{PCA}
+&
+\approx3.6
+\\
+\text{Kernel PCA}
+&
+\approx3.9
+\\
+\text{Diffusion Maps}
+&
+\approx4.0
+\end{array}
+\]
+
+Bereits dieses Ranking war ausgesprochen aufschlussreich.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die erste Auswahl}
+
+Auf Grundlage dieser Ergebnisse wurden zwei Verfahren für weitere Untersuchungen ausgewählt:
+
+\[
+\boxed{
+\text{Diffusion Maps}
+}
+\]
+
+und
+
+\[
+\boxed{
+\text{Kernel PCA}.
+}
+\]
+
+Alle übrigen Verfahren wurden zunächst zurückgestellt.
+
+Der Grund war einfach.
+
+Beide Methoden lieferten
+
+\begin{itemize}
+
+\item
+
+stabile Resultate,
+
+\item
+
+geringe Standardabweichungen,
+
+\item
+
+Werte nahe der gesuchten Vier.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Physikalische Interpretation}
+
+Erstmals entstand hier eine bemerkenswerte Vermutung.
+
+Vielleicht existiert überhaupt keine eindeutige Projektion.
+
+Stattdessen könnte gelten:
+
+\[
+\boxed{
+\text{Physikalisch sinnvolle Projektionen erhalten globale Strukturen.}
+}
+\]
+
+Genau dies leisten sowohl Kernel PCA
+
+als auch Diffusion Maps.
+
+Beide Verfahren versuchen,
+
+nicht lokale Details,
+
+sondern die globale Geometrie des relationalen Netzes zu bewahren.
+
+Dies könnte erklären,
+
+warum gerade sie stabile vierdimensionale Strukturen erzeugen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ein neuer Forschungsansatz}
+
+Nach Abschluss der Vergleichstests wurde die Strategie erneut angepasst.
+
+Anstatt weitere Projektionsverfahren zu testen,
+
+konzentrierte sich die Untersuchung nun auf die beiden stärksten Kandidaten.
+
+Die zentrale Frage lautete jetzt:
+
+\[
+\boxed{
+\text{Sind die beobachteten Vierdimensionen robust gegenüber Parameteränderungen?}
+}
+\]
+
+Dies führte unmittelbar zu den umfangreichen Stabilitätsanalysen der Diffusionsprojektion,
+
+welche den Schwerpunkt der folgenden Kapitel bilden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Zusammenfassung}
+
+Die systematische Untersuchung verschiedener Projektionsoperatoren führte erstmals zu einer klaren Priorisierung.
+
+Die wichtigsten Erkenntnisse lauten:
+
+\begin{itemize}
+
+\item
+Nicht jede Projektion erzeugt physikalisch sinnvolle Strukturen.
+
+\item
+Random Projection scheidet als universeller Projektionsoperator weitgehend aus.
+
+\item
+PCA liefert bereits erstaunlich gute Ergebnisse.
+
+\item
+Kernel PCA erzeugt reproduzierbar Werte nahe
+\(
+d_{\mathrm{eff}}\approx4.
+\)
+
+\item
+Diffusion Maps liefert die stabilsten Resultate und wird deshalb zum Hauptkandidaten der weiteren Untersuchungen.
+
+\end{itemize}
+
+Damit begann die zweite Phase der numerischen PST-Forschung:
+
+Nicht mehr der Vergleich verschiedener Verfahren,
+
+sondern die detaillierte Analyse der Diffusionsprojektion selbst.
+
