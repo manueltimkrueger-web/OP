@@ -1,0 +1,301 @@
+\chapter{Mathematische Grundlagen}
+
+\section{Ziel dieses Bandes}
+
+Die Projective Structure Theory (PST) erhebt den Anspruch, physikalische
+Raumzeit nicht vorauszusetzen, sondern aus einer allgemeineren
+informationellen Struktur entstehen zu lassen.
+
+Während Band I die ontologischen Grundlagen des
+Ontophänomenalismus (OP) behandelt, entwickelt dieser Band die
+mathematische Sprache, welche für die Beschreibung des
+Ontophänomenalen Phasenraums (OPP) benötigt wird.
+
+Dabei verfolgen wir ein wichtiges Prinzip:
+
+\begin{quote}
+Es werden keinerlei geometrische Eigenschaften vorausgesetzt,
+die später erst erklärt werden sollen.
+\end{quote}
+
+Insbesondere werden zunächst keine Größen wie
+
+\[
+\text{Raum},
+\qquad
+\text{Zeit},
+\qquad
+\text{Abstand},
+\qquad
+\text{Metrik}
+\]
+
+als fundamental angenommen.
+
+Diese sollen vielmehr als mögliche Eigenschaften geeigneter
+Projektionen aus dem OPP hervorgehen.
+
+Damit unterscheidet sich die PST grundlegend von klassischen
+geometrischen Theorien.
+
+\section{Warum Mathematik?}
+
+Die Physik benutzt Mathematik nicht nur als Beschreibungssprache,
+sondern häufig als Werkzeug zur Entdeckung neuer Zusammenhänge.
+
+Historisch entstanden zahlreiche mathematische Strukturen lange vor
+ihrer physikalischen Anwendung.
+
+Beispiele sind
+
+\begin{itemize}
+\item komplexe Zahlen,
+\item Tensorrechnung,
+\item Differentialgeometrie,
+\item Lie-Gruppen,
+\item Hilberträume,
+\item Distributionen.
+\end{itemize}
+
+Die PST folgt derselben Idee.
+
+Wir suchen keine Mathematik, welche bereits bekannte Physik beschreibt.
+
+Wir suchen vielmehr mathematische Strukturen, aus denen bekannte
+Physik emergieren kann.
+
+\section{Minimale mathematische Anforderungen}
+
+Da keine Geometrie vorausgesetzt werden soll, benötigt der OPP nur
+wenige fundamentale Eigenschaften.
+
+Es genügt zunächst eine Menge
+
+\[
+\Omega
+\]
+
+deren Elemente wir Attraktoren nennen.
+
+Zwischen diesen Attraktoren existieren Beziehungen.
+
+Mehr wird zunächst nicht angenommen.
+
+Formal:
+
+\[
+\Omega
+=
+\{A_1,A_2,\ldots,A_n,\ldots\}.
+\]
+
+Es existiert keinerlei Ordnung.
+
+Insbesondere existieren zunächst keine Begriffe wie
+
+\[
+A_i < A_j,
+\]
+
+keine Koordinaten
+
+\[
+(x,y,z),
+\]
+
+keine Zeitparameter
+
+\[
+t,
+\]
+
+und keine Abstände
+
+\[
+d(A_i,A_j).
+\]
+
+\section{Relationen}
+
+Statt einer Geometrie wird ausschließlich angenommen, dass zwischen
+zwei Attraktoren eine Relation existieren kann.
+
+Formal schreiben wir
+
+\[
+R(A_i,A_j).
+\]
+
+Diese Relation besitzt zunächst keinerlei Interpretation.
+
+Sie kann später beispielsweise darstellen:
+
+\begin{itemize}
+\item Ähnlichkeit,
+\item Informationsaustausch,
+\item Kopplungsstärke,
+\item gegenseitige Beeinflussung,
+\item Übergangswahrscheinlichkeit,
+\item oder etwas vollständig anderes.
+\end{itemize}
+
+Der entscheidende Punkt lautet:
+
+\begin{quote}
+Die Relation ist fundamentaler als der Abstand.
+\end{quote}
+
+\section{Symmetrie der Relation}
+
+Für die bisher untersuchten numerischen Modelle wurde stets eine
+symmetrische Relation verwendet.
+
+Es gilt daher
+
+\[
+R(A_i,A_j)
+=
+R(A_j,A_i).
+\]
+
+Dies bedeutet lediglich, dass die gegenseitige Beziehung unabhängig von
+der Betrachtungsrichtung ist.
+
+Eine Orientierung wird dadurch noch nicht eingeführt.
+
+Asymmetrische Relationen können später untersucht werden.
+
+Für die bisherigen Simulationen waren sie jedoch nicht notwendig.
+
+\section{Selbstrelation}
+
+Jeder Attraktor besitzt außerdem eine Selbstrelation.
+
+Diese wird geschrieben als
+
+\[
+R(A_i,A_i).
+\]
+
+In sämtlichen bisherigen numerischen Experimenten wurde
+
+\[
+R(A_i,A_i)=1
+\]
+
+gewählt.
+
+Dadurch erhält jeder Attraktor dieselbe maximale Selbstkopplung.
+
+Dies entspricht keiner physikalischen Forderung, sondern lediglich einer
+Normierung.
+
+\section{Darstellung als Matrix}
+
+Besitzt der OPP endlich viele Attraktoren,
+
+\[
+N
+=
+|\Omega|,
+\]
+
+dann kann die Relation vollständig durch eine Matrix beschrieben werden.
+
+Es entsteht die Matrix
+
+\[
+\mathbf{R}
+=
+(R_{ij}),
+\]
+
+mit
+
+\[
+R_{ij}
+=
+R(A_i,A_j).
+\]
+
+Da
+
+\[
+R_{ij}=R_{ji},
+\]
+
+ist
+
+\[
+\mathbf{R}
+=
+\mathbf{R}^{\mathrm T}
+\]
+
+symmetrisch.
+
+Diese Matrix bildet den Ausgangspunkt sämtlicher numerischer
+Simulationen der PST.
+
+Bemerkenswert ist dabei:
+
+Die Matrix beschreibt ausschließlich Relationen.
+
+Noch immer existieren keine Koordinaten.
+
+Noch immer existiert kein Raum.
+
+Noch immer existiert keine Zeit.
+
+Die Matrix enthält ausschließlich informationelle Beziehungen.
+
+\section{Vom Relationalen zur Geometrie}
+
+Die zentrale Hoffnung der PST lautet nun:
+
+Nicht die Matrix wird aus einer Geometrie berechnet.
+
+Sondern umgekehrt.
+
+Aus geeigneten Eigenschaften der Matrix
+
+\[
+\mathbf R
+\]
+
+sollen später emergieren:
+
+\begin{align}
+\mathbf R
+&\longrightarrow
+\text{Topologie}
+\\
+&\longrightarrow
+\text{Nachbarschaft}
+\\
+&\longrightarrow
+\text{Abstand}
+\\
+&\longrightarrow
+\text{Metrik}
+\\
+&\longrightarrow
+\text{Raumzeit}.
+\end{align}
+
+Dieser Perspektivwechsel bildet den eigentlichen Kern der Projective
+Structure Theory.
+
+\section{Bemerkung}
+
+Die bisherigen numerischen Untersuchungen haben bereits gezeigt, dass
+geeignete Relationen tatsächlich spektrale Strukturen erzeugen, welche
+niedrige effektive Dimensionen besitzen können.
+
+Damit existiert erstmals ein konkreter Hinweis darauf, dass
+raumzeitähnliche Strukturen tatsächlich aus rein relationalen
+Informationen hervorgehen könnten.
+
+Die mathematische Beschreibung dieser spektralen Eigenschaften bildet den
+Gegenstand des nächsten Kapitels.
+
