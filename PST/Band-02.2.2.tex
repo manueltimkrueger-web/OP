@@ -1,0 +1,476 @@
+\subsection{2.2.2 Die Gram-Matrix als emergente Geometrie}
+
+Nachdem im vorherigen Abschnitt der relationale Kernel
+
+\[
+R_{ij}
+\]
+
+als fundamentale Struktur des OPP eingeführt wurde, stellt sich unmittelbar die nächste Frage:
+
+\begin{center}
+\emph{Wie entsteht aus einer reinen Relation überhaupt Geometrie?}
+\end{center}
+
+Genau hier beginnt der eigentliche mathematische Kern der PST.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Vom Beziehungsnetz zur Geometrie}
+
+Die Matrix
+
+\[
+R=(R_{ij})
+\]
+
+enthält ausschließlich paarweise Relationen.
+
+Sie besitzt zunächst keinerlei:
+
+\begin{itemize}
+\item Koordinaten,
+\item Abstände,
+\item Winkel,
+\item Raumdimension,
+\item Metrik.
+\end{itemize}
+
+Sie beschreibt lediglich,
+
+\[
+\text{„Wie stark stehen zwei Attraktoren miteinander in Beziehung?“}
+\]
+
+Die PST behauptet deshalb:
+
+\begin{center}
+Geometrie existiert im OPP nicht fundamental.
+
+Sie entsteht erst aus den Relationen.
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Warum eine Gram-Matrix?}
+
+In der klassischen Geometrie besitzt man Punkte
+
+\[
+x_i\in\mathbb R^n
+\]
+
+und definiert daraus
+
+\[
+G_{ij}=x_i\cdot x_j.
+\]
+
+Die Gram-Matrix enthält sämtliche Winkel- und Abstandsinformationen.
+
+Die PST besitzt jedoch keine Punkte.
+
+Deshalb muss eine Gram-Matrix ausschließlich aus Relationen konstruiert werden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Die PST-Konstruktion}
+
+In sämtlichen numerischen Experimenten wurde dieselbe Konstruktion verwendet.
+
+Sei
+
+\[
+R_{ij}
+\]
+
+die relationale Stärke.
+
+Dann wird bezüglich eines Referenzattraktors
+
+\[
+0
+\]
+
+definiert
+
+\[
+\boxed{
+K_{ij}
+=
+R_{i0}
++
+R_{j0}
+-
+R_{ij}.
+}
+\]
+
+Diese Matrix nennen wir
+
+\[
+\boxed{\mathcal K}
+\]
+
+oder einfach
+
+\[
+K.
+\]
+
+Sie bildet den zentralen mathematischen Operator der bisherigen PST-Simulationen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Warum genau diese Formel?}
+
+Die Konstruktion erinnert unmittelbar an die klassische Metrikrekonstruktion.
+
+Für euklidische Punkte gilt
+
+\[
+||x_i-x_j||^2
+=
+||x_i||^2
++
+||x_j||^2
+-
+2x_i\cdot x_j.
+\]
+
+Die PST ersetzt
+
+\[
+||x_i||^2
+\]
+
+durch
+
+\[
+R_{i0},
+\]
+
+also durch die Relation zum Referenzattraktor.
+
+Damit wird
+
+\[
+K
+\]
+
+zum Analogon einer Gram-Matrix.
+
+Wichtig:
+
+Es werden keinerlei Koordinaten vorausgesetzt.
+
+Alles entsteht ausschließlich aus den Relationen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Interpretation}
+
+Man kann die Matrix
+
+\[
+K
+\]
+
+auf verschiedene Arten interpretieren.
+
+\paragraph{1. Informationsgeometrie}
+
+Jeder Eintrag beschreibt,
+
+wie ähnlich zwei Attraktoren bezüglich des gesamten relationalen Netzwerkes sind.
+
+\paragraph{2. Emergentes Skalarprodukt}
+
+Formal verhält sich
+
+\[
+K
+\]
+
+wie ein Skalarprodukt.
+
+Deshalb lassen sich Eigenwerte und Eigenvektoren interpretieren wie Raumachsen.
+
+\paragraph{3. Projektionsoperator}
+
+Die später entstehenden Raumdimensionen sind nichts anderes als Eigenrichtungen dieser Matrix.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Eigenschaften}
+
+Die Matrix besitzt mehrere wichtige Eigenschaften.
+
+\paragraph{Symmetrie}
+
+Da
+
+\[
+R_{ij}=R_{ji}
+\]
+
+gilt,
+
+ist unmittelbar
+
+\[
+K_{ij}=K_{ji}.
+\]
+
+Somit
+
+\[
+K
+=
+K^T.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Reelles Spektrum}
+
+Da
+
+\[
+K
+\]
+
+symmetrisch ist,
+
+besitzt sie ausschließlich reelle Eigenwerte
+
+\[
+\lambda_i.
+\]
+
+Dies ist entscheidend für sämtliche Spektraluntersuchungen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Eigenzerlegung}
+
+Es gilt
+
+\[
+K
+=
+V
+\Lambda
+V^T.
+\]
+
+Dabei ist
+
+\[
+\Lambda
+=
+\operatorname{diag}
+(\lambda_1,\ldots,\lambda_n).
+\]
+
+Die Eigenvektoren bilden die möglichen Projektionsrichtungen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Die effektive Dimension}
+
+Aus den Eigenwerten wurde in nahezu allen Tests dieselbe Größe berechnet.
+
+Die sogenannte effektive Dimension
+
+\[
+d_{\mathrm{eff}}
+\]
+
+lautet
+
+\[
+\boxed{
+d_{\mathrm{eff}}
+=
+\frac{\left(\sum_i |\lambda_i|\right)^2}
+{\sum_i\lambda_i^2}.
+}
+\]
+
+Diese Größe besitzt mehrere bemerkenswerte Eigenschaften.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Beispiele}
+
+Besitzen alle Eigenwerte denselben Betrag,
+
+\[
+\lambda_i=1
+\]
+
+für
+
+\[
+i=1,\ldots,n,
+\]
+
+so ergibt sich
+
+\[
+d_{\mathrm{eff}}
+=
+n.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ist dagegen nur ein Eigenwert ungleich Null,
+
+\[
+\lambda_1\neq0,
+\qquad
+\lambda_{i>1}=0,
+\]
+
+dann folgt
+
+\[
+d_{\mathrm{eff}}
+=
+1.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Die Größe misst also nicht die Anzahl mathematischer Dimensionen,
+
+sondern
+
+\begin{center}
+die Anzahl effektiv aktiver Freiheitsgrade.
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Warum genau diese Definition?}
+
+Diese Definition entspricht der sogenannten Participation Ratio,
+
+die u.a. verwendet wird in
+
+\begin{itemize}
+\item Random-Matrix-Theorie,
+\item Quantenchaos,
+\item Anderson-Lokalisierung,
+\item Netzwerktheorie,
+\item Informationstheorie.
+\end{itemize}
+
+Sie misst,
+
+wie viele Eigenmoden tatsächlich zum Gesamtsystem beitragen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Physikalische Interpretation}
+
+In der PST besitzt
+
+\[
+d_{\mathrm{eff}}
+\]
+
+eine wesentlich tiefere Bedeutung.
+
+Sie beschreibt nicht
+
+\[
+\text{„Wie viele Dimensionen existieren?“}
+\]
+
+sondern
+
+\[
+\boxed{
+\text{„Wie viele Freiheitsgrade werden durch die Projektion tatsächlich sichtbar?“}
+}
+\]
+
+Damit wird
+
+\[
+d_{\mathrm{eff}}
+\]
+
+zur mathematischen Brücke zwischen
+
+\[
+\text{OPP}
+\]
+
+und
+
+\[
+\text{emergenter Raumzeit}.
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Konzeptionelle Bedeutung}
+
+Diese Sichtweise verändert den gesamten geometrischen Ausgangspunkt.
+
+Die klassische Physik beginnt mit
+
+\[
+\text{Raum}
+\rightarrow
+\text{Punkte}
+\rightarrow
+\text{Abstände}.
+\]
+
+Die PST beginnt stattdessen mit
+
+\[
+\boxed{
+\text{Relation}
+\rightarrow
+\text{Gram-Matrix}
+\rightarrow
+\text{Eigenstruktur}
+\rightarrow
+\text{Geometrie}.
+}
+\]
+
+Raum ist somit kein Fundament,
+
+sondern ein Spektrum.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Folgerung}
+
+Die Gram-Matrix stellt den ersten Schritt dar,
+
+bei dem reine Information in geometrische Struktur übergeht.
+
+Sie besitzt keinerlei klassische Rauminterpretation,
+
+enthält jedoch bereits sämtliche Informationen,
+
+aus denen eine Raumzeitprojektion entstehen kann.
+
+Alle späteren numerischen Untersuchungen — Optimierungen, Spektralkollaps, Diffusionsprojektionen, Kernel-PCA und Stabilitätsfunktionale — operieren ausschließlich auf dieser Matrix.
+
+Damit bildet
+
+\[
+\boxed{\mathcal K}
+\]
+
+den eigentlichen mathematischen Mittelpunkt der bisherigen PST.
+
