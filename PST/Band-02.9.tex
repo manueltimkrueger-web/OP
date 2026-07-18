@@ -1,0 +1,506 @@
+\subsection{2.9 Diffusionsprojektion und der universelle Skalenparameter}
+
+Nach der Auswahl der Diffusionsprojektion als vielversprechendstem Projektionsoperator begann die nächste Phase der numerischen Untersuchungen.
+
+Die zentrale Frage lautete nun:
+
+\[
+\boxed{
+\text{Ist das beobachtete } d_{\mathrm{eff}}\approx4
+\text{ robust oder lediglich Zufall?}
+}
+\]
+
+Insbesondere sollte untersucht werden, wie empfindlich die Projektion auf ihre freien Parameter reagiert.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der Diffusionsparameter}
+
+Die Diffusionsprojektion basiert auf einem Diffusionsprozess auf dem relationalen Graphen.
+
+Mathematisch kann dieser Prozess durch einen Operator
+
+\[
+P^t
+\]
+
+beschrieben werden.
+
+Dabei bezeichnet
+
+\[
+t
+\]
+
+die effektive Diffusionszeit.
+
+Physikalisch bedeutet dies:
+
+\begin{itemize}
+
+\item
+
+kleines \(t\):
+nur lokale Strukturen werden sichtbar,
+
+\item
+
+großes \(t\):
+immer größere Bereiche verschmelzen zu globalen Strukturen.
+
+\end{itemize}
+
+Der Parameter
+
+\[
+t
+\]
+
+bestimmt somit unmittelbar die Beobachtungsskala.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der erste Diffusionsscan}
+
+Im ersten systematischen Test wurde
+
+\[
+t
+\]
+
+über einen großen Bereich variiert.
+
+Typische Ergebnisse waren:
+
+\[
+\begin{array}{c|c}
+t
+&
+d_{\mathrm{eff}}
+\\
+\hline
+0.25
+&
+39.8
+\\
+0.5
+&
+39.3
+\\
+1
+&
+36.8
+\\
+2
+&
+28.7
+\\
+4
+&
+13.5
+\\
+8
+&
+5.1
+\end{array}
+\]
+
+Bereits dieses Resultat war außerordentlich aufschlussreich.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die wichtigste Beobachtung}
+
+Die effektive Dimension nahm kontinuierlich mit wachsender Diffusionszeit ab.
+
+Formal:
+
+\[
+t
+\uparrow
+\quad\Longrightarrow\quad
+d_{\mathrm{eff}}
+\downarrow.
+\]
+
+Dies bedeutet,
+
+dass die Diffusionsprojektion tatsächlich Freiheitsgrade zusammenfasst.
+
+Die Raumzeit entsteht also nicht plötzlich,
+
+sondern entwickelt sich kontinuierlich aus dem hochdimensionalen OPP.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der Feinscan}
+
+Da sich
+
+\[
+t
+\approx
+8
+\]
+
+bereits in der Nähe der gesuchten Vierdimension befand,
+
+wurde anschließend ein deutlich feinerer Scan durchgeführt.
+
+Untersucht wurden insbesondere
+
+\[
+t
+=
+6,7,8,9,10,11,12.
+\]
+
+Die Ergebnisse lauteten näherungsweise
+
+\[
+\begin{array}{c|c}
+t
+&
+d_{\mathrm{eff}}
+\\
+\hline
+6
+&
+7.79
+\\
+7
+&
+5.65
+\\
+8
+&
+5.16
+\\
+9
+&
+4.45
+\\
+10
+&
+3.98
+\\
+11
+&
+3.27
+\\
+12
+&
+3.07
+\end{array}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ein bemerkenswertes Resultat}
+
+Besonders auffällig war
+
+\[
+t
+=
+10.
+\]
+
+Hier ergab sich
+
+\[
+d_{\mathrm{eff}}
+=
+3.98
+\pm
+0.36.
+\]
+
+Zum ersten Mal erschien die gesuchte Vier,
+
+ohne dass sie explizit in den Algorithmus eingebaut worden war.
+
+Dies war einer der wichtigsten numerischen Befunde der gesamten Untersuchung.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ist die Vier universell?}
+
+Natürlich stellte sich sofort die nächste Frage.
+
+War
+
+\[
+t
+=
+10
+\]
+
+eine reine Zufallszahl?
+
+Oder existiert ein universelles Skalengesetz?
+
+Falls Letzteres zutrifft,
+
+müsste der optimale Wert von
+
+\[
+t
+\]
+
+mit der Größe des Systems skalieren.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der Skalierungsansatz}
+
+Als erste Vermutung wurde angenommen,
+
+dass die optimale Diffusionszeit proportional zum Logarithmus der Punktzahl wächst.
+
+Es wurde daher untersucht:
+
+\[
+\boxed{
+t
+=
+c
+\,
+\log N.
+}
+\]
+
+Hierbei bezeichnet
+
+\[
+N
+\]
+
+die Zahl der Attraktoren,
+
+während
+
+\[
+c
+\]
+
+eine dimensionslose Konstante ist.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der universelle Skalenscan}
+
+Für verschiedene Werte von
+
+\[
+N
+\]
+
+und
+
+\[
+c
+\]
+
+wurden umfangreiche Simulationen durchgeführt.
+
+Typische Resultate lauteten:
+
+\[
+\begin{array}{c|c|c}
+N
+&
+c
+&
+d_{\mathrm{eff}}
+\\
+\hline
+20
+&
+3.0
+&
+5.22
+\\
+40
+&
+2.5
+&
+4.50
+\\
+40
+&
+3.0
+&
+3.58
+\\
+80
+&
+2.0
+&
+3.86
+\\
+160
+&
+1.5
+&
+4.29
+\end{array}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Interpretation}
+
+Die Ergebnisse zeigten,
+
+dass kein einzelner universeller Wert
+
+\[
+c
+\]
+
+existiert.
+
+Gleichzeitig entstand jedoch ein anderer Eindruck.
+
+Für geeignete Kombinationen aus
+
+\[
+N
+\]
+
+und
+
+\[
+t
+\]
+
+taucht immer wieder
+
+\[
+d_{\mathrm{eff}}
+\approx
+4
+\]
+
+auf.
+
+Die Vier erscheint somit nicht an einer einzigen Stelle,
+
+sondern auf einer ganzen Kurve im Parameterraum.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Physikalische Deutung}
+
+Dieses Verhalten besitzt eine bemerkenswerte Interpretation.
+
+Der Parameter
+
+\[
+t
+\]
+
+ist keine fundamentale Naturkonstante.
+
+Er beschreibt vielmehr,
+
+wie weit ein Beobachter Informationen innerhalb des OPP integriert.
+
+Kleine Werte entsprechen lokalen Beobachtern.
+
+Große Werte beschreiben zunehmend globale Beobachtungen.
+
+Die Raumzeit erscheint somit erst ab einer bestimmten Integrationsskala.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ein neuer Gedanke}
+
+An dieser Stelle entstand erstmals eine weitreichende Hypothese.
+
+Vielleicht ist
+
+\[
+t
+\]
+
+gar kein mathematischer Hilfsparameter.
+
+Vielleicht beschreibt er unmittelbar die Auflösung des Beobachters.
+
+Dann wäre
+
+\[
+\boxed{
+t
+=
+\text{Informationsreichweite eines Beobachters}.
+}
+\]
+
+Die Raumzeit wäre damit nicht nur projektional,
+
+sondern zusätzlich skalenabhängig.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Konsequenzen}
+
+Die Untersuchungen führten zu mehreren wichtigen Schlussfolgerungen.
+
+\begin{enumerate}
+
+\item
+
+Die Diffusionsprojektion besitzt tatsächlich einen physikalisch relevanten Parameter.
+
+\item
+
+Vierdimensionale Raumzeit erscheint nur innerhalb eines bestimmten Skalenbereiches.
+
+\item
+
+Die Raumzeit ist daher keine fundamentale Eigenschaft des OPP,
+
+sondern eine emergente Beobachtungsstruktur.
+
+\item
+
+Der Beobachter wird damit zu einem unverzichtbaren Bestandteil der Theorie.
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Zusammenfassung}
+
+Die Diffusionsanalysen lieferten einen der stärksten numerischen Hinweise der gesamten PST.
+
+Sie zeigten,
+
+dass ein kontinuierlicher Übergang existiert
+
+\[
+\boxed{
+\text{hochdimensionaler OPP}
+\longrightarrow
+\text{vierdimensionale Raumzeit}.
+}
+\]
+
+Dieser Übergang wird nicht durch eine Änderung des OPP selbst erzeugt,
+
+sondern ausschließlich durch die Art,
+
+wie Informationen innerhalb des OPP integriert werden.
+
+Damit erhält die Projektion erstmals eine direkte physikalische Bedeutung.
+
+Sie beschreibt nicht nur einen mathematischen Algorithmus,
+
+sondern möglicherweise den fundamentalen Prozess,
+
+durch den Beobachter überhaupt eine Raumzeit erfahren.
+
