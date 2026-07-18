@@ -1,0 +1,315 @@
+\subsection{2.5 Der rohe OPP als hochdimensionale Struktur}
+
+Die erste Phase der numerischen Untersuchungen verfolgte ein bewusst einfaches Ziel:
+
+\begin{center}
+\emph{Welche Eigenschaften besitzt der OPP ohne jede Optimierung und ohne jede Projektion?}
+\end{center}
+
+Diese Frage ist von grundlegender Bedeutung.
+
+Denn wenn der OPP bereits intrinsisch eine vierdimensionale Raumzeit enthalten würde, wäre die gesamte Projektionstheorie überflüssig.
+
+Die Ergebnisse der Simulationen zeigten jedoch ein völlig anderes Bild.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der Aufbau des rohen OPP}
+
+Der OPP wurde als Menge relational gekoppelter Attraktoren modelliert.
+
+Es existieren keine kartesischen Koordinaten einer Raumzeit.
+
+Vielmehr besitzt jedes Attraktorpaar lediglich eine Relation
+
+\[
+R_{ij}.
+\]
+
+Diese Relation wurde zunächst durch einen exponentiellen Kernel beschrieben
+
+\[
+R_{ij}
+=
+\exp(-d_{ij}),
+\]
+
+wobei
+
+\[
+d_{ij}
+\]
+
+eine projektive Distanz zwischen zwei Attraktoren bezeichnet.
+
+Aus dieser Matrix wurde anschließend die projektive Gram-Matrix konstruiert.
+
+Deren Eigenwertspektrum bildete die Grundlage sämtlicher Analysen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Messgröße: Die effektive Dimension}
+
+Als zentrales Diagnosewerkzeug wurde die effektive Dimension verwendet
+
+\[
+d_{\mathrm{eff}}
+=
+\frac{\left(\sum_i |\lambda_i|\right)^2}
+{\sum_i \lambda_i^2},
+\]
+
+wobei
+
+\[
+\lambda_i
+\]
+
+die Eigenwerte der Gram-Matrix darstellen.
+
+Dieses Maß beschreibt nicht die topologische Dimension,
+
+sondern die effektive Zahl dominanter Freiheitsgrade.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Erste Beobachtung}
+
+Bereits die ersten Simulationen ergaben überraschend konsistente Werte.
+
+Typischerweise erhielt man
+
+\[
+30
+<
+d_{\mathrm{eff}}
+<
+45.
+\]
+
+Die genaue Zahl hing zwar von
+
+\begin{itemize}
+
+\item der Punktzahl,
+
+\item dem Kernel,
+
+\item der Stichprobe
+
+\end{itemize}
+
+ab,
+
+bewegte sich jedoch stets in diesem Größenbereich.
+
+Dies war das erste robuste numerische Resultat der PST.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Skalierungsversuche}
+
+Um auszuschließen,
+
+dass die hohe Dimension lediglich ein Endlichkeitseffekt ist,
+
+wurden verschiedene Punktzahlen untersucht.
+
+Typische Ergebnisse waren beispielsweise
+
+\[
+\begin{array}{c|c}
+N & d_{\mathrm{eff}}\\
+\hline
+10 & \approx 9.6\\
+20 & \approx17.8\\
+40 & \approx31.6
+\end{array}
+\]
+
+Die effektive Dimension wächst also mit zunehmender Zahl der Attraktoren.
+
+Dieses Verhalten spricht deutlich gegen einen intrinsischen vierdimensionalen Raum.
+
+Stattdessen deutet es auf einen hochdimensionalen Informationsraum hin.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Interpretation}
+
+Dieses Ergebnis war zunächst enttäuschend.
+
+Die ursprüngliche Hoffnung lautete,
+
+dass der OPP spontan eine Struktur mit
+
+\[
+d_{\mathrm{eff}}
+\approx
+4
+\]
+
+entwickeln würde.
+
+Stattdessen zeigte sich:
+
+\[
+\boxed{
+\text{Der rohe OPP besitzt keine erkennbare Raumzeitstruktur.}
+}
+\]
+
+Gerade diese negative Aussage besitzt jedoch hohen wissenschaftlichen Wert.
+
+Denn sie schließt eine ganze Klasse möglicher Modelle aus.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Robustheit}
+
+Besonders bemerkenswert war,
+
+dass sich die hohe effektive Dimension gegenüber vielen Änderungen als ausgesprochen stabil erwies.
+
+Unter anderem wurden variiert
+
+\begin{itemize}
+
+\item Punktzahl,
+
+\item Zufallsinitialisierung,
+
+\item Stichproben,
+
+\item Kernelparameter.
+
+\end{itemize}
+
+Trotzdem blieb die effektive Dimension stets hoch.
+
+Dies deutet darauf hin,
+
+dass der OPP keine zufällige Punktwolke,
+
+sondern eine eigene hochdimensionale Struktur besitzt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ein wichtiger Fehlschluss wurde vermieden}
+
+An dieser Stelle wäre es leicht gewesen,
+
+durch geeignete Parameterwahl künstlich
+
+\[
+d_{\mathrm{eff}}
+=
+4
+\]
+
+zu erzwingen.
+
+Bewusst wurde genau dies nicht getan.
+
+Die numerischen Ergebnisse wurden akzeptiert,
+
+obwohl sie den ursprünglichen Erwartungen widersprachen.
+
+Gerade dadurch blieb das Forschungsprogramm wissenschaftlich belastbar.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die erste große Hypothese}
+
+Aus den Ergebnissen entstand erstmals eine neue Vermutung.
+
+Vielleicht gilt gar nicht
+
+\[
+\boxed{
+\text{Raumzeit ist eine Eigenschaft des OPP.}
+}
+\]
+
+sondern vielmehr
+
+\[
+\boxed{
+\text{Raumzeit ist eine Eigenschaft der Beobachtung des OPP.}
+}
+\]
+
+Dies war der eigentliche Beginn der Projektionstheorie.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Konsequenzen für die PST}
+
+Die Ergebnisse führten zu mehreren unmittelbaren Schlussfolgerungen.
+
+\begin{enumerate}
+
+\item
+Der OPP ist wesentlich hochdimensional.
+
+\item
+Die hohe Dimension ist stabil.
+
+\item
+Vierdimensionale Raumzeit entsteht nicht automatisch.
+
+\item
+Es muss einen zusätzlichen Mechanismus geben.
+
+\end{enumerate}
+
+Damit rückte zwangsläufig die Frage nach geeigneten Projektionsoperatoren in den Mittelpunkt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der Blickwechsel}
+
+Bis zu diesem Zeitpunkt lautete die Forschungsfrage
+
+\[
+\text{„Wie erzeugt der OPP Raumzeit?“}
+\]
+
+Nach den ersten Simulationen wurde daraus
+
+\[
+\boxed{
+\text{„Welche Beobachtung macht aus dem OPP eine Raumzeit?“}
+}
+\]
+
+Dieser Perspektivwechsel gehört zu den wichtigsten konzeptionellen Fortschritten der gesamten PST.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Zusammenfassung}
+
+Die erste numerische Phase der PST führte zu einem klaren Ergebnis.
+
+\begin{itemize}
+
+\item
+Der rohe OPP besitzt eine stabile hochdimensionale Informationsstruktur.
+
+\item
+Eine intrinsische vierdimensionale Raumzeit konnte nicht gefunden werden.
+
+\item
+Die hohe Dimension ist keine numerische Instabilität.
+
+\item
+Die Suche muss sich daher von der Dynamik auf geeignete Projektionen verlagern.
+
+\end{itemize}
+
+Gerade das Scheitern der ursprünglichen Erwartung erwies sich damit als entscheidender wissenschaftlicher Fortschritt.
+
+Die folgenden Kapitel beschäftigen sich deshalb nicht mehr mit dem OPP allein,
+
+sondern mit den mathematischen Projektionen, durch welche eine beobachtbare Physik entstehen könnte.
+
