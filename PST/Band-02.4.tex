@@ -1,0 +1,297 @@
+\subsection{2.4 Das numerische Testprogramm der PST}
+
+Nachdem sich gezeigt hatte, dass der rohe OPP keine unmittelbar vierdimensionale Struktur besitzt, wurde ein systematisches numerisches Testprogramm entwickelt. Ziel war es nicht mehr, eine vorgefasste Erwartung zu bestätigen, sondern die Eigenschaften des OPP unter möglichst vielen unterschiedlichen mathematischen Fragestellungen zu untersuchen.
+
+Der Grundsatz lautete:
+
+\[
+\boxed{
+\text{Jede numerische Beobachtung muss reproduzierbar und projektionsunabhängig überprüft werden.}
+}
+\]
+
+Insbesondere sollten folgende Fragen beantwortet werden:
+
+\begin{enumerate}
+\item Welche Eigenschaften besitzt der rohe OPP?
+\item Welche Eigenschaften entstehen erst durch Projektionen?
+\item Welche Resultate sind robust?
+\item Welche Resultate sind lediglich numerische Artefakte?
+\item Existieren universelle Attraktoren?
+\end{enumerate}
+
+Dadurch entstand eine Serie nummerierter Tests, die schrittweise verschiedene Aspekte der Theorie untersuchten.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die Philosophie hinter den Tests}
+
+Ein wesentliches Ziel bestand darin, Bestätigungsfehler (Confirmation Bias) zu vermeiden.
+
+Deshalb wurde bewusst darauf verzichtet,
+
+\begin{itemize}
+\item Parameter gezielt auf vier Dimensionen einzustellen,
+\item bekannte physikalische Größen einzubauen,
+\item Ergebnisse nachträglich passend zu interpretieren.
+\end{itemize}
+
+Stattdessen wurde stets versucht,
+
+\[
+\boxed{
+\text{möglichst allgemeine mathematische Verfahren}
+}
+\]
+
+auf den OPP anzuwenden.
+
+Erst anschließend wurde untersucht,
+
+welche physikalische Interpretation die Ergebnisse möglicherweise besitzen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die drei großen Testphasen}
+
+Im Verlauf der Untersuchungen kristallisierten sich drei unterschiedliche Testphasen heraus.
+
+\subsection*{Phase I – Analyse des rohen OPP}
+
+Die erste Phase untersuchte ausschließlich den ursprünglichen OPP.
+
+Hierzu gehörten insbesondere
+
+\begin{itemize}
+
+\item Eigenwertspektren
+
+\item effektive Dimension
+
+\item Skalierungsverhalten
+
+\item Stabilität gegenüber Punktzahl
+
+\item verschiedene Kernel
+
+\end{itemize}
+
+Das wichtigste Ergebnis lautete:
+
+\[
+d_{\mathrm{eff}}
+\approx
+30\ldots45.
+\]
+
+Der OPP besitzt also eine robuste hochdimensionale Struktur.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Phase II – Optimierung}
+
+In der zweiten Phase wurden Optimierungsverfahren eingeführt.
+
+Hier entstand erstmals das universelle Stabilitätsfunktional
+
+\[
+\mathcal{S}
+=
+\Phi
+-
+\lambda F,
+\]
+
+wobei
+
+\begin{itemize}
+
+\item
+\(
+\Phi
+\)
+
+die gesamte Selbstinformation beschreibt,
+
+\item
+
+\(
+F
+\)
+
+die Frustration des Spektrums misst.
+
+\end{itemize}
+
+Durch Optimierung dieses Funktionals ließ sich das Eigenwertspektrum gezielt verändern.
+
+Hier trat erstmals überraschend eine stabile effektive Dimension im Bereich
+
+\[
+d_{\mathrm{eff}}
+\approx
+4\ldots5
+\]
+
+auf.
+
+Dieses Ergebnis war zunächst äußerst überraschend.
+
+Allerdings zeigte sich später,
+
+dass hierbei bereits implizit ein gewünschter Rang in das Optimierungsverfahren eingebaut wurde.
+
+Deshalb konnte dieser Test allein noch nicht als Beweis gelten.
+
+Gerade diese kritische Erkenntnis stellte jedoch einen wichtigen wissenschaftlichen Fortschritt dar.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Phase III – Projektionen}
+
+Die dritte Phase untersuchte schließlich verschiedene Projektionsverfahren.
+
+Nun wurde nicht mehr versucht,
+
+den OPP direkt zu verändern,
+
+sondern unterschiedliche mathematische Beobachtungsoperatoren wurden auf denselben OPP angewandt.
+
+Dies entsprach unmittelbar der Grundidee der PST:
+
+\[
+\boxed{
+\text{Die Physik könnte eine Projektion des OPP sein.}
+}
+\]
+
+Getestet wurden unter anderem
+
+\begin{itemize}
+
+\item PCA
+
+\item Kernel-PCA
+
+\item Diffusion Maps
+
+\item Random Projection
+
+\item verschiedene Kernel
+
+\item unterschiedliche Diffusionszeiten
+
+\end{itemize}
+
+Diese Testreihe entwickelte sich später zum erfolgreichsten Teil des gesamten numerischen Programms.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Warum nummerierte Tests?}
+
+Alle Experimente wurden fortlaufend nummeriert.
+
+Dies hatte mehrere Vorteile.
+
+\begin{itemize}
+
+\item vollständige Reproduzierbarkeit
+
+\item eindeutige Referenzierbarkeit
+
+\item Vergleich verschiedener Versionen
+
+\item wissenschaftliche Dokumentation
+
+\end{itemize}
+
+Dadurch entstand Schritt für Schritt ein numerisches Labor der PST.
+
+Jeder Test konnte unabhängig wiederholt werden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Die wichtigste wissenschaftliche Erkenntnis}
+
+Während der Testserie zeigte sich immer deutlicher,
+
+dass negative Ergebnisse mindestens ebenso wertvoll waren wie positive.
+
+Beispiele:
+
+\begin{itemize}
+
+\item
+Der rohe OPP besitzt keine intrinsische Raumzeit.
+
+\item
+Optimierungsverfahren können gewünschte Dimensionen künstlich erzeugen.
+
+\item
+Nicht jede Projektion ist physikalisch sinnvoll.
+
+\item
+Einige Resultate verschwinden bei veränderten Parametern.
+
+\end{itemize}
+
+Diese Erkenntnisse verhinderten,
+
+dass vorschnell falsche Schlussfolgerungen gezogen wurden.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der methodische Wendepunkt}
+
+Mit zunehmender Zahl der Simulationen entstand schließlich eine neue Forschungsstrategie.
+
+Anfangs lautete die Frage:
+
+\[
+\text{„Hat der OPP vier Dimensionen?“}
+\]
+
+Später wurde daraus:
+
+\[
+\boxed{
+\text{„Welche Projektionen des OPP erzeugen vierdimensionale Physik?“}
+}
+\]
+
+Dieser scheinbar kleine Unterschied veränderte die gesamte PST.
+
+Denn nun wurde Raumzeit selbst als beobachterabhängige Größe verstanden.
+
+Der OPP blieb hochdimensional,
+
+während die beobachtete Physik möglicherweise erst durch den Projektionsoperator entsteht.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Ausblick}
+
+Die folgenden Kapitel dokumentieren die einzelnen numerischen Testreihen im Detail.
+
+Dabei wird deutlich werden,
+
+dass sich aus einer großen Zahl zunächst negativer Resultate allmählich zwei besonders vielversprechende Projektionsverfahren herauskristallisierten:
+
+\begin{enumerate}
+
+\item Diffusion Maps
+
+\item Kernel Principal Component Analysis (Kernel PCA)
+
+\end{enumerate}
+
+Beide Verfahren erzeugten erstmals reproduzierbar effektive Dimensionen nahe
+
+\[
+3+1,
+\]
+
+ohne diese explizit in den OPP einzubauen.
+
+Sie bilden deshalb den Ausgangspunkt der weiteren numerischen Entwicklung der PST.
+
