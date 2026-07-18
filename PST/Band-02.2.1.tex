@@ -1,0 +1,354 @@
+\subsection{2.2.1 Motivation relationaler Kernel im Ontophänomenalen Phasenraum}
+
+\subsubsection{Einleitung}
+
+Der Ontophänomenale Phasenraum (OPP) besitzt nach den bisherigen
+Grundannahmen der PST zunächst keinerlei klassische Geometrie.
+
+Insbesondere existieren im OPP zunächst keine
+
+\begin{itemize}
+\item kartesischen Koordinaten,
+\item physikalischen Abstände,
+\item Winkel,
+\item Metriken,
+\item Dimensionen
+\end{itemize}
+
+im üblichen Sinn.
+
+Der OPP stellt daher keinen Raum im mathematischen Sinne einer
+Mannigfaltigkeit mit vorgegebener Metrik dar.
+
+Vielmehr bildet er ein rein ontologisches Relationssubstrat.
+
+Die erste mathematische Aufgabe besteht deshalb nicht darin,
+Koordinaten einzuführen, sondern die Beziehungen zwischen
+ontophänomenalen Zuständen zu beschreiben.
+
+Genau hierfür werden relationale Kernel eingeführt.
+
+\bigskip
+
+\subsubsection{Der relationale Grundgedanke}
+
+Seien
+
+\[
+x_i,\;x_j \in \mathcal{O}
+\]
+
+zwei Zustände des OPP.
+
+Zwischen diesen Zuständen existiert zunächst lediglich eine
+Relation
+
+\[
+R_{ij}.
+\]
+
+Diese Relation besitzt zunächst keine Interpretation als Abstand.
+
+Stattdessen beschreibt sie lediglich die Stärke der gegenseitigen
+Verknüpfung.
+
+Formal
+
+\[
+R :
+\mathcal O \times \mathcal O
+\longrightarrow
+\mathbb R .
+\]
+
+Dabei gilt
+
+\[
+R_{ij}=R_{ji}.
+\]
+
+Die Relation ist somit zunächst symmetrisch.
+
+Die gesamte Information des OPP wird in der Matrix
+
+\[
+R=
+(R_{ij})
+\]
+
+gespeichert.
+
+Diese Matrix stellt das eigentliche Fundament der PST dar.
+
+Nicht die Punkte selbst sind fundamental,
+
+sondern ihre Beziehungen.
+
+Dies entspricht unmittelbar der relationalen Grundidee des
+Ontophänomenalismus.
+
+\bigskip
+
+\subsubsection{Warum überhaupt Kernel?}
+
+Eine beliebige Matrix wäre mathematisch möglich.
+
+Sie besitzt jedoch keinerlei Struktur.
+
+Die Physik zeigt dagegen überall eine sehr starke Lokalität.
+
+Beispiele sind:
+
+\begin{itemize}
+\item Gravitationsfelder
+\item elektromagnetische Felder
+\item Quantenkorrelationen
+\item statistische Korrelationen
+\item Diffusionsprozesse
+\end{itemize}
+
+Alle besitzen gemeinsam:
+
+\begin{quote}
+Je ähnlicher zwei Zustände sind,
+desto stärker beeinflussen sie sich.
+\end{quote}
+
+Ein Kernel beschreibt genau diese Idee.
+
+Er ordnet jedem Paar
+
+\[
+(x_i,x_j)
+\]
+
+eine kontinuierliche Kopplungsstärke zu.
+
+\bigskip
+
+\subsubsection{Minimalforderungen an einen PST-Kernel}
+
+Aus physikalischer Sicht ergeben sich mehrere
+Minimalforderungen.
+
+\paragraph{1. Positivität}
+
+Die Kopplungsstärke soll nicht negativ werden.
+
+\[
+R_{ij}\ge0.
+\]
+
+Negative Kopplungen können später eingeführt werden,
+werden jedoch zunächst ausgeschlossen.
+
+\paragraph{2. Symmetrie}
+
+Da zunächst keine ausgezeichnete Richtung existiert,
+
+muss gelten
+
+\[
+R_{ij}=R_{ji}.
+\]
+
+\paragraph{3. Maximale Selbstkopplung}
+
+Ein Zustand besitzt stets maximale Ähnlichkeit mit sich selbst.
+
+Daher
+
+\[
+R_{ii}=1.
+\]
+
+Dies normiert automatisch den gesamten Kernel.
+
+\paragraph{4. Monotonie}
+
+Mit wachsender Trennung soll die Kopplung
+abnehmen.
+
+Ist
+
+\[
+d_1<d_2,
+\]
+
+so soll gelten
+
+\[
+R(d_1)>R(d_2).
+\]
+
+Dies beschreibt mathematisch die intuitive Forderung
+lokaler Wechselwirkungen.
+
+\paragraph{5. Glattheit}
+
+Kleine Änderungen der Relation sollen kleine Änderungen
+der Kopplung erzeugen.
+
+Der Kernel soll daher stetig sein.
+
+\bigskip
+
+\subsubsection{Der Kernel als Projektion der Ontologie}
+
+Im OP existieren zunächst keine physikalischen Abstände.
+
+Die Funktion
+
+\[
+R(d)
+\]
+
+ist daher nicht als Abstandsgesetz zu verstehen.
+
+Sie beschreibt vielmehr,
+
+wie stark zwei ontophänomenale Zustände
+gegenseitig miteinander gekoppelt sind.
+
+Erst spätere Projektionen erzeugen aus dieser
+relationalen Information eine effektive Geometrie.
+
+Die Reihenfolge lautet daher
+
+\[
+\boxed{
+\text{Relation}
+\;\longrightarrow\;
+\text{Kernel}
+\;\longrightarrow\;
+\text{Spektrum}
+\;\longrightarrow\;
+\text{Geometrie}
+}
+\]
+
+nicht umgekehrt.
+
+Dies stellt einen fundamentalen Unterschied
+zur klassischen Differentialgeometrie dar.
+
+\bigskip
+
+\subsubsection{Vom Kernel zur Gram-Matrix}
+
+Aus dem Kernel wird anschließend eine
+Gram-Matrix konstruiert.
+
+Sie besitzt allgemein die Form
+
+\[
+K=f(R).
+\]
+
+In den bisherigen PST-Simulationen wurde unter anderem
+
+\[
+K_{ij}
+=
+R_{i0}
++
+R_{j0}
+-
+R_{ij}
+\]
+
+verwendet.
+
+Diese Konstruktion besitzt mehrere Vorteile:
+
+\begin{itemize}
+\item sie ist symmetrisch,
+\item sie erlaubt Spektralanalysen,
+\item sie erzeugt Eigenmoden,
+\item sie ermöglicht Dimensionsschätzungen,
+\item sie ist numerisch stabil.
+\end{itemize}
+
+Die Eigenwerte von
+
+\[
+K
+\]
+
+enthalten somit die gesamte geometrische Information
+der jeweiligen Projektion.
+
+\bigskip
+
+\subsubsection{Warum verschiedene Kernel getestet werden müssen}
+
+Eine zentrale offene Frage der PST lautet:
+
+\begin{quote}
+Ist die beobachtete Raumzeit eine Eigenschaft des OPP selbst
+oder lediglich eine Eigenschaft einer speziellen Projektion?
+\end{quote}
+
+Um diese Frage beantworten zu können,
+muss untersucht werden,
+
+wie empfindlich die entstehende Geometrie
+gegenüber der Wahl des Kernels ist.
+
+Ist beispielsweise ausschließlich ein bestimmter
+Kernel in der Lage,
+
+eine stabile effektive Vierdimensionalität
+zu erzeugen,
+
+dann besitzt dieser Kernel möglicherweise
+eine fundamentale physikalische Bedeutung.
+
+Entstehen dagegen ähnliche Ergebnisse
+für viele unterschiedliche Kernel,
+
+spricht dies für eine universelle Eigenschaft
+des OPP.
+
+Die Kernelwahl wird dadurch selbst
+zu einer überprüfbaren physikalischen Hypothese.
+
+\bigskip
+
+\subsubsection{Erkenntnistheoretische Bedeutung}
+
+Die bisherigen numerischen Untersuchungen legen nahe,
+
+dass die beobachtete Raumzeit nicht unmittelbar
+im OPP vorhanden ist.
+
+Vielmehr scheint sie als Eigenschaft
+bestimmter Projektionen aufzutreten.
+
+Der Kernel übernimmt dabei die Rolle eines
+Projektionsoperators.
+
+Er bestimmt,
+
+welche Aspekte der hochdimensionalen relationalen Struktur
+überhaupt sichtbar werden.
+
+Damit erhält der Kernel eine doppelte Bedeutung:
+
+\begin{enumerate}
+\item mathematisch beschreibt er Relationen,
+\item erkenntnistheoretisch beschreibt er die Art,
+wie Beobachter den OPP wahrnehmen.
+\end{enumerate}
+
+Dies passt unmittelbar zur Grundidee des
+Ontophänomenalismus:
+
+Nicht die Welt besitzt notwendigerweise
+eine vierdimensionale Struktur,
+
+sondern unsere Beobachtung könnte genau jene
+Projektionsvorschrift realisieren,
+welche aus dem hochdimensionalen OPP
+eine stabile emergente Raumzeit entstehen lässt.
+
