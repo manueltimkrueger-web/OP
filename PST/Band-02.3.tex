@@ -1,0 +1,259 @@
+\subsection{2.3 Erste numerische Untersuchungen des OPP}
+
+Nachdem die grundlegende mathematische Struktur des OPP formuliert worden war, stellte sich unmittelbar die entscheidende Frage:
+
+\begin{center}
+\emph{Besitzt dieses System überhaupt Eigenschaften, die als Ursprung unserer Physik in Frage kommen?}
+\end{center}
+
+Da eine analytische Lösung des vollständigen OPP derzeit nicht möglich ist, wurde ein umfangreiches numerisches Untersuchungsprogramm begonnen. Ziel war es ausdrücklich nicht, eine gewünschte Physik in das Modell hineinzubauen, sondern ausschließlich zu untersuchen, welche Strukturen aus den Grundannahmen des OPP spontan entstehen.
+
+Dabei wurde von Anfang an ein wichtiger methodischer Grundsatz verfolgt:
+
+\[
+\boxed{
+\text{Der OPP darf nicht auf die bekannte Physik angepasst werden.}
+}
+\]
+
+Stattdessen sollte untersucht werden,
+
+\begin{itemize}
+\item welche Eigenschaften robust auftreten,
+\item welche Strukturen unabhängig von Parametern entstehen,
+\item welche Resultate lediglich Artefakte bestimmter Projektionsverfahren sind.
+\end{itemize}
+
+Diese Vorgehensweise entspricht dem wissenschaftlichen Ideal einer möglichst hypothesenarmen Exploration.
+
+\section*{Vom philosophischen Modell zur numerischen Theorie}
+
+Die ersten Versionen der PST waren rein konzeptioneller Natur.
+
+Mit zunehmender mathematischer Präzisierung entstand jedoch die Möglichkeit, den OPP als konkretes numerisches System zu simulieren.
+
+Hierfür wurden insbesondere folgende Werkzeuge entwickelt:
+
+\begin{itemize}
+
+\item Aufbau relationaler Kernelmatrizen
+
+\item Konstruktion projektiver Gram-Matrizen
+
+\item Spektralanalyse über Eigenwerte
+
+\item effektive Dimensionsmaße
+
+\item Mutual-Information-Kernel
+
+\item Stabilitätsfunktionale
+
+\item verschiedene Projektionsalgorithmen
+
+\end{itemize}
+
+Diese Werkzeuge bildeten die Grundlage sämtlicher späterer Simulationen.
+
+\section*{Die Grundidee der Simulationen}
+
+Der OPP wurde numerisch nicht als kontinuierlicher Raum modelliert, sondern als endliche Menge von Attraktoren
+
+\[
+\{A_i\}_{i=1}^{N},
+\]
+
+zwischen denen ausschließlich Relationen existieren.
+
+Aus diesen Relationen wurde jeweils eine Kernelmatrix
+
+\[
+R_{ij}
+\]
+
+aufgebaut.
+
+Aus der Kernelmatrix wurde anschließend eine projektive Gram-Matrix konstruiert,
+
+deren Eigenwertspektrum untersucht wurde.
+
+Die zentrale Fragestellung lautete:
+
+\[
+\boxed{
+\text{Welche effektive Dimension besitzt das Spektrum?}
+}
+\]
+
+Dabei interessierte insbesondere,
+
+ob sich unabhängig von den Details stabile niedrige Dimensionen ergeben.
+
+\section*{Warum die effektive Dimension?}
+
+Anstelle einer klassischen topologischen Dimension wurde zunächst die sogenannte effektive Dimension verwendet.
+
+Diese besitzt den Vorteil,
+
+dass sie direkt aus dem Eigenwertspektrum berechnet werden kann.
+
+Verwendet wurde
+
+\[
+d_{\mathrm{eff}}
+=
+\frac{\left(\sum_i |\lambda_i|\right)^2}
+{\sum_i \lambda_i^2},
+\]
+
+wobei
+
+\[
+\lambda_i
+\]
+
+die Eigenwerte der jeweiligen Gram-Matrix darstellen.
+
+Dieses Maß besitzt mehrere günstige Eigenschaften.
+
+\begin{itemize}
+
+\item Es reagiert kontinuierlich.
+
+\item Es benötigt keine explizite Metrik.
+
+\item Es eignet sich auch für hochdimensionale projektive Räume.
+
+\item Es misst effektiv die Zahl relevanter Freiheitsgrade.
+
+\end{itemize}
+
+Damit wurde
+
+\[
+d_{\mathrm{eff}}
+\]
+
+zum zentralen Diagnosewerkzeug sämtlicher numerischer Experimente.
+
+\section*{Das erste überraschende Ergebnis}
+
+Bereits die ersten Simulationen lieferten ein unerwartetes Resultat.
+
+Der rohe OPP zeigte keine niedrige Dimension.
+
+Vielmehr ergaben sich Werte von ungefähr
+
+\[
+30
+\le
+d_{\mathrm{eff}}
+\le
+45.
+\]
+
+Diese Dimension erwies sich als bemerkenswert stabil.
+
+Selbst deutliche Änderungen der Punktzahl führten lediglich zu moderaten Änderungen.
+
+Dies war zunächst enttäuschend,
+
+gleichzeitig aber äußerst interessant.
+
+Denn offenbar besitzt der OPP tatsächlich eine eigene hochdimensionale Struktur,
+
+anstatt zufällig auseinanderzufallen.
+
+\section*{Der erste wichtige Fehlschlag}
+
+Die ursprüngliche Hoffnung lautete,
+
+dass bereits der rohe OPP spontan eine vierdimensionale Struktur erzeugen würde.
+
+Dies trat jedoch nicht ein.
+
+Mehrere Versuche,
+
+den OPP direkt zu analysieren,
+
+führten stets zu hochdimensionalen Spektren.
+
+Gerade dieses negative Ergebnis erwies sich später als außerordentlich wertvoll.
+
+Denn dadurch entstand erstmals ernsthaft die Vermutung,
+
+dass
+
+\[
+\boxed{
+\text{Raumzeit möglicherweise überhaupt keine Eigenschaft des OPP ist.}
+}
+\]
+
+Diese Erkenntnis markierte den Übergang zur Projektionstheorie.
+
+\section*{Von der Enttäuschung zur neuen Hypothese}
+
+An diesem Punkt änderte sich die Forschungsstrategie grundlegend.
+
+Anstatt weiter nach einer intrinsischen Raumzeit im OPP zu suchen,
+
+wurde nun gefragt:
+
+\begin{center}
+\emph{Welche Projektion auf den OPP erzeugt unsere beobachtete Physik?}
+\end{center}
+
+Damit verschob sich das gesamte Forschungsprogramm.
+
+Nicht mehr der OPP selbst,
+
+sondern die Projektionsoperatoren rückten in den Mittelpunkt.
+
+Dieser Perspektivwechsel sollte sich später als entscheidender Schritt der gesamten PST erweisen.
+
+\section*{Das Ziel der weiteren Untersuchungen}
+
+Aus diesen ersten Experimenten ergaben sich mehrere konkrete Arbeitsprogramme.
+
+Insbesondere sollten beantwortet werden:
+
+\begin{enumerate}
+
+\item Welche Projektionen erzeugen stabile niedrige Dimensionen?
+
+\item Existiert ein universeller Attraktor bei etwa vier Dimensionen?
+
+\item Welche Eigenschaften des OPP bleiben unter Projektionen erhalten?
+
+\item Welche Strukturen sind Projektionsartefakte?
+
+\item Können physikalische Symmetrien ebenfalls als Projektionseffekte verstanden werden?
+
+\end{enumerate}
+
+Diese Fragen bestimmten sämtliche folgenden numerischen Untersuchungen.
+
+\section*{Bedeutung für die PST}
+
+Obwohl zunächst kein unmittelbarer Erfolg erzielt wurde,
+
+war dieses erste numerische Programm von grundlegender Bedeutung.
+
+Zum ersten Mal zeigte sich,
+
+dass
+
+\begin{itemize}
+
+\item der OPP selbst stabil hochdimensional ist,
+
+\item einfache Analysen keine Raumzeit liefern,
+
+\item Projektionen offenbar unverzichtbar sind,
+
+\item die Suche nach der "richtigen Projektion" wahrscheinlich wichtiger ist als die Suche nach einer "richtigen Dynamik".
+
+\end{itemize}
+
+Diese Erkenntnisse bilden den Ausgangspunkt aller späteren numerischen Tests der PST und markieren den Übergang von einer rein philosophischen Theorie zu einem mathematisch überprüfbaren Forschungsprogramm.
+
