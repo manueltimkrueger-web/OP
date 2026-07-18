@@ -1,0 +1,408 @@
+\subsection{2.12 Aktueller Stand der numerischen Evidenz und offene Forschungsfragen}
+
+Nach Abschluss der bisherigen numerischen Untersuchungen lässt sich erstmals eine konsistente Zwischenbilanz ziehen.
+
+Die zahlreichen Simulationen verfolgten ursprünglich kein einheitliches Ziel. Erst im Verlauf der Arbeiten kristallisierte sich Schritt für Schritt heraus, welche Fragestellungen tatsächlich von fundamentaler Bedeutung sind.
+
+Im Rückblick lassen sich die Ergebnisse in drei Kategorien einteilen:
+
+\begin{enumerate}
+\item robuste numerische Befunde,
+\item wahrscheinliche Hypothesen,
+\item weiterhin offene Probleme.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{I. Robuste numerische Befunde}
+
+Mehrere Resultate wurden unabhängig voneinander reproduziert und besitzen daher einen deutlich höheren Evidenzgrad.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(1) Der rohe OPP ist hochdimensional}
+
+Ohne jede Projektion wächst die effektive Dimension nahezu linear mit der Anzahl der Attraktoren.
+
+Typische Messwerte waren
+
+\[
+\begin{array}{c|c}
+N & d_{\mathrm{eff}} \\
+\hline
+10 & 9.6 \\
+20 & 17.8 \\
+40 & 31.6
+\end{array}
+\]
+
+Daraus folgt unmittelbar:
+
+\[
+\boxed{
+\text{Der OPP besitzt keine intrinsische vierdimensionale Struktur.}
+}
+\]
+
+Die Vier muss daher zwangsläufig erst durch einen weiteren Mechanismus entstehen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(2) Projektionen verändern die effektive Dimension massiv}
+
+Alle getesteten Projektionsoperatoren reduzierten die effektive Dimension.
+
+Allerdings nicht in gleichem Maße.
+
+Die Projektion ist daher kein nebensächlicher mathematischer Schritt,
+
+sondern bestimmt unmittelbar die beobachtbare Geometrie.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(3) Nicht jede Projektion ist physikalisch sinnvoll}
+
+Der Vergleich verschiedener Verfahren ergab deutliche Qualitätsunterschiede.
+
+Die Rangfolge lautete ungefähr:
+
+\[
+\begin{array}{l|c}
+\text{Methode}
+&
+d_{\mathrm{eff}}
+\\
+\hline
+\text{Random Projection}
+&
+2.9
+\\
+\text{PCA}
+&
+3.6
+\\
+\text{Kernel PCA}
+&
+3.9
+\\
+\text{Diffusion Maps}
+&
+4.0
+\end{array}
+\]
+
+Bereits dieses Resultat spricht gegen die Annahme,
+
+jede beliebige Projektion könne eine physikalische Raumzeit erzeugen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(4) Diffusionsprojektionen besitzen einen stabilen Arbeitsbereich}
+
+Die umfangreichen Parameterstudien zeigten,
+
+dass sich
+
+\[
+d_{\mathrm{eff}}
+\approx
+4
+\]
+
+nur innerhalb eines begrenzten Bereiches der Diffusionszeit ergibt.
+
+Insbesondere
+
+\[
+t
+\approx
+9
+-
+10
+\]
+
+lieferte wiederholt Werte nahe vier.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{II. Wahrscheinliche Hypothesen}
+
+Mehrere Schlussfolgerungen werden durch die bisherigen Daten gestützt,
+
+sind jedoch noch nicht endgültig bewiesen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(1) Raumzeit ist eine Projektion}
+
+Die numerischen Ergebnisse sprechen deutlich dafür,
+
+dass Raumzeit keine Eigenschaft des OPP selbst ist.
+
+Vielmehr scheint zu gelten
+
+\[
+\boxed{
+\text{Raumzeit}
+=
+\mathcal{P}(\mathrm{OPP}).
+}
+\]
+
+Diese Aussage bildet inzwischen eine der zentralen Arbeitshypothesen der PST.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(2) Projektionen entsprechen Beobachtungsprozessen}
+
+Die Ähnlichkeit zwischen Informationsreduktion
+
+und realer Beobachtung wurde im Verlauf der Arbeiten immer deutlicher.
+
+Dadurch entstand die Vermutung,
+
+dass physikalische Beobachter mathematisch selbst als Projektionsoperatoren beschrieben werden können.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(3) Symmetriebruch könnte projektionsbedingt sein}
+
+Die Diskussion über Eichgruppen,
+
+Lie-Gruppen
+
+und Kaluza-Klein-Strukturen führte zu einer neuen Interpretation.
+
+Nicht der OPP muss bereits alle beobachteten Symmetrien besitzen.
+
+Vielmehr könnte gelten:
+
+\[
+\boxed{
+\text{Symmetriebruch}
+=
+\text{Folge der Projektion.}
+}
+\]
+
+Dies stellt derzeit eine der interessantesten offenen Forschungsrichtungen dar.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(4) Fake-5D}
+
+Die häufig beobachteten Werte
+
+\[
+d_{\mathrm{eff}}
+\approx
+5
+\]
+
+werden inzwischen nicht mehr als Hinweis auf eine reale fünfte Raumdimension interpretiert.
+
+Wahrscheinlicher erscheint,
+
+dass eine zusätzliche Spektralmode bestehen bleibt,
+
+welche beispielsweise
+
+\begin{itemize}
+
+\item
+
+Projektionsunschärfe,
+
+\item
+
+innere Freiheitsgrade,
+
+\item
+
+oder Quantenfluktuationen
+
+repräsentiert.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{III. Offene Probleme}
+
+Trotz der bisherigen Fortschritte bleiben zahlreiche fundamentale Fragen unbeantwortet.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(1) Der Projektionsoperator}
+
+Bislang existiert kein physikalisch motivierter Projektionsoperator.
+
+Kernel PCA und Diffusion Maps sind lediglich mathematische Kandidaten.
+
+Die eigentliche Projektion der Natur ist weiterhin unbekannt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(2) Lorentz-Metrik}
+
+Bis heute wurde nicht gezeigt,
+
+wie aus einer Projektion zwingend eine Lorentz-Signatur
+
+\[
+(-,+,+,+)
+\]
+
+entsteht.
+
+Dieses Problem besitzt höchste Priorität.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(3) Eichgruppen}
+
+Ebenso offen bleibt,
+
+ob sich
+
+\[
+SU(3)
+\times
+SU(2)
+\times
+U(1)
+\]
+
+tatsächlich aus projektionsbedingten Restgruppen ableiten lassen.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(4) Dynamik}
+
+Die bisherigen Untersuchungen behandeln überwiegend statische Strukturen.
+
+Eine vollständige Theorie benötigt jedoch zusätzlich
+
+\begin{itemize}
+
+\item
+
+Zeitentwicklung,
+
+\item
+
+Feldgleichungen,
+
+\item
+
+und Wechselwirkungen.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{(5) Mathematische Fundierung}
+
+Viele bisher verwendete Größen
+
+wie beispielsweise
+
+\[
+d_{\mathrm{eff}},
+\]
+
+das Stabilitätsfunktional,
+
+oder verschiedene Projektionsoperatoren,
+
+wurden zunächst heuristisch eingeführt.
+
+Eine streng mathematische Herleitung steht noch aus.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Der wichtigste Erkenntnisgewinn}
+
+Trotz aller offenen Fragen besitzt die bisherige Arbeit einen entscheidenden Erfolg.
+
+Zu Beginn der Untersuchungen bestand die Hoffnung,
+
+im OPP direkt eine vierdimensionale Struktur zu finden.
+
+Nach zahlreichen Simulationen lautet die heutige Sichtweise genau umgekehrt.
+
+\[
+\boxed{
+\text{Vierdimensionale Raumzeit muss gar nicht im OPP existieren.}
+}
+\]
+
+Sie entsteht vielmehr erst durch geeignete Projektionsprozesse.
+
+Dieser Perspektivwechsel verändert die gesamte Fragestellung der PST.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Neue Forschungsstrategie}
+
+Die zukünftige Entwicklung der PST orientiert sich daher an folgendem Schema:
+
+\[
+\boxed{
+\text{Existenz}
+\rightarrow
+\text{OPP}
+\rightarrow
+\text{Projektionsoperator}
+\rightarrow
+\text{Symmetriebruch}
+\rightarrow
+\text{Raumzeit}
+\rightarrow
+\text{Physik}.
+}
+\]
+
+Nicht mehr die Geometrie des OPP steht im Mittelpunkt,
+
+sondern die Mathematik der Projektion.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Schlussbemerkung}
+
+Die numerischen Arbeiten der ersten Entwicklungsphase haben weder die PST bewiesen noch widerlegt.
+
+Sie haben jedoch etwas erreicht,
+
+das wissenschaftlich mindestens ebenso wichtig ist.
+
+Sie haben die ursprüngliche Fragestellung präzisiert.
+
+Heute ist wesentlich klarer,
+
+\begin{itemize}
+
+\item
+
+welche Hypothesen mit den Daten vereinbar sind,
+
+\item
+
+welche Ideen aufgegeben wurden,
+
+\item
+
+welche Projektionsverfahren Erfolg versprechen,
+
+\item
+
+und an welchen mathematischen Problemen künftig gearbeitet werden muss.
+
+\end{itemize}
+
+Damit endet der erste große numerische Entwicklungszyklus der PST.
+
+Die weitere Forschung richtet ihren Schwerpunkt nun auf die mathematische Rekonstruktion derjenigen Projektion,
+
+aus der die bekannte Physik als stabile emergente Struktur hervorgeht.
