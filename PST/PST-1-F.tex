@@ -1,0 +1,483 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-1-F: Philosophisches Fundament
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-1-F: Philosophisches Fundament -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Korollar}[section]
+
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-1-F: Philosophisches Fundament}\\[0.4em]
+  {\large Verbindung zum OP, Existenz = Bestimmtheit,
+  Rekonstruktionskette}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument legt das philosophische Fundament der Projektiven
+Strukturtheorie (PST). Es beschreibt die Verbindung zwischen dem
+Ontoph\"{a}nomenalismus (OP) und der PST, formalisiert die Arbeitshypothese
+\(\text{Existenz} = \text{Bestimmtheit}\), entwickelt die vollst\"{a}ndige
+Rekonstruktionskette von der Existenz bis zur Physik und formuliert das
+Prinzip der minimalen Ontologie als Leitprinzip des gesamten
+Forschungsprogramms.
+
+Die PST ist keine eigenst\"{a}ndige Theorie neben dem OP, sondern dessen
+mathematische Ausarbeitung. Ihr Fernziel lautet:
+\[
+  \boxed{\text{Existenz} \;\Longrightarrow\; \text{Universum.}}
+\]
+Zwischen beiden Begriffen d\"{u}rfen ausschlie\ss{}lich mathematisch
+notwendige Rekonstruktionsschritte stehen.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Die PST als mathematische Ausarbeitung des OP}
+%==============================================================
+
+\begin{methodennote}[Stellung der PST im Forschungsprogramm]
+Der Ontoph\"{a}nomenalismus (OP) liefert das philosophische Fundament:
+Axiome, Begriffe, Prinzipien. Die Projektive Strukturtheorie (PST) \"{u}bernimmt
+die Aufgabe, dieses Fundament mathematisch auszuarbeiten und physikalisch
+zu operationalisieren.
+
+Die PST ist damit nicht optional. Sie ist das Einl\"{o}sungsversprechen
+des OP: Wenn das primordiale Denkfeld (OPP) tats\"{a}chlich der Urgrund der
+physikalischen Realit\"{a}t ist, muss sich zeigen lassen, wie aus ihm
+Raumzeit, Materie und Wechselwirkungen emergieren.
+\end{methodennote}
+
+\begin{remark}[Warum die PST ein Epochenprojekt ist]
+Die mathematische Ausarbeitung des Weges von der minimalen Ontologie zur
+vollst\"{a}ndigen Physik ist eine der ambiti\"{o}sestens Aufgaben, die ein
+Forschungsprogramm sich stellen kann. Die PST beansprucht nicht, diesen
+Weg in kurzer Zeit zu vollenden. Sie beansprucht, ihn konsequent,
+methodisch sauber und mit explizit markierten offenen Fragen zu gehen.
+\end{remark}
+
+%==============================================================
+\section{Ausgangspunkt: Das erste Axiom des OP}
+%==============================================================
+
+\begin{axiom}[Erstes Axiom des OP --- Typ R]
+Etwas existiert:
+\[
+  \exists\, \mathcal{M}_{\text{OPP}}.
+\]
+Das Axiom ist notwendig wahr, da seine Negation performativ
+selbstwidersprüchlich ist: Die Aussage \glqq{}Nichts existiert\grqq{}
+setzt eine existierende Aussage voraus.
+\end{axiom}
+
+\begin{remark}[Das modallogische Patt]
+Das erste Axiom beantwortet nicht die Frage, warum etwas existiert.
+Es stellt eine pr\"{a}zisere Frage: Ist \glqq{}nicht etwas\grqq{}
+\"{u}berhaupt eine koh\"{a}rente Alternative?
+
+Der OP zeigt ein modallogisches Patt (vgl.\ OP, Sektion~1):
+\begin{itemize}
+  \item Es ist m\"{o}glich, dass \glqq{}nicht etwas\grqq{} eine echte
+        M\"{o}glichkeit ist.
+  \item Es ist ebenso m\"{o}glich, dass \glqq{}nicht etwas\grqq{} eine
+        absolute Unm\"{o}glichkeit ist.
+\end{itemize}
+Die Asymmetrie der Gewissheit: Zustand~A (Existenz) ist performativ
+bewiesen. Zustand~B (nicht etwas) kann weder belegt noch widerspruchsfrei
+beschrieben werden. Damit tr\"{a}gt die Behauptung der Gleichrangigkeit
+beider Zust\"{a}nde die Beweislast --- und diese wurde bisher nicht erf\"{u}llt.
+\end{remark}
+
+%==============================================================
+\section{Existenz = Bestimmtheit}
+%==============================================================
+
+\begin{methodennote}[Beitrag von DeepSeek (Seki)]
+Die mathematische Formalisierung der \"{A}quivalenz von Existenz und
+Bestimmtheit wurde von Seki (DeepSeek) im Rahmen des Forschungsdialogs
+erarbeitet und in die PST-Grundlegung eingebracht.
+\end{methodennote}
+
+\begin{definition}[Vollkommen unbestimmtes Substrat]
+Sei $X$ ein hypothetisches Objekt, f\"{u}r das gilt:
+\[
+  \forall P\colon \quad P(X) \text{ ist nicht definiert.}
+\]
+$X$ besitzt keinerlei Eigenschaften, Relationen, Differenzen oder
+Bestimmungen.
+\end{definition}
+
+\begin{theorem}[Ontologische Leere des Unbestimmten]
+Ein vollkommen unbestimmtes $X$ ist von \glqq{}Nichts\grqq{}
+ununterscheidbar. Es gibt kein ontologisches Kriterium, das $X$ von der
+Abwesenheit jeglicher Existenz differenziert.
+\end{theorem}
+
+\begin{proof}[Beweis durch Widerspruch]
+Angenommen, $X$ existiert, ist aber vollkommen unbestimmt. Dann existiert
+keine Eigenschaft $P$ mit $P(X) \neq P(\emptyset)$. Da \glqq{}Nichts\grqq{}
+durch die vollst\"{a}ndige Abwesenheit von Eigenschaften charakterisiert
+ist, sind $X$ und \glqq{}Nichts\grqq{} ununterscheidbar --- im Widerspruch
+zur Annahme, dass $X$ existiert.\qed
+\end{proof}
+
+\begin{corollary}[Minimale Existenzbedingung]
+Jede Existenzaussage erfordert ein Minimum an Bestimmtheit:
+\[
+  \mathcal{E}(X) \;\Rightarrow\; \mathcal{B}(X),
+\]
+wobei $\mathcal{E}(X)$ f\"{u}r \glqq{}$X$ existiert\grqq{} und
+$\mathcal{B}(X)$ f\"{u}r \glqq{}$X$ ist bestimmt\grqq{} steht.
+\end{corollary}
+
+\begin{theorem}[Umkehrung: Bestimmtheit impliziert Existenz]
+Jede Bestimmtheit konstituiert einen ontologischen Sachverhalt:
+\[
+  \mathcal{B}(X) \;\Rightarrow\; \mathcal{E}(X).
+\]
+\end{theorem}
+
+\begin{proof}
+Sei $\mathcal{B}(X)$ gegeben. Dann existiert mindestens eine Eigenschaft,
+Differenz oder Relation, die auf $X$ zutrifft. Diese Eigenschaft selbst
+ist ein ontologischer Sachverhalt --- sie existiert. Da $X$ der Tr\"{a}ger
+dieser Eigenschaft ist, existiert auch $X$ im minimalen Sinne der
+Bestimmtheit.\qed
+\end{proof}
+
+\begin{corollary}[Existenz = Bestimmtheit]
+\[
+  \boxed{\mathcal{E}(X) \;\Longleftrightarrow\; \mathcal{B}(X)}
+  \qquad\text{oder k\"{u}rzer:}\qquad
+  \boxed{\text{Existenz} = \text{Bestimmtheit}.}
+\]
+\end{corollary}
+
+\begin{remark}[Bestimmtheit ist fundamentaler als Differenz]
+Die fr\"{u}here Gleichung $\text{Existenz} = \text{Differenz}$ scheitert
+an der Frage \glqq{}Differenz zwischen was?\grqq{}. Differenz $A \neq B$
+setzt logisch zwei bereits bestimmte Pole voraus. Bestimmtheit hingegen
+ben\"{o}tigt keine Zweiheit: Ein einzelnes, bestimmtes $X$ ist bereits
+ontologisch gehaltvoll. Damit gilt:
+\[
+  \text{Differenz} \subset \text{Bestimmtheit.}
+\]
+\end{remark}
+
+%==============================================================
+\section{Die Hierarchie der ontologischen Kategorien}
+%==============================================================
+
+Aus der \"{A}quivalenz $\text{Existenz} = \text{Bestimmtheit}$ ergibt
+sich eine vollst\"{a}ndige Hierarchie:
+
+\[
+  \boxed{\text{Existenz} = \text{Bestimmtheit}}
+  \;\Longrightarrow\;
+  \text{Differenz}
+  \;\Longrightarrow\;
+  \text{Relation}
+  \;\Longrightarrow\;
+  \text{Sachverhalte}
+  \;\Longrightarrow\;
+  \text{Aussagen}
+  \;\Longrightarrow\;
+  \text{Wahrheit.}
+\]
+
+\begin{remark}[Verbindung zur DRS]
+Diese Hierarchie stimmt mit der Differenz-Relation-Struktur (DRS) \"{u}berein.
+DRS zeigt: Form ist die stabile Organisation von Differenzen und Relationen.
+Bestimmtheit ist die Vorbedingung f\"{u}r Form. Damit ist die Hierarchie:
+\[
+  \text{Bestimmtheit}
+  \;\Longrightarrow\;
+  \text{Differenz} \;\Longleftrightarrow\; \text{Relation}
+  \;\Longleftrightarrow\; \text{Form}
+  \;\Longrightarrow\;
+  \text{Information}
+  \;\Longrightarrow\;
+  \text{Physik.}
+\]
+\end{remark}
+
+%==============================================================
+\section{Das Prinzip der minimalen Ontologie}
+%==============================================================
+
+\begin{definition}[Prinzip der minimalen Ontologie]
+Die PST verfolgt konsequent:
+\[
+  \boxed{
+    \text{Ontologisch so wenig wie m\"{o}glich,}
+    \quad
+    \text{mathematisch so viel wie n\"{o}tig.}
+  }
+\]
+\end{definition}
+
+\begin{remark}[Was der OPP nicht voraussetzt]
+Der Ontoph\"{a}nomenale Phasenraum ($\mathcal{M}_{\text{OPP}}$) setzt
+selbst folgende Strukturen \emph{nicht} voraus:
+\begin{itemize}
+  \item Raum, Zeit, Metriken, Koordinaten, Dimension
+  \item Teilchen, Felder, Wechselwirkungen
+  \item Naturkonstanten, Kopplungskonstanten
+  \item Eichsymmetrien, Kausalit\"{a}t, Dynamik
+\end{itemize}
+All diese Gr\"{o}\ss{}en sollen sp\"{a}ter emergieren. Gerade diese
+ontologische Sparsamkeit \emph{erzwingt} Emergenz: Weil der OPP selbst
+keine Raumzeit besitzt, muss erkl\"{a}rt werden, wie dennoch eine Raumzeit
+beobachtet werden kann.
+\end{remark}
+
+\begin{remark}[Warum Emergenz unvermeidlich wird]
+Die Theorie ist durch das Prinzip der minimalen Ontologie gezwungen, alle
+physikalischen Eigenschaften aus Projektionsprozessen herzuleiten:
+\begin{itemize}
+  \item Symmetrien, Teilchen, Massen
+  \item Eichfelder, Kausalit\"{a}t, Dynamik
+  \item Lorentz-Invarianz, Quantisierung
+\end{itemize}
+Jede Eigenschaft die nicht aus der Projektion folgt, w\"{a}re eine
+versteckte zus\"{a}tzliche Annahme --- ein Versto\ss{} gegen das Prinzip.
+\end{remark}
+
+%==============================================================
+\section{Die vollst\"{a}ndige Rekonstruktionskette}
+%==============================================================
+
+Das Fernziel der PST lautet:
+
+\[
+  \boxed{\text{Existenz} \;\Longrightarrow\; \text{Universum.}}
+\]
+
+Die vollst\"{a}ndige Kette der Rekonstruktionsschritte:
+
+\[
+  \text{Existenz}
+  \rightarrow
+  \text{Bestimmtheit}
+  \rightarrow
+  \text{Differenz}
+  \rightarrow
+  \text{Relation}
+  \rightarrow
+  \text{OPP}
+  \rightarrow
+  \mathcal{P}
+  \rightarrow
+  \text{Raumzeit}
+  \rightarrow
+  \text{Physik.}
+\]
+
+\begin{methodennote}[Status der Rekonstruktionsschritte]
+Nicht alle Schritte dieser Kette sind gleichweit ausgearbeitet.
+Gem\"{a}\ss{} MKO werden die Schritte nach ihrem epistemischen Status
+gekennzeichnet:
+
+\begin{itemize}
+  \item \textbf{Gesichert (MKO Ebene~1):} Existenz $\rightarrow$
+        Bestimmtheit (Theorem in Sektion~3), Bestimmtheit $\rightarrow$
+        Differenz $\rightarrow$ Relation (UP und Reductio in OP).
+  \item \textbf{Konzeptuell gut begr\"{u}ndet (MKO Ebene~2):}
+        Relation $\rightarrow$ OPP (OPP als Phasenraum aller m\"{o}glichen
+        Relationen).
+  \item \textbf{Numerisch best\"{a}tigt, noch nicht bewiesen
+        (MKO Ebene~4--5):} OPP $\rightarrow \mathcal{P} \rightarrow$
+        Raumzeit (Diffusion Maps erzeugen $d_{\text{eff}} \approx 4$,
+        aber $\mathcal{P}^\ast$ ist noch nicht hergeleitet).
+  \item \textbf{Offen (MKO Ebene~5):} Raumzeit $\rightarrow$ Physik
+        (Lorentz-Signatur, Eichgruppen, Quantisierung, Naturkonstanten).
+\end{itemize}
+\end{methodennote}
+
+%==============================================================
+\section{Der OPP als absolutes Substrat}
+%==============================================================
+
+\begin{definition}[OPP als absolutes Substrat]
+Der Ontoph\"{a}nomenale Phasenraum $\mathcal{M}_{\text{OPP}}$ ist das
+absolut existierende, statische Substrat. Er ist \emph{nicht} bestimmt
+im Sinne projektiver Bestimmtheit --- er ist reine Potenzialit\"{a}t.
+Bestimmtheit emergiert erst durch Projektion.
+\end{definition}
+
+\begin{remark}[Verbindung zu Axiom~2 des OP]
+Axiom~2 des OP (Minimalreflexivit\"{a}t) sichert dem OPP eine zeitlose
+Selbstpr\"{a}senz. Diese Selbstpr\"{a}senz ist das minimale Fundament
+f\"{u}r die Projektion: Ohne Selbstpr\"{a}senz g\"{a}be es keinen Attraktor,
+von dem aus projiziert werden k\"{o}nnte.
+\end{remark}
+
+\begin{proposition}[Die Kette der Emergenz]
+\[
+  \underbrace{\mathcal{M}_{\text{OPP}}}_{\text{absolut, unbestimmt}}
+  \;\Longrightarrow\;
+  \underbrace{\mathcal{P}}_{\text{Projektion}}
+  \;\Longrightarrow\;
+  \underbrace{\mathcal{B}(X) \geq I_0}_{\text{Bestimmtheit}}
+  \;\Longrightarrow\;
+  \underbrace{\text{Ph\"{a}nomenale Existenz}}_{\text{Raumzeit, Physik}}
+\]
+wobei $I_0 > 0$ die minimale Informationsschwelle bezeichnet, unterhalb
+derer keine Bestimmtheit entsteht (vgl.\ PST-2-M).
+\end{proposition}
+
+%==============================================================
+\section{Die Rolle der Mathematik in der PST}
+%==============================================================
+
+In der PST \"{u}bernimmt Mathematik eine konstruktive Funktion --- nicht
+nur eine beschreibende:
+
+\[
+  \boxed{
+    \text{Ontologie} + \text{Mathematik} = \text{Physik.}
+  }
+\]
+
+\begin{remark}[Rekonstruktion statt Anpassung]
+Die PST soll Beobachtungen nicht an freie Parameter anpassen, sondern
+Beobachtungen aus minimalen Annahmen herleiten. Idealerweise ergibt sich
+$3+1$ Dimensionen nicht weil dies experimentell bekannt ist, sondern weil
+jede andere Dimensionszahl mathematisch instabil w\"{a}re. Dasselbe gilt
+langfristig f\"{u}r Lichtgeschwindigkeit, Eichgruppen,
+Massenhierarchien und Kopplungskonstanten.
+\end{remark}
+
+%==============================================================
+\section{Der Wert negativer Resultate}
+%==============================================================
+
+\begin{methodennote}[Wissenschaftlicher Wert von No-Go Ergebnissen]
+Ein bemerkenswerter Aspekt der PST-Forschung ist, dass auch negative
+Ergebnisse wertvoll sind. Insbesondere:
+
+\begin{itemize}
+  \item Der rohe OPP besitzt keine spontane Vierdimensionalit\"{a}t
+        ($d_{\text{eff}} \approx 30$--$45$ ohne Projektion).
+  \item Beliebige Projektionen liefern keine stabile Physik.
+  \item Einige Verfahren erzeugen offensichtlich unphysikalische
+        Ergebnisse.
+\end{itemize}
+
+Jedes dieser Resultate verkleinert den Raum m\"{o}glicher Theorien.
+Ausschl\"{u}sse besitzen daher denselben wissenschaftlichen Wert wie
+positive Befunde. Das No-Go Ergebnis (OPP besitzt keine intrinsische
+4D-Struktur) ist kein Scheitern --- es ist ein wichtiger positiver
+Befund, der die Forschungsrichtung pr\"{a}zisiert: Nicht der OPP selbst,
+sondern die Projektion ist der Schl\"{u}ssel zur Raumzeit.
+\end{methodennote}
+
+%==============================================================
+\section{Offene Grundfragen}
+%==============================================================
+
+\begin{enumerate}
+  \item \textbf{Der universelle Projektionsoperator $\mathcal{P}^\ast$:}
+        Welcher Operator ist physikalisch korrekt --- und warum besitzt
+        die Natur genau diesen Operator? Das ist die zentrale offene Frage
+        der PST.
+
+  \item \textbf{Lorentz-Signatur:} Wie emergiert die charakteristische
+        $(+,-,-,-)$ Signatur der Minkowski-Raumzeit aus einer
+        signaturfreien, hochdimensionalen Struktur?
+
+  \item \textbf{Eichsymmetrien:} Wie entstehen $SU(3) \times SU(2)
+        \times U(1)$ als Symmetriegruppen der physikalischen Projektion?
+
+  \item \textbf{Quantisierung:} Ist Quantisierung eine Folge endlicher
+        Projektionsaufl\"{o}sung --- und wenn ja, welche Gr\"{o}\ss{}e
+        entspricht dem Planck'schen Wirkungsquantum?
+
+  \item \textbf{Naturkonstanten:} K\"{o}nnen Lichtgeschwindigkeit,
+        Gravitationskonstante und Feinstrukturkonstante aus Eigenschaften
+        des OPP und der Projektion abgeleitet werden?
+\end{enumerate}
+
+%==============================================================
+\section{Schnittstellen zu anderen Modulen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{OP (Logische Grundlegung):} PST-1-F baut direkt auf
+        Axiom~1, Axiom~2, UP und der Reductio ad indiscernibile auf.
+        Das modallogische Patt (OP, Sektion~1) ist der Ausgangspunkt.
+  \item \textbf{OPP (Ontoph\"{a}nomenaler Phasenraum):} Der OPP ist das
+        mathematische Objekt dessen Projektion die PST studiert.
+  \item \textbf{DPR (Die Projektive Reduktion):} DPR liefert die
+        philosophische Grundlage f\"{u}r Projektionsoperatoren.
+        PST-3-P arbeitet DPR mathematisch aus.
+  \item \textbf{DRS (Differenz-Relation-Struktur):} Die Hierarchie
+        Bestimmtheit $\rightarrow$ Differenz $\rightarrow$ Relation
+        $\rightarrow$ Form ist mit der Rekonstruktionskette der PST
+        vollst\"{a}ndig konsistent.
+  \item \textbf{DFD (Das Fragedifferential):} $\mathcal{D}(E) =
+        D_{\text{KL}}(Q_E \| P)$ misst die Bestimmtheit einer Perspektive
+        relativ zum Gesamtfeld --- eine direkte Operationalisierung von
+        $\mathcal{B}(X) \geq I_0$.
+  \item \textbf{PST-2-M bis PST-6-R:} Die weiteren PST-Dokumente
+        arbeiten die mathematischen Strukturen (PST-2-M), die
+        Projektionstheorie (PST-3-P), die Forschungsgeschichte (PST-4-G),
+        die Strategie (PST-5-S) und die physikalische Rekonstruktion
+        (PST-6-R) aus.
+\end{itemize}
+
+\end{document}
+
