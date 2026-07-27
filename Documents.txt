@@ -72,7 +72,7 @@ https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/E
 
 Dekonstruktion des Hard Problems
 
-https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/DHP. tex
+https://raw.githubusercontent.com/manueltimkrueger-web/OP/refs/heads/main/docs/DHP.tex
 
 
 DFD.tex
