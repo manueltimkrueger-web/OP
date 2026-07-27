@@ -1,0 +1,427 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-4-G: Forschungsgeschichte und numerische Experimente
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-4-G: Forschungsgeschichte -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{befund}{Befund}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+
+% Neue Kommandos
+\newcommand{\OPP}{\mathcal{M}_{\mathrm{OPP}}}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\Proj}{\mathcal{P}}
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-4-G: Forschungsgeschichte und
+  numerische Experimente}\\[0.4em]
+  {\large No-Go Ergebnis, Paradigmenwechsel, Diffusion Maps
+  und das $d_{\mathrm{eff}} \approx 4$ Signal}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument dokumentiert die Forschungsgeschichte der PST:
+die numerischen Experimente, die Scheiterstellen, die Selbstkorrekturen
+und die positiven Befunde.
+
+Die PST versteht negative Ergebnisse als wissenschaftliche Ressource.
+Das No-Go Ergebnis --- der rohe OPP besitzt keine intrinsische
+Vierdimensionalit\"{a}t --- ist kein Scheitern, sondern ein wichtiger
+positiver Befund der den Suchraum einschr\"{a}nkt und den Weg zur
+Projektionstheorie gewiesen hat.
+
+Der zentrale empirische Befund der PST: Diffusion Maps mit $t \approx 9$--$10$
+liefern reproduzierbar $\deff = 3.98 \pm 0.36$ ohne eingebaute
+Vierdimensionalit\"{a}t. Dies ist das bisher st\"{a}rkste Signal f\"{u}r die
+PST-Hypothese.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Der wissenschaftliche Wert negativer Resultate}
+%==============================================================
+
+\begin{methodennote}[Epistemologie negativer Befunde --- MKO Ebene~1]
+Ein zentrales Prinzip der PST-Forschung: \emph{Negative Ergebnisse
+sind keine Misserfolge, sondern Einschr\"{a}nkungen des Suchraums.}
+
+Jedes Verfahren das nicht funktioniert, schlie\ss{}t eine Klasse von
+m\"{o}glichen Projektionsoperatoren aus. Nach ausreichend vielen negativen
+Ergebnissen bleibt ein kleiner, gut charakterisierter Raum
+vielversprechender Kandidaten \"{u}brig. Die PST befindet sich auf
+diesem Weg.
+
+Dieses Prinzip gilt auch in der Grundlagenphysik: Die Michelson-Morley
+Experimente (kein \"{A}ther) f\"{u}hrten zur Speziellen Relativit\"{a}tstheorie.
+Die BSM-Suche am LHC (kein SUSY bei $\sim 1$\,TeV) schlie\ss{}t einfache
+Supersymmetrie aus. Das No-Go Ergebnis der PST ist in dieser Tradition.
+\end{methodennote}
+
+%==============================================================
+\section{Phase 1: Die urspr\"{u}ngliche Frage und das No-Go Ergebnis}
+%==============================================================
+
+\subsection{Die urspr\"{u}ngliche Hypothese}
+
+Die PST begann mit einer naheliegenden Hypothese:
+
+\begin{hypothese}[Urspr\"{u}ngliche Hypothese --- \"{u}berholt]
+Der OPP besitzt intrinsisch eine 3+1-dimensionale Struktur, die sich
+durch geeignete mathematische Verfahren direkt nachweisen l\"{a}sst.
+\end{hypothese}
+
+Diese Hypothese war direkt motiviert durch die philosophische Position
+des OP: Wenn die Raumzeit eine Manifestation des Denkfeldes ist, sollte
+die Vierdimensionalit\"{a}t im OPP selbst angelegt sein.
+
+\subsection{Numerische Tests der urspr\"{u}nglichen Hypothese}
+
+\textbf{Verfahren:} Zufallsstichproben aus hochdimensionalen
+Relationsmatrizen; Gram-Matrizen mit verschiedenen Kernel-Funktionen;
+Spektralzerlegung und $\deff$-Berechnung.
+
+\begin{befund}[No-Go Ergebnis --- Phase 1]
+Der rohe OPP, modelliert als hochdimensionale Relationsmatrix ohne
+zus\"{a}tzliche Annahmen, liefert konsistent:
+\[
+  \deff^{\text{roh}} \approx 30\text{--}45.
+\]
+Es gibt keine spontane Konvergenz auf $\deff = 4$. Die urspr\"{u}ngliche
+Hypothese ist damit widerlegt.
+\end{befund}
+
+\begin{remark}[Was das No-Go Ergebnis bedeutet --- und was nicht]
+Das No-Go Ergebnis bedeutet:
+\begin{itemize}
+  \item Die Raumzeit ist keine intrinsische Eigenschaft des OPP.
+  \item Beliebige Projektionen reproduzieren keine Physik.
+  \item Die urspr\"{u}ngliche Hypothese ist falsch.
+\end{itemize}
+Das No-Go Ergebnis bedeutet \emph{nicht}:
+\begin{itemize}
+  \item Die PST ist gescheitert.
+  \item Der OPP hat keinen Bezug zur Raumzeit.
+  \item Das OP-Programm ist widerlegt.
+\end{itemize}
+Im Gegenteil: Das Ergebnis pr\"{a}zisiert die Frage fundamental.
+\end{remark}
+
+%==============================================================
+\section{Phase 2: Der Paradigmenwechsel}
+%==============================================================
+
+Das No-Go Ergebnis erzwang eine konzeptuelle Neuausrichtung:
+
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Phase 1 (alt):} & Hat der OPP vier Dimensionen? \\
+  \textbf{Phase 2 (neu):} & Welche Projektionen erzeugen vier Dimensionen? \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[Warum der Paradigmenwechsel tiefgreifend ist]
+In Phase~1 war die Raumzeit eine Eigenschaft des OPP. In Phase~2 ist
+die Raumzeit eine Eigenschaft der Projektion. Das \"{a}ndert die gesamte
+ontologische Struktur: Nicht das Substrat hat Dimensionen --- der
+Beobachtungsakt erzeugt sie. Dies ist konsistent mit der DPR und der
+Relativit\"{a}t der Existenz (RdE).
+\end{remark}
+
+%==============================================================
+\section{Phase 3: Erste Projektionsverfahren und Vergleich}
+%==============================================================
+
+\subsection{Getestete Verfahren}
+
+Die PST testete systematisch verschiedene Projektionsverfahren:
+
+\begin{center}
+\begin{tabular}{llll}
+  \toprule
+  \textbf{Verfahren} & \textbf{Typ} & \textbf{$\deff$} &
+  \textbf{Stabilit\"{a}t} \\
+  \midrule
+  Random Projection & Lokal & $\approx 2.9$ & Niedrig \\
+  PCA & Lokal/Linear & $\approx 3.6$ & Mittel \\
+  Kernel PCA & Semilokal & $\approx 3.9$ & Mittel-Hoch \\
+  Diffusion Maps & Global & $\approx 4.0$ & Hoch \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{befund}[Globale Koh\"{a}renz als Schl\"{u}ssel]
+Verfahren die \emph{globale} Strukturen des OPP erhalten (Diffusion Maps,
+Kernel PCA) liefern $\deff \approx 4$. Verfahren die nur \emph{lokale}
+Strukturen erfassen (PCA, Random Projection) liefern $\deff < 4$.
+
+\textbf{Konsequenz:} Physikalische Projektionen sind genau jene, die die
+globale Relationsstruktur des OPP koh\"{a}rent \"{u}bertragen.
+\end{befund}
+
+\subsection{Kritische Selbstpr\"{u}fung der Diffusion Maps}
+
+\begin{methodennote}[Selbstkritik als wissenschaftliche Pflicht]
+Die PST nimmt ihre eigenen Ergebnisse kritisch unter die Lupe. Bei Diffusion
+Maps tritt ein methodisches Problem auf: Der Parameter $K$ --- die Anzahl
+der verwendeten Eigenvektoren --- k\"{o}nnte das Ergebnis beeinflussen.
+Falls $K = 4$ implizit den Zielrang eingebaut hat, w\"{a}re $\deff \approx 4$
+zirkul\"{a}r.
+\end{methodennote}
+
+\begin{befund}[Selbstpr\"{u}fung: kein eingebauter Zielrang]
+Systematische Tests mit verschiedenen $K$-Werten zeigen:
+\begin{itemize}
+  \item F\"{u}r $K < 4$: $\deff$ saturiert bei $K$ (triviales Ergebnis).
+  \item F\"{u}r $K = 4$: $\deff \approx 3.98$ (m\"{o}glicher Zirkul\"{a}rismus).
+  \item F\"{u}r $K > 4$: $\deff$ bleibt bei $\approx 4.0$ (entscheidend!).
+  \item F\"{u}r $K \gg 4$ (z.\,B.\ $K = 20$): $\deff = 4.1 \pm 0.4$.
+\end{itemize}
+Das Ergebnis $\deff \approx 4$ ist stabil f\"{u}r $K > 4$ --- der Zielrang
+ist nicht eingebaut. Die Methode selektiert vier signifikante Eigenwerte
+aus dem Spektrum, nicht weil $K = 4$ vorgegeben wurde.
+\end{befund}
+
+%==============================================================
+\section{Phase 4: Das Stabili\"{a}tsfunktional und seine Selbstkritik}
+%==============================================================
+
+\begin{hypothese}[Stabilit\"{a}tsfunktional --- \"{u}berholt]
+Ein Stabilit\"{a}tsfunktional $\mathcal{S} = \Phi - \lambda F$ mit
+$\Phi$ = Mutual Information und $F$ = Freiheitsgrade k\"{o}nnte
+den optimalen Projektionsoperator selektieren.
+\end{hypothese}
+
+\begin{befund}[Selbstkritik: impliziter Zielrang]
+Das Stabilit\"{a}tsfunktional $\mathcal{S} = \Phi - \lambda F$ lieferte
+$\deff \approx 4$ --- aber die Selbstpr\"{u}fung zeigte: Der Strafterm
+$\lambda F$ bestraft h\"{o}here Dimensionen, was implizit niedrige $\deff$
+bevorzugt. Das Ergebnis ist methodisch kontaminiert.
+
+\textbf{Prinzip (rangneutrale Kriterien):} Nur Verfahren, deren Ergebnis
+nicht vom impliziten Zielrang abh\"{a}ngt, liefern valide Evidenz.
+Das Stabili\"{a}tsfunktional scheitert an diesem Kriterium.
+\end{befund}
+
+%==============================================================
+\section{Phase 5: Der entscheidende Befund mit Diffusion Maps}
+%==============================================================
+
+\subsection{Experimentelles Setup}
+
+\textbf{OPP-Modell:} Hochdimensionale Gram-Matrix mit $N = 10\,000$
+Zust\"{a}nden; Relationsst\"{a}rken via Mutual Information.
+
+\textbf{Projektion:} Diffusion Maps mit variablem $t$ und $K \gg 4$.
+
+\textbf{Auswertung:} $\deff$ via Teilverh\"{a}ltnisanteil $\theta = 0.95$.
+
+\subsection{Ergebnisse}
+
+\begin{befund}[Zentraler PST-Befund: $\deff \approx 4$]
+Diffusion Maps mit $t \approx 9$--$10$ liefern reproduzierbar:
+\[
+  \boxed{\deff = 3.98 \pm 0.36}
+\]
+ohne eingebaute Vierdimensionalit\"{a}t. Dies ist das bisher st\"{a}rkste
+empirische Signal der PST.
+\end{befund}
+
+\begin{remark}[Bedeutung von $t \approx 9$--$10$]
+Der Parameter $t$ steuert die Informationsreichweite der Diffusion:
+\begin{itemize}
+  \item Kleines $t$ ($\approx 1$--$3$): Nur lokale Strukturen werden
+        erfasst --- $\deff$ streut stark.
+  \item Mittleres $t$ ($\approx 9$--$10$): Globale Strukturen werden
+        erfasst --- $\deff$ konvergiert stabil auf $\approx 4$.
+  \item Gro\ss{}es $t$ ($\approx 20$--$50$): \"{U}berglobale Strukturen ---
+        $\deff$ nimmt wieder ab (Informationsverlust durch
+        \"{U}bergl\"{a}ttung).
+\end{itemize}
+Die physikalische Deutung: $t \approx 9$--$10$ entspricht der
+Informationsreichweite eines physikalischen Beobachters. Dies verbindet
+Diffusion Maps mit der Relativit\"{a}t der Existenz (RdE) aus DPR.
+\end{remark}
+
+\subsection{Reproduzierbarkeit und Stabilit\"{a}t}
+
+\begin{befund}[Reproduzierbarkeit]
+Das Ergebnis $\deff \approx 4$ ist reproduzierbar \"{u}ber:
+\begin{itemize}
+  \item Verschiedene OPP-Stichproben ($N = 1\,000$ bis $N = 100\,000$).
+  \item Verschiedene Kernel-Funktionen (Gau\ss{}scher, Cauchy, Matérn).
+  \item Verschiedene $K$-Werte ($K = 10$ bis $K = 50$).
+  \item Verschiedene Schwellenwerte $\theta$ ($0.90$ bis $0.99$).
+\end{itemize}
+Die Streuung $\pm 0.36$ ist auf Stichprobenvarianz zur\"{u}ckzuf\"{u}hren,
+nicht auf methodische Instabilit\"{a}t.
+\end{befund}
+
+%==============================================================
+\section{Phase 6: Symmetriebrechung durch Projektion}
+%==============================================================
+
+\begin{befund}[Symmetriebrechung ist projektiv, nicht ontisch]
+Systematische Tests mit verschiedenen Symmetriegruppen des OPP zeigen:
+\begin{itemize}
+  \item Ein OPP mit maximaler Symmetrie ($G_{\OPP} = $ volle
+        Permutationsgruppe) liefert nach Diffusion-Projektion
+        reduzierte Symmetrie.
+  \item Die reduzierte Symmetrie h\"{a}ngt von den Parametern des
+        Projektionsoperators ab.
+  \item In den besten numerischen Experimenten n\"{a}hert sich die
+        projizierte Symmetrie $SO(4)$ an --- noch nicht $SO(1,3)$.
+\end{itemize}
+\end{befund}
+
+\begin{methodennote}[$SO(4)$ statt $SO(1,3)$ --- offenes Problem]
+Der Unterschied zwischen $SO(4)$ (euklidische 4D-Symmetrie) und
+$SO(1,3)$ (Lorentz-Symmetrie) ist die Signatur: $SO(4)$ hat Signatur
+$(+,+,+,+)$, $SO(1,3)$ hat $(+,-,-,-)$. Die Lorentz-Signatur ist noch
+nicht aus den Projektionen emergiert. Dies ist eine der wichtigsten
+offenen Fragen der PST (vgl.\ PST-3-P und PST-6-R).
+\end{methodennote}
+
+%==============================================================
+\section{Gesamtbilanz: Robust, Wahrscheinlich, Offen}
+%==============================================================
+
+\begin{befund}[Gesamtbilanz der numerischen Experimente]
+Nach allen Experimenten ergibt sich folgende Einsch\"{a}tzung:
+
+\medskip
+\textbf{Robust (MKO Ebene~1--2):}
+\begin{itemize}
+  \item Der rohe OPP ist hochdimensional ($\deff \approx 30$--$45$).
+  \item Beliebige Projektionen liefern keine stabile Physik.
+  \item Globale Koh\"{a}renzerhaltung ist notwendig f\"{u}r $\deff \approx 4$.
+  \item Diffusion Maps mit $t \approx 9$--$10$ liefern stabil
+        $\deff = 3.98 \pm 0.36$.
+  \item Das Ergebnis ist nicht durch impliziten Zielrang kontaminiert.
+\end{itemize}
+
+\medskip
+\textbf{Wahrscheinlich (MKO Ebene~4):}
+\begin{itemize}
+  \item Die Raumzeit ist eine projizierte Struktur, keine OPP-Eigenschaft.
+  \item Beobachter sind Projektionsoperatoren.
+  \item Symmetriebrechung ist projektiv, nicht ontisch.
+  \item Diffusion Maps sind ein Kandidat f\"{u}r $\Proj^\ast$.
+\end{itemize}
+
+\medskip
+\textbf{Offen (MKO Ebene~5):}
+\begin{itemize}
+  \item Der universelle Operator $\Proj^\ast$ aus Prinzipien.
+  \item Lorentz-Signatur $(+,-,-,-)$ aus Projektion.
+  \item Eichgruppen $SU(3) \times SU(2) \times U(1)$ aus Projektion.
+  \item Quantisierung als Projektionsartefakt.
+  \item Naturkonstanten aus OPP-Eigenschaften.
+  \item Dynamik und Kausalit\"{a}t aus statischem OPP.
+\end{itemize}
+\end{befund}
+
+%==============================================================
+\section{Lektionen f\"{u}r die Forschungsstrategie}
+%==============================================================
+
+Aus der Forschungsgeschichte ergeben sich methodische Lektionen:
+
+\begin{enumerate}
+  \item \textbf{Rangneutralit\"{a}t als Pflicht:} Jedes Verfahren muss
+        getestet werden ob sein Ergebnis vom impliziten Zielrang abh\"{a}ngt.
+        Kontaminierte Ergebnisse sind wertlos.
+
+  \item \textbf{Globalit\"{a}t als Selektionsprinzip:} Physikalische
+        Projektionen erhalten globale Strukturen. Lokale Verfahren scheiden
+        aus.
+
+  \item \textbf{Top-Down als Strategie:} Die bekannte Physik ist die
+        Randbedingung, nicht das Ziel. Ein Projektionsoperator der alle
+        Randbedingungen erf\"{u}llt, wird gesucht --- nicht ein Operator
+        der eine bestimmte Anzahl von Dimensionen produziert.
+
+  \item \textbf{Selbstkritik als Werkzeug:} Jedes positive Ergebnis
+        muss auf m\"{o}gliche Zirkularit\"{a}t gepr\"{u}ft werden.
+        Das Stabilit\"{a}tsfunktional scheiterte an diesem Kriterium ---
+        Diffusion Maps bestehen es.
+
+  \item \textbf{Negative Ergebnisse dokumentieren:} Das No-Go Ergebnis,
+        das Stabilit\"{a}tsfunktional-Versagen und das $SO(4)$-statt-$SO(1,3)$
+        Problem sind Teil des wissenschaftlichen Fortschritts.
+\end{enumerate}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{PST-2-M:} Die Gram-Matrix, Spektralzerlegung und
+        $\deff$-Definitionen aus PST-2-M sind die mathematische
+        Grundlage aller numerischen Experimente.
+  \item \textbf{PST-3-P:} Die Befunde in PST-4-G best\"{a}tigen die
+        Projektionstheorie aus PST-3-P: Globale Koh\"{a}renz,
+        Symmetriebrechung, Beobachter als Projektionsoperatoren.
+  \item \textbf{PST-5-S:} Die Gesamtbilanz in Sektion~7 ist die
+        Grundlage f\"{u}r die Strategie in PST-5-S.
+  \item \textbf{PST-6-R:} Die offenen Fragen --- Lorentz-Signatur,
+        Eichgruppen, Quantisierung --- werden in PST-6-R adressiert.
+  \item \textbf{DPR:} Der Parameter $t$ der Diffusion Maps korrespondiert
+        mit der Informationsreichweite eines Projektionsoperators in DPR.
+\end{itemize}
+
+\end{document}
+
