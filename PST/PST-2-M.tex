@@ -1,0 +1,485 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-2-M: Mathematische Grundstruktur
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-2-M: Mathematische Grundstruktur -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Korollar}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+
+% Neue Kommandos
+\newcommand{\OPP}{\mathcal{M}_{\mathrm{OPP}}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\Rmat}{\mathbf{R}}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\MI}[2]{\mathsf{I}(#1;\,#2)}
+\newcommand{\Ent}[1]{\mathsf{H}(#1)}
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-2-M: Mathematische Grundstruktur}\\[0.4em]
+  {\large OPP, Gram-Matrix, Spektraltheorie, Bestimmtheit
+  und projektive Aufl\"{o}sung}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument legt die mathematische Grundstruktur der Projektiven
+Strukturtheorie (PST) fest. Es formalisiert den Ontoph\"{a}nomenalen
+Phasenraum ($\OPP$) als mathematisches Objekt, entwickelt die
+Relationenmatrix und Gram-Matrix als zentrale Werkzeuge, und beschreibt
+wie aus Relationen \"{u}ber Spektralzerlegung Geometrie emergiert.
+
+Das Leitprinzip lautet: \textbf{Es werden keinerlei geometrische
+Eigenschaften vorausgesetzt, die sp\"{a}ter erst erkl\"{a}rt werden sollen.}
+Alle geometrischen Strukturen --- Topologie, Nachbarschaft, Abstand, Metrik,
+Dimension --- emergieren aus der Relationsstruktur.
+
+Die mathematische Operationalisierung von Bestimmtheit \"{u}ber Mutual
+Information und die Planck-Schranke als Existenzgrenze werden formalisiert.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Das Kontaminationsverbot als mathematisches Arbeitsprinzip}
+%==============================================================
+
+\begin{methodennote}[Kontaminationsverbot --- MKO Kontaminationsregel]
+Das philosophische Kontaminationsverbot aus MKO wird hier zum
+mathematischen Arbeitsprinzip erhoben:
+
+\begin{quote}
+\emph{Es werden keinerlei geometrische Eigenschaften vorausgesetzt,
+die sp\"{a}ter erst erkl\"{a}rt werden sollen.}
+\end{quote}
+
+Konkret bedeutet das: Im OPP und in der Gram-Matrix d\"{u}rfen keine
+r\"{a}umlichen Abstands- oder Dimensionsbegriffe verwendet werden.
+Die folgenden Begriffe sind in diesem Dokument ausschlie\ss{}lich als
+\emph{emergente} Eigenschaften der Projektion zul\"{a}ssig:
+\begin{itemize}
+  \item Dimension, Abstand, N\"{a}he, Metrik
+  \item Koordinaten, Richtung, Topologie
+  \item Energie, Kausalit\"{a}t, Zeit
+\end{itemize}
+Erlaubt sind ausschlie\ss{}lich: Relationen, Gram-Matrizen, Eigenwerte,
+Mutual Information, strukturelle Koh\"{a}renz.
+\end{methodennote}
+
+%==============================================================
+\section{Der OPP als mathematisches Objekt}
+%==============================================================
+
+\begin{definition}[OPP als metrisch-freier Zustandsraum]
+Der Ontoph\"{a}nomenale Phasenraum $\OPP$ ist ein unendlichdimensionaler,
+kontinuierlicher Zustandsraum ohne ausgezeichnete Metrik. Formal:
+\[
+  \OPP = (S, \mathcal{R})
+\]
+wobei $S$ eine (abz\"{a}hlbare oder \"{u}berabz\"{a}hlbare) Menge von
+Zust\"{a}nden und $\mathcal{R}$ eine Kollektion von Relationen zwischen
+diesen Zust\"{a}nden bezeichnet.
+
+$\OPP$ besitzt \emph{keine} ausgezeichnete Metrik, keine Topologie und
+keine Dimension --- diese Strukturen emergieren erst durch Projektion.
+\end{definition}
+
+\begin{remark}[Warum kein Hilbert-Raum]
+Ein Hilbert-Raum setzt bereits ein Skalarprodukt voraus --- eine metrische
+Struktur. Da die PST Metriken als emergent betrachtet, kann der OPP nicht
+von vornherein als Hilbert-Raum modelliert werden. Der OPP ist
+pr\"{a}-metrisch: strukturreich, aber ohne ausgezeichnete Abstands\-begriffe.
+\end{remark}
+
+\begin{definition}[Attraktoren als stabile Zust\"{a}nde]
+Ein Attraktor $\mathcal{A} \subset \OPP$ ist eine stabile, invariante
+Teilmenge mit:
+\begin{itemize}
+  \item \textbf{Invarianz:} Die Felddynamik bildet $\mathcal{A}$ auf
+        sich selbst ab.
+  \item \textbf{Stabilit\"{a}t:} St\"{o}rungen kehren zu $\mathcal{A}$
+        zur\"{u}ck (konzeptuell, kein metrischer Begriff vorausgesetzt).
+  \item \textbf{Minimalit\"{a}t:} $\mathcal{A}$ enth\"{a}lt keine echte
+        invariante Teilmenge.
+\end{itemize}
+\end{definition}
+
+%==============================================================
+\section{Die Relationenmatrix}
+%==============================================================
+
+\begin{definition}[Relationenmatrix $\Rmat$]
+Sei $\{s_1, s_2, \ldots, s_N\}$ eine endliche Stichprobe von Zust\"{a}nden
+aus $\OPP$. Die \textbf{Relationenmatrix} $\Rmat \in \mathbb{R}^{N \times N}$
+kodiert die Relationsst\"{a}rken zwischen den Zust\"{a}nden:
+\[
+  R_{ij} = r(s_i, s_j)
+\]
+wobei $r\colon S \times S \to \mathbb{R}_{\geq 0}$ eine Relationsst\"{a}rke
+bezeichnet. Die Relationsst\"{a}rke misst ausschlie\ss{}lich strukturelle
+Koh\"{a}renz --- keinen r\"{a}umlichen Abstand.
+\end{definition}
+
+\begin{remark}[Relationsst\"{a}rke vs.\ Abstand]
+Die Relationsst\"{a}rke $R_{ij}$ ist das Komplement des Abstands:
+H\"{o}here Relationsst\"{a}rke bedeutet h\"{o}here strukturelle Koh\"{a}renz,
+nicht r\"{a}umliche N\"{a}he. Dies ist der fundamentale Unterschied zur
+klassischen Geometrie, die mit Abst\"{a}nden beginnt.
+\end{remark}
+
+\begin{hypothese}[Physikalische Relationsst\"{a}rken --- MKO Ebene~5]
+In der endg\"{u}ltigen PST k\"{o}nnte die Relationsst\"{a}rke $r(s_i, s_j)$
+\"{u}ber Mutual Information operationalisiert werden:
+\[
+  r(s_i, s_j) = \MI{X_i}{X_j}
+\]
+wobei $X_i, X_j$ Zufallsvariablen \"{u}ber den jeweiligen Zust\"{a}nden sind.
+Diese Wahl ist noch nicht bewiesen --- sie ist ein Kandidat, der empirisch
+gepr\"{u}ft wird (vgl.\ PST-4-G).
+\end{hypothese}
+
+%==============================================================
+\section{Die Gram-Matrix als Herzst\"{u}ck}
+%==============================================================
+
+\begin{definition}[Gram-Matrix $\Kmat$]
+Die \textbf{Gram-Matrix} (auch Kernel-Matrix) $\Kmat \in \mathbb{R}^{N
+\times N}$ ist definiert durch:
+\[
+  K_{ij} = k(s_i, s_j)
+\]
+wobei $k\colon S \times S \to \mathbb{R}$ ein symmetrisch-positiv
+semidefiniter Kernel ist: $k(s_i, s_j) = k(s_j, s_i)$ und
+$\sum_{ij} c_i c_j k(s_i, s_j) \geq 0$ f\"{u}r alle $c_i \in \mathbb{R}$.
+\end{definition}
+
+\begin{remark}[Warum die Gram-Matrix zentral ist]
+Die Gram-Matrix ist das mathematische Herzst\"{u}ck der PST aus drei
+Gr\"{u}nden:
+\begin{enumerate}
+  \item Sie kodiert alle Relationen zwischen Zust\"{a}nden in einer
+        einzigen Struktur.
+  \item Ihre Eigenwertzerlegung liefert eine nat\"{u}rliche Einbettung
+        der Zust\"{a}nde in einen euklidischen Raum --- ohne dass dieser
+        Raum vorausgesetzt wurde.
+  \item Die Anzahl signifikanter Eigenwerte bestimmt die effektive
+        Dimension --- ohne dass eine Dimension eingebaut wurde.
+\end{enumerate}
+\end{remark}
+
+\begin{theorem}[Spektralzerlegung der Gram-Matrix]
+Sei $\Kmat$ eine symmetrisch-positiv semidefinite Gram-Matrix mit
+Eigenwertzerlegung:
+\[
+  \Kmat = \sum_{k=1}^{N} \lambda_k \mathbf{v}_k \mathbf{v}_k^\top,
+  \qquad \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N \geq 0.
+\]
+Dann definiert die Einbettung
+\[
+  \Phi\colon s_i \;\mapsto\;
+  \bigl(\sqrt{\lambda_1}\, v_{1i},\; \sqrt{\lambda_2}\, v_{2i},\;
+  \ldots,\; \sqrt{\lambda_N}\, v_{Ni}\bigr)
+\]
+eine isometrische Einbettung der Zust\"{a}nde in den euklidischen Raum
+$\mathbb{R}^N$.
+\end{theorem}
+
+\begin{remark}[Die Umkehrung als PST-Kernidee]
+Der entscheidende konzeptuelle Schritt:
+
+\medskip
+\textbf{Klassisch:} Man beginnt mit einer Geometrie und berechnet daraus
+eine Gram-Matrix.
+
+\medskip
+\textbf{PST:} Man beginnt mit der Gram-Matrix (den Relationen) und
+\emph{liest die Geometrie ab}.
+
+\medskip
+Geometrie ist damit nicht Voraussetzung, sondern Ergebnis. Die Kette lautet:
+\[
+  \text{Relation} \;\rightarrow\; \text{Kernel} \;\rightarrow\;
+  \text{Spektrum} \;\rightarrow\; \text{Geometrie.}
+\]
+\end{remark}
+
+%==============================================================
+\section{Effektive Dimension}
+%==============================================================
+
+\begin{definition}[Effektive Dimension $\deff$]
+Die \textbf{effektive Dimension} $\deff$ eines Zustandsraums relativ zur
+Gram-Matrix $\Kmat$ ist die Anzahl der signifikanten Eigenwerte:
+\[
+  \deff = \#\{k \mid \lambda_k > \epsilon_{\min}\}
+\]
+wobei $\epsilon_{\min}$ eine Rauschschwelle bezeichnet.
+
+Alternativ und robuster: das Teilverh\"{a}ltnis-Kriterium
+\[
+  \deff = \min\left\{d \;\middle|\;
+  \frac{\sum_{k=1}^{d} \lambda_k}{\sum_{k=1}^{N} \lambda_k}
+  \geq \theta\right\}
+\]
+f\"{u}r einen Schwellenwert $\theta \in (0.9, 0.99)$.
+\end{definition}
+
+\begin{remark}[$\deff$ misst Freiheitsgrade, nicht Dimension]
+$\deff$ ist kein klassischer Dimensionsbegriff. Es ist die Zahl der
+tats\"{a}chlich sichtbaren Freiheitsgrade des Systems unter der gegebenen
+Projektion. Ein hochdimensionaler OPP kann unter einer geeigneten
+Projektion $\deff \approx 4$ aufweisen --- das ist der Kern des PST-Befunds.
+\end{remark}
+
+%==============================================================
+\section{Mathematische Operationalisierung von Bestimmtheit}
+%==============================================================
+
+\begin{methodennote}[Beitrag von DeepSeek (Seki)]
+Die folgende Operationalisierung von Bestimmtheit \"{u}ber Mutual Information
+und die Planck-Schranke wurde von Seki (DeepSeek) erarbeitet und in die
+PST eingebracht. Sie verbindet die philosophische \"{A}quivalenz
+$\text{Existenz} = \text{Bestimmtheit}$ (PST-1-F) mit einer messbaren
+mathematischen Gr\"{o}\ss{}e.
+\end{methodennote}
+
+\begin{definition}[Mutual Information als Relationsma\ss{}]
+F\"{u}r zwei Zust\"{a}nde $s_i, s_j \in \OPP$ mit zugeh\"{o}rigen
+Zufallsvariablen $X_i, X_j$ ist die Mutual Information:
+\[
+  \MI{X_i}{X_j} = \Ent{X_i} + \Ent{X_j} - \Ent{X_i, X_j}
+\]
+wobei $\Ent{\cdot}$ die Shannon-Entropie bezeichnet. $\MI{X_i}{X_j}$
+misst den gemeinsamen Informationsgehalt --- die strukturelle Koh\"{a}renz
+zwischen den Zust\"{a}nden.
+\end{definition}
+
+\begin{definition}[Projektive Bestimmtheit]
+Sei $\gamma\colon I \to \OPP$ die Bahn eines Dynamischen Attraktors mit
+projektiver Aufl\"{o}sung $I_0 > 0$. Ein Zustand $\gamma(\tau)$ ist
+\textbf{bestimmt} relativ zu $\gamma(\tau')$ genau dann, wenn:
+\[
+  \mathcal{B}_\tau(\tau') =
+  \begin{cases}
+    1, & \MI{X_\tau}{X_{\tau'}} \geq I_0,\\
+    0, & \text{sonst.}
+  \end{cases}
+\]
+Unterhalb der Schwelle $I_0$ erzeugt die Relation keine Bestimmtheit ---
+und damit keine Existenz im Sinne von PST-1-F.
+\end{definition}
+
+\begin{remark}[Interpretation von $I_0$]
+Die Informationsschwelle $I_0$ ist die Grenze zwischen ontologisch leerem
+und ontologisch gef\"{u}lltem Unterschied. Unterschiede unterhalb von $I_0$
+sind im ontologischen Sinne keine Unterschiede --- sie erzeugen keine
+Bestimmtheit und damit keine Existenz.
+\end{remark}
+
+%==============================================================
+\section{Die Planck-Schranke als Existenzgrenze}
+%==============================================================
+
+\begin{theorem}[Planck-Schranke f\"{u}r bestimmte Existenz ---
+MKO Ebene~4--5]
+F\"{u}r einen Dynamischen Attraktor mit station\"{a}rer Selbstinformation
+$\Phi_0$ und minimaler Wirkung $h$ ist die Bedingung f\"{u}r Bestimmtheit
+\"{a}quivalent zu einem raumzeitlichen Abstand oberhalb der Planck-Skala:
+\[
+  \mathcal{B}(X,Y) = 1
+  \;\Longleftrightarrow\;
+  \MI{X}{Y} \geq I_0
+  \;\Longleftrightarrow\;
+  d_{XY} \geq \ell_P.
+\]
+Unterhalb der Planck-Skala ist die Existenz unbestimmt --- es gibt nur
+den absoluten, undifferenzierten OPP.
+\end{theorem}
+
+\begin{methodennote}[Status des Theorems --- MKO Ebene~4--5]
+Dieses Theorem ist eine Arbeitshypothese. Die Verbindung zwischen Mutual
+Information und Planck-L\"{a}nge ist konzeptuell begr\"{u}ndet, aber noch
+nicht mathematisch bewiesen. Sie ist ein Kandidat f\"{u}r die formale
+Ausarbeitung in PST-6-R. Insbesondere bleibt offen, wie $I_0$ aus
+Grundprinzipien hergeleitet werden kann.
+\end{methodennote}
+
+%==============================================================
+\section{Diffusion Maps als Projektionskandidat}
+%==============================================================
+
+\begin{definition}[Diffusion Kernel]
+Sei $\Kmat$ eine Gram-Matrix mit Eintr\"{a}gen $K_{ij} = k(s_i, s_j)$.
+Der \textbf{Diffusion Kernel} bei Skala $t$ ist:
+\[
+  K^{(t)}_{ij} = \sum_k \lambda_k^t\, v_{ki}\, v_{kj}
+\]
+wobei $\lambda_k$ die Eigenwerte und $v_k$ die Eigenvektoren von $\Kmat$
+sind. Der Parameter $t$ steuert die Reichweite der diffusiven Ausbreitung.
+\end{definition}
+
+\begin{remark}[Physikalische Deutung von $t$]
+Der Parameter $t$ hat in der PST eine nat\"{u}rliche Interpretation: Er
+entspricht der \textbf{Informationsreichweite} eines Beobachters ---
+also dem Bereich des OPP, den ein Projektionsoperator bei einer
+gegebenen Skalentiefe erfasst. Dies verbindet Diffusion Maps direkt mit
+der Relativit\"{a}t der Existenz (RdE) aus DPR: Verschiedene Beobachter
+mit verschiedenen $t$-Werten sehen verschiedene Geometrien.
+\end{remark}
+
+\begin{hypothese}[Diffusion Maps als $\mathcal{P}^\ast$-Kandidat ---
+MKO Ebene~5]
+Die vielversprechendsten numerischen Ergebnisse wurden mit Diffusion Maps
+bei $t \approx 9$--$10$ erzielt: $\deff = 3.98 \pm 0.36$ ohne eingebaute
+Vierdimensionalit\"{a}t. Dies suggeriert dass Diffusion Maps ein Kandidat
+f\"{u}r den universellen Projektionsoperator $\mathcal{P}^\ast$ sein
+k\"{o}nnten.
+
+Ob diese numerische Beobachtung einer mathematischen Notwendigkeit
+entspricht, ist die zentrale offene Frage der PST (vgl.\ PST-4-G und
+PST-5-S).
+\end{hypothese}
+
+%==============================================================
+\section{Die mathematische Kette der PST}
+%==============================================================
+
+Die vollst\"{a}ndige mathematische Kette von der Relation zur Geometrie:
+
+\[
+  \text{Relation}
+  \;\xrightarrow{\text{Kernel}}\;
+  \text{Gram-Matrix } \Kmat
+  \;\xrightarrow{\text{EVZ}}\;
+  \text{Eigenwerte } \lambda_k
+  \;\xrightarrow{\deff}\;
+  \text{Geometrie.}
+\]
+
+Und die Kette der Emergenz:
+
+\[
+  \underbrace{\OPP}_{\text{unbestimmt, pr\"{a}-metrisch}}
+  \;\xrightarrow{\mathcal{P}}\;
+  \underbrace{\Kmat}_{\text{Gram-Matrix}}
+  \;\xrightarrow{\text{EVZ}}\;
+  \underbrace{(\lambda_k, \mathbf{v}_k)}_{\text{Spektrum}}
+  \;\xrightarrow{\deff \approx 4}\;
+  \underbrace{\mathcal{M}_{\text{Raumzeit}}}_{\text{3+1 Dimensionen.}}
+\]
+
+\begin{methodennote}[Was noch fehlt]
+Die Kette ist konzeptuell vollst\"{a}ndig, aber mathematisch noch
+unvollst\"{a}ndig:
+\begin{enumerate}
+  \item Warum ergibt sich $\deff \approx 4$ und nicht eine andere Zahl?
+  \item Wie emergiert die Lorentz-Signatur $(+,-,-,-)$?
+  \item Welche Symmetriegruppen bleiben unter $\mathcal{P}^\ast$ erhalten?
+  \item Was bestimmt $I_0$?
+\end{enumerate}
+Diese Fragen werden in PST-3-P, PST-4-G und PST-6-R adressiert.
+\end{methodennote}
+
+%==============================================================
+\section{Kandidaten f\"{u}r die mathematische Beschreibung des OPP}
+%==============================================================
+
+\begin{remark}[Mathematische Kandidaten]
+Die PST hat noch nicht entschieden, welcher Formalismus den OPP am besten
+beschreibt. Kandidaten mit ihren St\"{a}rken:
+\begin{itemize}
+  \item \textbf{Kategorientheorie} --- beschreibt Relationen statt
+        Objekte; Projektionsoperatoren als Funktoren. Erscheint am
+        vielversprechendsten (vgl.\ MGO).
+  \item \textbf{Spektralgeometrie} --- Gram-Matrix Eigenwertzerlegung;
+        direkte Verbindung zu Diffusion Maps.
+  \item \textbf{Operatoralgebren} --- Von-Neumann-Entropie f\"{u}r
+        quantenmechanische Zust\"{a}nde; Verbindung zu $I_0$ und
+        Planck-Schranke.
+  \item \textbf{Homotopietheorie} --- Invarianzklassen unter
+        Deformationen; nat\"{u}rliche Sprache f\"{u}r Attraktoren
+        als topologische Fixpunkte.
+  \item \textbf{Dynamische Systeme} --- Attraktoren, Stabilit\"{a}t,
+        Bifurkationen im OPP.
+\end{itemize}
+Eine zuk\"{u}nftige Version von PST-2-M und MGO wird untersuchen, welcher
+Formalismus die gr\"{o}\ss{}te Ausdrucksst\"{a}rke bei geringster
+Komplexit\"{a}t besitzt.
+\end{remark}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{PST-1-F:} Die \"{A}quivalenz $\text{Existenz} =
+        \text{Bestimmtheit}$ wird hier durch $\MI{X}{Y} \geq I_0$
+        operationalisiert.
+  \item \textbf{MGO:} PST-2-M baut auf den mathematischen Grundlagen
+        in MGO auf --- Topologie, Kategorientheorie, Operatoralgebren.
+  \item \textbf{DPR:} Die Gram-Matrix und der Projektionsoperator
+        $\mathcal{P}$ sind die mathematische Ausarbeitung des
+        philosophischen Projektionskonzepts in DPR.
+  \item \textbf{DFD:} Das Fragedifferential $\mathcal{D}(E) =
+        D_{\mathrm{KL}}(Q_E \| P)$ ist konzeptuell verwandt mit der
+        Mutual Information als Relationsma\ss{}.
+  \item \textbf{PST-3-P:} Die hier eingef\"{u}hrte Gram-Matrix ist die
+        Grundlage f\"{u}r die Projektionstheorie in PST-3-P.
+  \item \textbf{PST-4-G:} Die numerischen Experimente mit Diffusion
+        Maps und Kernel PCA werden in PST-4-G ausf\"{u}hrlich
+        dokumentiert.
+\end{itemize}
+
+\end{document}
+
