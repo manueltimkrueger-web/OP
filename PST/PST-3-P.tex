@@ -1,0 +1,454 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-3-P: Projektionstheorie
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-3-P: Projektionstheorie -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Korollar}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+\newtheorem{prinzip}{Prinzip}[section]
+
+% Neue Kommandos
+\newcommand{\OPP}{\mathcal{M}_{\mathrm{OPP}}}
+\newcommand{\Kmat}{\mathbf{K}}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\Proj}{\mathcal{P}}
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-3-P: Projektionstheorie}\\[0.4em]
+  {\large Eigenschaften physikalischer Projektionen, Symmetriebrechung,
+  Dimensionsemergenz und der universelle Operator $\mathcal{P}^\ast$}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument entwickelt die Projektionstheorie der PST. Es beantwortet
+die zentrale Frage: \emph{Welche Eigenschaften muss ein Projektionsoperator
+besitzen, damit er physikalisch sinnvolle Strukturen erzeugt?}
+
+Die drei Kernaussagen des Dokuments sind:
+
+\begin{enumerate}
+  \item Nicht jede Projektion ist physikalisch --- physikalische
+        Projektionen sind eine ausgezeichnete Klasse.
+  \item Projektion ist Symmetriebrechung: Der OPP besitzt maximale
+        Symmetrie; die physikalische Raumzeit entsteht durch
+        Einschr\"{a}nkung dieser Symmetrie.
+  \item $\deff \approx 4$ ist kein Zufall --- es gibt strukturelle
+        Gr\"{u}nde warum genau vier Dimensionen emergieren.
+\end{enumerate}
+
+Die Suche nach dem universellen Projektionsoperator $\Proj^\ast$ ist
+die zentrale offene Frage der PST.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Die zentrale Frage: Welche Projektionen sind physikalisch?}
+%==============================================================
+
+\begin{methodennote}[Paradigmenwechsel in der PST]
+Die fr\"{u}he Phase der PST fragte: \glqq{}Hat der OPP vier
+Dimensionen?\grqq{} Die Antwort war: Nein, der rohe OPP besitzt
+$\deff \approx 30$--$45$.
+
+Die reife Phase fragt: \glqq{}Welche Projektionen erzeugen
+vierdimensionale Physik?\grqq{} Das ist eine fundamentale Umkehrung:
+Nicht der OPP \emph{ist} vierdimensional --- die Physik
+\emph{erscheint} vierdimensional weil der Projektionsoperator
+$\Proj$ genau die Strukturen hervorhebt, die wir als Raumzeit
+wahrnehmen.
+\end{methodennote}
+
+Die Frage nach dem physikalischen Projektionsoperator ist nicht
+\"{a}quivalent zur Frage nach dem OPP. Es sind zwei verschiedene
+Ebenen:
+
+\begin{center}
+\begin{tabular}{lll}
+  \toprule
+  \textbf{Ebene} & \textbf{Objekt} & \textbf{Frage} \\
+  \midrule
+  Ontisch & OPP & Was existiert? \\
+  Projektiv & $\Proj$ & Wie wird es sichtbar? \\
+  Ph\"{a}nomenal & Raumzeit & Was beobachten wir? \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+%==============================================================
+\section{Algebraische Eigenschaften physikalischer Projektionen}
+%==============================================================
+
+\begin{definition}[Projektionsoperator]
+Ein \textbf{Projektionsoperator} $\Proj\colon \OPP \to
+\mathcal{M}_{\mathcal{O}}$ bildet den hochdimensionalen OPP auf
+einen niedrigdimensionalen Beobachtungsraum $\mathcal{M}_{\mathcal{O}}$
+ab. Die algebraischen Eigenschaften (vgl.\ DPR):
+\begin{enumerate}
+  \item \textbf{Idempotenz:} $\Proj \circ \Proj = \Proj$ --- eine
+        bereits projizierte Struktur \"{a}ndert sich durch erneute
+        Projektion nicht.
+  \item \textbf{Nicht-Injektivit\"{a}t:} $\Proj(x) = \Proj(y)
+        \not\Rightarrow x = y$ --- verschiedene OPP-Zust\"{a}nde
+        k\"{o}nnen auf denselben Beobachtungszustand abgebildet werden.
+  \item \textbf{Koh\"{a}renzerhaltung:} Relational verbundene Zust\"{a}nde
+        im OPP erscheinen auch im Beobachtungsraum als verbunden.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Physikalische Projektion]
+Eine Projektion $\Proj$ hei\ss{}t \textbf{physikalisch}, wenn sie
+zus\"{a}tzlich folgende Eigenschaften erf\"{u}llt:
+\begin{enumerate}
+  \item \textbf{Globale Kohärenzerhaltung:} $\Proj$ erh\"{a}lt globale
+        Strukturen des OPP, nicht nur lokale Details.
+  \item \textbf{Stabilit\"{a}t:} $\deff(\Proj)$ ist stabil gegen\"{u}ber
+        kleinen St\"{o}rungen des Projektionsoperators.
+  \item \textbf{Lorentz-Invarianz (Hypothese):} Die emergierte Metrik
+        besitzt Lorentz-Symmetrie --- $(+,-,-,-)$ Signatur.
+  \item \textbf{Eich-Kompatibilit\"{a}t (Hypothese):} Die Eichgruppen
+        des Standardmodells $SU(3) \times SU(2) \times U(1)$ bleiben
+        als Symmetriegruppen der Projektion erhalten.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Warum globale Kohärenz entscheidend ist]
+Numerische Experimente (PST-4-G) zeigen klar: Projektionsverfahren
+die \emph{lokale} Strukturen bevorzugen (PCA, Random Projection) liefern
+$\deff < 4$ oder instabile Ergebnisse. Verfahren die
+\emph{globale} Strukturen erhalten (Diffusion Maps, Kernel PCA) liefern
+$\deff \approx 4$.
+
+Dies suggeriert: Physikalische Projektionen sind genau jene, die die
+globale Relationsstruktur des OPP kohär\"{a}rent auf den Beobachtungsraum
+\"{u}bertragen.
+\end{remark}
+
+%==============================================================
+\section{Projektion als Symmetriebrechung}
+%==============================================================
+
+\begin{prinzip}[Projektion = Symmetriebrechung]
+Der OPP besitzt eine maximale Symmetriegruppe $G_{\OPP}$ ---
+die Gruppe aller Transformationen die die Relationsstruktur invariant
+lassen. Die physikalische Raumzeit entsteht durch Einschr\"{a}nkung
+dieser Symmetrie:
+\[
+  G_{\OPP} \;\xrightarrow{\Proj}\; G_\Proj
+  = \Proj(G_{\OPP}) \;\subseteq\; G_{\OPP}.
+\]
+\end{prinzip}
+
+\begin{remark}[Lorentz-Gruppe als projizierte Symmetrie]
+Die Lorentz-Gruppe $SO(1,3)$ ist in dieser Sichtweise keine
+fundamentale Symmetrie des Universums, sondern eine
+\emph{projizierte Symmetrie} --- die Symmetriegruppe die nach der
+Anwendung von $\Proj^\ast$ auf den OPP verbleibt.
+
+Das ist eine tiefgreifende Umkehrung: Nicht der OPP muss
+Lorentz-Symmetrie besitzen --- die Projektion muss sie erzeugen.
+\end{remark}
+
+\begin{hypothese}[Eichgruppen als Projektivsymmetrien --- MKO Ebene~5]
+Die Eichgruppen des Standardmodells
+$SU(3) \times SU(2) \times U(1)$ k\"{o}nnten Symmetriegruppen sein,
+die nach der physikalischen Projektion im Beobachtungsraum verbleiben:
+\[
+  \Proj^\ast(G_{\OPP}) \supseteq SU(3) \times SU(2) \times U(1)
+  \times SO(1,3).
+\]
+Falls dies zutrifft, erkl\"{a}rt die PST nicht nur die Raumzeit, sondern
+auch die Materiestruktur des Universums als projektive Erscheinung.
+
+Diese Hypothese ist spekulativ (MKO Ebene~5) und erfordert erhebliche
+weitere mathematische Arbeit.
+\end{hypothese}
+
+\begin{remark}[Verbindung zu Kaluza-Klein]
+Es gibt eine strukturelle \"{A}hnlichkeit zur Kaluza-Klein-Theorie: Dort
+werden Eichsymmetrien als geometrische Symmetrien zus\"{a}tzlicher
+kompakter Raumdimensionen gedeutet. In der PST wird der umgekehrte
+Weg gegangen: Aus dem hochdimensionalen OPP werden durch Projektion
+sowohl die 3+1 Raumzeit als auch die Eichstrukturen herausdestilliert.
+Ob dies mathematisch \"{a}quivalent ist oder eine neue Perspektive
+er\"{o}ffnet, bleibt eine Frage der PST-6-R.
+\end{remark}
+
+%==============================================================
+\section{Warum vier Dimensionen?}
+%==============================================================
+
+\begin{methodennote}[Offenste Frage der PST]
+Die Frage warum genau $\deff \approx 4$ emergiert --- und nicht 3, 5
+oder 11 --- ist die tiefste offene Frage der PST. Numerisch ist das
+Ergebnis reproduzierbar. Warum es so ist, ist noch nicht verstanden.
+\end{methodennote}
+
+\begin{hypothese}[Stabilitätshypothese f\"{u}r $d = 4$ --- MKO Ebene~5]
+Genau vier Dimensionen sind die einzige Zahl f\"{u}r die die folgende
+Kombination von Eigenschaften gleichzeitig m\"{o}glich ist:
+\begin{enumerate}
+  \item \textbf{Kausale Struktur:} $d = 4$ ist die minimale Dimension
+        f\"{u}r eine nicht-triviale kausale Struktur (Lichtkegelgeometrie).
+  \item \textbf{Lorentz-Invarianz:} $SO(1,3)$ besitzt genau in $d = 4$
+        bestimmte Eigenschaften (Weyl-Spinoren, selbstduale Formen), die
+        f\"{u}r das Standardmodell unabdingbar sind.
+  \item \textbf{Stabilit\"{a}t von Bahnen:} Planetenbahnen sind nur in
+        $d = 3$ Raumdimensionen stabil. Mehr Dimensionen f\"{u}hren zu
+        Instabilit\"{a}ten.
+  \item \textbf{Eichtheorie-Kompatibilit\"{a}t:} Yang-Mills-Theorien sind
+        in $d = 4$ renormierbar.
+\end{enumerate}
+Falls der OPP durch Diffusion Maps projiziert wird, k\"{o}nnte das
+Minimum der Freien Energie der Projektion bei $\deff = 4$ liegen ---
+als Folge der globalen Struktur des OPP.
+\end{hypothese}
+
+\begin{remark}[Anthropischer Einwand und seine Grenze]
+Man k\"{o}nnte einwenden: Die vier Dimensionen werden beobachtet weil
+wir in einem Universum mit vier Dimensionen leben (anthropisches
+Argument). Die PST versucht, dieses Argument zu \"{u}berwinden: Nicht
+\glqq{}Wir beobachten 4D weil wir 4D-Wesen sind\grqq{}, sondern
+\glqq{}Der universelle Projektionsoperator $\Proj^\ast$ erzeugt
+notwendigerweise 4D, unabh\"{a}ngig vom Beobachter.\grqq{} Das ist eine
+st\"{a}rkere und pr\"{u}fbarere These.
+\end{remark}
+
+%==============================================================
+\section{Der universelle Projektionsoperator $\Proj^\ast$}
+%==============================================================
+
+\begin{definition}[Universeller Projektionsoperator]
+Der \textbf{universelle Projektionsoperator} $\Proj^\ast$ ist der
+(noch zu findende) Operator der:
+\begin{enumerate}
+  \item Notwendigerweise $\deff = 4$ erzeugt (nicht als Annahme,
+        sondern als Eigenschaft des OPP).
+  \item Die Lorentz-Signatur $(+,-,-,-)$ reproduziert.
+  \item Die Eichgruppen $SU(3) \times SU(2) \times U(1)$ erzeugt.
+  \item Quantisierung als Konsequenz seiner endlichen Aufl\"{o}sung liefert.
+  \item Die bekannten Naturkonstanten reproduziert.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}[Status von $\Proj^\ast$]
+$\Proj^\ast$ ist das Fernziel der PST. Kein existierender Formalismus
+erf\"{u}llt alle f\"{u}nf Bedingungen. Diffusion Maps bei $t \approx 9$--$10$
+erf\"{u}llt Bedingung~1 numerisch --- die restlichen vier Bedingungen
+sind noch offen.
+\end{remark}
+
+\begin{prinzip}[Randbedingungsprinzip]
+Die Suche nach $\Proj^\ast$ folgt dem Top-Down-Ansatz: Die bekannte
+Physik (Standardmodell, Lorentz-Invarianz, Quantenmechanik) liefert
+die Randbedingungen. Ein Projektionsoperator der diese Randbedingungen
+erf\"{u}llt, ist ein Kandidat f\"{u}r $\Proj^\ast$. Die PST sucht den
+\emph{einfachsten} Operator der alle Randbedingungen erf\"{u}llt.
+\end{prinzip}
+
+%==============================================================
+\section{Quantisierung als projektives Artefakt}
+%==============================================================
+
+\begin{hypothese}[Quantisierung aus endlicher Projektionsaufl\"{o}sung
+--- MKO Ebene~5]
+Quantisierung ist keine ontologische Eigenschaft des OPP, sondern
+eine Eigenschaft der Projektion: Weil der Projektionsoperator
+$\Proj$ eine endliche Informationsaufl\"{o}sung besitzt, entstehen
+diskrete Zust\"{a}nde im projizierten Raum.
+
+Formal: Die minimale Informationseinheit $I_0$ (PST-2-M) entspricht
+dem Planck'schen Wirkungsquantum $\hbar$:
+\[
+  I_0 \;\leftrightarrow\; \hbar.
+\]
+Unterhalb von $I_0$ gibt es keine projektive Bestimmtheit --- und damit
+keine unterscheidbaren Quantenzust\"{a}nde. Die Quantisierung von Energie,
+Impuls und Drehimpuls w\"{a}re dann eine direkte Konsequenz der minimalen
+Projektionsaufl\"{o}sung.
+
+Diese Hypothese ist spekulativ (MKO Ebene~5) und erfordert eine
+pr\"{a}zise mathematische Ausarbeitung in PST-6-R.
+\end{hypothese}
+
+\begin{remark}[Verbindung zur Unsch\"{a}rferelation]
+Die Nicht-Injektivit\"{a}t des Projektionsoperators ($\Proj(x) = \Proj(y)
+\not\Rightarrow x = y$, vgl.\ DPR) k\"{o}nnte eine konzeptuelle Wurzel
+der quantenmechanischen Unsch\"{a}rfe sein: Verschiedene OPP-Zust\"{a}nde
+sind projektiv nicht unterscheidbar. Das entspricht der Heisenbergschen
+Unsch\"{a}rferelation: Orts- und Impulsmessung k\"{o}nnen nicht gleichzeitig
+beliebig pr\"{a}zise sein --- weil der Projektionsoperator beide nicht
+gleichzeitig vollst\"{a}ndig aufl\"{o}st.
+\end{remark}
+
+%==============================================================
+\section{Lorentz-Signatur als projektive Eigenschaft}
+%==============================================================
+
+\begin{hypothese}[Lorentz-Signatur aus Projektion --- MKO Ebene~5]
+Die charakteristische Minkowski-Signatur $(+,-,-,-)$ der Raumzeit ist
+keine Eigenschaft des OPP, sondern des Projektionsoperators $\Proj^\ast$.
+
+Konkret: Die Zeitdimension und die drei Raumdimensionen entstehen durch
+unterschiedliche Rollen im Projektionsspektrum --- der erste Eigenwert
+$\lambda_1$ der Gram-Matrix k\"{o}nnte die zeitartige Richtung
+definieren, w\"{a}hrend $\lambda_2, \lambda_3, \lambda_4$ die raumartigen
+Richtungen definieren.
+
+Die negativen Vorzeichen in der Lorentz-Signatur k\"{o}nnten aus dem
+Imagin\"{a}rteil von Eigenvektoren emergieren --- bei komplexen
+Kernel-Matrizen. Dies ist eine offene Forschungshypothese f\"{u}r PST-6-R.
+\end{hypothese}
+
+%==============================================================
+\section{Beobachter als Projektionsoperatoren}
+%==============================================================
+
+\begin{proposition}[Beobachter = Projektionsoperatoren]
+Im Rahmen der PST ist ein physikalischer Beobachter identisch mit
+einem Projektionsoperator $\Proj_{\mathcal{O}}$:
+\[
+  \text{Beobachter } \mathcal{O}
+  \;\equiv\;
+  \Proj_{\mathcal{O}}\colon \OPP \to \mathcal{M}_{\mathcal{O}}.
+\]
+Verschiedene Beobachter entsprechen verschiedenen Projektionsoperatoren
+und \glqq{}sehen\grqq{} deshalb verschiedene (aber konsistente)
+Ausschnitte des OPP.
+\end{proposition}
+
+\begin{remark}[Verbindung zu DPR und RdE]
+Dies ist die mathematische Ausarbeitung der \emph{Relativit\"{a}t der
+Existenz} (RdE) aus DPR: Raumzeitliche Existenz ist relativ zum
+Projektionsoperator. Was f\"{u}r $\Proj_{\mathcal{O}_1}$ existiert, muss
+nicht f\"{u}r $\Proj_{\mathcal{O}_2}$ existieren --- wegen der
+Nicht-Injektivit\"{a}t.
+\end{remark}
+
+\begin{remark}[Verbindung zu DFD]
+Das Fragedifferential $\mathcal{D}(E) = D_{\mathrm{KL}}(Q_E \| P)$
+misst die Informationsdistanz zwischen dem projizierten Zustand $Q_E$
+eines Beobachters und dem Gesamtfeld $P$. In der PST-Sprache: Es misst
+den \glqq{}Abstand\grqq{} zwischen dem Projektionsoperator
+$\Proj_{\mathcal{O}}$ und dem universellen Operator $\Proj^\ast$.
+\end{remark}
+
+%==============================================================
+\section{Die Hierarchie der Projektioneigenschaften}
+%==============================================================
+
+Nicht alle Projektioneigenschaften sind gleich fundamental. Wir
+unterscheiden:
+
+\begin{enumerate}
+  \item \textbf{Notwendige Eigenschaften:} Idempotenz, Nicht-Injektivit\"{a}t,
+        globale Koh\"{a}renzerhaltung. Jede physikalische Projektion
+        muss diese besitzen.
+  \item \textbf{Hinreichende Eigenschaften (Hypothese):} Lorentz-Invarianz,
+        Eich-Kompatibilit\"{a}t, $\deff = 4$. Diese charakterisieren
+        $\Proj^\ast$ spezifisch.
+  \item \textbf{Emergente Eigenschaften:} Quantisierung, Kausalit\"{a}t,
+        Dynamik. Diese folgen aus den notwendigen und hinreichenden
+        Eigenschaften --- sie werden nicht separat postuliert.
+\end{enumerate}
+
+%==============================================================
+\section{Offene Fragen der Projektionstheorie}
+%==============================================================
+
+\begin{enumerate}
+  \item \textbf{$\Proj^\ast$ aus Prinzipien:} Kann der universelle
+        Projektionsoperator aus dem Prinzip der minimalen Ontologie
+        und der Randbedingung Physik eindeutig hergeleitet werden?
+  \item \textbf{Lorentz-Signatur:} Wie emergiert die
+        $(+,-,-,-)$-Signatur aus einer signaturfreien Gram-Matrix?
+  \item \textbf{Eichgruppen:} Warum $SU(3) \times SU(2) \times U(1)$
+        und nicht andere Gruppen?
+  \item \textbf{Quantisierung:} Ist $I_0 \leftrightarrow \hbar$
+        mathematisch pr\"{a}zisierbar?
+  \item \textbf{Eindeutigkeit:} Gibt es genau einen $\Proj^\ast$ oder
+        eine Familie von Operatoren die alle physikalisch \"{a}quivalent
+        sind?
+  \item \textbf{Dynamik:} Wie emergiert zeitliche Evolution aus dem
+        statischen OPP? Ist die Schr\"{o}dinger-Gleichung eine
+        projektive Eigenschaft?
+\end{enumerate}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{PST-1-F:} Das Rekonstruktionsziel OPP $\rightarrow
+        \mathcal{P} \rightarrow$ Raumzeit $\rightarrow$ Physik wird
+        hier mathematisch ausgearbeitet.
+  \item \textbf{PST-2-M:} Die Gram-Matrix und Diffusion Maps aus
+        PST-2-M sind die mathematischen Grundlagen der Projektionstheorie.
+  \item \textbf{DPR (Die Projektive Reduktion):} PST-3-P ist die
+        mathematische Ausarbeitung von DPR. Idempotenz, Nicht-Injektivit\"{a}t
+        und RdE aus DPR werden hier formalisiert.
+  \item \textbf{DFD (Das Fragedifferential):} Das Fragedifferential
+        misst in PST-Sprache den Abstand vom universellen Operator
+        $\Proj^\ast$.
+  \item \textbf{PST-4-G:} Die numerischen Evidenzen f\"{u}r die
+        Projektionstheorie werden in PST-4-G dokumentiert.
+  \item \textbf{PST-6-R:} Die vollst\"{a}ndige physikalische Ausarbeitung
+        von Lorentz-Signatur, Eichgruppen und Quantisierung obliegt
+        PST-6-R.
+\end{itemize}
+
+\end{document}
+
