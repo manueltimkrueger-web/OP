@@ -1,0 +1,387 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-5-S: Strategie, Zwischenbilanz und offene Fragen
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-5-S: Strategie und Zwischenbilanz -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+\newtheorem{prinzip}{Prinzip}[section]
+\newtheorem{ziel}{Forschungsziel}[section]
+
+% Neue Kommandos
+\newcommand{\OPP}{\mathcal{M}_{\mathrm{OPP}}}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\Proj}{\mathcal{P}}
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-5-S: Strategie, Zwischenbilanz
+  und offene Fragen}\\[0.4em]
+  {\large Forschungsstrategie, priorisierte Agenda und
+  Selbstverst\"{a}ndnis der PST}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument zieht eine Zwischenbilanz der PST, entwickelt die
+Forschungsstrategie f\"{u}r die n\"{a}chsten Phasen und benennt die
+priorisierten offenen Fragen.
+
+Das Selbstverst\"{a}ndnis der PST: Sie ist kein abgeschlossenes System,
+sondern ein offenes Forschungsprogramm im Sinne von Imre Lakatos. Der
+harte Kern --- die Rekonstruktionskette
+Existenz $\rightarrow$ OPP $\rightarrow \mathcal{P} \rightarrow$
+Raumzeit $\rightarrow$ Physik --- ist durch das No-Go Ergebnis und die
+Diffusion-Maps-Befunde gest\"{a}rkt worden. Der Schutzg\"{u}rtel aus
+Hilfs\-hypothesen wird laufend angepasst.
+
+Das Fernziel bleibt:
+\[
+  \boxed{\text{Existenz} \;\Longrightarrow\; \text{Universum.}}
+\]
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Selbstverst\"{a}ndnis: Die PST als Forschungsprogramm}
+%==============================================================
+
+\begin{methodennote}[PST im Sinne von Lakatos]
+Die PST versteht sich als wissenschaftliches Forschungsprogramm im Sinne
+von Imre Lakatos. Ein Forschungsprogramm besteht aus:
+\begin{itemize}
+  \item \textbf{Hartem Kern:} Unver\"{a}nderliche Grundhypothesen die
+        das Programm definieren.
+  \item \textbf{Schutzg\"{u}rtel:} Hilfshypothesen die angepasst werden
+        k\"{o}nnen wenn Evidenz dagegen spricht.
+  \item \textbf{Heuristik:} Methodische Regeln die bestimmen, wie das
+        Programm weiterentwickelt wird.
+\end{itemize}
+Ein Programm ist \emph{progressiv} wenn neue Versionen mehr voraussagen
+als alte. Es ist \emph{degenerativ} wenn es nur ad hoc auf Gegenbeispiele
+reagiert. Die PST ist bisher progressiv: Das No-Go Ergebnis f\"{u}hrte
+zu einer tieferen Theorie, nicht zu einer ad hoc Rettung.
+\end{methodennote}
+
+\begin{definition}[Harter Kern der PST]
+Der harte Kern der PST --- die Annahmen die nicht aufgegeben werden
+k\"{o}nnen ohne das Programm aufzugeben:
+\begin{enumerate}
+  \item Der OPP existiert als hochdimensionaler, pr\"{a}-metrischer
+        Zustandsraum.
+  \item Raumzeit, Physik und Bestimmtheit emergieren durch Projektion.
+  \item Es gibt einen universellen Projektionsoperator $\Proj^\ast$.
+  \item Das Prinzip der minimalen Ontologie gilt.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Schutzg\"{u}rtel der PST]
+Anpassbare Hilfshypothesen:
+\begin{enumerate}
+  \item Diffusion Maps sind $\Proj^\ast$ (ersetzbar durch anderen Operator).
+  \item $t \approx 9$--$10$ ist der physikalische Skalenparameter
+        (ersetzbar durch pr\"{a}zisere Herleitung).
+  \item $I_0 \leftrightarrow \hbar$ (ersetzbar durch pr\"{a}zisere
+        Operationalisierung).
+  \item Mutual Information als Relationsst\"{a}rke (ersetzbar durch
+        andere Gr\"{o}\ss{}e).
+\end{enumerate}
+\end{definition}
+
+%==============================================================
+\section{Zwischenbilanz: Was die PST bisher geleistet hat}
+%==============================================================
+
+\begin{remark}[Positive Leistungen der PST]
+Die PST hat bisher geleistet:
+\begin{enumerate}
+  \item \textbf{Pr\"{a}zisierung der Frage:} Von \glqq{}Hat der OPP 4D?\grqq{}
+        zu \glqq{}Welche Projektionen erzeugen 4D?\grqq{} --- ein
+        fundamentaler konzeptueller Fortschritt.
+  \item \textbf{Das No-Go Ergebnis:} Der rohe OPP hat keine intrinsische
+        Vierdimensionalit\"{a}t. Das schr\"{a}nkt den Theorieraum ein.
+  \item \textbf{Das $\deff \approx 4$ Signal:} Diffusion Maps mit
+        $t \approx 9$--$10$ liefern reproduzierbar $\deff = 3.98 \pm 0.36$
+        ohne eingebaute Vierdimensionalit\"{a}t. Das ist der bisher
+        st\"{a}rkste empirische Befund.
+  \item \textbf{Das Symmetriebrechungsprinzip:} Projektion = Symmetriebrechung
+        ist ein neues konzeptuelles Prinzip mit Vorhersagekraft.
+  \item \textbf{Methodische Reinigung:} Rangneutralit\"{a}t als Kriterium;
+        Unterscheidung lokaler und globaler Verfahren; Selbstpr\"{u}fung
+        als Pflicht.
+  \item \textbf{Verbindung zu OP und DPR:} Die PST hat die philosophischen
+        Konzepte von DPR (Projektionsoperatoren, RdE) mathematisch
+        ausgearbeitet.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Grenzen der bisherigen PST]
+Die PST hat bisher nicht geleistet:
+\begin{enumerate}
+  \item Den universellen Operator $\Proj^\ast$ hergeleitet.
+  \item Die Lorentz-Signatur $(+,-,-,-)$ aus Projektion emergiert.
+  \item Die Eichgruppen $SU(3) \times SU(2) \times U(1)$ erzeugt.
+  \item Quantisierung als Projektionsartefakt bewiesen.
+  \item Eine einzige Naturkonstante aus OPP-Eigenschaften abgeleitet.
+  \item Dynamik aus dem statischen OPP erkl\"{a}rt.
+\end{enumerate}
+Diese Liste ist ehrlich und wird in v1.0 der PST-Dokumente
+als Forschungsagenda dienen.
+\end{remark}
+
+%==============================================================
+\section{Die Forschungsstrategie: Top-Down und Bottom-Up}
+%==============================================================
+
+\begin{prinzip}[Doppelte Strategie]
+Die PST verfolgt gleichzeitig zwei komplementäre Ans\"{a}tze:
+\begin{itemize}
+  \item \textbf{Top-Down:} Ausgangspunkt ist die bekannte Physik.
+        Gesucht werden Projektionsoperatoren die Lorentz-Invarianz,
+        Eichgruppen und Quantisierung reproduzieren.
+  \item \textbf{Bottom-Up:} Ausgangspunkt ist der OPP. Gesucht werden
+        emergente Strukturen ohne physikalische Vorannahmen.
+\end{itemize}
+Beide Ans\"{a}tze sind notwendig. Top-Down liefert Randbedingungen;
+Bottom-Up liefert neue, unerwartete Strukturen.
+\end{prinzip}
+
+\begin{remark}[Warum Bottom-Up allein scheitert]
+Reines Bottom-Up --- man beginnt mit dem OPP und hofft auf Physik ---
+ist gescheitert (No-Go Ergebnis). Der OPP allein legt keine physikalische
+Struktur nahe. Man braucht die Randbedingungen der Physik als Leitfaden.
+\end{remark}
+
+\begin{remark}[Warum Top-Down allein gef\"{a}hrlich ist]
+Reines Top-Down --- man sucht Operatoren die die bekannte Physik
+reproduzieren --- l\"{a}uft Gefahr zirkul\"{a}r zu werden: Man findet,
+was man sucht. Das Rangneutralit\"{a}tsprinzip (PST-4-G) ist die
+Schutzma\ss{}nahme gegen diesen Fehler.
+\end{remark}
+
+%==============================================================
+\section{Priorisierte Forschungsagenda}
+%==============================================================
+
+\begin{ziel}[Priorit\"{a}t 1: $\Proj^\ast$ aus Prinzipien]
+\textbf{Frage:} Kann der universelle Projektionsoperator aus dem Prinzip
+der minimalen Ontologie und den Randbedingungen der Physik eindeutig
+hergeleitet werden?
+
+\textbf{Warum Priorit\"{a}t 1:} Ohne $\Proj^\ast$ bleibt die PST
+deskriptiv. Mit $\Proj^\ast$ wird sie prädiktiv --- sie kann Physik
+vorhersagen, nicht nur rekonstruieren.
+
+\textbf{N\"{a}chste Schritte:}
+\begin{itemize}
+  \item Charakterisierung der Klasse von Projektionsoperatoren die
+        $\deff = 4$ liefern.
+  \item Pr\"{u}fung welcher Operator die Lorentz-Signatur reproduziert.
+  \item Kategorientheoretische Formulierung von $\Proj^\ast$ als Funktor.
+\end{itemize}
+\end{ziel}
+
+\begin{ziel}[Priorit\"{a}t 2: Lorentz-Signatur]
+\textbf{Frage:} Wie emergiert $(+,-,-,-)$ aus einer signaturfreien
+Gram-Matrix?
+
+\textbf{Warum Priorit\"{a}t 2:} $\deff \approx 4$ ist ein Signal f\"{u}r
+vier Dimensionen --- aber noch nicht f\"{u}r die Lorentz-Signatur.
+Der Unterschied zwischen euklidischer 4D ($SO(4)$) und Minkowski-4D
+($SO(1,3)$) ist physikalisch entscheidend.
+
+\textbf{Kandidatenansatz:} Imagin\"{a}re Eigenwerte bei komplexen
+Gram-Matrizen k\"{o}nnten die Signatur erzeugen.
+\end{ziel}
+
+\begin{ziel}[Priorit\"{a}t 3: Mathematische Fundierung]
+\textbf{Frage:} Welcher mathematische Formalismus beschreibt OPP,
+Attraktoren und Projektionsoperatoren am pr\"{a}zisesten?
+
+\textbf{Kandidaten:} Kategorientheorie, Operatoralgebren, Homotopietheorie,
+spektrale Tripel (Connes).
+
+\textbf{Warum Priorit\"{a}t 3:} Ohne pr\"{a}zise Mathematik bleiben
+alle Aussagen \"{u}ber $\Proj^\ast$ vage. Die mathematische Fundierung
+ist Voraussetzung f\"{u}r alle anderen Ziele.
+\end{ziel}
+
+\begin{ziel}[Priorit\"{a}t 4: Eichgruppen]
+\textbf{Frage:} Wie emergieren $SU(3) \times SU(2) \times U(1)$ als
+Symmetriegruppen der physikalischen Projektion?
+
+\textbf{Warum Priorit\"{a}t 4:} Die Eichgruppen des Standardmodells
+sind die pr\"{a}ziseste bekannte Beschreibung der Materiestruktur.
+Ihre Ableitung aus $\Proj^\ast$ w\"{a}re ein Durchbruch.
+\end{ziel}
+
+\begin{ziel}[Priorit\"{a}t 5: Quantisierung und Naturkonstanten]
+\textbf{Frage:} Ist $I_0 \leftrightarrow \hbar$ pr\"{a}zisierbar?
+K\"{o}nnen Naturkonstanten aus OPP-Eigenschaften abgeleitet werden?
+
+\textbf{Warum Priorit\"{a}t 5:} Naturkonstanten sind die h\"{a}rtesten
+Pr\"{u}fsteine jeder Fundamentaltheorie. Eine einzige korrekt abgeleitete
+Konstante w\"{a}re ein starker Beleg f\"{u}r die PST.
+\end{ziel}
+
+%==============================================================
+\section{Kriterien f\"{u}r Fortschritt und Scheitern}
+%==============================================================
+
+\begin{methodennote}[Wann ist die PST erfolgreich?]
+Die PST ist erfolgreich wenn:
+\begin{enumerate}
+  \item $\Proj^\ast$ eindeutig aus Prinzipien hergeleitet wird.
+  \item $\deff = 4$ mathematisch notwendig folgt (nicht nur numerisch).
+  \item Lorentz-Signatur aus $\Proj^\ast$ emergiert.
+  \item Mindestens eine Naturkonstante korrekt abgeleitet wird.
+\end{enumerate}
+\end{methodennote}
+
+\begin{methodennote}[Wann scheitert die PST?]
+Die PST scheitert wenn:
+\begin{enumerate}
+  \item Es sich zeigt, dass $\deff \approx 4$ ein Artefakt der
+        Diffusion-Maps-Implementierung ist (kontrollierte Tests laufen).
+  \item Kein rangneutraler Operator $\Proj^\ast$ existiert der alle
+        Randbedingungen erf\"{u}llt.
+  \item Die Lorentz-Signatur grundsätzlich nicht aus einer reellen,
+        positiv semidefiniten Gram-Matrix emergieren kann.
+\end{enumerate}
+Jedes dieser Scheitern-Kriterien ist pr\"{u}fbar. Die PST ist falsifizierbar
+im Sinne von Popper.
+\end{methodennote}
+
+%==============================================================
+\section{Das Fernziel und seine Bedeutung}
+%==============================================================
+
+\begin{remark}[Was das Fernziel bedeutet]
+Das Fernziel der PST lautet:
+\[
+  \text{Existenz} \;\Longrightarrow\; \text{Universum.}
+\]
+Dies bedeutet: Aus der einzigen gesicherten Tatsache --- dass
+\"{u}berhaupt etwas existiert --- sollen alle Eigenschaften des
+physikalischen Universums mathematisch notwendig folgen.
+
+Das ist das ambiti\"{o}seste Ziel das ein Forschungsprogramm sich stellen
+kann. Es ist m\"{o}glicherweise nicht vollst\"{a}ndig erreichbar. Aber
+jeder Schritt in diese Richtung --- jede Eigenschaft des Universums die
+aus minimalen Annahmen folgt --- ist ein echter wissenschaftlicher
+Fortschritt.
+\end{remark}
+
+\begin{remark}[Was die PST \emph{nicht} beansprucht]
+Die PST beansprucht nicht:
+\begin{itemize}
+  \item Eine fertige Theorie zu sein.
+  \item Alle physikalischen Fragen zu beantworten.
+  \item Die einzig m\"{o}gliche mathematische Ausarbeitung des OP zu sein.
+  \item Konkurrenztheorien (String-Theorie, Loop-Quanten-Gravitation,
+        kausal-dynamische Triangulierung) zu widerlegen.
+\end{itemize}
+Die PST beansprucht: Die konsequenteste mathematische Ausarbeitung des
+philosophischen Programms des OP zu sein, die mit dem Prinzip der
+minimalen Ontologie konsistent ist.
+\end{remark}
+
+%==============================================================
+\section{Verh\"{a}ltnis zu anderen Ans\"{a}tzen}
+%==============================================================
+
+\begin{remark}[PST und String-Theorie]
+Die String-Theorie beginnt mit einem Stringobjekt --- das ist bereits
+eine geometrische Annahme. Die PST beginnt mit dem OPP ohne geometrische
+Vorannahmen. Der Unterschied ist fundamental: String-Theorie setzt
+Geometrie voraus, PST leitet sie ab. Ob beide Programme letztlich
+\"{a}quivalent sind, ist eine offene Frage.
+\end{remark}
+
+\begin{remark}[PST und Loop-Quanten-Gravitation (LQG)]
+LQG diskretisiert die Raumzeit --- Raum besteht aus endlichen
+Quantenvolumina. Die PST macht keine solche Diskretisierungsannahme:
+Der OPP ist kontinuierlich; Diskretisierung emergiert durch die endliche
+Aufl\"{o}sung des Projektionsoperators. Dies k\"{o}nnte eine tiefere
+Erkl\"{a}rung f\"{u}r das LQG-Bild liefern.
+\end{remark}
+
+\begin{remark}[PST und nicht-kommutative Geometrie (Connes)]
+Alain Connes beschreibt Raumzeit \"{u}ber spektrale Tripel $(A, H, D)$
+--- eine Algebra $A$, ein Hilbert-Raum $H$ und einen Dirac-Operator $D$.
+Die PST k\"{o}nnte diese Struktur als einen spezifischen Projektionsoperator
+interpretieren. Connes' Ansatz ist m\"{o}glicherweise eine mathematisch
+ausgearbeitete Version des PST-Projektionsprinzips.
+\end{remark}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{PST-1-F bis PST-4-G:} PST-5-S ist die Synthese aller
+        vorangegangenen PST-Dokumente. Es zieht die Bilanz und gibt
+        die Richtung vor.
+  \item \textbf{PST-6-R:} Die priorisierte Forschungsagenda in Sektion~4
+        ist das Arbeitsprogramm f\"{u}r PST-6-R.
+  \item \textbf{OP:} Das Fernziel der PST ist die Einl\"{o}sung des
+        philosophischen Versprechens des OP: Wenn das Denkfeld der
+        Urgrund ist, muss die Physik daraus folgen.
+  \item \textbf{MGO:} Priorit\"{a}t~3 (mathematische Fundierung) ist
+        eine direkte Aufgabe f\"{u}r MGO~v1.1.
+  \item \textbf{AR (Adversarial Review):} Die Scheitern-Kriterien in
+        Sektion~5 sind direkt als AR-Testfragen verwendbar.
+\end{itemize}
+
+\end{document}
+
