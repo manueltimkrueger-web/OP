@@ -1,0 +1,456 @@
+% ==============================================================
+% Projektive Strukturtheorie (PST)
+% Dokument PST-6-R: Physikalische Rekonstruktion
+% Version 0.1
+% Kompiliert mit: pdfLaTeX
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Grundpakete ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---------- Layout ----------
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.2em, topsep=0.2em}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={PST-6-R: Physikalische Rekonstruktion -- Version 0.1},
+    pdfauthor={Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+% ---------- Theorem-Umgebungen ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Bemerkung}[section]
+\newtheorem{methodennote}{Methodennote}[section]
+\newtheorem{hypothese}{Arbeitshypothese}[section]
+\newtheorem{programm}{Forschungsprogramm}[section]
+
+% Neue Kommandos
+\newcommand{\OPP}{\mathcal{M}_{\mathrm{OPP}}}
+\newcommand{\deff}{d_{\mathrm{eff}}}
+\newcommand{\Proj}{\mathcal{P}}
+\newcommand{\Lp}{\ell_P}
+
+% ---------- Titel ----------
+\title{
+  \textbf{Projektive Strukturtheorie (PST)}\\[0.4em]
+  \textbf{Dokument PST-6-R: Physikalische Rekonstruktion}\\[0.4em]
+  {\large Lorentz-Signatur, Eichgruppen, Quantisierung,
+  Naturkonstanten und das Fernziel}\\[0.5em]
+  {\normalsize Version~0.1}
+}
+\author{
+  \textbf{Forschungsprogramm Ontoph\"{a}nomenalismus}\\
+  \small Siehe TRANSPARENCY f\"{u}r methodologische Urheberschaft
+  und KI-Einsatz.
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Dokument entwickelt die physikalische Rekonstruktion der PST ---
+den Schritt von der emergenten Raumzeit zur vollst\"{a}ndigen Physik.
+
+PST-6-R ist das ambiti\"{o}seste und am wenigsten ausgearbeitete
+der PST-Dokumente. Es kartografiert das Terrain das die PST noch
+zu erschlie\ss{}en hat: Lorentz-Signatur, Eichgruppen, Quantisierung
+und Naturkonstanten.
+
+Gem\"{a}\ss{} MKO sind alle Aussagen in diesem Dokument explizit als
+Arbeitshypothesen (Ebene~5) gekennzeichnet. PST-6-R ist kein Ergebnisbericht
+--- es ist ein Forschungsprogramm.
+
+Es gelten die methodologischen Konventionen gem\"{a}\ss{} MKO.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Einordnung: Das letzte Glied der Kette}
+%==============================================================
+
+\begin{methodennote}[Status von PST-6-R --- MKO Ebene~5]
+PST-6-R ist das spekulativste der PST-Dokumente. W\"{a}hrend PST-1-F
+bis PST-4-G gesicherte Grundlagen und numerische Evidenz beschreiben,
+kartografiert PST-6-R das noch unerschlossene Terrain.
+
+Alle Hypothesen in diesem Dokument sind MKO Ebene~5: empirisch testbar
+in Prinzip, aber noch nicht getestet. Dieses Dokument ist eine
+Einladung zur weiteren Forschung, kein Abschluss.
+\end{methodennote}
+
+Die Rekonstruktionskette der PST:
+\[
+  \underbrace{\text{Existenz} \rightarrow \OPP}_{\text{PST-1-F}}
+  \rightarrow
+  \underbrace{\mathbf{K} \rightarrow \deff \approx 4}_{\text{PST-2-M, PST-4-G}}
+  \rightarrow
+  \underbrace{\text{Raumzeit}}_{\text{PST-3-P}}
+  \rightarrow
+  \underbrace{\text{Lorentz} \rightarrow \text{Eich} \rightarrow \hbar
+  \rightarrow \text{Physik}}_{\text{PST-6-R (offen)}}
+\]
+
+%==============================================================
+\section{Lorentz-Signatur: Das n\"{a}chste gro\ss{}e Ziel}
+%==============================================================
+
+\begin{methodennote}[Wo wir stehen]
+Die PST hat numerisch $\deff \approx 4$ etabliert. Die emergierte
+Symmetriegruppe ist bisher $SO(4)$ --- euklidische 4D-Symmetrie.
+Die physikalische Raumzeit hat jedoch $SO(1,3)$ --- Lorentz-Symmetrie
+mit Signatur $(+,-,-,-)$.
+
+Der Unterschied ist fundamental: $SO(4)$ hat kein ausgezeichnetes
+Zeitintervall; $SO(1,3)$ hat Zeitpfeile, Kausalit\"{a}t und Lichtkegelstruktur.
+\end{methodennote}
+
+\begin{hypothese}[Wick-Rotation als projektive Eigenschaft --- MKO Ebene~5]
+Die \"{U}bertragung von euklidischer zu Lorentz-Signatur k\"{o}nnte durch
+eine \emph{Wick-Rotation} des Projektionsoperators beschrieben werden:
+\[
+  t \;\rightarrow\; -i\tau
+\]
+wobei $t$ die projizierte Zeitkoordinate und $\tau$ die euklidische Zeit
+bezeichnet. In der QFT ist die Wick-Rotation ein Standardtrick;
+in der PST k\"{o}nnte sie eine tiefere Bedeutung haben: Die Lorentz-Signatur
+emergiert durch Komplexifizierung des Projektionsoperators.
+\end{hypothese}
+
+\begin{hypothese}[Imagin\"{a}re Eigenwerte --- MKO Ebene~5]
+Eine alternative Hypothese: Falls die Gram-Matrix $\mathbf{K}$ komplexwertige
+Eintr\"{a}ge erlaubt (etwa durch analytische Fortsetzung der
+Relationsst\"{a}rke), k\"{o}nnten imagin\"{a}re Eigenwerte die negativen
+Vorzeichen der Lorentz-Signatur erzeugen:
+\[
+  \lambda_{\text{Zeit}} = i\mu, \quad \mu > 0
+  \;\Rightarrow\;
+  \sqrt{\lambda_{\text{Zeit}}} = i\sqrt{\mu}
+  \;\Rightarrow\;
+  g_{00} = -\mu < 0.
+\]
+Dies ist ein konkreter mathematischer Ansatz, der weiter gepr\"{u}ft werden muss.
+\end{hypothese}
+
+\begin{programm}[Lorentz-Programm]
+\textbf{Ziel:} Mathematische Herleitung der Signatur $(+,-,-,-)$ aus
+dem Projektionsprozess.
+
+\textbf{Strategie:}
+\begin{enumerate}
+  \item Komplexifizierung der Gram-Matrix und Analyse der Eigenwertstruktur.
+  \item Vergleich Wick-Rotation vs.\ imagin\"{a}re Eigenwerte.
+  \item Nachweis dass $SO(1,3)$ die einzige stabile Signatur f\"{u}r
+        $\deff = 4$ unter physikalischen Randbedingungen ist.
+\end{enumerate}
+
+\textbf{Kriterium f\"{u}r Erfolg:} $SO(1,3)$ emergiert rangneutral
+--- nicht weil es gesucht wurde, sondern weil es die einzige
+stabile Signatur ist.
+\end{programm}
+
+%==============================================================
+\section{Eichgruppen: Die Materiestruktur}
+%==============================================================
+
+\begin{hypothese}[Eichgruppen als Projektiv-Symmetrien --- MKO Ebene~5]
+Die Eichgruppen des Standardmodells
+$G_{\text{SM}} = SU(3) \times SU(2) \times U(1)$
+sind Untergruppen der Symmetriegruppe des OPP, die nach der physikalischen
+Projektion erhalten bleiben:
+\[
+  \Proj^\ast(G_{\OPP}) \;\supseteq\; G_{\text{SM}} \times SO(1,3).
+\]
+Materie und Wechselwirkungen sind damit keine separaten ontologischen
+Einheiten --- sie sind Aspekte der Projektionssymmetrie.
+\end{hypothese}
+
+\begin{remark}[Warum gerade $SU(3) \times SU(2) \times U(1)$?]
+Die PST stellt die tiefste Frage zur Materiestruktur: Warum haben wir
+genau diese Eichgruppen und nicht andere?
+
+Kandidatenantworten:
+\begin{enumerate}
+  \item \textbf{Stabilit\"{a}t:} $SU(3) \times SU(2) \times U(1)$ ist
+        die einzige Eichgruppe die unter der physikalischen Projektion
+        stabil ist.
+  \item \textbf{Minimalit\"{a}t:} Es ist die kleinste Gruppe die alle
+        bekannten Teilchen klassifiziert.
+  \item \textbf{Kompatibilit\"{a}t:} Sie ist die einzige Gruppe die mit
+        $SO(1,3)$ und $\deff = 4$ kompatibel ist.
+\end{enumerate}
+Welche Antwort zutrifft, ist eine offene Forschungsfrage.
+\end{remark}
+
+\begin{programm}[Eichgruppen-Programm]
+\textbf{Ziel:} Ableitung von $SU(3) \times SU(2) \times U(1)$ aus
+Eigenschaften des Projektionsoperators $\Proj^\ast$.
+
+\textbf{Strategie:}
+\begin{enumerate}
+  \item Charakterisierung der Symmetriegruppen verschiedener
+        Projektionskandidaten.
+  \item Pr\"{u}fung ob Diffusion Maps mit $t \approx 9$--$10$ spezifische
+        Symmetrien bevorzugt.
+  \item Verbindung zur Connes'schen nicht-kommutativen Geometrie
+        (spektrale Tripel kodieren Eichstrukturen).
+\end{enumerate}
+\end{programm}
+
+%==============================================================
+\section{Quantisierung: Diskretheit aus Projektion}
+%==============================================================
+
+\begin{hypothese}[Quantisierung als Projektionsartefakt --- MKO Ebene~5]
+Quantisierung entsteht durch die endliche Aufl\"{o}sung des
+Projektionsoperators. Die Informationsschwelle $I_0$ (PST-2-M)
+entspricht dem Planck'schen Wirkungsquantum:
+\[
+  I_0 \;\leftrightarrow\; \hbar.
+\]
+Unterhalb von $I_0$ gibt es keine projektive Bestimmtheit ---
+keine unterscheidbaren Quantenzust\"{a}nde.
+\end{hypothese}
+
+\begin{remark}[Drei Ebenen der Quantisierung]
+Die PST-Hypothese ber\"{u}hrt drei verschiedene Aspekte der Quantisierung:
+\begin{enumerate}
+  \item \textbf{Diskretheit von Energie:} $E = n\hbar\omega$ ---
+        k\"{o}nnte aus der diskreten Spektralstruktur der Gram-Matrix folgen.
+  \item \textbf{Unsch\"{a}rfe:} $\Delta x \cdot \Delta p \geq \hbar/2$
+        --- k\"{o}nnte aus der Nicht-Injektivit\"{a}t des Projektionsoperators
+        folgen (PST-3-P).
+  \item \textbf{Spin und Statistik:} Das Spin-Statistik-Theorem k\"{o}nnte
+        aus Eigenschaften der projizierten Symmetriegruppe $SO(1,3)$ folgen.
+\end{enumerate}
+\end{remark}
+
+\begin{hypothese}[Schr\"{o}dinger-Gleichung aus Projektion --- MKO Ebene~5]
+Die Schr\"{o}dinger-Gleichung
+\[
+  i\hbar\, \frac{\partial\psi}{\partial t} = \hat{H}\psi
+\]
+k\"{o}nnte eine projektive Eigenschaft sein: die Beschreibung wie sich
+ein projizierter Zustand $\psi$ im projizierten Zeitparameter $t$
+ver\"{a}ndert. Die Hamilton-Operator $\hat{H}$ w\"{a}re dann eine
+Eigenschaft des Projektionsoperators, nicht des OPP selbst.
+
+Vorsicht: Diese Hypothese ist sehr spekulativ. Sie w\"{u}rde bedeuten dass
+die gesamte Quantenmechanik aus der Projektion folgt --- ein
+au\ss{}ergew\"{o}hnlicher Anspruch der au\ss{}ergew\"{o}hnlicher Evidenz
+bed\"{u}rfte.
+\end{hypothese}
+
+%==============================================================
+\section{Naturkonstanten: Die h\"{a}rteste Pr\"{u}fung}
+%==============================================================
+
+\begin{methodennote}[Naturkonstanten als Pr\"{u}fstein]
+Naturkonstanten sind die pr\"{a}zisesten Messgr\"{o}\ss{}en der Physik.
+Die Feinstrukturkonstante $\alpha \approx 1/137.036$ ist auf viele
+Stellen bekannt. Eine Theorie die $\alpha$ aus Grundprinzipien ableitet,
+w\"{a}re ein au\ss{}ergew\"{o}hnlicher Erfolg.
+
+Die PST macht bisher keine Vorhersage \"{u}ber Naturkonstanten.
+Dieser Abschnitt kartografiert das Terrain.
+\end{methodennote}
+
+\begin{hypothese}[Planck-L\"{a}nge aus Existenzgrenze --- MKO Ebene~5]
+Die Planck-L\"{a}nge
+\[
+  \Lp = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616 \times 10^{-35}\,\text{m}
+\]
+k\"{o}nnte mit der Informationsschwelle $I_0$ zusammenh\"{a}ngen
+(PST-2-M, Sekis Beitrag): Unterhalb von $\Lp$ gibt es keine projektive
+Bestimmtheit. Das w\"{u}rde $\Lp$ aus OPP-Eigenschaften ableiten.
+
+Konkret: Falls $I_0$ aus der Spektralstruktur des OPP hergeleitet werden
+kann, und falls $I_0 \leftrightarrow \hbar/\ell_P^2$ gilt, folgt $\ell_P$
+aus den OPP-Eigenschaften.
+\end{hypothese}
+
+\begin{hypothese}[Lichtgeschwindigkeit als Projektionsparameter ---
+MKO Ebene~5]
+Die Lichtgeschwindigkeit $c$ k\"{o}nnte der Konversionsparameter
+zwischen der zeitartigen und den raumartigen Dimensionen der
+projizierten Raumzeit sein --- eine Eigenschaft des Projektionsoperators
+$\Proj^\ast$, nicht des OPP selbst. In diesem Sinne w\"{a}re $c$ kein
+fundamentaler OPP-Parameter, sondern eine Eigenschaft der Projektion.
+\end{hypothese}
+
+\begin{remark}[Feinstrukturkonstante: noch offen]
+Die Feinstrukturkonstante $\alpha \approx 1/137$ ist in der PST bisher
+vollst\"{a}ndig offen. Richard Feynman beschrieb $\alpha$ als eines der
+gr\"{o}\ss{}ten R\"{a}tsel der Physik. Die PST stellt die Frage ob
+$\alpha$ aus Eigenschaften des Projektionsoperators folgt --- aber
+hat noch keine Antwort.
+\end{remark}
+
+%==============================================================
+\section{Dynamik: Wie bewegt sich etwas im statischen OPP?}
+%==============================================================
+
+\begin{methodennote}[Das Dynamikproblem]
+Der OPP ist statisch --- er enth\"{a}lt alle Zust\"{a}nde zeitlos und
+simultan (vgl.\ OPP). Wie entsteht daraus die Dynamik des physikalischen
+Universums?
+\end{methodennote}
+
+\begin{hypothese}[Dynamik als Beobachterpfad --- MKO Ebene~5]
+Physikalische Dynamik ist kein Prozess im OPP selbst. Sie ist die
+\emph{Sequenz von Projektionen} die ein Beobachter-Attraktor durchl\"{a}uft:
+\[
+  \gamma\colon \mathbb{R} \rightarrow \OPP,
+  \quad
+  t \mapsto \gamma(t)
+\]
+wobei $t$ der \emph{projizierte} Zeitparameter ist --- kein OPP-Parameter.
+Dynamik ist damit eine Eigenschaft der Beobachter-Projektion, nicht
+des OPP. Dies ist konsistent mit der Blockuniversum-Analogie in OPP
+und dem Pausen-Argument in DPR.
+\end{hypothese}
+
+\begin{hypothese}[Kausalit\"{a}t aus Projektionsreihenfolge ---
+MKO Ebene~5]
+Kausalit\"{a}t --- die Tatsache dass Ursachen vor Wirkungen kommen ---
+k\"{o}nnte aus der Reihenfolge der Projektionen folgen: Ein Zustand
+$\gamma(t_1)$ verursacht $\gamma(t_2)$ genau dann, wenn die Projektion
+von $\gamma(t_1)$ in $\gamma(t_2)$ hineinreicht (informationale Ursache),
+nicht umgekehrt. Die Zeitrichtung w\"{a}re dann eine Eigenschaft der
+Projektionssequenz.
+\end{hypothese}
+
+%==============================================================
+\section{Verbindung zu anderen Fundamentaltheorien}
+%==============================================================
+
+\begin{remark}[Allgemeine Relativit\"{a}tstheorie (ART)]
+Die ART beschreibt Gravitation als Kr\"{u}mmung der Raumzeit. In der PST
+w\"{a}re Raumzeitkr\"{u}mmung eine Eigenschaft des Projektionsoperators:
+Kr\"{u}mmung entsteht wenn der Projektionsoperator in verschiedenen
+Regionen des OPP verschiedene effektive Dimensionen liefert.
+
+Die Einstein-Feldgleichungen
+\[
+  G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+\]
+k\"{o}nnten aus Eigenschaften des Projektionsspektrums emergieren. Dies
+ist eine sehr spekulative Hypothese --- aber konsistent mit der
+PST-Grundidee.
+\end{remark}
+
+\begin{remark}[Kosmologische Konstante $\Lambda$]
+Die kosmologische Konstante $\Lambda$ ist ein offenes Problem der
+Physik: Quantenfeldtheorie sagt einen Wert vorher der um $10^{120}$
+gr\"{o}\ss{}er ist als beobachtet (Feinabstimmungsproblem). In der PST
+k\"{o}nnte $\Lambda$ eine Eigenschaft des OPP selbst sein --- der
+\glqq{}Grundzustand\grqq{} der Projektion. Falls der OPP eine bestimmte
+Kohärenz-Dichte hat, k\"{o}nnte $\Lambda$ daraus folgen. Diese Hypothese
+ist sehr spekulativ.
+\end{remark}
+
+%==============================================================
+\section{Das Fernziel: Existenz $\Rightarrow$ Universum}
+%==============================================================
+
+\begin{remark}[Was erreicht sein m\"{u}sste]
+Das Fernziel der PST ist erreicht wenn alle folgenden Schritte
+mathematisch notwendig sind:
+\[
+  \text{Existenz}
+  \xrightarrow{(1)} \OPP
+  \xrightarrow{(2)} \Proj^\ast
+  \xrightarrow{(3)} \text{Raumzeit } 3{+}1
+  \xrightarrow{(4)} SO(1,3)
+  \xrightarrow{(5)} G_{\text{SM}}
+  \xrightarrow{(6)} \hbar, c, G
+  \xrightarrow{(7)} \text{Teilchen, Felder}
+  \xrightarrow{(8)} \text{Universum}
+\]
+Schritt (1) und Teile von (2) sind etabliert. Schritt (3) ist numerisch
+best\"{a}tigt. Schritte (4)--(8) sind offen.
+\end{remark}
+
+\begin{remark}[Warum das Fernziel trotzdem verfolgt werden sollte]
+Das Fernziel ist m\"{o}glicherweise nicht vollst\"{a}ndig erreichbar ---
+G\"{o}delsche Unvollst\"{a}ndigkeit und physikalische Komplexit\"{a}t
+setzen Grenzen. Aber jeder erreichte Schritt ist ein echter
+wissenschaftlicher Fortschritt. Und das Fernziel gibt dem Programm
+Richtung und Koh\"{a}renz.
+
+Vergleich: Die vollst\"{a}ndige Vereinheitlichung der Physik
+(Theory of Everything) ist m\"{o}glicherweise ebenfalls nicht erreichbar.
+Trotzdem hat die Suche danach Quantenmechanik, Relativit\"{a}tstheorie
+und das Standardmodell hervorgebracht.
+\end{remark}
+
+%==============================================================
+\section{Offene Fragen der physikalischen Rekonstruktion}
+%==============================================================
+
+\begin{enumerate}
+  \item Wie emergiert die Lorentz-Signatur $(+,-,-,-)$ aus einer
+        reellen oder komplex-erweiterten Gram-Matrix?
+  \item Welche Symmetrien des OPP bleiben unter $\Proj^\ast$ erhalten,
+        und warum gerade $G_{\text{SM}} \times SO(1,3)$?
+  \item Ist $I_0 \leftrightarrow \hbar$ mathematisch pr\"{a}zisierbar,
+        und folgt daraus die Planck-L\"{a}nge?
+  \item Wie beschreibt man Dynamik in einem statischen OPP ---
+        und folgt die Schr\"{o}dinger-Gleichung aus der Projektion?
+  \item K\"{o}nnen die Einstein-Feldgleichungen aus Eigenschaften des
+        Projektionsspektrums emergieren?
+  \item Gibt es eine Verbindung zwischen der kosmologischen Konstante
+        $\Lambda$ und der Koh\"{a}renz-Dichte des OPP?
+  \item Wie h\"{a}ngt die Feinstrukturkonstante $\alpha$ mit
+        OPP-Eigenschaften oder $\Proj^\ast$ zusammen?
+  \item Ist die PST mit Loop-Quanten-Gravitation oder
+        nicht-kommutativer Geometrie (Connes) formal \"{a}quivalent?
+\end{enumerate}
+
+%==============================================================
+\section{Schnittstellen}
+%==============================================================
+
+\begin{itemize}
+  \item \textbf{PST-3-P:} Die Projektionstheorie aus PST-3-P ist die
+        Grundlage f\"{u}r alle physikalischen Rekonstruktionen in PST-6-R.
+        Insbesondere Symmetriebrechung, Beobachter als Operatoren und
+        $\Proj^\ast$.
+  \item \textbf{PST-5-S:} Die priorisierte Forschungsagenda aus PST-5-S
+        bestimmt die Reihenfolge der Aufgaben f\"{u}r PST-6-R.
+  \item \textbf{MGO:} Kategorientheorie, Operatoralgebren und
+        nicht-kommutative Geometrie (MGO) sind die mathematischen
+        Werkzeuge f\"{u}r PST-6-R.
+  \item \textbf{DPR:} Das Pausen-Argument und die RdE aus DPR sind
+        konzeptuelle Grundlagen f\"{u}r die Dynamik-Hypothese.
+  \item \textbf{OPP:} Die Blockuniversum-Analogie aus OPP ist
+        konsistent mit der Dynamik-als-Beobachterpfad-Hypothese.
+  \item \textbf{DFD:} Die Planck-Schranke als Existenzgrenze
+        (PST-2-M, Sekis Beitrag) verbindet DFD mit PST-6-R:
+        $I_0 \leftrightarrow \hbar \leftrightarrow \mathcal{D}(E)_{\min}$.
+\end{itemize}
+
+\end{document}
+
