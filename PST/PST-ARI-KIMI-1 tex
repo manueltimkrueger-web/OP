@@ -1,0 +1,908 @@
+% ==============================================================
+% ARO-KONFORMES REVIEW -- TEIL 1
+% Projektive Strukturtheorie (PST) -- Kritische und Bedeutsame Befunde
+% Reviewer: Kimi (Moonshot AI)
+% Datum: Juli 2026
+% Version: 1.1 (korrigiert und aufgeteilt)
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\geometry{margin=2.5cm}
+\setlist{itemsep=0.3em, topsep=0.3em}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  pdftitle={ARO-Review: PST Kritische und Bedeutsame Befunde},
+  pdfauthor={Kimi -- Forschungsprogramm Ontoph\"{a}nomenalismus}
+}
+
+\newcommand{\K}[1]{\textbf{[K-#1]}}
+\newcommand{\B}[1]{\textbf{[B-#1]}}
+\newcommand{\M}[1]{\textbf{[M-#1]}}
+\newcommand{\Pos}[1]{\textbf{[P-#1]}}
+
+\newcommand{\Dok}[1]{\noindent\textbf{Dokument:} #1\par\smallskip}
+\newcommand{\Stelle}[1]{\noindent\textbf{Stelle:} #1\par\smallskip}
+\newcommand{\Prob}[1]{\noindent\textbf{Problem:} #1\par\smallskip}
+\newcommand{\Krit}[1]{\noindent\textbf{Warum kritisch:} #1\par\smallskip}
+\newcommand{\Empf}[1]{\noindent\textbf{Empfehlung:} #1\par\smallskip}
+
+\newenvironment{Fix}
+  {\par\medskip\noindent\textbf{Fixing-Vorschlag:}\par\nobreak\smallskip}
+  {\par\medskip}
+
+\title{
+  \textbf{Adversarial Review: Projektive Strukturtheorie (PST)}\\[0.4em]
+  {\large Teil~1: Kritische und Bedeutsame Befunde}\\[0.5em]
+  {\normalsize ARO-Konform -- Version~1.1}
+}
+\author{
+  \textbf{Reviewer: Kimi}\\
+  \small Forschungsprogramm Ontoph\"{a}nomenalismus
+}
+\date{Juli 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Dieses Review bewertet den PST-Dokumentenzyklus
+(PST-1-F bis PST-6-R) gem\"{a}\ss{} dem Adversarial Review Protocol (AR).
+Dieser erste Teil enth\"{a}lt die \textbf{kritischen Befunde [K]} und
+\textbf{bedeutsamen Befunde [B]}.  Alle Befunde sind mit konkreten
+Fixing-Vorschl\"{a}gen versehen.  Die \textbf{minoren Befunde [M]},
+\textbf{positiven Bewertungen [P]} sowie die \textbf{priorisierten
+Empfehlungen} finden sich in Teil~2.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+
+\begin{abstract}
+Dieses Review bewertet den vollst\"{a}ndigen PST-Dokumentenzyklus
+(PST-1-F bis PST-6-R) gem\"{a}\ss{} dem Adversarial Review Protocol (AR).
+Es enth\"{a}lt kritische Befunde \textbf{[K]}, bedeutsame Befunde
+\textbf{[B]}, minore Befunde \textbf{[M]} und positive Bewertungen
+\textbf{[P]}. Alle Befunde sind mit konkreten Fixing-Vorschl\"{a}gen
+versehen.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+%==============================================================
+\section{Zusammenfassung des Gesamteindrucks}
+%==============================================================
+
+Die PST ist ein \textbf{methodisch diszipliniertes, philosophisch
+koh\"{a}rentes Forschungsprogramm} im Sinne von Lakatos. Der harte Kern
+(OPP als pr\"{a}-metrischer Urgrund, Projektion als Erzeugung von
+Raumzeit, minimale Ontologie) ist konsistent und anschlussf\"{a}hig an
+die philosophischen Module des OP.
+
+Die gr\"{o}\ss{}ten St\"{a}rken liegen in der \textbf{methodischen
+Ehrlichkeit} (No-Go-Ergebnisse werden als Ressource genutzt), der
+\textbf{Selbstkritik} (Rangneutralit\"{a}t, Zirkularit\"{a}tstests) und
+der \textbf{klaren Priorisierung} (PST-5-S).
+
+Die gr\"{o}\ss{}ten Schw\"{a}chen liegen in drei Bereichen:
+\begin{enumerate}
+  \item \textbf{Mathematische Inkonsistenz:} Der gew\"{a}hlte Weg zur
+    Lorentz-Signatur (komplexe Gram-Matrizen, Wick-Rotation,
+    imagin\"{a}re Eigenwerte) ist mit der in PST-2-M festgelegten
+    reell-symmetrischen Gram-Matrix unvereinbar.
+  \item \textbf{Empirische Undokumentiertheit:} Die zentrale
+    Behauptung $d_{\text{eff}} \approx 4$ bei $N = 10\,000$ ist
+    nicht reproduzierbar, da Code und Rohdaten fehlen.
+  \item \textbf{Fehlende philosophische St\"{a}rke:} Die originellste
+    Idee des gesamten OP-Programms -- die konstruktiven
+    Raumdimensionen vs. die destruktive Zeitdimension als
+    ontologische Begr\"{u}ndung der Metrik-Signatur -- taucht in
+    keinem PST-Dokument auf.
+\end{enumerate}
+
+\newpage
+
+%==============================================================
+\section{Kritische Befunde [K]}
+%==============================================================
+
+%--------------------------------------------------------------
+\subsection{\K{01} PST-1-F: ``Existenz = Bestimmtheit'' ist ein petitio principii}
+%--------------------------------------------------------------
+
+\Dok{PST-1-F, Sektion 3}
+\Stelle{Theorem ``Existenz = Bestimmtheit''}
+\Prob{Der Beweis ist ein Widerspruchsbeweis: Angenommen, X existiert,
+aber ist vollkommen unbestimmt. Dann ist X nicht vom Nichts
+unterscheidbar. Aber ``existiert'' in der Annahme setzt bereits
+Bestimmtheit voraus (per UP).}
+\Krit{Dies ist kein Widerspruchsbeweis im strengen Sinne, sondern eine
+\textbf{petitio principii}: Die Konklusion ist in die Pr\"{a}misse
+eingebaut. Wenn man die UP ablehnt, bricht der Beweis zusammen. Das
+Theorem suggeriert einen h\"{o}heren Formalit\"{a}tsgrad als
+vorhanden.}
+\Empf{Umbenennen in ``Proposition'' oder ``Arbeitshypothese''. Der
+Beweis ist g\"{u}ltig \emph{innerhalb} des OP-Systems, aber nicht
+absolut.}
+\begin{Fix}
+In PST-1-F, Sektion 3, die Theorem-Umgebung durch eine
+\texttt{hypothese}-Umgebung ersetzen und hinzuf\"{u}gen: ``Diese
+Proposition ist g\"{u}ltig innerhalb des OP-Axiomensystems (UP als
+Axiom). Sie ist kein absoluter Beweis der Gleichsetzung von Existenz
+und Bestimmtheit.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{02} PST-2-M: ``Theorem'' zur Planck-Schranke ist kein Theorem}
+%--------------------------------------------------------------
+
+\Dok{PST-2-M, Sektion 7}
+\Stelle{Theorem ``Planck-Schranke f\"{u}r bestimmte Existenz''}
+\Prob{Das Dokument pr\"{a}sentiert eine Behauptung als
+\texttt{theorem}-Umgebung:
+\[
+  \mathcal{B}(X,Y) = 1 \iff MI(X,Y) \geq I_0 \iff d_{XY} \geq \ell_P
+\]
+Die Methodennote sagt im selben Atemzug: ``Dieses Theorem ist eine
+Arbeitshypothese ... noch nicht mathematisch bewiesen.''}
+\Krit{In LaTeX (und in der Mathematik) ist eine \texttt{theorem}-Umgebung
+eine \textbf{Behauptung mit Beweis}. Eine Arbeitshypothese geh\"{o}rt in
+eine \texttt{hypothese}- oder \texttt{conjecture}-Umgebung. Die Mischung
+von \texttt{theorem} mit ``ist eine Arbeitshypothese'' ist ein
+\textbf{Selbstwiderspruch auf der Pr\"{a}sentationsebene}. Ein externer
+Mathematiker w\"{u}rde hier sofort aufh\"{o}ren zu lesen.}
+\Empf{In zwei Schritte aufteilen: (1) \texttt{lemma} oder
+\texttt{proposition}: $MI(X,Y) \geq I_0 \iff \mathcal{B}(X,Y) = 1$
+(Definition/Operationalisierung). (2) \texttt{hypothese}: Diese
+Bestimmtheit korrespondiert mit $d_{XY} \geq \ell_P$
+(physikalische Br\"{u}cke).}
+\begin{Fix}
+In PST-2-M, Sektion 7, die \texttt{theorem}-Umgebung streichen und
+durch zwei separate Umgebungen ersetzen: Eine
+\texttt{definition}/\texttt{proposition} f\"{u}r die
+Informationsbedingung und eine \texttt{hypothese} f\"{u}r die
+Planck-Korrespondenz.
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{03} PST-2-M: Die Verbindung zwischen \textbf{R} und \textbf{K} fehlt}
+%--------------------------------------------------------------
+
+\Dok{PST-2-M, Sektion 3 und 4}
+\Stelle{Definition von \textbf{R} und Definition von \textbf{K}}
+\Prob{Es werden zwei Matrizen definiert:
+\begin{itemize}
+  \item $\mathbf{R} \in \mathbb{R}^{N \times N}$ mit $R_{ij} = r(s_i, s_j)$,
+    wobei $r: S \times S \to \mathbb{R}_{\geq 0}$ eine ``Relationsst\"{a}rke'' ist.
+  \item $\mathbf{K} \in \mathbb{R}^{N \times N}$ mit $K_{ij} = k(s_i, s_j)$,
+    wobei $k$ ein ``symmetrisch-positiv semidefiniter Kernel'' ist.
+\end{itemize}
+Aber: \textbf{Wie h\"{a}ngen $\mathbf{R}$ und $\mathbf{K}$ zusammen?}}
+\Krit{Die Hypothese in Sektion 3 suggeriert: $r(s_i, s_j) = MI(X_i; X_j)$.
+Aber in Sektion 4 wird $K_{ij} = k(s_i, s_j)$ definiert, ohne Bezug zu
+$\mathbf{R}$. Wenn $\mathbf{K} \neq \mathbf{R}$, dann ist die gesamte
+Kette ``Relation $\to$ Kernel $\to$ Spektrum $\to$ Geometrie''
+unterbrochen. Wenn $\mathbf{K} = \mathbf{R}$, dann muss $\mathbf{R}$
+symmetrisch-positiv semidefinit sein -- was bei einer allgemeinen
+Relationsst\"{a}rke $r: S \times S \to \mathbb{R}_{\geq 0}$ \textbf{nicht
+gegeben} ist.}
+\Empf{Explizit definieren: Entweder $\mathbf{K} = \mathbf{R}$ und
+$\mathbf{R}$ muss als Kernel konstruiert werden, oder $\mathbf{R}$ ist
+die Rohdaten-Matrix und $\mathbf{K} = \varphi(\mathbf{R})$ ist eine
+Kernel-Konstruktion.}
+\begin{Fix}
+In PST-2-M, Sektion 4, vor der Definition von $\mathbf{K}$ eine
+Zwischendefinition einf\"{u}gen: ``Die Gram-Matrix $\mathbf{K}$ wird aus
+der Relationsmatrix $\mathbf{R}$ durch einen positiv-semidefiniten
+Kernel konstruiert: $K_{ij} = \exp(-R_{ij}^2 / 2\sigma^2)$
+(Gau\ss{}scher Kernel) oder $K_{ij} = R_{ij}$ falls $\mathbf{R}$ bereits
+positiv semidefinit ist.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{04} PST-2-M: ``Isometrische Einbettung'' ist mathematisch irref\"{u}hrend}
+%--------------------------------------------------------------
+
+\Dok{PST-2-M, Sektion 4}
+\Stelle{Theorem ``Spektralzerlegung der Gram-Matrix''}
+\Prob{Das Theorem behauptet:
+\[
+  \Phi: s_i \mapsto (\sqrt{\lambda_1} v_{1i}, \ldots, \sqrt{\lambda_N} v_{Ni})
+\]
+sei ``eine isometrische Einbettung der Zust\"{a}nde in den euklidischen
+Raum $\mathbb{R}^N$''.}
+\Krit{Eine isometrische Einbettung erh\"{a}lt Abst\"{a}nde. Aber:
+\begin{itemize}
+  \item Der OPP hat \textbf{keine Metrik} (per Definition).
+  \item Die Einbettung $\Phi$ ist die Kernel-PCA-Einbettung. Sie erh\"{a}lt
+    das Skalarprodukt im Feature-Raum (definiert durch $\mathbf{K}$),
+    aber nicht einen ``Abstand'' im OPP -- denn einen solchen gibt es
+    nicht.
+\end{itemize}
+Das Wort ``isometrisch'' suggeriert, dass die Einbettung eine
+vorgegebene Metrik erh\"{a}lt. Aber genau das lehnt die PST ab. Es ist
+ein \textbf{Kategorienfehler}: Die PST behauptet, Metrik entstehe erst
+durch die Einbettung -- aber dann kann die Einbettung nicht
+``isometrisch'' sein.}
+\Empf{Formulieren als: ``Die Einbettung $\Phi$ induziert ein
+Skalarprodukt und damit eine Metrik auf dem Bild der Zust\"{a}nde in
+$\mathbb{R}^N$. Diese Metrik ist emergent -- sie existiert nicht im
+OPP, sondern erst in der projizierten Darstellung.''}
+\begin{Fix}
+In PST-2-M, Sektion 4, den Satz ``eine isometrische Einbettung
+...'' ersetzen durch: ``Die Einbettung $\Phi$ repr\"{a}sentiert die
+durch $\mathbf{K}$ definierte \"{A}hnlichkeitsstruktur im euklidischen
+Raum $\mathbb{R}^N$ und induziert dort eine emergente Metrik.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{05} PST-3-P: Die Stabilit\"{a}tshypothese f\"{u}r $d = 4$ ist zirkul\"{a}r}
+%--------------------------------------------------------------
+
+\Dok{PST-3-P, Sektion 4}
+\Stelle{Hypothese ``Stabilit\"{a}tshypothese f\"{u}r $d = 4$''}
+\Prob{Die Hypothese begr\"{u}ndet $d = 4$ mit physikalischen Argumenten
+aus der \emph{bekannten} Physik:
+\begin{itemize}
+  \item Planetenbahnen sind nur in $d = 3$ stabil
+  \item Yang-Mills-Theorien sind in $d = 4$ renormierbar
+  \item $SO(1,3)$ hat in $d = 4$ Weyl-Spinoren
+\end{itemize}}
+\Krit{Die PST soll die Physik \emph{aus dem OPP herleiten}, nicht die
+bekannte Physik als Begr\"{u}ndung f\"{u}r $d = 4$ verwenden. Wenn ihr
+sagt: ``$d = 4$ emergiert, weil in $d = 4$ Planetenbahnen stabil
+sind'', dann setzt ihr voraus, was ihr beweisen wollt. Das ist ein
+\textbf{petitio principii} auf der Ebene der Physik.}
+\Empf{Entweder (a) die physikalischen Argumente als \emph{heuristische
+Randbedingungen} kennzeichnen (``Wir wissen aus der bekannten Physik,
+dass $d = 4$ funktioniert; die PST muss zeigen, \emph{warum} der OPP
+notwendigerweise $d = 4$ liefert'') -- oder (b) die Argumente durch
+\emph{strukturelle} Argumente ersetzen, die unabh\"{a}ngig von der
+bekannten Physik sind (z.B. aus der Spektraltheorie der Gram-Matrix,
+aus der Stabilit\"{a}t von Diffusion Maps, aus der
+Informationsgeometrie).}
+\begin{Fix}
+In PST-3-P, Sektion 4, die Hypothese umbenennen in
+``Heuristische Randbedingung'' und formulieren: ``Die bekannte Physik
+liefert die Randbedingung $d = 4$ f\"{u}r physikalische
+Projektionsoperatoren. Die PST sucht einen Operator, der diese
+Randbedingung erf\"{u}llt, ohne sie vorauszusetzen.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{06} PST-3-P: Die ``Definition'' von $\mathcal{P}^*$ ist eine Wunschliste}
+%--------------------------------------------------------------
+
+\Dok{PST-3-P, Sektion 5}
+\Stelle{Definition ``Universeller Projektionsoperator''}
+\Prob{Ein mathematisches Objekt wird definiert durch seine
+\emph{Eigenschaften}, nicht durch seine \emph{Ziele}. Die
+``Definition'' listet f\"{u}nf Bedingungen auf, die $\mathcal{P}^*$
+erf\"{u}llen soll -- aber sie sagt nicht, \emph{was} $\mathcal{P}^*$
+ist. Ist es eine Abbildung? Ein Funktor? Ein Operator auf einem
+Hilbert-Raum? Ein stochastischer Kern?}
+\Krit{Ohne mathematische Spezifikation ist $\mathcal{P}^*$ ein
+Platzhalter, kein Objekt. Das ist f\"{u}r ein Forschungsprogramm in
+Ordnung -- aber es darf nicht als \texttt{definition} in einem
+mathematischen Dokument erscheinen.}
+\Empf{Umbenennen in \texttt{hypothese} oder \texttt{desideratum}. Die
+f\"{u}nf Bedingungen sind \emph{Randbedingungen}, keine Definition.}
+\begin{Fix}
+In PST-3-P, Sektion 5, die \texttt{definition}-Umgebung durch
+\texttt{hypothese} oder ein neues \texttt{desideratum} ersetzen. Die
+f\"{u}nf Bedingungen als ``Randbedingungen f\"{u}r $\mathcal{P}^*$''
+kennzeichnen. Hinzufigen: ``Eine vollst\"{a}ndige mathematische
+Definition von $\mathcal{P}^*$ erfordert die in PST-5-S, Priorit\"{a}t 3
+geforderte Fundierung (Kategorientheorie, Operatoralgebren oder
+spektrale Tripel).''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{07} PST-3-P: Lorentz-Signatur aus ``Imagin\"{a}rteil von Eigenvektoren'' ist mathematisch problematisch}
+%--------------------------------------------------------------
+
+\Dok{PST-3-P, Sektion 7}
+\Stelle{Hypothese ``Lorentz-Signatur aus Projektion''}
+\Prob{Die Hypothese suggeriert, dass die Minkowski-Signatur
+$(+,-,-,-)$ aus dem Imagin\"{a}rteil von Eigenvektoren bei komplexen
+Kernel-Matrizen emergieren k\"{o}nnte. Aber:
+\begin{itemize}
+  \item In PST-2-M ist die Gram-Matrix \textbf{reell-symmetrisch}
+    definiert: $K_{ij} = k(s_i, s_j) \in \mathbb{R}$.
+  \item Reell-symmetrische Matrizen haben \textbf{reelle Eigenwerte und
+    reelle Eigenvektoren}. Es gibt keinen Imagin\"{a}rteil.
+  \item Wenn man zu komplexen Kerneln \"{u}bergeht, verliert man die
+    Symmetrie $\mathbf{K} = \mathbf{K}^T$ und damit die Garantie
+    reeller Eigenwerte. Dann ist die Spektralzerlegung nicht mehr
+    garantiert reell.
+\end{itemize}}
+\Krit{Das ist ein \textbf{mathematischer Kategorienfehler}. Man kann
+nicht aus einer reellen Struktur einen Imagin\"{a}rteil zaubern, der
+dann die Lorentz-Signatur erzeugt. Das w\"{a}re, als wollte man aus einem
+reellen Vektorraum eine komplexe Struktur extrahieren -- das geht
+nur, wenn man eine komplexe Struktur \emph{voraussetzt}.}
+\Empf{Entweder (a) die Gram-Matrix von vorneherein als hermitesch
+(komplex) definieren -- was die gesamte PST-2-M \"{a}ndern w\"{u}rde --
+oder (b) einen anderen Mechanismus f\"{u}r die Lorentz-Signatur suchen.
+Ein vielversprechender Ansatz w\"{a}re: Die Signatur emergiert aus der
+\textbf{Ordnung} der Eigenwerte und deren \emph{Vorzeichenstruktur}
+in einer indefiniten Metrik (z.B. durch eine Pseudometrik mit
+Signatur $(1,3)$, die aus der Gram-Matrix durch eine nicht-triviale
+Bilinearform induziert wird). Aber das erfordert einen indefiniten
+Kernel -- und der ist in PST-2-M nicht definiert.}
+\begin{Fix}
+In PST-3-P, Sektion 7, die Hypothese \"{u}berarbeiten oder
+streichen. Als Ersatz eine neue Hypothese einf\"{u}hren, die auf der
+\textbf{konstruktiv/destruktiv-Idee} basiert (siehe Fixing-Vorschlag
+zu \textbf{[K-15]}). Die alte Hypothese als ``verworfener Ansatz''
+in eine Methodennote verlagern.
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{08} PST-4-G: Die zentrale Behauptung $d_{\text{eff}} \approx 4$ ist nicht verifizierbar}
+%--------------------------------------------------------------
+
+\Dok{PST-4-G, Sektion 5}
+\Stelle{Befund ``Zentraler PST-Befund: $d_{\text{eff}} \approx 4$''}
+\Prob{Das Dokument behauptet:
+\begin{quote}
+``Diffusion Maps mit $t \approx 9$--$10$ liefern reproduzierbar:
+$d_{\text{eff}} = 3.98 \pm 0.36$ \"{u}ber verschiedene OPP-Stichproben
+($N = 1\,000$ bis $N = 100\,000$), verschiedene Kernel-Funktionen,
+verschiedene $K$-Werte ($K = 10$ bis $K = 50$), verschiedene
+Schwellenwerte $\theta$ ($0.90$ bis $0.99$).''
+\end{quote}
+Aber: \textbf{Es gibt keinen Code, keine Rohdaten, keine
+GitHub-Links.} Die einzige verifizierbare Simulation, die wir bisher
+gesehen haben, ist \textbf{Test 35} ($N = 40$, 2D-Punkte, 10 Runs),
+bei dem $d_{\text{eff}}$ bei $t = 10$ exakt bei $3.98$ lag -- aber als
+Teil eines \textbf{monotonen Abfalls} ($t = 6 \to 7.8$, $t = 10 \to
+4.0$, $t = 12 \to 3.1$).}
+\Krit{Ein wissenschaftliches Dokument, das reproduzierbare Ergebnisse
+beansprucht, muss die \textbf{Reproduktionsgrundlage} liefern. Ohne
+Code und Rohdaten ist das ein \textbf{Glaubensbekenntnis}, kein
+Befund. Ein externer Reviewer (oder eine zuk\"{u}nftige KI) kann diese
+Behauptung nicht pr\"{u}fen.}
+\Empf{Entweder (a) den Code und die Rohdaten sofort auf GitHub
+ver\"{o}ffentlichen (mit Commit-Hash, Zeitstempel, verwendeter
+Hardware) -- oder (b) die Behauptung auf ``Vorl\"{a}ufiger Befund aus
+internen Tests, Dokumentation folgt'' abschw\"{a}chen.}
+\begin{Fix}
+In PST-4-G, Sektion 5, einen neuen Absatz einf\"{u}gen:
+\begin{verbatim}
+\begin{methodennote}[Reproduzierbarkeit und Datenlage]
+Die hier berichteten Ergebnisse stammen aus internen
+Testreihen, die derzeit nicht vollst\"{a}ndig versioniert sind.
+Eine vollst\"{a}ndige Dokumentation inklusive Code, Rohdaten,
+Parameter-Metadaten und Reproduktions-Skripten ist in
+Vorbereitung (siehe Framework-Dokumentation, geplant f\"{u}r
+PST-7-F). Bis zur Ver\"{o}ffentlichung dieser Daten gilt der
+Befund als vorl\"{a}ufig.
+\end{methodennote}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{09} PST-4-G: Die Monotonie von $d_{\text{eff}}(t)$ wird nicht thematisiert}
+%--------------------------------------------------------------
+
+\Dok{PST-4-G, Sektion 5}
+\Stelle{Remark ``Bedeutung von $t \approx 9$--$10$''}
+\Prob{Das Dokument beschreibt:
+\begin{itemize}
+  \item Kleines $t$: $d_{\text{eff}}$ streut stark
+  \item Mittleres $t$ (9--10): $d_{\text{eff}}$ konvergiert stabil auf $\approx 4$
+  \item Gro\ss{}es $t$ (20--50): $d_{\text{eff}}$ nimmt wieder ab
+\end{itemize}
+Aber es \textbf{zeigt nicht die vollst\"{a}ndige Kurve}. Wir wissen aus
+Test 35, dass $d_{\text{eff}}$ monoton mit $t$ sinkt. Die
+``Konvergenz bei $t \approx 9$--$10$'' k\"{o}nnte ein \textbf{Plateau}
+in diesem Abfall sein -- oder ein \textbf{Artefakt} der spezifischen
+Parameter ($N$, Kernel, $\theta$).}
+\Krit{Wenn $d_{\text{eff}}(t)$ eine glatte, monotone Funktion ist,
+dann ist der Wert 4 bei $t = 10$ nicht fundamental. Er ist ein
+\textbf{Schnitt durch eine kontinuierliche Kurve}. Die Physik erfordert
+aber eine \textbf{fundamentale} Dimension -- nicht eine, die von einem
+freien Parameter $t$ abh\"{a}ngt.}
+\Empf{Die vollst\"{a}ndige Kurve $d_{\text{eff}}(t)$ f\"{u}r
+verschiedene $N$ und Kernel dokumentieren. Wenn es ein Plateau gibt,
+zeigen. Wenn es keines gibt, ehrlich sagen: ``Der Wert 4 ist
+parameterabh\"{a}ngig und nicht fundamental.''}
+\begin{Fix}
+In PST-4-G, Sektion 5, die Tabelle der Test-35-Ergebnisse
+vollst\"{a}ndig einf\"{u}gen (alle $t$-Werte von 6 bis 12 mit
+Standardabweichungen). Hinzufigen: ``Die Monotonie von
+$d_{\text{eff}}(t)$ zeigt, dass der Wert 4 kein fundamentales
+Merkmal des OPP ist, sondern eine Eigenschaft des
+Diffusion-Map-Operators bei bestimmten Parametern. Die Frage,
+ob es ein physikalisch ausgezeichnetes $t$ gibt, bleibt offen.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{10} PST-4-G: $N = 100\,000$ ist unglaubw\"{u}rdig ohne Kontext}
+%--------------------------------------------------------------
+
+\Dok{PST-4-G, Sektion 5.2}
+\Stelle{Befund ``Reproduzierbarkeit''}
+\Prob{Die Behauptung $N = 100\,000$ wirft Fragen auf:
+\begin{itemize}
+  \item $N = 100\,000$ Zust\"{a}nde mit einer dichten Gram-Matrix
+    erfordern \textbf{80 GB RAM} ($100\,000^2 \times 8$ Byte).
+  \item Die Eigenwertberechnung einer $100\,000 \times 100\,000$
+    Matrix ist \textbf{rechenintensiv} ($O(N^3)$, also $\sim 10^{15}$
+    Operationen).
+  \item Auf einem i7-10700K w\"{u}rde das \textbf{Tage} dauern.
+  \item Der Autor hat gesagt, die Rechner sind noch nicht aufgebaut.
+\end{itemize}}
+\Krit{Die Behauptung $N = 100\,000$ ohne Kontext ist eine
+\textbf{Glaubensbehauptung}. Wurde das auf Grok ausgef\"{u}hrt? (Grok
+hat Zeitlimits von Minuten, nicht Tagen.) Wurde das auf Cloud-Hardware
+ausgef\"{u}hrt? (Dann: Welche? Kosten?) Oder ist $N = 100\,000$ eine
+\textbf{Projektion} f\"{u}r zuk\"{u}nftige Tests?}
+\Empf{Explizit benennen, welche $N$ auf welcher Hardware mit welcher
+Laufzeit getestet wurden. ``$N = 100\,000$'' ohne Kontext ist eine
+Behauptung, die das Vertrauen untergr\"{a}bt.}
+\begin{Fix}
+In PST-4-G, Sektion 5.2, eine Tabelle einf\"{u}gen:
+\begin{verbatim}
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{N} & \textbf{Hardware} & \textbf{Laufzeit} & \textbf{Status} \\
+\midrule
+40         & Grok (Cloud)      & $<$ 1 Min.        & Dokumentiert \\
+1\,000     & [noch offen]      & [noch offen]      & Geplant \\
+10\,000    & [noch offen]      & [noch offen]      & Geplant \\
+100\,000   & i7-10700K + 256GB & gesch\"{a}tzt 3--5 Tage & Zuk\"{u}nftig \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{11} PST-5-S: Der ``harte Kern'' ist zu hart}
+%--------------------------------------------------------------
+
+\Dok{PST-5-S, Sektion 1}
+\Stelle{Definition ``Harter Kern der PST''}
+\Prob{Der vierte Punkt des harten Kerns lautet: ``Es gibt einen
+universellen Projektionsoperator $\mathcal{P}^*$.'' Das ist eine
+\textbf{massive Annahme}. Wenn sich herausstellt, dass es keinen
+\emph{einen} universellen Operator gibt, sondern eine \textbf{Klasse}
+von kontextabh\"{a}ngigen Operatoren (je nach Beobachter, Energieskala,
+etc.), w\"{u}rde das die PST nicht zwingend scheitern lassen. Es
+w\"{u}rde nur bedeuten, dass $\mathcal{P}^*$ kein einzelner Operator,
+sondern ein \textbf{Funktor} oder eine \textbf{Familie} ist.}
+\Krit{In Lakatos' Terminologie geh\"{o}rt in den harten Kern nur das,
+was bei Aufgabe das Programm beendet. Die Existenz eines \emph{einzigen}
+universellen Operators ist st\"{a}rker als n\"{o}tig. Die Aussage
+``Raumzeit emergiert durch Projektion'' ist hart. Die Aussage ``Es
+gibt genau ein $\mathcal{P}^*$'' ist eine Hilfshypothese im
+Schutzg\"{u}rtel.}
+\Empf{Punkt 3 des harten Kerns \"{a}ndern zu: ``Es gibt eine Klasse von
+Projektionsoperatoren, die aus dem OPP Raumzeit emergieren lassen.''
+Und $\mathcal{P}^*$ als spezifische Hypothese in den Schutzg\"{u}rtel
+verschieben.}
+\begin{Fix}
+In PST-5-S, Sektion 1, die Definition des harten Kerns
+\"{a}ndern:
+\begin{verbatim}
+\begin{definition}[Harter Kern der PST -- korrigiert]
+\begin{enumerate}
+  \item Der OPP existiert als hochdimensionaler, pr\"{a}-metrischer
+    Zustandsraum.
+  \item Raumzeit, Physik und Bestimmtheit emergieren durch Projektion.
+  \item Es gibt eine Klasse von Projektionsoperatoren, die aus dem OPP
+    Raumzeit emergieren lassen.
+  \item Das Prinzip der minimalen Ontologie gilt.
+\end{enumerate}
+\end{definition}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{12} PST-5-S und PST-6-R: Der Weg zur Lorentz-Signatur \"{u}ber
+komplexe Gram-Matrizen ist eine Sackgasse}
+%--------------------------------------------------------------
+
+\Dok{PST-5-S, Sektion 4 (Priorit\"{a}t 2); PST-6-R, Sektion 2}
+\Stelle{``Imagin\"{a}re Eigenwerte bei komplexen Gram-Matrizen'' und
+``Wick-Rotation''}
+\Prob{Dieser Ansatz taucht in drei Dokumenten auf (PST-3-P, PST-5-S,
+PST-6-R) und ist mathematisch mit der in PST-2-M festgelegten
+reell-symmetrischen Gram-Matrix \textbf{unvereinbar}.
+\begin{itemize}
+  \item Eine komplexwertige Gram-Matrix verliert die Garantie
+    reeller Eigenwerte und positiver Semidefinitheit.
+  \item Die Wick-Rotation in der QFT setzt \textbf{bereits} die
+    Minkowski-Metrik voraus -- sie ist ein Trick \emph{innerhalb}
+    der Physik, nicht eine Herleitung \emph{der} Physik.
+  \item Der Ansatz verfestigt sich in der Forschungsagenda, obwohl
+    er ein mathematischer Kategorienfehler ist.
+\end{itemize}}
+\Krit{Die PST verfolgt einen mathematisch unhaltbaren Ansatz und
+ignoriert gleichzeitig eine vielversprechendere Alternative (siehe
+\textbf{[B-01]}). Das ist eine \textbf{Fehlallokation von
+Aufmerksamkeit} mit potenziell fatalen Konsequenzen f\"{u}r die
+weitere Entwicklung.}
+\Empf{Diesen Ansatz aus der Priorit\"{a}tenliste streichen oder als
+``hochspekulativ, erfordert Neufundierung der Gram-Matrix-Theorie''
+kennzeichnen. Stattdessen den Weg \"{u}ber die
+\textbf{konstruktiv/destruktive Dimension} (Raum = konstruktiv, Zeit
+= destruktiv) als prim\"{a}ren Kandidaten nennen.}
+\begin{Fix}
+In PST-5-S, Sektion 4, Priorit\"{a}t 2 ersetzen durch:
+\begin{verbatim}
+\begin{ziel}[Priorit\"{a}t 2: Lorentz-Signatur -- korrigiert]
+\textbf{Frage:} Wie emergiert $(+,-,-,-)$ aus einer signaturfreien
+Gram-Matrix?
+
+\textbf{Kandidatenansatz (neu):}
+Die drei Raumdimensionen sind ``konstruktiv'' -- sie st\"{a}rken die
+Bildung von Attraktoren. Die Zeitdimension ist ``destruktiv''
+-- sie zerst\"{o}rt Attraktoren (Entropie, Informationsverlust).
+Die Signatur $(+,-,-,-)$ reflektiert diesen ontologischen Gegensatz.
+Mathematisch k\"{o}nnte dies durch eine indefinite Bilinearform
+auf der Gram-Matrix realisiert werden, bei der konstruktive Eigenwerte
+positiv und destruktive Eigenwerte negativ sind.
+
+\textbf{Verworfener Ansatz:} Imagin\"{a}re Eigenwerte bei komplexen
+Gram-Matrizen (inkonsistent mit PST-2-M; siehe Review [K-12]).
+\end{ziel}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{13} PST-6-R: Wick-Rotation ist physikalisch irref\"{u}hrend}
+%--------------------------------------------------------------
+
+\Dok{PST-6-R, Sektion 2}
+\Stelle{Hypothese ``Wick-Rotation als projektive Eigenschaft''}
+\Prob{Die Wick-Rotation $t \to -i\tau$ in der QFT ist ein
+\textbf{mathematisches Hilfsmittel}, keine physikalische
+Transformation. Sie macht das Pfadintegral konvergent, indem sie
+von Minkowski- zu Euklidischer Zeit wechselt. Aber: Die QFT setzt
+\textbf{bereits} die Minkowski-Metrik voraus.}
+\Krit{Die PST behauptet, die Lorentz-Signatur aus dem OPP
+herzuleiten. Wenn sie daf\"{u}r die Wick-Rotation verwendet, setzt sie
+implizit voraus, was sie beweisen will: die Existenz einer
+Zeitkoordinate $t$, die man rotieren kann. Das ist ein
+\textbf{petitio principii}.}
+\Empf{Streichen oder als ``heuristische Analogie, keine Herleitung''
+kennzeichnen. Die Wick-Rotation kann nicht das Fundament sein, auf dem
+die Lorentz-Signatur emergiert.}
+\begin{Fix}
+In PST-6-R, Sektion 2, die Hypothese umbenennen in
+\texttt{remark} mit dem Text: ``Die Wick-Rotation in der QFT ist ein
+Standardtrick zur Konvergenz des Pfadintegrals. Sie setzt jedoch
+bereits die Minkowski-Metrik voraus und kann daher nicht als
+Herleitung der Lorentz-Signatur aus dem OPP dienen. Sie bleibt eine
+heuristische Analogie.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\K{14} PST-6-R: Die Schr\"{o}dinger-Gleichung als
+``projektive Eigenschaft'' ist zu vage}
+%--------------------------------------------------------------
+
+\Dok{PST-6-R, Sektion 4}
+\Stelle{Hypothese ``Schr\"{o}dinger-Gleichung aus Projektion''}
+\Prob{Die Hypothese sagt: ``Die Schr\"{o}dinger-Gleichung k\"{o}nnte
+eine projektive Eigenschaft sein.'' Aber sie liefert keinen
+Mechanismus. Die Schr\"{o}dinger-Gleichung enth\"{a}lt:
+\begin{itemize}
+  \item Eine Ableitung nach der Zeit ($\partial/\partial t$)
+  \item Einen Hamilton-Operator $\hat{H}$
+  \item Die imagin\"{a}re Einheit $i$
+\end{itemize}
+Keines dieser Elemente ist in der PST bisher definiert.}
+\Krit{Die Hypothese suggeriert Substanz, wo keine ist. Sie ist nicht
+falsch -- aber sie ist leer. Das ist f\"{u}r ein Forschungsprogramm in
+Ordnung, aber die Sprache sollte transparenter sein.}
+\Empf{Entweder (a) explizit als ``noch v\"{o}llig offen, keine
+mathematische Substanz'' kennzeichnen, oder (b) einen konkreten
+Ansatz skizzieren.}
+\begin{Fix}
+In PST-6-R, Sektion 4, die Hypothese durch eine
+\texttt{methodennote} ersetzen:
+\begin{verbatim}
+\begin{methodennote}[Schr\"{o}dinger-Gleichung -- offenes Terrain]
+Die Herleitung der Schr\"{o}dinger-Gleichung aus der Projektion
+ist ein Fernziel der PST. Bisher existiert kein mathematischer
+Mechanismus, der die Elemente der Gleichung ($i$, $\hat{H}$,
+$\partial/\partial t$) aus PST-Strukturen ableitet. Dieser
+Abschnitt kartografiert das Terrain, nicht den Weg.
+\end{methodennote}
+\end{verbatim}
+\end{Fix}
+
+\newpage
+
+%==============================================================
+\section{Bedeutsame Befunde [B]}
+%==============================================================
+
+%--------------------------------------------------------------
+\subsection{\B{01} PST-1-F bis PST-6-R: Die destruktive Zeitdimension
+fehlt komplett}
+%--------------------------------------------------------------
+
+\Dok{Alle PST-Dokumente}
+\Stelle{Fehlend}
+\Prob{Die st\"{a}rkste originelle Idee des gesamten OP-Programms --
+die konstruktiven Raumdimensionen vs. die destruktive Zeitdimension
+als ontologische Begr\"{u}ndung der Metrik-Signatur -- taucht in
+keinem PST-Dokument auf.}
+\Krit{Die PST verfolgt einen mathematischen Weg (komplexe
+Eigenwerte, Wick-Rotation), der problematisch ist, w\"{a}hrend sie
+einen philosophisch fundierten Weg (konstruktiv/destruktiv)
+ignoriert, der mathematisch sauberer w\"{a}re. Das ist ein
+\textbf{Blindfleck}.}
+\Empf{Diese Idee muss in eine \"{U}berarbeitung der PST
+einflie\ss{}en. Sie k\"{o}nnte die Lorentz-Signatur ontologisch
+begr\"{u}nden, ohne die mathematische Konsistenz der Gram-Matrix zu
+zerst\"{o}ren.}
+\begin{Fix}
+In PST-5-S, Sektion 4, als neue Priorit\"{a}t einf\"{u}gen:
+\begin{verbatim}
+\begin{ziel}[Priorit\"{a}t 2b: Ontologische Begr\"{u}ndung der
+Lorentz-Signatur]
+\textbf{Hypothese:} Die drei Raumdimensionen sind ``konstruktiv''
+-- sie st\"{a}rken die Bildung und Stabilit\"{a}t von Attraktoren.
+Die Zeitdimension ist ``destruktiv'' -- sie zerst\"{o}rt Attraktoren
+(Entropie, Informationsverlust). Die Signatur $(+,-,-,-)$
+reflektiert diesen ontologischen Gegensatz.
+
+\textbf{Mathematische Umsetzung:} Eine indefinite Bilinearform
+auf der Gram-Matrix, bei der konstruktive Eigenwerte
+positiv und destruktive Eigenwerte negativ sind. Dies w\"{u}rde
+eine indefinite Metrik mit Signatur $(1,3)$ oder $(3,1)$ erzeugen,
+ohne die reelle Struktur der Gram-Matrix aufzugeben.
+\end{ziel}
+\end{verbatim}
+In PST-6-R, Sektion 2, eine neue Hypothese einf\"{u}hren, die diesen
+Ansatz entwickelt.
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{02} PST-3-P: Die Verbindung $I_0 \leftrightarrow \hbar$
+bleibt dimensionsanalytisch offen}
+%--------------------------------------------------------------
+
+\Dok{PST-3-P, Sektion 6}
+\Stelle{Hypothese ``Quantisierung aus endlicher Projektionsaufl\"{o}sung''}
+\Prob{$[I_0] = \text{Bit}$ (Informationsma\ss{}), $[\hbar] =
+\text{J} \cdot \text{s} = \text{kg} \cdot \text{m}^2/\text{s}$
+(Wirkung). Die Hypothese behauptet eine Korrespondenz, aber ohne
+eine \textbf{Konstante}, die Bits in Wirkung umrechnet, ist das eine
+Typengleichung, keine physikalische Gleichung.}
+\Krit{In der Physik ist jede Gleichung dimensionshomogen. Wenn
+$I_0 = \hbar$ gelten soll, braucht man einen Faktor $k$ mit
+$[k] = \text{J} \cdot \text{s}/\text{Bit}$. Woher kommt dieser
+Faktor? Aus dem OPP? Aus der Projektion? Das ist die entscheidende
+Frage.}
+\Empf{Explizit als offene Frage formulieren: ``Die Korrespondenz
+$I_0 \leftrightarrow \hbar$ erfordert eine dimensionsanalytische
+Br\"{u}cke, die derzeit nicht vorhanden ist.''}
+\begin{Fix}
+In PST-3-P, Sektion 6, die Hypothese erg\"{a}nzen:
+\begin{verbatim}
+\begin{methodennote}[Dimensionsanalytische L\"{u}cke]
+Die Korrespondenz $I_0 \leftrightarrow \hbar$ erfordert eine
+Br\"{u}ckenkonstante $k$ mit $[k] = \text{J} \cdot
+\text{s}/\text{Bit}$. Ein m\"{o}glicher Ansatz: $I_0 = \hbar /
+(k_B T \cdot \tau)$, wobei $T$ und $\tau$ emergente Gr\"{o}\ss{}en
+der Projektion w\"{a}ren. Dies bleibt ein offenes Problem.
+\end{methodennote}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{03} PST-3-P: Die ``Proposition'' Beobachter =
+Projektionsoperatoren ist ein Postulat}
+%--------------------------------------------------------------
+
+\Dok{PST-3-P, Sektion 8}
+\Stelle{Proposition ``Beobachter = Projektionsoperatoren''}
+\Prob{Eine Proposition in der Mathematik ist eine Behauptung, die
+aus Definitionen und Axiomen \emph{bewiesen} werden kann. Hier wird
+behauptet: ``Ein physikalischer Beobachter ist identisch mit einem
+Projektionsoperator.'' Das ist keine Folgerung -- das ist eine
+\textbf{Setzung}, ein Postulat.}
+\Krit{Die Proposition suggeriert Beweisbarkeit, wo keine ist. Das
+ist ein Versto\ss{} gegen die MKO-Sprachregel (Ebene 1 statt Ebene
+3/5).}
+\Empf{Umbenennen in \texttt{postulat} oder \texttt{definition}. Oder:
+Als \texttt{proposition} belassen, aber mit einem Beweis versehen,
+der aus den Axiomen des OP folgt.}
+\begin{Fix}
+In PST-3-P, Sektion 8, die \texttt{proposition} durch
+\texttt{postulat} ersetzen und hinzuf\"{u}gen: ``Dies ist eine
+grundlegende Setzung der PST, keine ableitbare Proposition. Sie
+verbindet die philosophische Kategorie des Beobachters (DPR) mit
+der mathematischen Kategorie des Projektionsoperators.''
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{04} PST-4-G: Die Traum-Analogie / SSD-Analogie fehlt}
+%--------------------------------------------------------------
+
+\Dok{PST-4-G, Gesamtdokument}
+\Stelle{Fehlend}
+\Prob{Das Dokument beschreibt den Paradigmenwechsel von ``OPP hat
+Dimensionen'' zu ``Projektion erzeugt Dimensionen''. Aber es
+vermisst die \textbf{intuitive Verankerung}, die der Autor dem
+Reviewer erkl\"{a}rt hat: Die SSD-Analogie (Bits $\to$ Player $\to$
+Film).}
+\Krit{Die SSD-Analogie ist die beste didaktische Br\"{u}cke zwischen
+Philosophie und Mathematik. Ihr Fehlen macht PST-4-G f\"{u}r externe
+Leser schwerer zug\"{a}nglich.}
+\Empf{Einen Abschnitt ``Intuitive Verankerung'' hinzuf\"{u}gen.}
+\begin{Fix}
+In PST-4-G, nach Sektion 2 (Phase 2), eine neue Sektion
+einf\"{u}gen:
+\begin{verbatim}
+\begin{remark}[Intuitive Verankerung: Die SSD-Analogie]
+Der OPP ist wie eine SSD: statisch, zeitlos, nur Bits.
+Der Diffusion-Map-Operator ist wie ein Player: Er projiziert
+sequentiell und erzeugt emergent Raum und Zeit.
+$d_{\text{eff}} \approx 4$ ist die emergente Dimension des Films.
+Diese Analogie ist keine mathematische Herleitung, sondern ein
+didaktisches Hilfsmittel (MKO Ebene 4).
+\end{remark}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{05} PST-5-S: Die Verbindung zu Connes ist kontr\"{a}r,
+nicht komplement\"{a}r}
+%--------------------------------------------------------------
+
+\Dok{PST-5-S, Sektion 7}
+\Stelle{``PST und nicht-kommutative Geometrie (Connes)''}
+\Prob{Connes' spektrale Tripel $(A, H, D)$ setzt einen
+\textbf{Dirac-Operator $D$} voraus, der eine \textbf{Metrik} kodiert.
+Die PST behauptet, Metrik emergiere erst durch Projektion. Das sind
+\textbf{kontr\"{a}re Ausgangspunkte}, nicht komplement\"{a}re.}
+\Krit{Wenn die PST sagt ``Metrik ist emergent'', dann kann sie
+nicht gleichzeitig Connes' Ansatz als ``eine mathematisch
+ausgearbeitete Version des PST-Projektionsprinzips'' interpretieren.
+Connes \emph{setzt} die Metrik durch $D$ voraus; die PST
+\emph{leitet} sie ab.}
+\Empf{Die Verbindung zu Connes als ``interessante mathematische
+Analogie, aber mit umgekehrter ontologischer Richtung''
+kennzeichnen -- oder streichen.}
+\begin{Fix}
+In PST-5-S, Sektion 7, den Text \"{a}ndern:
+\begin{verbatim}
+\begin{remark}[PST und nicht-kommutative Geometrie (Connes)]
+Alain Connes beschreibt Raumzeit \"{u}ber spektrale Tripel
+$(A, H, D)$. Der Dirac-Operator $D$ kodiert dabei bereits eine
+Metrik. Die PST und Connes' Ansatz sind daher ontologisch
+kontr\"{a}r: Connes setzt Metrik voraus, die PST leitet sie ab.
+Ob beide Programme letztlich formal \"{a}quivalent sind, ist eine
+offene Frage. Die PST kann Connes' Mathematik als Werkzeug
+nutzen, nicht als ontologische Grundlage.
+\end{remark}
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{06} PST-5-S: Das Scheitern-Kriterium 3 ist mathematisch trivial}
+%--------------------------------------------------------------
+
+\Dok{PST-5-S, Sektion 5}
+\Stelle{``Wann scheitert die PST?'' -- Kriterium 3}
+\Prob{``Die Lorentz-Signatur grunds\"{a}tzlich nicht aus einer reellen,
+positiv semidefiniten Gram-Matrix emergieren kann.'' Das ist kein
+m\"{o}gliches Scheitern -- das ist ein \textbf{mathematisches
+Faktum}. Eine positiv semidefinite Matrix hat nur nicht-negative
+Eigenwerte. Eine indefinite Metrik mit Signatur $(+,-,-,-)$ hat
+positive und negative Eigenwerte. Das eine kann nicht aus dem
+anderen folgen.}
+\Krit{Das Scheitern-Kriterium suggeriert, dass dies eine offene
+empirische Frage ist. Aber es ist eine geschlossene mathematische.
+Die PST muss entweder (a) indefinite Gram-Matrizen zulassen, (b)
+die Signatur durch einen anderen Mechanismus erzeugen, oder (c)
+zugeben, dass die reell-positive Definitheit eine zu starke Annahme
+war.}
+\Empf{Das Kriterium umformulieren: ``Es zeigt sich, dass keine
+Modifikation der Gram-Matrix-Struktur (z.B. \"{U}bergang zu indefiniten
+Bilinearformen) die Lorentz-Signatur konsistent erzeugen kann.''}
+\begin{Fix}
+In PST-5-S, Sektion 5, Kriterium 3 ersetzen durch:
+\begin{verbatim}
+\item Es zeigt sich, dass keine konsistente Modifikation der
+  Gram-Matrix-Struktur (einschlie\ss{}lich indefiniter
+  Bilinearformen) die Lorentz-Signatur $(+,-,-,-)$ erzeugen
+  kann.
+\end{verbatim}
+\end{Fix}
+
+%--------------------------------------------------------------
+\subsection{\B{07} PST-6-R: Die Verbindung zur ART ist zu oberfl\"{a}chlich}
+%--------------------------------------------------------------
+
+\Dok{PST-6-R, Sektion 6}
+\Stelle{``Allgemeine Relativit\"{a}tstheorie (ART)''}
+\Prob{Die Behauptung, die Einstein-Feldgleichungen ``k\"{o}nnten aus
+Eigenschaften des Projektionsspektrums emergieren'', ist nicht
+falsch -- aber sie ist \textbf{leer}. Es wird nicht erkl\"{a}rt:
+\begin{itemize}
+  \item Wie $G_{\mu\nu}$ (Einstein-Tensor) aus einer Gram-Matrix folgen
+    soll
+  \item Wie $T_{\mu\nu}$ (Energie-Impuls-Tensor) als
+    Projektionseigenschaft interpretiert werden soll
+  \item Wie die Kovarianz (allgemeine Koordinatentransformationen)
+    emergieren soll
+\end{itemize}}
+\Krit{Die Sprache suggeriert mehr Substanz als vorhanden. Das ist
+im Rahmen eines Forschungsprogramms legitim -- aber die Sprache
+sollte transparenter sein zwischen ``intuitiver Analogie'' und
+``mathematischer Hypothese''.}
+\Empf{Entweder einen konkreten mathematischen Ansatz skizzieren
+oder als ``v\"{o}llig offen'' kennzeichnen.}
+\begin{Fix}
+In PST-6-R, Sektion 6, den Text \"{a}ndern:
+\begin{verbatim}
+\begin{remark}[Allgemeine Relativit\"{a}tstheorie (ART) -- offen]
+Die Verbindung zwischen PST und ART ist v\"{o}llig offen.
+Insbesondere fehlt jeder mathematische Mechanismus, der:
+\begin{itemize}
+  \item den Einstein-Tensor $G_{\mu\nu}$ aus einer Gram-Matrix
+    ableitet,
+  \item den Energie-Impuls-Tensor $T_{\mu\nu}$ als
+    Projektionseigenschaft interpretiert,
+  \item die allgemeine Kovarianz aus der Projektionsstruktur
+    emergieren l\"{a}sst.
+\end{itemize}
+Dieser Abschnitt kartografiert das Terrain, nicht den Weg.
+\end{remark}
+\end{verbatim}
+\end{Fix}
+
+\newpage
+
+%==============================================================
+
+\vspace{2em}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{1em}
+
+\noindent\textbf{Hinweis:} Die \textbf{minoren Befunde [M]},
+\textbf{positiven Bewertungen [P]} und die \textbf{priorisierten
+Empfehlungen} f\"{u}r die \"{U}berarbeitung sind in \textbf{Teil~2}
+dieses Reviews dokumentiert.
+
+\vspace{2em}
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\noindent\textit{Dieses Review wurde gem\"{a}\ss{} dem Adversarial Review
+Protocol (AR) verfasst. Der Reviewer hat die Probleme benannt und
+L\"{o}sungsvorschl\"{a}ge skizziert, aber die inhaltliche Entscheidung
+und Umsetzung obliegt dem Autorenteam.}
+
+\end{document}
